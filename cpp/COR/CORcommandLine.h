@@ -52,17 +52,17 @@ public:
    const CORstring& flagArgument(const CORstring& Flag) const;
 
 private:
-   struct CLIextraParamDescription {
-      CLIextraParamDescription() : ParamRequired(false) {}
-      CLIextraParamDescription(const CORstring& Name, const CORstring& Description, bool IsRequired)
+   struct CORparameterDescriptionEntry {
+      CORparameterDescriptionEntry() : ParamRequired(false) {}
+      CORparameterDescriptionEntry(const CORstring& Name, const CORstring& Description, bool IsRequired)
          : ParamName(Name), ParamDescription(Description), ParamRequired(IsRequired) {}
       CORstring ParamName;
       CORstring ParamDescription;
       bool ParamRequired;
    };
 
-   struct CLIlineFlag {
-      explicit CLIlineFlag(const CORstring& iName);
+   struct CORflagEntry {
+      explicit CORflagEntry(const CORstring& iName);
       CORstring   Name;
       CORstring   Description;
       bool  HasArgument;
@@ -71,24 +71,24 @@ private:
       CORstring   Argument;
       CORstring   ArgumentName;
    private:
-      CLIlineFlag(const CLIlineFlag& Orig);
-      CLIlineFlag& operator=(const CLIlineFlag& Orig);
+      CORflagEntry(const CORflagEntry& Orig);
+      CORflagEntry& operator=(const CORflagEntry& Orig);
    };
 
    CORstring Description;
    CORstring ProgramName;
    bool HasParsed;
    CORarray<CORstring> ExtraArgs;
-   CORarray<CLIextraParamDescription> ParamDescription;
-   CORlist<CORauto<CLIlineFlag> > FlagList;
+   CORarray<CORparameterDescriptionEntry> ParamDescription;
+   CORlist<CORauto<CORflagEntry> > FlagList;
    CORstring NullString;
    CORstring RepeatedFlagName;
 
    bool isFlag(const char* pArgument) const;
-   CLIlineFlag* createFlagIfNotInList(const CORstring& FlagName);
-   CLIlineFlag* addPresentFlag(const char* pArgument);
-   CLIlineFlag* flag(const CORstring& FlagName);
-   const CLIlineFlag* flag(const CORstring& FlagName) const;
+   CORflagEntry* createFlagIfNotInList(const CORstring& FlagName);
+   CORflagEntry* addPresentFlag(const char* pArgument);
+   CORflagEntry* flag(const CORstring& FlagName);
+   const CORflagEntry* flag(const CORstring& FlagName) const;
    bool isFlagInList(const CORstring& FlagName) const;
    void addArgument(const char* pArgument);
    bool isHelpArgument(const CORstring& FlagName) const;

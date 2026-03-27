@@ -20,12 +20,12 @@ COR_LOG_MODULE;
 // 0 turns off globbing; 1 turns it on
 int _CRT_glob = 0; 
 
-//Number of spaces between the Name of the Argument and its description columns
-static const CORuint32 CLI_NUMBER_OF_PADDING_SPACES = 2;
-//Maximum width of output when showing usage
-static const CORuint32 CLI_SHOW_USAGE_WIDTH = 75;
+// Number of spaces between the argument and description columns.
+static const CORuint32 kPaddingSpaces = 2;
+// Maximum width of output when showing usage.
+static const CORuint32 kShowUsageWidth = 75;
 
-CORcommandLine::CLIlineFlag::CLIlineFlag(const CORstring& iName)
+CORcommandLine::CORflagEntry::CORflagEntry(const CORstring& iName)
    : Name(iName),
      IsPresent(false),
      WasExpected(false),
@@ -33,24 +33,24 @@ CORcommandLine::CLIlineFlag::CLIlineFlag(const CORstring& iName)
      ArgumentName("") {
 }
 
-CORcommandLine::CLIlineFlag* CORcommandLine::createFlagIfNotInList(const CORstring& FlagName) {
-   CLIlineFlag* pFlag = flag(FlagName);
+CORcommandLine::CORflagEntry* CORcommandLine::createFlagIfNotInList(const CORstring& FlagName) {
+   CORflagEntry* pFlag = flag(FlagName);
    if (NULL == pFlag)
    {
-      FlagList.add(CORauto<CLIlineFlag>(new CLIlineFlag(FlagName)));
+      FlagList.add(CORauto<CORflagEntry>(new CORflagEntry(FlagName)));
       pFlag = flag(FlagName);
    }
    return pFlag;
 }
 
-CORcommandLine::CLIlineFlag* CORcommandLine::addPresentFlag(const char* pArgument) {
+CORcommandLine::CORflagEntry* CORcommandLine::addPresentFlag(const char* pArgument) {
    CORstring FlagName = pArgument;
    FlagName = FlagName.strip(CORstring::Leading, '-');
 
-   CLIlineFlag* pFlag = flag(FlagName);
+   CORflagEntry* pFlag = flag(FlagName);
    if (NULL == pFlag)
    {
-      FlagList.add(CORauto<CLIlineFlag>(new CLIlineFlag(FlagName)));
+      FlagList.add(CORauto<CORflagEntry>(new CORflagEntry(FlagName)));
       pFlag = flag(FlagName);
    }
    else if (pFlag->IsPresent)
@@ -64,7 +64,7 @@ CORcommandLine::CLIlineFlag* CORcommandLine::addPresentFlag(const char* pArgumen
    return pFlag;
 }
 
-const CORcommandLine::CLIlineFlag* CORcommandLine::flag(const CORstring& FlagName) const {
+const CORcommandLine::CORflagEntry* CORcommandLine::flag(const CORstring& FlagName) const {
    for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place))
    {
       if (FlagList[Place]->Name == FlagName)
@@ -76,8 +76,8 @@ const CORcommandLine::CLIlineFlag* CORcommandLine::flag(const CORstring& FlagNam
    return NULL;
 }
 
-CORcommandLine::CLIlineFlag* CORcommandLine::flag(const CORstring& FlagName) {
-   return const_cast<CLIlineFlag*>(static_cast<const CORcommandLine*>(this)->flag(FlagName));
+CORcommandLine::CORflagEntry* CORcommandLine::flag(const CORstring& FlagName) {
+   return const_cast<CORflagEntry*>(static_cast<const CORcommandLine*>(this)->flag(FlagName));
 }
 
 bool CORcommandLine::isFlagInList(const CORstring& FlagName) const {
@@ -120,7 +120,7 @@ bool CORcommandLine::isFlag(const char* pArgument) const {
 }
 
 void CORcommandLine::addExtraParamDescriptionRequired(const CORstring& Parameter, const CORstring& Description) {
-   ParamDescription.push_back(CLIextraParamDescription(Parameter, Description, true));
+   ParamDescription.push_back(CORparameterDescriptionEntry(Parameter, Description, true));
 }
 
 void CORcommandLine::addExtraParamDescription
@@ -128,7 +128,7 @@ void CORcommandLine::addExtraParamDescription
    const CORstring& Parameter, 
    const CORstring& Description
 ) {
-   ParamDescription.push_back(CLIextraParamDescription(Parameter, Description, false));
+   ParamDescription.push_back(CORparameterDescriptionEntry(Parameter, Description, false));
 }
 
 void CORcommandLine::setDescription(const CORstring& Description) {
@@ -136,9 +136,7 @@ void CORcommandLine::setDescription(const CORstring& Description) {
 }
 
 void CORcommandLine::parseArgs(int argc, const char** ppArg) {
-   if (HasParsed){
-      COR_ERROR_STREAM_PLAIN("CORcommandLine::parseArgs() has been called more than once.", 0);
-   }
+   CORPRECONDITION(!HasParsed);
    HasParsed = true;
    CORPRECONDITION(argc != 0);
    ProgramName = ppArg[0];
@@ -152,7 +150,7 @@ void CORcommandLine::parseArgs(int argc, const char** ppArg) {
       // add it to the table anyways and set it to be unexpected,
       // so a program can test for unknownFlagPresent and do a showUsage().
       if (isHelpArgument(ppArg[ArgIndex])){
-         CLIlineFlag* pFlag = addPresentFlag(ppArg[ArgIndex]);
+         CORflagEntry* pFlag = addPresentFlag(ppArg[ArgIndex]);
          pFlag->WasExpected = false;
          ArgIndex++;
       }
@@ -160,7 +158,7 @@ void CORcommandLine::parseArgs(int argc, const char** ppArg) {
       // Otherwise it's a normal flag, add it to the table if it doesn't
       // already exist
       else if (isFlag(ppArg[ArgIndex])) {
-         CLIlineFlag* pFlag = addPresentFlag(ppArg[ArgIndex]);
+         CORflagEntry* pFlag = addPresentFlag(ppArg[ArgIndex]);
          if (pFlag->HasArgument){
             // at present, a flag can have at most one argument following it
             ArgIndex++;
@@ -223,7 +221,7 @@ bool CORcommandLine::isFlagPresent(const CORstring& FlagName) const {
 
 // Add a flag with argument 
 void CORcommandLine::addFlagWithArgument ( const CORstring& FlagName, const CORstring& ArgumentName) {
-   CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
+   CORflagEntry* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = true;
    pFlag->ArgumentName = ArgumentName;
@@ -231,7 +229,7 @@ void CORcommandLine::addFlagWithArgument ( const CORstring& FlagName, const CORs
 
 // Add a flag with argument, and provide a description 
 void CORcommandLine::addFlagWithArgument(const CORstring& FlagName, const CORstring& ArgumentName, const CORstring& Description) {
-   CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
+   CORflagEntry* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = true;
    pFlag->ArgumentName = ArgumentName;
@@ -240,7 +238,7 @@ void CORcommandLine::addFlagWithArgument(const CORstring& FlagName, const CORstr
 
 // Add a flag without any arguments
 void CORcommandLine::addFlagWithoutArgument ( const CORstring& FlagName, const CORstring& Description) {
-   CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
+   CORflagEntry* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = false;
    pFlag->Description = Description;   
@@ -256,7 +254,7 @@ void CORcommandLine::showUsage(CORostream& OutStream) const {
    OutStream << ProgramName;
 
    CORstring FlagName;
-   const CLIlineFlag* pCommandLineFlag;
+   const CORflagEntry* pCommandLineFlag;
 
    CORuint32 MaxFlagLength = 0;
    CORuint32 MaxDescriptionLength = 0;
@@ -308,14 +306,14 @@ void CORcommandLine::showUsage(CORostream& OutStream) const {
    // Print out the flags together with their descriptions
    OutStream << "Known flags:" << newline;
 
-   CORuint32 MaxLineLength = 70; // width of output TODO - can we get this to be dynamic?
+   CORuint32 MaxLineLength = kShowUsageWidth; // width of output TODO - can we get this to be dynamic?
 
    for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place)) {
       pCommandLineFlag = FlagList[Place].get();
       FlagName = pCommandLineFlag->Name;
       if (pCommandLineFlag->WasExpected) {
          if(FlagName.size() <= MaxFlagLength) {
-            CORstring PaddingSpaces(MaxFlagLength - FlagName.size() + CLI_NUMBER_OF_PADDING_SPACES, ' ');
+            CORstring PaddingSpaces(MaxFlagLength - FlagName.size() + kPaddingSpaces, ' ');
             CORstring FlagInfo = "  --" + FlagName + PaddingSpaces;
             CORstring FlagDescription = pCommandLineFlag->Description;
             if (pCommandLineFlag->HasArgument) {
@@ -384,7 +382,7 @@ bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
    }
 
    CORstring FlagName;
-   const CLIlineFlag* pCommandLineFlag;
+   const CORflagEntry* pCommandLineFlag;
 
    for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place)) {
       pCommandLineFlag = FlagList[Place].get();
