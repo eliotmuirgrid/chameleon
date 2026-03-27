@@ -27,7 +27,6 @@ static const CORuint32 CLI_SHOW_USAGE_WIDTH = 75;
 
 CORcommandLine::CLIlineFlag::CLIlineFlag(const CORstring& iName)
    : Name(iName),
-     IsHidden(false),
      IsPresent(false),
      WasExpected(false),
      HasArgument(false),
@@ -268,7 +267,7 @@ void CORcommandLine::showUsage(CORostream& OutStream) const {
       {
          pCommandLineFlag = FlagList[Place].get();
          FlagName = pCommandLineFlag->Name;
-         if (pCommandLineFlag->WasExpected && !pCommandLineFlag->IsHidden)
+         if (pCommandLineFlag->WasExpected)
          {
             if (pCommandLineFlag->HasArgument) {
                OutStream << "  [--" << FlagName << ' ' << pCommandLineFlag->ArgumentName << ']'; 
@@ -314,7 +313,7 @@ void CORcommandLine::showUsage(CORostream& OutStream) const {
    for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place)) {
       pCommandLineFlag = FlagList[Place].get();
       FlagName = pCommandLineFlag->Name;
-      if (pCommandLineFlag->WasExpected && !pCommandLineFlag->IsHidden) {
+      if (pCommandLineFlag->WasExpected) {
          if(FlagName.size() <= MaxFlagLength) {
             CORstring PaddingSpaces(MaxFlagLength - FlagName.size() + CLI_NUMBER_OF_PADDING_SPACES, ' ');
             CORstring FlagInfo = "  --" + FlagName + PaddingSpaces;
@@ -401,12 +400,6 @@ bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
       }
    }
    return false;
-}
-
-void CORcommandLine::hideFlag(const CORstring& FlagName) {
-   if (isFlagInList(FlagName)) {
-      flag(FlagName)->IsHidden = true;
-   }
 }
 
 bool CORcommandLine::isHelpArgument(const CORstring& FlagString) const {

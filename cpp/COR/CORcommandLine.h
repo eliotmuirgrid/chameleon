@@ -11,6 +11,9 @@
 // Register expected flags first, then call parseArgs(), then query the
 // parsed flags and extra arguments.
 //
+// If this class doesn't meet your requirements please bugger off and don't alter it. 
+// Write something else to meet your needs.  This is a simple solution to a simple problem.
+//
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 #include <COR/CORarray.h>
@@ -38,7 +41,6 @@ public:
    // Error reporting and usage output after parsing.
    bool parsingErrorsPresent(CORostream& Out) const;
    void showUsage(CORostream& Out) const;
-   void hideFlag(const CORstring& Flag);
    
    // Query parsed values.
    const CORstring& programName() const;
@@ -68,7 +70,6 @@ private:
       bool  WasExpected;
       CORstring   Argument;
       CORstring   ArgumentName;
-      bool  IsHidden;
    private:
       CLIlineFlag(const CLIlineFlag& Orig);
       CLIlineFlag& operator=(const CLIlineFlag& Orig);
