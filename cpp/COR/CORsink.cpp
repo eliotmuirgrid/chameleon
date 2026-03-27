@@ -9,9 +9,6 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-
-// We should get rid of CORsource
-
 #include <COR/CORsink.h>
 
 CORsink::CORsink(){
