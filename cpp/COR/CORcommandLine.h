@@ -98,15 +98,6 @@ public:
                             const CORstring& ArgumentName,
                             const CORstring& Description);
 
-   // sets RepeatOk for the given flag
-   void setFlagRepeatOk(const CORstring& FlagName, bool RepeatOk);
-
-   // number of repeated arguments for the given flag
-   int flagRepeatCount(const CORstring& FlagName) const;
-
-   // get a given repeated argument for the given flag
-   const CORstring& flagRepeatValue(const CORstring& FlagName, int RepeatIndex) const;
-
    //get argument for a flag. returns "" if flag doesn't have arguments
    void flagArgument(const CORstring& FlagName, CORstring& Argument) const;
 
@@ -149,9 +140,6 @@ private:
       CORstring   Argument;
       CORstring   ArgumentName;
       bool  IsHidden;
-      bool  WasRepeated;
-      CORarray<CORstring> ValueList;
-      bool  RepeatOk;
    private:
       CLIlineFlag(const CLIlineFlag& Orig);
       CLIlineFlag& operator=(const CLIlineFlag& Orig);
@@ -164,6 +152,7 @@ private:
    CORarray<CLIextraParamDescription> ParamDescription;
    CORlist<CORauto<CLIlineFlag> > FlagList;
    CORstring NullString;
+   CORstring RepeatedFlagName;
 
    bool isFlag(const char* pArgument) const;
    CLIlineFlag* createFlagIfNotInList(const CORstring& FlagName);
@@ -178,5 +167,3 @@ private:
    CORcommandLine(const CORcommandLine& Orig);
    CORcommandLine& operator=(const CORcommandLine& Orig);
 };
-
-void CORcommandLineRepeatValueList(CORarray<CORstring>& ValueList, const CORcommandLine& LineParser, const CORstring& FlagName);

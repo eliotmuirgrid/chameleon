@@ -31,9 +31,7 @@ CORcommandLine::CLIlineFlag::CLIlineFlag(const CORstring& iName)
      IsPresent(false),
      WasExpected(false),
      HasArgument(false),
-     ArgumentName(""),
-     WasRepeated(false),
-     RepeatOk(false) {
+     ArgumentName("") {
 }
 
 CORcommandLine::CLIlineFlag* CORcommandLine::createFlagIfNotInList(const CORstring& FlagName) {
@@ -58,7 +56,9 @@ CORcommandLine::CLIlineFlag* CORcommandLine::addPresentFlag(const char* pArgumen
    }
    else if (pFlag->IsPresent)
    {
-      pFlag->WasRepeated = true;
+      if (RepeatedFlagName.is_null()) {
+         RepeatedFlagName = FlagName;
+      }
    }
    pFlag->IsPresent = true;
 
@@ -167,7 +167,6 @@ void CORcommandLine::parseArgs(int argc, const char** ppArg) {
             ArgIndex++;
             if (ArgIndex < argc){ // we can't assume that the the last flag's argument will be there if needed!
                pFlag->Argument = ppArg[ArgIndex];
-               pFlag->ValueList.push_back() = ppArg[ArgIndex];
             } else {
                COR_ERROR_STREAM_PLAIN("Argument missing for flag " << ppArg[ArgIndex-1], 0);
             }
@@ -238,13 +237,6 @@ void CORcommandLine::addFlagWithArgument(const CORstring& FlagName, const CORstr
    pFlag->HasArgument = true;
    pFlag->ArgumentName = ArgumentName;
    pFlag->Description = Description;
-}
-
-void CORcommandLine::setFlagRepeatOk(const CORstring& FlagName, bool RepeatOk) {
-   CLIlineFlag* pFlag = flag(FlagName);
-   CORMSGPRECONDITION(pFlag, "setFlagRepeatOk(): Flag " << FlagName << " not yet defined");
-   CORMSGPRECONDITION(pFlag->HasArgument, "setFlagRepeatOk(): Flag " << FlagName << " doesn't have argument");
-   pFlag->RepeatOk = RepeatOk;
 }
 
 // Add a flag without any arguments
@@ -386,22 +378,12 @@ void CORcommandLine::flagArgument(const CORstring& FlagName,CORstring& Argument)
    }
 }
 
-int CORcommandLine::flagRepeatCount(const CORstring& FlagName) const {
-   if (!isFlagInList(FlagName)) {
-      COR_ERROR_STREAM(FlagName << " not defined.", 0);
-   }
-   return flag(FlagName)->ValueList.size();
-}
-
-const CORstring& CORcommandLine::flagRepeatValue(const CORstring& FlagName, int RepeatIndex) const {
-   if (!isFlagInList(FlagName)) {
-      COR_ERROR_STREAM(FlagName << " not defined.", 0);
-   }
-   CORPRECONDITION(RepeatIndex >= 0 && RepeatIndex < flag(FlagName)->ValueList.size());
-   return flag(FlagName)->ValueList[RepeatIndex];
-}
-
 bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
+   if (!RepeatedFlagName.is_null()) {
+      ErrorStream << "Flag " << RepeatedFlagName << " used more than once." << newline;
+      return true;
+   }
+
    CORstring FlagName;
    const CLIlineFlag* pCommandLineFlag;
 
@@ -415,10 +397,6 @@ bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
          if (!isHelpFlag(pCommandLineFlag->Name)) {
             ErrorStream << "Unknown flag " << FlagName << " encountered." << newline;
          }
-         return true;
-      }
-      if (pCommandLineFlag->WasRepeated && !pCommandLineFlag->RepeatOk) {
-         ErrorStream << "Flag " << FlagName << " used more than once." << newline;
          return true;
       }
    }
@@ -443,10 +421,4 @@ bool CORcommandLine::isHelpFlag(const CORstring& FlagString) const {
       return true;
    }
    return false;
-}
-
-void CORcommandLineRepeatValueList(CORarray<CORstring>& ValueList, const CORcommandLine& LineParser, const CORstring& FlagName) {
-   for(int ValueIndex=0; ValueIndex < LineParser.flagRepeatCount(FlagName); ValueIndex++){
-      ValueList.push_back() = LineParser.flagRepeatValue(FlagName, ValueIndex);
-   }
 }
