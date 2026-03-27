@@ -13,6 +13,8 @@
 
 #ifdef COR_ENABLE_TRACING
 
+#include <COR/CORcommandLine.h>
+
 #include <COR/CORerror.h>
 #include <COR/CORutils.h>
 #include <COR/CORmutex.h>
@@ -348,6 +350,17 @@ static void CORlogHeader(int argc, const char** argv) {
    }
 
    COR_TRACE_INTERNAL(g_CORlog_INF, CORlogInternal, Line);
+}
+
+void CORlogAddCommandLineFlags(CORcommandLine& LineParser) {
+   LineParser.addFlagWithArgument("out"  , "<filename>", "CORlog filename");
+   LineParser.addFlagWithArgument("d"    , "<modules>", "CORlog DBG");
+   LineParser.addFlagWithArgument("trace", "<modules>", "CORlog TRC");
+   LineParser.addFlagWithArgument("i"    , "<modules>", "CORlog INF");
+   LineParser.addFlagWithArgument("w"    , "<modules>", "CORlog WRN");
+   LineParser.addFlagWithArgument("e"    , "<modules>", "CORlog ERR");
+   LineParser.addFlagWithArgument("F"    , "true|false", "CORlog flush");
+   LineParser.addFlagWithArgument("n"    , "true|false", "CORlog indenting");
 }
 
 void CORlog::init(int argc, const char** argv) {

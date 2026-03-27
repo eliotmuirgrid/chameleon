@@ -84,6 +84,14 @@ void CORtrace(const CORstring& Expression = "");
 void CORsetTraceLogFile(const CORstring& FilePath = "");
 //void CORdebug(const char** Glob);
 
+class CORcommandLine;
+
+#ifdef COR_ENABLE_TRACING
+void CORlogAddCommandLineFlags(CORcommandLine& LineParser);
+#else
+inline void CORlogAddCommandLineFlags(CORcommandLine&) {}
+#endif
+
 class CORlog{
 public:
    static void init(int argc, const char** argv);

@@ -13,10 +13,7 @@
 //---------------------------------------------------------------------------
 #include <COR/CORcommandLine.h>
 
-#include <COR/CORarray.h>
-#include <COR/CORauto.h>
-#include <COR/CORlist.h>
-
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 // NOTE https://willus.com/mingw/_globbing.shtml
@@ -139,32 +136,7 @@ void CORcommandLine::setDescription(const CORstring& Description) {
    this->Description = Description;
 }
 
-#ifdef COR_ENABLE_TRACING
-void CORcommandLine::addRuntimeConditionalLoggingFlags() {
-   if (HasParsed) return;
-   // the following flags are used by CORlog and are to be ignored by this command line parser:
-   addFlagWithArgument("out"  , "<filename>", "CORlog filename");
-   addFlagWithArgument("d"    , "<modules>", "CORlog DBG");
-   addFlagWithArgument("trace", "<modules>", "CORlog TRC");
-   addFlagWithArgument("i"    , "<modules>", "CORlog INF");
-   addFlagWithArgument("w"    , "<modules>", "CORlog WRN");
-   addFlagWithArgument("e"    , "<modules>", "CORlog ERR");
-   addFlagWithArgument("F"    , "true|false", "CORlog flush");
-   addFlagWithArgument("n"    , "true|false", "CORlog indenting");
-}
-#endif
-
 void CORcommandLine::parseArgs(int argc, const char** ppArg) {
-#ifdef COR_ENABLE_TRACING
-   COR_LOG_INIT(argc, ppArg);
-#endif
-   parseArgsNoTrace(argc,ppArg); 
-}
-
-void CORcommandLine::parseArgsNoTrace(int argc, const char** ppArg) {
-#ifdef COR_ENABLE_TRACING
-   addRuntimeConditionalLoggingFlags(); // must be called before HasParsed is set.
-#endif
    if (HasParsed){
       COR_ERROR_STREAM_PLAIN("CORcommandLine::parseArgs() has been called more than once.", 0);
    }

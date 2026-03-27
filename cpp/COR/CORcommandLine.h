@@ -43,7 +43,6 @@
 #include <COR/CORarray.h>
 #include <COR/CORauto.h>
 #include <COR/CORlist.h>
-#include <COR/CORlog.h>
 
 class CORostream;
 
@@ -58,7 +57,6 @@ public:
    // output an error message to stderr - the user should check the return
    // value of this class.
    void parseArgs(int argc, const char** ppArg);
-   void parseArgsNoTrace(int argc, const char** ppArg);
    
    // returns the program name - argv[0] - which was stored upon parsing above
    const CORstring& programName() const;
@@ -130,10 +128,6 @@ public:
    void addExtraParamDescription(const CORstring& Parameter, const CORstring& Description);
    void addExtraParamDescriptionRequired(const CORstring& Parameter, const CORstring& Description);
    void setDescription(const CORstring& Description);
-
-#ifdef COR_ENABLE_TRACING
-   void addRuntimeConditionalLoggingFlags(); // for CORlog support
-#endif
 
 private:
    struct CLIextraParamDescription {

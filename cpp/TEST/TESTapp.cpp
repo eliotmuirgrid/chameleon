@@ -45,6 +45,7 @@ bool TESTinit(int argc,const char** argv, CORmap<CORstring, CORauto<CORclosure0>
    COR_FUNCTION(TESTinit);
    SCKinitWinsock();
    CORcommandLine LineParser;
+   CORlogAddCommandLineFlags(LineParser);
    LineParser.addFlagWithArgument("test", "Glob expression to use.");
    LineParser.addFlagWithoutArgument("lastfailed", "Rerun last failed tests from lastfailed.tmp file.");
    LineParser.addFlagWithoutArgument("showtests", "List the tests availale.");
@@ -53,6 +54,7 @@ bool TESTinit(int argc,const char** argv, CORmap<CORstring, CORauto<CORclosure0>
       LineParser.showUsage(CORcout);
       return false;
    }
+   COR_LOG_INIT(argc, argv);
    if (LineParser.isFlagPresent("showtests")){
       TESTlistTests(*pTestCollection);
       return false;
