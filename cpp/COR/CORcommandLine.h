@@ -38,19 +38,7 @@
 // arguments' on the command line, but they can have a description associated with them,
 // and they can be required or optional.  
 //
-// TODO - it is probably needlessly confusing to have flags, arguments, parameters, 
-// and extra arguments.  Perhaps parameters could be recast as flags with arguments.
-//
-// TODO
-//  - Would be nice if optional flags/arguments could be assigned default values.
-//  - Would be nice if flags/arguments could be typed (at least for basic built-in types).
-//  - Treating help flags as unknown arguments is not user friendly.
-//  - Neither parseArgs, nor parsingErrorsPresent check for required "extra arguments".
-//  - Cleaner object model would have three classes: schema -> parser -> results.
-//    See Boost's Program Options library for an example.
-//
 // Author: Eliot Muir
-//
 //---------------------------------------------------------------------------
 #include <COR/CORarray.h>
 #include <COR/CORauto.h>

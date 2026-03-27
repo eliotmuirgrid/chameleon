@@ -1,0 +1,17 @@
+---
+description: Chameleon repository conventions
+alwaysApply: true
+---
+
+# One Rule To Rule Them All
+
+- Preserve user changes. Do not revert unrelated edits.
+- In `cpp/`, prefer current names over legacy ones: use `COR*`, `TEST*`, and `CORcommandLine`; do not introduce `COL*`, `UNIT*`, or `CLI*`.
+- Use `#pragma once` in headers.
+- File banners should use: `// Copyright (C) 2026 Eliot Muir.  All rights reserved.`
+- Do not add `// Date:` lines to file headers.
+- For function and method definitions, put the opening `{` on the same line as the closing `)` or after the constructor initializer list.
+- Keep control-flow brace style unchanged unless explicitly requested.
+- Favor small, readability-first refactors and clear comments only where they help.
+- Keep files ASCII unless there is a strong reason not to.
+- When updating makefiles, prefer clearer comments and simple structure over cleverness.
