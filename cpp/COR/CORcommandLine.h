@@ -24,53 +24,30 @@ public:
    CORcommandLine();
    ~CORcommandLine();
 
+   // Configure usage text, parameters, and flags before parsing.
+   void setDescription(const CORstring& Desc);
+   void addExtraParamDescription(const CORstring& Param, const CORstring& Desc);
+   void addExtraParamDescriptionRequired(const CORstring& Param, const CORstring& Desc);
+   void addFlagWithoutArgument(const CORstring& Flag, const CORstring& Desc);
+   void addFlagWithArgument(const CORstring& Flag, const CORstring& Arg);
+   void addFlagWithArgument(const CORstring& Flag, const CORstring& Arg, const CORstring& Desc);
+
    // Parse flags and positional arguments.
-   void parseArgs(int argc, const char** ppArg);
+   void parseArgs(int argc, const char** argv);
+
+   // Error reporting and usage output after parsing.
+   bool parsingErrorsPresent(CORostream& Out) const;
+   void showUsage(CORostream& Out) const;
+   void hideFlag(const CORstring& Flag);
    
-   // Return argv[0].
+   // Query parsed values.
    const CORstring& programName() const;
-
-   // Number of positional arguments.
    int countOfExtraArgument() const;
-
-   // Positional argument by index.
-   const CORstring& extraArgument(int ArgumentIndex) const;
-
-   // Positional argument by declared parameter name.
-   const CORstring& extraArgument(const CORstring& Parameter) const;
-
-   // True if a registered flag was present.
-   bool isFlagPresent(const CORstring& FlagName) const;
-
-   // Register a flag with no argument.
-   void addFlagWithoutArgument(const CORstring& FlagName, const CORstring& Description);
-
-   // Register a flag with an argument.
-   // ArgumentName is a usage label such as "<file>".
-   void addFlagWithArgument(const CORstring& FlagName, const CORstring& ArgumentName);
-
-   // Register a flag with an argument and usage description.
-   void addFlagWithArgument(const CORstring& FlagName,
-                            const CORstring& ArgumentName,
-                            const CORstring& Description);
-
-   // Retrieve a flag argument. Returns "" if the flag has no argument.
-   void flagArgument(const CORstring& FlagName, CORstring& Argument) const;
-
-   const CORstring& flagArgument(const CORstring& FlagName) const;
-
-   // Print usage for registered flags and parameters.
-   void showUsage(CORostream& OutStream) const;
-
-   // Hide a flag from showUsage().
-   void hideFlag(const CORstring& FlagName);
-   
-   // Return true and write an error summary if parsing found a problem.
-   bool parsingErrorsPresent(CORostream& ErrorStream) const;
-
-   void addExtraParamDescription(const CORstring& Parameter, const CORstring& Description);
-   void addExtraParamDescriptionRequired(const CORstring& Parameter, const CORstring& Description);
-   void setDescription(const CORstring& Description);
+   const CORstring& extraArgument(int Index) const;
+   const CORstring& extraArgument(const CORstring& Param) const;
+   bool isFlagPresent(const CORstring& Flag) const;
+   void flagArgument(const CORstring& Flag, CORstring& Arg) const;
+   const CORstring& flagArgument(const CORstring& Flag) const;
 
 private:
    struct CLIextraParamDescription {
