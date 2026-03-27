@@ -1,0 +1,105 @@
+//---------------------------------------------------------------------------
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
+//
+// Module: TESTapp
+//
+// Author: Eliot Muir
+//
+//
+// Description:
+//
+// Implementation
+//---------------------------------------------------------------------------
+#include "TESTapp.h"
+#include "TESTfilter.h"
+#include "TESTlastFailed.h"
+#include "TESTrun.h"
+#include "TESTlistTests.h"
+
+#include <CLI/CLIline.h>
+
+#include <SCK/SCKutils.h> // needed for windows.
+
+#include <COR/CORlog.h>
+COR_LOG_MODULE;
+
+void TESTapp::add(const CORstring& Name, TESTtest pFunc){
+   COR_METHOD(TESTapp::add);
+   if (m_TestCollection.count(Name) > 0){
+      CORcout << "Test: " << Name + " already defined.  Please select a unique name." << newline;
+      abort();
+   }
+   m_TestCollection.add(Name, CORnewClosure0(pFunc));
+}
+
+void TESTapp::addClosure(const CORstring& Name, CORclosure0* pFunc){
+   COR_METHOD(TESTapp::addClosure);
+   if (m_TestCollection.count(Name) > 0){
+      CORcout << "Test: " << Name + " already defined.  Please select a unique name." << newline;
+      abort();
+   }
+   m_TestCollection.add(Name, pFunc);
+}
+
+bool TESTinit(int argc,const char** argv, CORmap<CORstring, CORauto<CORclosure0> >* pTestCollection){
+   COR_FUNCTION(TESTinit);
+   SCKinitWinsock();
+   CLIline LineParser;
+   LineParser.addFlagWithArgument("test", "Glob expression to use.");
+   LineParser.addFlagWithoutArgument("lastfailed", "Rerun last failed tests from lastfailed.tmp file.");
+   LineParser.addFlagWithoutArgument("showtests", "List the tests availale.");
+   LineParser.parseArgs(argc,argv);
+   if (LineParser.parsingErrorsPresent(CORcout)){
+      LineParser.showUsage(CORcout);
+      return false;
+   }
+   if (LineParser.isFlagPresent("showtests")){
+      TESTlistTests(*pTestCollection);
+      return false;
+   }
+   if (LineParser.isFlagPresent("test")){
+      TESTfilterTests(LineParser.flagArgument("test"), pTestCollection);
+      if (pTestCollection->size() == 0){
+         CORcout << "No tests matched specification.  Use --showtests to show the available tests." << newline;
+         return false;
+      }
+   }
+   if (LineParser.isFlagPresent("lastfailed")){
+      TESTfilterFailedTests(pTestCollection);
+   }
+   return true;
+}
+
+int TESTapp::run(int argc,const char** argv){
+   COR_METHOD(TESTapp::run);
+   try{
+       if (!TESTinit(argc, argv, &m_TestCollection)){
+          return EXIT_FAILURE;
+       }
+       CORcout << "Running with threads " << m_TestCollection.size() << " test" << (m_TestCollection.size() != 1 ? "s." : ".") << newline;
+       return TESTrunTestCollection(m_TestCollection);
+   }catch(CORerror& Error){
+       CORcout << Error << newline;
+       return EXIT_FAILURE;
+   }catch (...){
+       CORcout << "Unhandled exception." << newline;
+       return EXIT_FAILURE;
+   }
+}
+
+int TESTapp::runSingleThreaded(int argc,const char** argv){
+   COR_METHOD(TESTapp::runSingleThreaded);
+   try{
+       if (!TESTinit(argc, argv, &m_TestCollection)){
+          return EXIT_FAILURE;
+       }
+       CORcout << "Running on single thread " << m_TestCollection.size() << " test" << (m_TestCollection.size() != 1 ? "s." : ".") << newline;
+       return TESTrunSingleThreadedTestCollection(m_TestCollection);
+   }catch(CORerror& Error){
+       CORcout << Error << newline;
+       return EXIT_FAILURE;
+   }catch (...){
+       CORcout << "Unhandled exception." << newline;
+       return EXIT_FAILURE;
+   }
+}
