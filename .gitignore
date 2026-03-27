@@ -24,3 +24,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+# Temporary files from C++ compilation
+*.d
+*.o

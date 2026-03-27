@@ -1,5 +1,12 @@
-# We use wildcard matching to figure out where sources are based on the DIRS
-# environmental variable
+# Shared build rules used by the leaf makefiles.
+#
+# Mental model:
+#   DIRS -> SEARCH -> SOURCES -> OBJECTS / DEPENDS -> TARGET
+#
+# Each leaf makefile sets DIRS (and sometimes TARGET / OBJECTS_EXTRA), then
+# includes one of the shared makefiles in this directory.
+
+# Object and library extensions vary by platform.
 ifdef OS
    OBJEXT :=.obj
    LIBEXT :=lib
@@ -8,38 +15,40 @@ else
    LIBEXT :=a
 endif
 
+# Discover source files from the directories listed in DIRS, plus any source
+# files in the current directory.
 SEARCH  := $(foreach dir, $(DIRS),../$(dir)/*.cpp ../$(dir)/*.c) *.c *.cpp
 SOURCES := $(wildcard $(SEARCH))
 OBJECTS := $(subst .cpp,$(OBJEXT), $(SOURCES))
 OBJECTS := $(subst .c,$(OBJEXT), $(OBJECTS))
 DEPENDS := $(subst $(OBJEXT),.d, $(OBJECTS))
 
+# Allows a leaf makefile to append extra objects.
 OBJECTS := $(OBJECTS) $(OBJECTS_EXTRA)
 
 include ../make/makefile.platform
 
-# If a target is not define, default to test
+# Default target name if a leaf makefile does not define one.
 TARGET ?= test
 ifeq (${PLATFORM},Windows)
     TARGET := $(TARGET).exe
 endif
 
-# Set MAC_TARGET to '-target x86_64-apple-macos13' for Intel
-# Set MAC_TARGET to '-target arm64-apple-macos13' for ARM
+# Optional explicit macOS target triple.
+# Example:
+#   MAC_TARGET ?= -target x86_64-apple-macos13
 #MAC_TARGET ?= -target x86_64-apple-macos13
 
-# Switch on the first form to enable Address Sanitizer IX-2379
-# `make ADDRESS_SANITIZE=-fsanitize=address` to enable address sanitizer
+# Enable Address Sanitizer by invoking:
+#   make ADDRESS_SANITIZE=-fsanitize=address
 ADDRESS_SANITIZE ?=
 
-# Conditionally add -DIFW_RELEASE=1 to the CXX flags for IX-2935.
-TRACE_LICENSE :=
-ifneq ($(IFW_RELEASE),)
-    TRACE_LICENSE := -DIFW_RELEASE=1
-endif
-
-# /Zi gives better symbols for stack traces,but bigger PDB file - it also makes the windows build slower see IX-1944
-# /FS is needed to allow parallel writes to PDB files with /Zi
+# Compiler / linker configuration by platform.
+#
+# Windows notes:
+#   /Zi gives better symbols for stack traces, but increases PDB size and slows
+#   the build.
+#   /FS allows parallel writes to the PDB when /Zi is enabled.
 ifdef OS # Windows
     CC      := ccache cl /nologo
     OBJECTS := $(patsubst %Posix.obj,,$(OBJECTS))   # Remove *Posix.* files - these are for Mac OS X and Linux
@@ -51,32 +60,36 @@ else	# POSIX
     CFLAGS   := -MMD -I../ -Werror
     CXXFLAGS := -MMD -I../ -Werror -std=c++11 $(TRACE_LICENSE) $(ADDRESS_SANITIZE)
     DEFAULT_LDFLAGS := -lstdc++ -lm $(ADDRESS_SANITIZE)
+
+    # Use ccache automatically when available.
     CCACHE   := $(shell command -v ccache  2> /dev/null)
     ifdef CCACHE
        CC  := ccache $(CC)
        CXX := ccache $(CXX)
     endif
+
     ifeq (${PLATFORM},Linux)        # Linux See ticket IX-1462 for dicussion on -static option
         #DEFAULT_LDFLAGS += -ldl -lpthread -static
         DEFAULT_LDFLAGS += -ldl -lpthread -rdynamic     # -rdynamic enables CORbacktrace() to print function names instead of pointers
     else ifeq (${PLATFORM},macOS)   # macOS
         CXXFLAGS += -Wno-unused-value
-        # Allows targeting Intel mac when build on an ARM mac
+        # Allows targeting Intel mac when building on an ARM mac, and vice versa.
         CPPFLAGS += $(MAC_TARGET)
         DEFAULT_LDFLAGS += $(MAC_TARGET)
     endif
 endif
 
-# Windows build command
+# Compile C / C++ sources on Windows.
 %.obj: %.cpp
 	$(CC) -I../ -I../LUAC -I../LUACOM $(CXXFLAGS) -I../ZLIB -I../DB/ODBCSQLNative /EHsc -c $< /Fo$@
 %.obj: %.c
 	$(CC) -I../ $(CXXFLAGS) -I../ZLIB -c $< /Fo$@
 
+# Compile Objective-C++ sources on macOS.
 %.oo:	%.mm
 	clang $(MAC_TARGET) -c $< -o $@
 
-# Define our clean rule - we try to use the native DEL under windows
+# Files removed by `make clean`.
 RMLIST   := $(foreach dir, $(DIRS),../$(dir)/*.obj ../$(dir)/*.o ../$(dir)/*.d) *.d *.o *.obj *~ $(TARGET)
 ifdef ComSpec  # ComSpec is just defined for Windows
 	RM := del /s /q

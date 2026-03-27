@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// Module:  CLIline
+// Module:  CORcommandLine
 // 
 // Description
 //
@@ -33,7 +33,7 @@
 // is no equivalent method for flags with arguments, and it leads to code that is more confusing than
 // it needs to be.)  
 
-// The interface for the CLIline class also refers to 'parameters'.  Parameters are
+// The interface for the CORcommandLine class also refers to 'parameters'.  Parameters are
 // arguments which are not associated with a flag.  That is, they look just like 'extra
 // arguments' on the command line, but they can have a description associated with them,
 // and they can be required or optional.  
@@ -59,10 +59,10 @@
 
 class CORostream;
 
-class CLIline{
+class CORcommandLine{
 public:
-   CLIline();
-   ~CLIline();
+   CORcommandLine();
+   ~CORcommandLine();
 
    // Parses the command line.  It registers the flags that are present, and builds
    // a vector of 'extra arguments'.
@@ -198,8 +198,8 @@ private:
    bool isHelpArgument(const CORstring& FlagName) const;
    bool isHelpFlag(const CORstring& FlagName) const;
 
-   CLIline(const CLIline& Orig);
-   CLIline& operator=(const CLIline& Orig);
+   CORcommandLine(const CORcommandLine& Orig);
+   CORcommandLine& operator=(const CORcommandLine& Orig);
 };
 
-void CLIlineRepeatValueList(CORarray<CORstring>& ValueList, const CLIline& LineParser, const CORstring& FlagName);
+void CORcommandLineRepeatValueList(CORarray<CORstring>& ValueList, const CORcommandLine& LineParser, const CORstring& FlagName);

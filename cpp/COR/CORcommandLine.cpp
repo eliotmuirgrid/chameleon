@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// Module:  CLIline
+// Module:  CORcommandLine
 // 
 // Description
 //
@@ -11,7 +11,7 @@
 // Author: Eliot Muir
 //
 //---------------------------------------------------------------------------
-#include "CLIline.h"
+#include "CORcommandLine.h"
 
 #include <COR/CORarray.h>
 #include <COR/CORauto.h>
@@ -28,7 +28,7 @@ static const CORuint32 CLI_NUMBER_OF_PADDING_SPACES = 2;
 //Maximum width of output when showing usage
 static const CORuint32 CLI_SHOW_USAGE_WIDTH = 75;
 
-CLIline::CLIlineFlag::CLIlineFlag(const CORstring& iName)
+CORcommandLine::CLIlineFlag::CLIlineFlag(const CORstring& iName)
    : Name(iName),
      IsHidden(false),
      IsPresent(false),
@@ -39,7 +39,7 @@ CLIline::CLIlineFlag::CLIlineFlag(const CORstring& iName)
      RepeatOk(false) {
 }
 
-CLIline::CLIlineFlag* CLIline::createFlagIfNotInList(const CORstring& FlagName) {
+CORcommandLine::CLIlineFlag* CORcommandLine::createFlagIfNotInList(const CORstring& FlagName) {
    CLIlineFlag* pFlag = flag(FlagName);
    if (NULL == pFlag)
    {
@@ -49,7 +49,7 @@ CLIline::CLIlineFlag* CLIline::createFlagIfNotInList(const CORstring& FlagName) 
    return pFlag;
 }
 
-CLIline::CLIlineFlag* CLIline::addPresentFlag(const char* pArgument) {
+CORcommandLine::CLIlineFlag* CORcommandLine::addPresentFlag(const char* pArgument) {
    CORstring FlagName = pArgument;
    FlagName = FlagName.strip(CORstring::Leading, '-');
 
@@ -68,7 +68,7 @@ CLIline::CLIlineFlag* CLIline::addPresentFlag(const char* pArgument) {
    return pFlag;
 }
 
-const CLIline::CLIlineFlag* CLIline::flag(const CORstring& FlagName) const {
+const CORcommandLine::CLIlineFlag* CORcommandLine::flag(const CORstring& FlagName) const {
    for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place))
    {
       if (FlagList[Place]->Name == FlagName)
@@ -80,26 +80,26 @@ const CLIline::CLIlineFlag* CLIline::flag(const CORstring& FlagName) const {
    return NULL;
 }
 
-CLIline::CLIlineFlag* CLIline::flag(const CORstring& FlagName) {
-   return const_cast<CLIlineFlag*>(static_cast<const CLIline*>(this)->flag(FlagName));
+CORcommandLine::CLIlineFlag* CORcommandLine::flag(const CORstring& FlagName) {
+   return const_cast<CLIlineFlag*>(static_cast<const CORcommandLine*>(this)->flag(FlagName));
 }
 
-bool CLIline::isFlagInList(const CORstring& FlagName) const {
+bool CORcommandLine::isFlagInList(const CORstring& FlagName) const {
    return NULL != flag(FlagName);
 }
 
-void CLIline::addArgument(const char* pArgument) {
+void CORcommandLine::addArgument(const char* pArgument) {
    ExtraArgs.push_back(pArgument);  
 }
 
-CLIline::CLIline()
+CORcommandLine::CORcommandLine()
    : HasParsed(false) {
 }
 
-CLIline::~CLIline() {
+CORcommandLine::~CORcommandLine() {
 }
 
-bool CLIline::isFlag(const char* pArgument) const {
+bool CORcommandLine::isFlag(const char* pArgument) const {
    // flags begin with at least 1 dash (ie. -FlagName, --FlagName).
    if (strlen(pArgument) <= 1)
    {
@@ -123,11 +123,11 @@ bool CLIline::isFlag(const char* pArgument) const {
    }
 }
 
-void CLIline::addExtraParamDescriptionRequired(const CORstring& Parameter, const CORstring& Description) {
+void CORcommandLine::addExtraParamDescriptionRequired(const CORstring& Parameter, const CORstring& Description) {
    ParamDescription.push_back(CLIextraParamDescription(Parameter, Description, true));
 }
 
-void CLIline::addExtraParamDescription
+void CORcommandLine::addExtraParamDescription
 (
    const CORstring& Parameter, 
    const CORstring& Description
@@ -135,14 +135,14 @@ void CLIline::addExtraParamDescription
    ParamDescription.push_back(CLIextraParamDescription(Parameter, Description, false));
 }
 
-void CLIline::setDescription(const CORstring& Description) {
+void CORcommandLine::setDescription(const CORstring& Description) {
    this->Description = Description;
 }
 
 #ifdef COR_ENABLE_TRACING
-void CLIline::addRuntimeConditionalLoggingFlags() {
+void CORcommandLine::addRuntimeConditionalLoggingFlags() {
    if (HasParsed) return;
-   // the following flags are used by CORlog and are to be ignored by this CLI parser:
+   // the following flags are used by CORlog and are to be ignored by this command line parser:
    addFlagWithArgument("out"  , "<filename>", "CORlog filename");
    addFlagWithArgument("d"    , "<modules>", "CORlog DBG");
    addFlagWithArgument("trace", "<modules>", "CORlog TRC");
@@ -154,19 +154,19 @@ void CLIline::addRuntimeConditionalLoggingFlags() {
 }
 #endif
 
-void CLIline::parseArgs(int argc, const char** ppArg) {
+void CORcommandLine::parseArgs(int argc, const char** ppArg) {
 #ifdef COR_ENABLE_TRACING
    COR_LOG_INIT(argc, ppArg);
 #endif
    parseArgsNoTrace(argc,ppArg); 
 }
 
-void CLIline::parseArgsNoTrace(int argc, const char** ppArg) {
+void CORcommandLine::parseArgsNoTrace(int argc, const char** ppArg) {
 #ifdef COR_ENABLE_TRACING
    addRuntimeConditionalLoggingFlags(); // must be called before HasParsed is set.
 #endif
    if (HasParsed){
-      COR_ERROR_STREAM_PLAIN("CLIline::parseArgs() has been called more than once.", 0);
+      COR_ERROR_STREAM_PLAIN("CORcommandLine::parseArgs() has been called more than once.", 0);
    }
    HasParsed = true;
    CORPRECONDITION(argc != 0);
@@ -213,22 +213,22 @@ void CLIline::parseArgsNoTrace(int argc, const char** ppArg) {
    }   
 }
 
-const CORstring& CLIline::programName() const {
+const CORstring& CORcommandLine::programName() const {
    return ProgramName;
 }
 
 // This is the count of extra arguments actually found 
-int CLIline::countOfExtraArgument() const {
+int CORcommandLine::countOfExtraArgument() const {
    return ExtraArgs.size();
 }
 
 // retrieve the value of an extra argument
-const CORstring& CLIline::extraArgument(int ArgumentIndex) const {
+const CORstring& CORcommandLine::extraArgument(int ArgumentIndex) const {
    return ExtraArgs[ArgumentIndex]; 
 }
 
 // retrieve the value of an extra argument
-const CORstring& CLIline::extraArgument(const CORstring& Parameter) const {
+const CORstring& CORcommandLine::extraArgument(const CORstring& Parameter) const {
    for (CORuint32 ExtraArgIndex = 0; ExtraArgIndex < static_cast<CORuint32>(ParamDescription.size()); ++ExtraArgIndex)
    {
       if (Parameter == ParamDescription[ExtraArgIndex].ParamName)
@@ -242,7 +242,7 @@ const CORstring& CLIline::extraArgument(const CORstring& Parameter) const {
 
 // Is a flag present - true/false -- new one, use this one from now on
 // i.e. --BLAH
-bool CLIline::isFlagPresent(const CORstring& FlagName) const {
+bool CORcommandLine::isFlagPresent(const CORstring& FlagName) const {
    if (!isFlagInList(FlagName)) {
       // This flag has not been installed by the users of this class
       COR_ERROR_STREAM("EXCEPTION: isFlagPresent was asked to check for the presence of flag " << FlagName << " which was not installed. "
@@ -252,7 +252,7 @@ bool CLIline::isFlagPresent(const CORstring& FlagName) const {
 }
 
 // Add a flag with argument 
-void CLIline::addFlagWithArgument ( const CORstring& FlagName, const CORstring& ArgumentName) {
+void CORcommandLine::addFlagWithArgument ( const CORstring& FlagName, const CORstring& ArgumentName) {
    CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = true;
@@ -260,7 +260,7 @@ void CLIline::addFlagWithArgument ( const CORstring& FlagName, const CORstring& 
 }
 
 // Add a flag with argument, and provide a description 
-void CLIline::addFlagWithArgument(const CORstring& FlagName, const CORstring& ArgumentName, const CORstring& Description) {
+void CORcommandLine::addFlagWithArgument(const CORstring& FlagName, const CORstring& ArgumentName, const CORstring& Description) {
    CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = true;
@@ -268,7 +268,7 @@ void CLIline::addFlagWithArgument(const CORstring& FlagName, const CORstring& Ar
    pFlag->Description = Description;
 }
 
-void CLIline::setFlagRepeatOk(const CORstring& FlagName, bool RepeatOk) {
+void CORcommandLine::setFlagRepeatOk(const CORstring& FlagName, bool RepeatOk) {
    CLIlineFlag* pFlag = flag(FlagName);
    CORMSGPRECONDITION(pFlag, "setFlagRepeatOk(): Flag " << FlagName << " not yet defined");
    CORMSGPRECONDITION(pFlag->HasArgument, "setFlagRepeatOk(): Flag " << FlagName << " doesn't have argument");
@@ -276,7 +276,7 @@ void CLIline::setFlagRepeatOk(const CORstring& FlagName, bool RepeatOk) {
 }
 
 // Add a flag without any arguments
-void CLIline::addFlagWithoutArgument ( const CORstring& FlagName, const CORstring& Description) {
+void CORcommandLine::addFlagWithoutArgument ( const CORstring& FlagName, const CORstring& Description) {
    CLIlineFlag* pFlag = createFlagIfNotInList(FlagName);
    pFlag->WasExpected = true;
    pFlag->HasArgument = false;
@@ -285,7 +285,7 @@ void CLIline::addFlagWithoutArgument ( const CORstring& FlagName, const CORstrin
 
 // This command will display the list of flags that the class knows about.
 // TODO - clean this up!
-void CLIline::showUsage(CORostream& OutStream) const {
+void CORcommandLine::showUsage(CORostream& OutStream) const {
    // Output the usage line that displays all the possible flags/arguments
    // TODO - this output does not wrap, but the output for "known flags" wraps. Create a printWrap function?
    OutStream << Description;
@@ -391,7 +391,7 @@ void CLIline::showUsage(CORostream& OutStream) const {
    }
 }
 
-const CORstring& CLIline::flagArgument(const CORstring& FlagName) const {
+const CORstring& CORcommandLine::flagArgument(const CORstring& FlagName) const {
    if (!isFlagInList(FlagName)) {
       COR_ERROR_STREAM(FlagName << " not defined.", 0);
    }
@@ -402,7 +402,7 @@ const CORstring& CLIline::flagArgument(const CORstring& FlagName) const {
 }
 
 //get argument for a flag. returns "" if flag doesn't have arguments
-void CLIline::flagArgument(const CORstring& FlagName,CORstring& Argument) const {
+void CORcommandLine::flagArgument(const CORstring& FlagName,CORstring& Argument) const {
    if (!isFlagInList(FlagName)) {
       COR_ERROR_STREAM(FlagName << " not defined.", 0);
    } else {
@@ -414,14 +414,14 @@ void CLIline::flagArgument(const CORstring& FlagName,CORstring& Argument) const 
    }
 }
 
-int CLIline::flagRepeatCount(const CORstring& FlagName) const {
+int CORcommandLine::flagRepeatCount(const CORstring& FlagName) const {
    if (!isFlagInList(FlagName)) {
       COR_ERROR_STREAM(FlagName << " not defined.", 0);
    }
    return flag(FlagName)->ValueList.size();
 }
 
-const CORstring& CLIline::flagRepeatValue(const CORstring& FlagName, int RepeatIndex) const {
+const CORstring& CORcommandLine::flagRepeatValue(const CORstring& FlagName, int RepeatIndex) const {
    if (!isFlagInList(FlagName)) {
       COR_ERROR_STREAM(FlagName << " not defined.", 0);
    }
@@ -429,7 +429,7 @@ const CORstring& CLIline::flagRepeatValue(const CORstring& FlagName, int RepeatI
    return flag(FlagName)->ValueList[RepeatIndex];
 }
 
-bool CLIline::parsingErrorsPresent(CORostream& ErrorStream) const {
+bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
    CORstring FlagName;
    const CLIlineFlag* pCommandLineFlag;
 
@@ -453,27 +453,27 @@ bool CLIline::parsingErrorsPresent(CORostream& ErrorStream) const {
    return false;
 }
 
-void CLIline::hideFlag(const CORstring& FlagName) {
+void CORcommandLine::hideFlag(const CORstring& FlagName) {
    if (isFlagInList(FlagName)) {
       flag(FlagName)->IsHidden = true;
    }
 }
 
-bool CLIline::isHelpArgument(const CORstring& FlagString) const {
+bool CORcommandLine::isHelpArgument(const CORstring& FlagString) const {
    if(FlagString == "--help"|| FlagString == "-help" || FlagString == "-?" || FlagString == "--?"|| FlagString == "/?"|| FlagString == "-h") {
       return true;
    }
    return false;
 }
 
-bool CLIline::isHelpFlag(const CORstring& FlagString) const {
+bool CORcommandLine::isHelpFlag(const CORstring& FlagString) const {
    if(FlagString == "help"|| FlagString == "?" || FlagString == "/?"|| FlagString == "h") {
       return true;
    }
    return false;
 }
 
-void CLIlineRepeatValueList(CORarray<CORstring>& ValueList, const CLIline& LineParser, const CORstring& FlagName) {
+void CORcommandLineRepeatValueList(CORarray<CORstring>& ValueList, const CORcommandLine& LineParser, const CORstring& FlagName) {
    for(int ValueIndex=0; ValueIndex < LineParser.flagRepeatCount(FlagName); ValueIndex++){
       ValueList.push_back() = LineParser.flagRepeatValue(FlagName, ValueIndex);
    }

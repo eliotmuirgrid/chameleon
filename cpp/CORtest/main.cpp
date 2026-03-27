@@ -10,14 +10,14 @@
 // Author: Eliot Muir
 //
 //---------------------------------------------------------------------------
-#include <CLI/CLIline.h>
+#include <COR/CORcommandLine.h>
 
 #include <COR/CORlog.h>
 
 COR_LOG_MODULE;
 
 int main(int argc, const char** argv) {
-   CLIline Line;
+   CORcommandLine Line;
    Line.setDescription("CORtest");
    Line.addFlagWithoutArgument("help", "Show usage and exit.");
    Line.parseArgs(argc, argv);

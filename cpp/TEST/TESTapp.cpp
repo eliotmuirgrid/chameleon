@@ -16,7 +16,7 @@
 #include "TESTrun.h"
 #include "TESTlistTests.h"
 
-#include <CLI/CLIline.h>
+#include <COR/CORcommandLine.h>
 
 #include <SCK/SCKutils.h> // needed for windows.
 
@@ -44,7 +44,7 @@ void TESTapp::addClosure(const CORstring& Name, CORclosure0* pFunc){
 bool TESTinit(int argc,const char** argv, CORmap<CORstring, CORauto<CORclosure0> >* pTestCollection){
    COR_FUNCTION(TESTinit);
    SCKinitWinsock();
-   CLIline LineParser;
+   CORcommandLine LineParser;
    LineParser.addFlagWithArgument("test", "Glob expression to use.");
    LineParser.addFlagWithoutArgument("lastfailed", "Rerun last failed tests from lastfailed.tmp file.");
    LineParser.addFlagWithoutArgument("showtests", "List the tests availale.");

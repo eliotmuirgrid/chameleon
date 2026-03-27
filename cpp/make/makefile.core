@@ -2,8 +2,11 @@ include ../make/makefile.common
 
 TARGET_PDB := $(shell git rev-parse HEAD).pdb
 
+# Build an executable from the discovered object files.
 $(TARGET): $(OBJECTS) $(SOURCES) 
-ifdef OS # Windows - IX-2968 $(OBJECTS) is too long to be passed directly into the LINK command. Serialize its contents to a file and use that file when linking instead.
+ifdef OS # Windows
+	# IX-2968: $(OBJECTS) can be too long to pass directly to LINK, so write
+	# the object list to a temporary response file first.
 	@if exist objectFiles.txt del objectFiles.txt
 	@for %%i in ($(OBJECTS)) do @echo %%i >> objectFiles.txt
 	LINK /nologo @objectFiles.txt /DEBUG /INCREMENTAL:NO $(LIB_LDFLAGS) $(DEFAULT_LDFLAGS) /PDB:$(TARGET_PDB) /PDBALTPATH:$(TARGET_PDB) /out:$@
@@ -27,13 +30,15 @@ info:
 
 all: $(TARGET)
 
-# Use double colon rule for clean so regular makefiles can perform addition cleaning. See Iguana makefile for example
+# Use a double-colon rule so leaf makefiles can extend `clean` if needed.
 # https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html
 clean::
 ifdef OS # Windows
+	# Windows clean is aggressive and resets generated / untracked build files.
 	cd ../ && git clean -dfx
 else
 	-$(RM) $(RMLIST)
 endif
 
+# Pull in generated dependency files when they exist.
 -include $(DEPENDS)
