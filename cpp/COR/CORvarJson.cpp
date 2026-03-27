@@ -10,13 +10,13 @@
 // Author: Eliot Muir 
 // ---------------------------------------------------------------------------
 
-#include "CORvar.h"
-#include "CORstring.h"
+#include <COR/CORvar.h>
+#include <COR/CORstring.h>
 
 #include <stdio.h>
 #include <ctype.h>
 
-#include "CORlog.h"
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 class CORjsonParseState{

@@ -9,18 +9,18 @@
 //
 // Author: Andrew Vajoczki
 //---------------------------------------------------------------------------
-#include "CORlog.h"
+#include <COR/CORlog.h>
 
 #ifdef COR_ENABLE_TRACING
 
-#include "CORerror.h"
-#include "CORutils.h"
-#include "CORmutex.h"
-#include "CORlocker.h"
-#include "CORthreadLocal.h"
-#include "CORarray.h"
-#include "CORsink.h"
-#include "CORtimeStamp.h"
+#include <COR/CORerror.h>
+#include <COR/CORutils.h>
+#include <COR/CORmutex.h>
+#include <COR/CORlocker.h>
+#include <COR/CORthreadLocal.h>
+#include <COR/CORarray.h>
+#include <COR/CORsink.h>
+#include <COR/CORtimeStamp.h>
 
 #include <stdio.h>
 #include <string.h>

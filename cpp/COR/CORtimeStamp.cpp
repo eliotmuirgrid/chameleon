@@ -15,15 +15,15 @@
 //this baby first though to make sure we don't break anything!
 
 #include <math.h>
-#include "CORhashmap.h"
+#include <COR/CORhashmap.h>
 
 #ifdef _WIN32
 #  define CHM_FILETIME
 #endif
 
-#include "CORmutex.h"
-#include "CORlocker.h"
-#include "CORlog.h"
+#include <COR/CORmutex.h>
+#include <COR/CORlocker.h>
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 #include <stdio.h>
@@ -38,7 +38,7 @@ COR_LOG_MODULE;
 #   include <sched.h>
 #endif
 
-#include "CORtimeStamp.h"
+#include <COR/CORtimeStamp.h>
 
 #ifdef _WIN32
 static inline void FileTimeToUnixTime(CORuint64* result, const FILETIME* in) {

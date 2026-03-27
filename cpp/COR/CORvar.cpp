@@ -10,9 +10,9 @@
 // A variant object that can hold a number, string, vector or map.
 //-----------------------------------------------------------------------------
 
-#include "CORvar.h"
-#include "CORvarJson.h"
-#include "CORlog.h"
+#include <COR/CORvar.h>
+#include <COR/CORvarJson.h>
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 #include <stdio.h>

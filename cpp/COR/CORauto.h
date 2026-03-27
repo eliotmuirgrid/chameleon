@@ -35,7 +35,7 @@
 // Author: Ryan Dewsbury
 //---------------------------------------------------------------------------
 
-#include "CORerror.h"
+#include <COR/CORerror.h>
 
 template<class TemplateClass>
 class CORauto {

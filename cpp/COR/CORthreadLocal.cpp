@@ -9,7 +9,7 @@
 //
 // Author: Andrew Vajoczki
 //---------------------------------------------------------------------------
-#include "CORthreadLocal.h"
+#include <COR/CORthreadLocal.h>
 #include <memory.h>
 
 #ifdef _WIN32

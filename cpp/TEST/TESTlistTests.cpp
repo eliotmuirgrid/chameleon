@@ -10,7 +10,7 @@
 //
 // Implementation
 //---------------------------------------------------------------------------
-#include "TESTlistTests.h"
+#include <TEST/TESTlistTests.h>
 
 #include <FIL/FILutils.h>
 

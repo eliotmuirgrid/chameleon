@@ -9,9 +9,9 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include "CORsinkString.h"
+#include <COR/CORsinkString.h>
 
-#include "CORlog.h"
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 CORsinkString::CORsinkString() : m_pString(new CORstring()), m_IsOwner(true) {

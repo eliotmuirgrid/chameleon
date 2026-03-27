@@ -9,10 +9,10 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include "CORmutex.h"
+#include <COR/CORmutex.h>
 
 #ifdef _WIN32
-#include "CORwindows.h"
+#include <COR/CORwindows.h>
 
 class CORmutexPrivate{
 public:

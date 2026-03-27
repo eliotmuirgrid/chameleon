@@ -9,10 +9,10 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include "CORostream.h"
-#include "CORerror.h"
-#include "CORsinkStandard.h"
-#include "CORsinkString.h"
+#include <COR/CORostream.h>
+#include <COR/CORerror.h>
+#include <COR/CORsinkStandard.h>
+#include <COR/CORsinkString.h>
 
 // Eliot at the moment I don't think this code is working.  Does it matter?
 // Probably not since we don't have a lot of static objects with destructors that

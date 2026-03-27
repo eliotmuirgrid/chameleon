@@ -7,6 +7,7 @@ alwaysApply: true
 
 - Preserve user changes. Do not revert unrelated edits.
 - In `cpp/`, prefer current names over legacy ones: use `COR*`, `TEST*`, and `CORcommandLine`; do not introduce `COL*`, `UNIT*`, or `CLI*`.
+- In `cpp/`, prefer project-local includes in package form such as `#include <COR/CORlog.h>` rather than quoted local forms like `#include "CORlog.h"`.
 - Use `#pragma once` in headers.
 - File banners should use: `// Copyright (C) 2026 Eliot Muir.  All rights reserved.`
 - Do not add `// Date:` lines to file headers.

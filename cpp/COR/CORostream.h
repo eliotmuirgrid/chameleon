@@ -46,7 +46,7 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 
-#include "CORstring.h"
+#include <COR/CORstring.h>
 
 class CORostreamPrivate;
 class CORsink;

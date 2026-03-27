@@ -10,7 +10,7 @@
 //
 // Implementation
 //---------------------------------------------------------------------------
-#include "TESTfilter.h"
+#include <TEST/TESTfilter.h>
 
 #include <COR/CORutils.h>  // for CORglobMatch function
 #include <COR/CORlist.h>

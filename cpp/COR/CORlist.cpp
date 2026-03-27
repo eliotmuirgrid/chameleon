@@ -10,8 +10,8 @@
 // Author: Ian Farquharson
 //
 //---------------------------------------------------------------------------
-#include "CORerror.h"
-#include "CORlist.h"
+#include <COR/CORerror.h>
+#include <COR/CORlist.h>
 
 CORvoidList::CORvoidList(): Size(0), Head(NULL), Tail(NULL){}
 

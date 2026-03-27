@@ -10,10 +10,10 @@
 // Author: Eliot Muir
 //
 //---------------------------------------------------------------------------
-#include "CORwindows.h"
-#include "CORutils.h"
-#include "CORvar.h"
-#include "CORlog.h"
+#include <COR/CORwindows.h>
+#include <COR/CORutils.h>
+#include <COR/CORvar.h>
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 

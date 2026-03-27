@@ -10,8 +10,8 @@
 //
 // Implementation
 //---------------------------------------------------------------------------
-#include "TESTlastFailed.h"
-#include "TESTrun.h"
+#include <TEST/TESTlastFailed.h>
+#include <TEST/TESTrun.h>
 
 #include <FIL/FILutils.h>
 

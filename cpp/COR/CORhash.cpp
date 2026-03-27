@@ -9,8 +9,8 @@
 //
 // Author: Nasron Cheong
 //---------------------------------------------------------------------------
-#include "CORhash.h"
-#include "CORlog.h"
+#include <COR/CORhash.h>
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 #define COR_LOOKUP_HASH_HASH_VALUE_BITS 32

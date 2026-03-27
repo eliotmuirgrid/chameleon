@@ -12,7 +12,7 @@
 // Author: Eliot Muir
 //-----------------------------------------------------------------------------
 
-#include "CORcore.h"
+#include <COR/CORcore.h>
 
 //=============================================================================
 // The COR_T "literal string" optimization to avoid calling strlen().

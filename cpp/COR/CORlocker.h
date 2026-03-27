@@ -35,7 +35,7 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 
-#include "CORmutex.h"
+#include <COR/CORmutex.h>
 
 class CORlocker{
 public:

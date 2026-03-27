@@ -10,8 +10,8 @@
 //
 // Implementation
 //---------------------------------------------------------------------------
-#include "TESTrun.h"
-#include "TESTlastFailed.h"
+#include <TEST/TESTrun.h>
+#include <TEST/TESTlastFailed.h>
 
 #include <COR/CORthreadPool.h>
 #include <COR/CORlog.h>

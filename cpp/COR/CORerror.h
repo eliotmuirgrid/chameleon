@@ -11,8 +11,8 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 
-#include "CORostream.h"
-#include "CORsinkString.h"
+#include <COR/CORostream.h>
+#include <COR/CORsinkString.h>
 
 #include <stdlib.h>
 

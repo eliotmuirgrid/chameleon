@@ -12,7 +12,7 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 
-#include "CORsink.h"
+#include <COR/CORsink.h>
 
 #include <stdio.h>
 

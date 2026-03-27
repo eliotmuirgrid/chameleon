@@ -51,8 +51,8 @@
 //
 //---------------------------------------------------------------------------
 
-#include "CORostream.h"
-#include "CORstring.h"
+#include <COR/CORostream.h>
+#include <COR/CORstring.h>
 
 #define COR_ENABLE_TRACING
 

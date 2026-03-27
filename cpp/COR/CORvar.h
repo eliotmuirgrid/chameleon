@@ -15,7 +15,7 @@
 //   Everything is stored by value.  No cycles are possible.
 //-----------------------------------------------------------------------------
 
-#include "CORmap.h"
+#include <COR/CORmap.h>
 #include <COR/CORarray.h>
 
 extern "C" { struct lua_State; }; // predeclared for method that converts from a Lua table.

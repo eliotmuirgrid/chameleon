@@ -72,16 +72,12 @@ public:
    // Retrieves the value of an extra argument
    const CORstring& extraArgument(const CORstring& Parameter) const;
 
-   // Is a flag present? - true/false -- new one, use this one from now on.
-   // Differs from flagPresent in that it only checks the FlagTable for the
-   // presence of FlagName, and does not try to register the flag.
+   // Is a flag present? - true/false 
    bool isFlagPresent(const CORstring& FlagName) const;
-
 
    // Registers a flag without any arguments.  The Description is used
    // by showUsage().
-   void addFlagWithoutArgument(const CORstring& FlagName,
-                               const CORstring& Description);
+   void addFlagWithoutArgument(const CORstring& FlagName, const CORstring& Description);
 
    // Registers a flag which has an argument. 
    // There seems to be some confusion in the libraries about the use
@@ -97,8 +93,7 @@ public:
    // email address.  In this case FlagName = "mailto", ArgumentName might be
    // something like "user@host", and Description might be "Mail output to 
    // specified email address."
-   void addFlagWithArgument(const CORstring& FlagName, 
-                            const CORstring& ArgumentName);
+   void addFlagWithArgument(const CORstring& FlagName, const CORstring& ArgumentName);
 
    // Register a flag which has an argument, and provide a usage description.
    void addFlagWithArgument(const CORstring& FlagName,

@@ -11,7 +11,7 @@
 // Author: Eliot Muir
 //
 //---------------------------------------------------------------------------
-#include "CORcommandLine.h"
+#include <COR/CORcommandLine.h>
 
 #include <COR/CORarray.h>
 #include <COR/CORauto.h>

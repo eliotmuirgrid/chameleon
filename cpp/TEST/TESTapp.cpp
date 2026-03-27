@@ -10,11 +10,11 @@
 //
 // Implementation
 //---------------------------------------------------------------------------
-#include "TESTapp.h"
-#include "TESTfilter.h"
-#include "TESTlastFailed.h"
-#include "TESTrun.h"
-#include "TESTlistTests.h"
+#include <TEST/TESTapp.h>
+#include <TEST/TESTfilter.h>
+#include <TEST/TESTlastFailed.h>
+#include <TEST/TESTrun.h>
+#include <TEST/TESTlistTests.h>
 
 #include <COR/CORcommandLine.h>
 

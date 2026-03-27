@@ -13,6 +13,7 @@ This document lives at the top level of the repository, adjacent to `cpp` and `l
 - Preserve existing user edits and avoid reverting unrelated work.
 - Prefer current project names: `COR*`, `TEST*`, and `CORcommandLine`.
 - Avoid reintroducing legacy names such as `COL*`, `UNIT*`, and `CLI*`.
+- In `cpp/`, prefer project-local includes in package form such as `#include <COR/CORlog.h>` rather than quoted local forms like `#include "CORlog.h"`.
 - Use `#pragma once` in headers.
 - Use the copyright line:
   `// Copyright (C) 2026 Eliot Muir.  All rights reserved.`

@@ -13,7 +13,7 @@
 // be re-run.  Implementation only - users use TESTapp.h instead.
 //---------------------------------------------------------------------------
 
-#include "TESTapp.h"
+#include <TEST/TESTapp.h>
 
 class TESTsummary;
 

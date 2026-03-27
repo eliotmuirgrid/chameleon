@@ -37,7 +37,7 @@
 // Uncomment this to enable extra debugging for destructed elements.
 //#define CORarray_MEMSET_DESTRUCTED
 
-#include "CORerror.h"
+#include <COR/CORerror.h>
 #include <new>
 
 #ifdef CORarray_MEMSET_DESTRUCTED

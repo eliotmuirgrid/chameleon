@@ -13,7 +13,7 @@
 // the library - use TESTapp.h instead.
 //---------------------------------------------------------------------------
 
-#include "TESTapp.h"
+#include <TEST/TESTapp.h>
 
 class SCKloop;
 

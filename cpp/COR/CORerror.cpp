@@ -8,14 +8,14 @@
 // Author: Eliot Muir
 //
 //---------------------------------------------------------------------------
-#include "CORerror.h"
-#include "CORlog.h"
-#include "CORstring.h"
+#include <COR/CORerror.h>
+#include <COR/CORlog.h>
+#include <COR/CORstring.h>
 
 COR_LOG_MODULE;
 
 #ifdef _WIN32
-   #include "CORwindows.h"
+   #include <COR/CORwindows.h>
 #else
    #include <errno.h>
    #include <execinfo.h>

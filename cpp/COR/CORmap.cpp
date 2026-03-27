@@ -9,8 +9,8 @@
 //
 // Author: Ian Farquharson
 //---------------------------------------------------------------------------
-#include "CORerror.h"
-#include "CORmap.h"
+#include <COR/CORerror.h>
+#include <COR/CORmap.h>
 
 /***************************\
 *                           *

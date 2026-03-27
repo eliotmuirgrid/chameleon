@@ -12,7 +12,7 @@
 
 // We should get rid of CORsource
 
-#include "CORsink.h"
+#include <COR/CORsink.h>
 
 CORsink::CORsink(){
    // do nothing

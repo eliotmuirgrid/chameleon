@@ -13,7 +13,7 @@
 //---------------------------------------------------------------------------
 class CORstring;
 
-#include "TESTapp.h"
+#include <TEST/TESTapp.h>
 
 void TESTlistTests(const CORmap<CORstring, CORauto< CORclosure0 > >& Tests);
 

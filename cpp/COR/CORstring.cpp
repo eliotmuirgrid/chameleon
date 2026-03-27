@@ -4,10 +4,10 @@
 // Module:  CORstring
 //---------------------------------------------------------------------------
 
-#include "CORwindows.h"
-#include "CORstring.h"
-#include "CORerror.h"
-#include "CORlog.h"
+#include <COR/CORwindows.h>
+#include <COR/CORstring.h>
+#include <COR/CORerror.h>
+#include <COR/CORlog.h>
 COR_LOG_MODULE;
 
 #ifndef _WIN32

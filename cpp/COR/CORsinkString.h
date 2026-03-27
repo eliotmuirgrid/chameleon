@@ -13,8 +13,8 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 
-#include "CORsink.h"
-#include "CORstring.h"
+#include <COR/CORsink.h>
+#include <COR/CORstring.h>
 
 class CORsinkString : public CORsink {
 public:

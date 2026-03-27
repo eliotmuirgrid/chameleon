@@ -10,8 +10,8 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include "CORsinkStandard.h"
-#include "CORstring.h"
+#include <COR/CORsinkStandard.h>
+#include <COR/CORstring.h>
 
 #ifdef _WIN32
    #include <io.h>

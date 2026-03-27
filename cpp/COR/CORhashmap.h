@@ -70,9 +70,9 @@
 // Author: Andrew Vajoczki - added STL style methods and iterators.
 //-----------------------------------------------------------------------------
 
-#include "CORerror.h"
-#include "CORhash.h"
-#include "CORpair.h"
+#include <COR/CORerror.h>
+#include <COR/CORhash.h>
+#include <COR/CORpair.h>
 
 class CORhashmapBaseNode{
 public:

@@ -17,7 +17,7 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include "CORcore.h"
+#include <COR/CORcore.h>
 
 class CORstring;
 

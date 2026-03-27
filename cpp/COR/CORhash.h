@@ -18,7 +18,7 @@
 //
 // Author: Nasron Cheong
 //---------------------------------------------------------------------------
-#include "CORcore.h"
+#include <COR/CORcore.h>
 
 class CORstring;
 
