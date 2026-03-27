@@ -12,11 +12,28 @@
 // This is the public interface to the TEST framework.
 //---------------------------------------------------------------------------
 
+#include <COR/CORostream.h>
 #include <COR/CORmap.h>
 #include <COR/CORclosure.h>
 #include <COR/CORauto.h>
 
 typedef void (*TESTtest)();
+
+class TESTfailure{
+public:
+   TESTfailure() {}
+   explicit TESTfailure(const CORstring& Description) : m_Description(Description) {}
+
+   const CORstring& description() const { return m_Description; }
+
+private:
+   CORstring m_Description;
+};
+
+inline CORostream& operator<<(CORostream& Stream, const TESTfailure& Failure) {
+   Stream << Failure.description();
+   return Stream;
+}
 
 class TESTapp{
 public:
@@ -42,8 +59,7 @@ private:
       __Stream << "Assert:      [" << #_EXPECTED  << " == " << #_ACTUAL << "]" << newline; \
       __Stream << "Expected:    [" << _EXPECTED << "]" << newline; \
       __Stream << "Actual:      [" << (_ACTUAL) << "]";  \
-      CORerror __Error(__ErrorString,__LINE__,__FILE__,0); \
-      throw __Error; \
+      throw TESTfailure(__ErrorString); \
    } 
 
 #define TEST_ASSERT_MESSAGE(_EXPRESSION,_MESSAGE_ON_FAIL) \
@@ -52,8 +68,7 @@ private:
       CORostream __Stream(__ErrorString); \
       __Stream << _MESSAGE_ON_FAIL << newline; \
       __Stream << "Assert:      [" << #_EXPRESSION << "]" << newline; \
-      CORerror __Error(__ErrorString,__LINE__,__FILE__,0); \
-      throw __Error; \
+      throw TESTfailure(__ErrorString); \
    }
 
 #define TEST_ASSERT(_EXPRESSION) \
@@ -61,7 +76,6 @@ private:
       CORstring __ErrorString; \
       CORostream __Stream(__ErrorString); \
       __Stream << "Assert:      [" << #_EXPRESSION << "]" << newline; \
-      CORerror __Error(__ErrorString,__LINE__,__FILE__,0); \
-      throw __Error; \
+      throw TESTfailure(__ErrorString); \
    }
 

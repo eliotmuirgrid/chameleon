@@ -53,10 +53,6 @@ public:
    //   CORstring str(COR_T("foo")); // optimized.
    CORstring(const CORtextLiteral& stringLiteral);
 
-   // Windows wide strings
-   CORstring(const wchar_t* WideCharacterString);
-   CORstring& operator=(const wchar_t* pValue);
-
    ~CORstring();
 
    int size() const { return _length; }       // Get length of string without trailing nil byte.
@@ -282,7 +278,7 @@ public:
    size_t write(const void* Buffer, CORuint32 SizeOfBuffer);
 
    // Sets the size of the CORstring and null terminates it.
-   // Will throw an exception if NewSize is greater than or equal to the string capacity.
+   // Will abort if NewSize is greater than or equal to the string capacity.
    // This is intended for use with operating system API calls which write directly to buffers.
    // Not for normal use - Eliot
    void setSize(int NewSize);

@@ -72,11 +72,7 @@ public:
    }
 
    ~CORauto() { 
-      try {
-         cleanUpPointer();  
-      } catch (const CORerror& Error) {
-         //COR_LOG(Error);
-      }
+      cleanUpPointer();  
    }
 
    //access operators

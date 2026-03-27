@@ -2,11 +2,11 @@
 //--------------------------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// Module: CORerror
+// Module: Error support
 //
 // Description:
 //
-// Standard Error Class
+// Abort, assertion, and error helper declarations.
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
@@ -65,57 +65,7 @@ CORstring CORerrorString(long ErrorCode);
 
 CORstring CORlastErrorAsString();
 
-class CORerror{
-public:
-   CORerror(const CORstring& Message, int Line, const char* File, int Code);
-   CORerror(const CORstring& Message="", int Code=0);
-   CORerror(const CORerror& Error, int Code);
-   CORerror(const CORerror& Error);
 
-   virtual ~CORerror();
-
-   const CORstring& description() const { return m_Description; }
-   int code() const { return m_Code; }
-   const CORstring& file() const { return m_File; }
-   int line() const { return m_Line; }
-
-   void setDescription(const CORstring& Description);
-   void setCode(int NewCode);
-
-   virtual CORerror& operator=(const CORerror& Error);
-   virtual bool operator==(const CORerror& Rhs) const;
-
-protected:
-   CORstring m_Description;
-   int m_Code;
-   CORstring m_File;
-   int m_Line;
-};
-
-CORostream& operator<<(CORostream& Stream, const CORerror& Error);
-
-#define COR_ERROR_STREAM(_Message, Number){\
-   CORsinkString _ErrorSink;\
-   CORostream Stream(_ErrorSink);\
-   Stream << _Message;\
-   throw CORerror(_ErrorSink.string(), __LINE__, __FILE__, Number);\
-}
-
-// Same as COR_ERROR_STREAM except without the File and Line information.  Use this in
-// cases when the __FILE__ and __LINE__ macros do not actually provide good context information
-// i.e. when the code is within a commonly used library and the actual problem is not in the library
-// but results from application code using the library.
-#define COR_ERROR_STREAM_PLAIN(Message, Number){\
-   CORsinkString _ErrorSink;\
-   CORostream ColErrorStream(_ErrorSink);\
-   ColErrorStream << Message;\
-   throw CORerror(_ErrorSink.string(), Number);\
-}
-
-// Aliases for the COR_ERROR_STREAM* macros that don't require you to explicitly
-// set an error code.
-#define COR_ERR_STREAM(Message) COR_ERROR_STREAM(Message, 0)
-#define COR_ERR_STREAM_PLAIN(Message) COR_ERROR_STREAM_PLAIN(Message, 0)
 
 // #13609 Wrapper around abort() to improve DBG crash dumps on Windows.
 // For some reason, crash dumps do not include the stack frame calling abort()
@@ -151,10 +101,10 @@ void CORsetAbortCallback(CORabortCallback pAbortCallback);
       CORabortWithMessage(_ErrorSink.string());
 
 
-// Implementation macros for CORPRECONDITION .
+// Implementation macros for abort-based precondition checks.
 
-#undef COR_THROW_IMPL
-#define COR_THROW_IMPL(Condition, Message, AssertType) \
+#undef COR_ABORT_IMPL
+#define COR_ABORT_IMPL(Condition, Message) \
    if (!(Condition)){\
       CORsinkString _ErrorSink;\
       CORostream ErrorStringStream_(_ErrorSink);\
@@ -162,16 +112,16 @@ void CORsetAbortCallback(CORabortCallback pAbortCallback);
       CORabortWithMessage(_ErrorSink.string());\
    }
 
-#undef COR_THROW_PRECONDITION
-#define COR_THROW_PRECONDITION(Condition, ConditionStr) COR_THROW_IMPL(Condition, "Failed precondition: " << ConditionStr, 0);
+#undef COR_ABORT_PRECONDITION
+#define COR_ABORT_PRECONDITION(Condition, ConditionStr) COR_ABORT_IMPL(Condition, "Failed precondition: " << ConditionStr);
 
-#undef COR_THROW_MSG_PRECONDITION
-#define COR_THROW_MSG_PRECONDITION(Condition, ConditionStr, Message) COR_THROW_IMPL(Condition, "Failed precondition: " << ConditionStr << ", " << Message, 0);
+#undef COR_ABORT_MSG_PRECONDITION
+#define COR_ABORT_MSG_PRECONDITION(Condition, ConditionStr, Message) COR_ABORT_IMPL(Condition, "Failed precondition: " << ConditionStr << ", " << Message);
 
 
 #ifdef COR_ASSERTS_ON
-   #define CORPRECONDITION(Condition) COR_THROW_PRECONDITION(Condition, #Condition)
-   #define CORMSGPRECONDITION(Condition, Message) COR_THROW_MSG_PRECONDITION(Condition, #Condition, Message)
+   #define CORPRECONDITION(Condition) COR_ABORT_PRECONDITION(Condition, #Condition)
+   #define CORMSGPRECONDITION(Condition, Message) COR_ABORT_MSG_PRECONDITION(Condition, #Condition, Message)
 #else
    #define CORPRECONDITION(Condition)
    #define CORMSGPRECONDITION(Condition, Message)

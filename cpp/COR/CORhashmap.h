@@ -291,12 +291,7 @@ public:
    CORhashmap(HashProc TheHashProc): Hash(TheHashProc) {}
 
    virtual ~CORhashmap(void) { 
-      try {
-         clear(); 
-      }
-      catch (const CORerror& Error) {
-         // There was an error logged here...
-      }
+      clear(); 
    }
 
    CORhashmap(const CORhashmap& Orig) : Hash(Orig.Hash) {

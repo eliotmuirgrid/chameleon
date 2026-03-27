@@ -953,58 +953,6 @@ void CORstring::replace(char FromChar, char ToChar)
    }
 }
 
-CORstring::CORstring(const wchar_t* WideCharacterString){
-   init();
-   if( WideCharacterString == 0 ){ //null string
-      return;
-   }
-   size_t MultiByteLength = wcstombs( 0, WideCharacterString, 0 );
-   bool UsingUTF8 = false;
-
-   // if our length is -1 then wcstombs has returned an error
-   // try using UTF-8 on windows
-#ifdef _WIN32
-   if (MultiByteLength == -1){
-      MultiByteLength = WideCharToMultiByte(CP_UTF8, 0, WideCharacterString, -1, 0, 0, 0, 0);
-      UsingUTF8 = true;
-   }
-#endif
-
-   MultiByteLength += 2; //null char length
-   setCapacity(MultiByteLength + 1);
-   if (!UsingUTF8)
-   {
-      //XXX - VERIFY - untested
-      int newCount = wcstombs( get_buffer(), WideCharacterString, MultiByteLength );
-      CORASSERT(newCount < capacity());
-      overrideLength(newCount); //XXX VERIFY
-   }
-#ifdef _WIN32
-   else
-   {
-      WideCharToMultiByte(CP_UTF8, 0, WideCharacterString, -1, get_buffer(), MultiByteLength, 0, 0);
-   }
-#endif
-}
-
-//TODO need to test this method
-CORstring& CORstring::operator=(const wchar_t* WideCharacterString){
-   if (WideCharacterString != NULL){
-      size_t MultiByteLength = wcstombs( 0, WideCharacterString, 0 );
-      if (MultiByteLength == -1){
-         COR_ERROR_STREAM("Unable to convert wide char string to multibyte string, locale may be incorrect.", 0);
-      }
-      assign(MultiByteLength, 0);
-      MultiByteLength = wcstombs( get_buffer(), WideCharacterString, MultiByteLength );
-      if (MultiByteLength == -1){
-         COR_ERROR_STREAM("Unable to convert wide char string to multibyte string, locale may be incorrect.", 0);
-      }
-   } else {
-      clear();
-   }
-   return *this;
-}
-
 bool CORstringHasPrefix(const CORstring& String, const CORstring& Prefix)
 {
    return String.size() >= Prefix.size() && String.substr(0, Prefix.size()) == Prefix;

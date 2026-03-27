@@ -36,11 +36,10 @@ public:
    void addFlagWithArgument(const CORstring& Flag, const CORstring& Arg, const CORstring& Desc);
 
    // Parse flags and positional arguments.
-   void parseArgs(int argc, const char** argv);
+   bool parseArgs(int argc, const char** argv, CORstring* pError);
 
-   // Error reporting and usage output after parsing.
-   bool parsingErrorsPresent(CORostream& Out) const;
-   void showUsage(CORostream& Out) const;
+   // Usage output after parsing.
+   void showUsage(CORostream* pOut) const;
    
    // Query parsed values.
    const CORstring& programName() const;
@@ -48,7 +47,7 @@ public:
    const CORstring& extraArgument(int Index) const;
    const CORstring& extraArgument(const CORstring& Param) const;
    bool isFlagPresent(const CORstring& Flag) const;
-   void flagArgument(const CORstring& Flag, CORstring& Arg) const;
+   void flagArgument(const CORstring& Flag, CORstring* pArg) const;
    const CORstring& flagArgument(const CORstring& Flag) const;
 
 private:

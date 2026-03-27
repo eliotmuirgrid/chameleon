@@ -70,24 +70,23 @@ public:
    ~CORlogFile() {
       close();
    }
-   void open(const char* filename, const char* mode = "w")
-   {
+   bool open(const char* filename, CORstring* pError, const char* mode = "w") {
       CORPRECONDITION(m_FILE==0);
+      CORPRECONDITION(pError != NULL);
+      pError->clear();
       m_FileName = filename;
-      if ('+' == m_FileName[0])
-      {
+      if ('+' == m_FileName[0]) {
          // if filename has a '+' prefix, open in append mode
          ++filename; // skip the '+'
          mode = "a"; // append mode
       }
       m_FILE = fopen(filename, mode);
-      if (NULL == m_FILE)
-      {
-         CORstring Error;
-         CORostream ErrorStream(Error);
+      if (NULL == m_FILE) {
+         CORostream ErrorStream(*pError);
          ErrorStream << COR_T("Error: can not open log file '") << m_FileName << '\'';
-         throw CORerror(Error);
+         return false;
       }
+      return true;
    }
 
    void close() {
@@ -111,14 +110,16 @@ public:
          fflush(m_FILE);
       }
    }
-   void reopen(){
+   bool reopen(CORstring* pError) {
+      CORPRECONDITION(pError != NULL);
+      pError->clear();
       m_FILE = fopen(m_FileName.c_str(), "a");
       if (NULL == m_FILE) {
-         CORstring Error;
-         CORostream ErrorStream(Error);
+         CORostream ErrorStream(*pError);
          ErrorStream << COR_T("Error: can not open log file '") << m_FileName << '\'';
-         throw CORerror(Error);
+         return false;
       }
+      return true;
    }
 private:
    CORstring m_FileName;
@@ -470,12 +471,12 @@ void CORlog::init(int argc, const char** argv) {
          }
          else if (Argument != "" && Argument.substr(0,1) != "-"){
             CORlogFile* LogFile = new CORlogFile(); // owned by gStream
-            try{
-               LogFile->open(Argument.c_str());
-            } catch (CORerror& Error)    {
+            CORstring Error;
+            if (!LogFile->open(Argument.c_str(), &Error)) {
                CORcerr << Error << newline;
                ::exit(1);
-            } if (!LogFile->isOpen()) {
+            }
+            if (!LogFile->isOpen()) {
                CORcerr << COR_T("Error: cannot open file '") << Argument << COR_T("'\n");
                ::exit(1);
             }
@@ -535,12 +536,12 @@ void CORtrace(const CORstring& Expression){
 void CORsetTraceLogFile(const CORstring& FilePath){
    const char* pFileName = NULL;
    CORlogFile* LogFile = new CORlogFile(); // owned by gStream
-   try{
-      LogFile->open(FilePath.c_str());
-   } catch (CORerror& Error) {
+   CORstring Error;
+   if (!LogFile->open(FilePath.c_str(), &Error)) {
       CORcerr << Error << newline;
       ::exit(1);
-   } if (!LogFile->isOpen()) {
+   }
+   if (!LogFile->isOpen()) {
       CORcout << COR_T("Error: cannot open file '") << pFileName << newline;
       ::exit(1);
    }
@@ -744,7 +745,11 @@ const char* CORlog::getBaseModuleName(char* FileName) {
 void CORlog::reopenFile() {
    CORlogFile* pLogFile = dynamic_cast<CORlogFile*>(gStream->sink());
    if (pLogFile){
-      pLogFile->reopen();
+      CORstring Error;
+      if (!pLogFile->reopen(&Error)) {
+         CORcerr << Error << newline;
+         ::exit(1);
+      }
    }
 }
 

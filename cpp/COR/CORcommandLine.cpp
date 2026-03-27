@@ -16,8 +16,8 @@
 #include <COR/CORlog.h>
 COR_LOG_MODULE;
 
-// NOTE https://willus.com/mingw/_globbing.shtml
-// 0 turns off globbing; 1 turns it on
+// On Windows, this tells the C runtime to pass wildcard arguments like "*.txt"
+// through unchanged so CORcommandLine sees the raw command line text.
 int _CRT_glob = 0; 
 
 // Number of spaces between the argument and description columns.
@@ -135,13 +135,15 @@ void CORcommandLine::setDescription(const CORstring& Description) {
    this->Description = Description;
 }
 
-void CORcommandLine::parseArgs(int argc, const char** ppArg) {
+bool CORcommandLine::parseArgs(int argc, const char** ppArg, CORstring* pError) {
    CORPRECONDITION(!HasParsed);
+   CORPRECONDITION(pError != NULL);
    HasParsed = true;
    CORPRECONDITION(argc != 0);
+   pError->clear();
    ProgramName = ppArg[0];
    if (argc == 1) {
-      return;
+      return true;
    }
    bool InFlagMode = true;
    CORint32 ArgIndex = 1;
@@ -165,7 +167,9 @@ void CORcommandLine::parseArgs(int argc, const char** ppArg) {
             if (ArgIndex < argc){ // we can't assume that the the last flag's argument will be there if needed!
                pFlag->Argument = ppArg[ArgIndex];
             } else {
-               COR_ERROR_STREAM_PLAIN("Argument missing for flag " << ppArg[ArgIndex-1], 0);
+               *pError = "Argument missing for flag ";
+               *pError += ppArg[ArgIndex - 1];
+               return false;
             }
          }
          ArgIndex++;
@@ -174,11 +178,35 @@ void CORcommandLine::parseArgs(int argc, const char** ppArg) {
       }      
    }
    
-   while (ArgIndex < argc) // Add the plain arguments to the list
-   {
+   while (ArgIndex < argc){ // Add the plain arguments to the list
       addArgument(ppArg[ArgIndex]);
       ArgIndex++;
-   }   
+   }
+   if (!RepeatedFlagName.is_null()) {
+      *pError = "Flag ";
+      *pError += RepeatedFlagName;
+      *pError += " used more than once.";
+      return false;
+   }
+
+   CORstring FlagName;
+   const CORflagEntry* pCommandLineFlag;
+   for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place)) {
+      pCommandLineFlag = FlagList[Place].get();
+      FlagName = pCommandLineFlag->Name;
+      if (!pCommandLineFlag->WasExpected) {
+         // #10739 We don't want to see this warning when a help flag is found, and only show the usage.
+         // This is not an ideal solution, but the help flag is only known to the command line parser
+         // and we don't want to change the code for all our command line applications.
+         if (!isHelpFlag(pCommandLineFlag->Name)) {
+            *pError = "Unknown flag ";
+            *pError += FlagName;
+            *pError += " encountered.";
+            return false;
+         }
+      }
+   }
+   return true;
 }
 
 const CORstring& CORcommandLine::programName() const {
@@ -211,11 +239,7 @@ const CORstring& CORcommandLine::extraArgument(const CORstring& Parameter) const
 // Is a flag present - true/false -- new one, use this one from now on
 // i.e. --BLAH
 bool CORcommandLine::isFlagPresent(const CORstring& FlagName) const {
-   if (!isFlagInList(FlagName)) {
-      // This flag has not been installed by the users of this class
-      COR_ERROR_STREAM("EXCEPTION: isFlagPresent was asked to check for the presence of flag " << FlagName << " which was not installed. "
-                        << "A flag should be first installed using either addFlagWithArgument or addFlagWithoutArgument before it is checked for.", 0);
-   }
+   CORMSGPRECONDITION(isFlagInList(FlagName), "Flag must be registered before it is queried");
    return flag(FlagName)->IsPresent;
 }
 
@@ -246,7 +270,9 @@ void CORcommandLine::addFlagWithoutArgument ( const CORstring& FlagName, const C
 
 // This command will display the list of flags that the class knows about.
 // TODO - clean this up!
-void CORcommandLine::showUsage(CORostream& OutStream) const {
+void CORcommandLine::showUsage(CORostream* pOutStream) const {
+   CORPRECONDITION(pOutStream != NULL);
+   CORostream& OutStream = *pOutStream;
    // Output the usage line that displays all the possible flags/arguments
    // TODO - this output does not wrap, but the output for "known flags" wraps. Create a printWrap function?
    OutStream << Description;
@@ -312,50 +338,45 @@ void CORcommandLine::showUsage(CORostream& OutStream) const {
       pCommandLineFlag = FlagList[Place].get();
       FlagName = pCommandLineFlag->Name;
       if (pCommandLineFlag->WasExpected) {
-         if(FlagName.size() <= MaxFlagLength) {
-            CORstring PaddingSpaces(MaxFlagLength - FlagName.size() + kPaddingSpaces, ' ');
-            CORstring FlagInfo = "  --" + FlagName + PaddingSpaces;
-            CORstring FlagDescription = pCommandLineFlag->Description;
-            if (pCommandLineFlag->HasArgument) {
-               // If the flag has a non empty description, we need a space!
-               FlagDescription += FlagDescription.compare("") == 0 ? "": ". ";
-               FlagDescription += "Requires argument " + pCommandLineFlag->ArgumentName + ".";
-            }
-            
-            OutStream << FlagInfo;
-
-            CORstring RemainingDescription = FlagDescription;
-            CORstring DescriptionToStream;
-            while (FlagInfo.size() + RemainingDescription.size() > MaxLineLength) {
-               // find first carriage return in RemainingDescription
-               if (RemainingDescription.find("\n") < (MaxLineLength - FlagInfo.size())) {
-                  RemainingDescription.split(DescriptionToStream, RemainingDescription, "\n");
-               } else {
-                  // Description must be split onto two or more lines for proper formatting
-                  CORuint32 SplitIndex = static_cast<CORuint32>(RemainingDescription.rfind(" ", MaxLineLength - FlagInfo.size()));
-                  RemainingDescription.splitAtIndex(DescriptionToStream, RemainingDescription, SplitIndex + 1);
-               }
-
-               OutStream << DescriptionToStream << newline << CORstring(FlagInfo.size(), ' ');
-            }
-            
-            if (RemainingDescription.find("\n") < RemainingDescription.size()) {
-               // there is a carriage return somewhere in the middle of this last line
-               RemainingDescription.split(DescriptionToStream, RemainingDescription, "\n");
-               OutStream << DescriptionToStream << newline << CORstring(FlagInfo.size(), ' ');
-            }
-            OutStream << RemainingDescription << newline;
-         } else {
-            COR_ERROR_STREAM("Flag " << FlagName << " length exceeds the maximum flag length of "<< MaxFlagLength,0)
+         CORPRECONDITION(FlagName.size() <= MaxFlagLength);
+         CORstring PaddingSpaces(MaxFlagLength - FlagName.size() + kPaddingSpaces, ' ');
+         CORstring FlagInfo = "  --" + FlagName + PaddingSpaces;
+         CORstring FlagDescription = pCommandLineFlag->Description;
+         if (pCommandLineFlag->HasArgument) {
+            // If the flag has a non empty description, we need a space!
+            FlagDescription += FlagDescription.compare("") == 0 ? "": ". ";
+            FlagDescription += "Requires argument " + pCommandLineFlag->ArgumentName + ".";
          }
+         
+         OutStream << FlagInfo;
+
+         CORstring RemainingDescription = FlagDescription;
+         CORstring DescriptionToStream;
+         while (FlagInfo.size() + RemainingDescription.size() > MaxLineLength) {
+            // find first carriage return in RemainingDescription
+            if (RemainingDescription.find("\n") < (MaxLineLength - FlagInfo.size())) {
+               RemainingDescription.split(DescriptionToStream, RemainingDescription, "\n");
+            } else {
+               // Description must be split onto two or more lines for proper formatting
+               CORuint32 SplitIndex = static_cast<CORuint32>(RemainingDescription.rfind(" ", MaxLineLength - FlagInfo.size()));
+               RemainingDescription.splitAtIndex(DescriptionToStream, RemainingDescription, SplitIndex + 1);
+            }
+
+            OutStream << DescriptionToStream << newline << CORstring(FlagInfo.size(), ' ');
+         }
+         
+         if (RemainingDescription.find("\n") < RemainingDescription.size()) {
+            // there is a carriage return somewhere in the middle of this last line
+            RemainingDescription.split(DescriptionToStream, RemainingDescription, "\n");
+            OutStream << DescriptionToStream << newline << CORstring(FlagInfo.size(), ' ');
+         }
+         OutStream << RemainingDescription << newline;
       }
    }
 }
 
 const CORstring& CORcommandLine::flagArgument(const CORstring& FlagName) const {
-   if (!isFlagInList(FlagName)) {
-      COR_ERROR_STREAM(FlagName << " not defined.", 0);
-   }
+   CORMSGPRECONDITION(isFlagInList(FlagName), "Flag must be registered before its argument is queried");
    if(flag(FlagName)->HasArgument) {
       return flag(FlagName)->Argument;
    }
@@ -363,41 +384,14 @@ const CORstring& CORcommandLine::flagArgument(const CORstring& FlagName) const {
 }
 
 //get argument for a flag. returns "" if flag doesn't have arguments
-void CORcommandLine::flagArgument(const CORstring& FlagName,CORstring& Argument) const {
-   if (!isFlagInList(FlagName)) {
-      COR_ERROR_STREAM(FlagName << " not defined.", 0);
+void CORcommandLine::flagArgument(const CORstring& FlagName, CORstring* pArgument) const {
+   CORMSGPRECONDITION(isFlagInList(FlagName), "Flag must be registered before its argument is queried");
+   CORPRECONDITION(pArgument != NULL);
+   if(flag(FlagName)->HasArgument) {
+      *pArgument = flag(FlagName)->Argument;
    } else {
-      if(flag(FlagName)->HasArgument) {
-         Argument = flag(FlagName)->Argument;
-      } else {
-         Argument = "";
-      }
+      *pArgument = "";
    }
-}
-
-bool CORcommandLine::parsingErrorsPresent(CORostream& ErrorStream) const {
-   if (!RepeatedFlagName.is_null()) {
-      ErrorStream << "Flag " << RepeatedFlagName << " used more than once." << newline;
-      return true;
-   }
-
-   CORstring FlagName;
-   const CORflagEntry* pCommandLineFlag;
-
-   for (CORlistPlace Place = FlagList.first(); Place != NULL; Place = FlagList.next(Place)) {
-      pCommandLineFlag = FlagList[Place].get();
-      FlagName = pCommandLineFlag->Name;
-      if (!pCommandLineFlag->WasExpected) {
-         // #10739 We don't want to see this warning when a help flag is found, and only show the usage.
-         // This is not an ideal solution, but the help flag is only known to the command line parser
-         // and we don't want to change the code for all our command line applications.
-         if (!isHelpFlag(pCommandLineFlag->Name)) {
-            ErrorStream << "Unknown flag " << FlagName << " encountered." << newline;
-         }
-         return true;
-      }
-   }
-   return false;
 }
 
 bool CORcommandLine::isHelpArgument(const CORstring& FlagString) const {

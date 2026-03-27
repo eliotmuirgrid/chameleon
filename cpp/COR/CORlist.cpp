@@ -123,9 +123,6 @@ CORlistPlace CORvoidList::next(CORlistPlace Place) const{
 
 CORlistPlace CORvoidList::insertItem(CORlistPlace Item, CORlistPlace Place){
    CORPRECONDITION(Item != NULL);
-   if (Item == NULL) {
-      COR_ERROR_STREAM("Out of memory", 0);
-   }
    if (Place == NULL){
       return addItem(Item);
    }
@@ -144,9 +141,6 @@ CORlistPlace CORvoidList::insertItem(CORlistPlace Item, CORlistPlace Place){
 
 CORlistPlace CORvoidList::addItem(CORlistPlace Item){
    CORPRECONDITION(Item != NULL);
-   if (Item == NULL) {
-      COR_ERROR_STREAM("Out of memory", 0);
-   }
    Item->Previous = Tail;
    Item->Next = NULL;
    if (Tail == NULL){

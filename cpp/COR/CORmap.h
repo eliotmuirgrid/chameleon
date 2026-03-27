@@ -152,12 +152,7 @@ public:
    : Compare(TheCompareProc) {
    }
    virtual ~CORavlTree() {
-      try {
-         clear(); 
-      }
-      catch (const CORerror& Error) {
-         //COR_LOG(Error);
-      }
+      clear(); 
    }
    Type& operator [](CORavlTreePlace Place) {
       CORPRECONDITION(Place != NULL);

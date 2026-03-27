@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// Module: CORerror
+// Module: Error support
 //
 // Description: Implementation
 //
@@ -96,8 +96,8 @@ void CORthrowWin32Error(long ErrorCode, const char* Description, int LineNumber,
    if (LineNumber != -1 && (FileName != NULL)){
       MessageStream << " on line " << LineNumber << " in " << FileName << " - ";
    }
-   MessageStream << CORerrorString(ErrorCode);
-   throw CORerror(ErrorSink.string(), static_cast<int>(ErrorCode));
+      MessageStream << CORerrorString(ErrorCode);
+      throw ErrorSink.string();
 }
 #endif
 
@@ -113,76 +113,6 @@ CORstring CORlastErrorAsString(){
    int LastError = static_cast<int>(CORlastError());
    COR_FUNCTION(CORlastErrorAsString);
    return CORerrorString(LastError);
-}
-
-static CORstring CORerrorAsString(int ErrorCode){
-   return CORintToString(ErrorCode);
-}
-
-CORerror::CORerror(const CORstring& Message, int Line, const char* File, int Code) :
-   m_Description(Message),
-   m_Code(Code),
-   m_File(File),
-   m_Line(Line)
-{
-   if (Code && Message.size()) {
-      COR_ERR("Message: `" << Message << "`, Code: " << CORerrorAsString(Code)
-         << ", File: " << File << ", Line " << Line << CORbacktrace());
-   }
-}
-
-CORerror::CORerror(const CORstring& Message, int Code) : m_Description(Message),  m_Code(Code),  m_Line(0){
-   if (Code && Message.size()) {
-      COR_ERR("Message: `" << Message << "`, Code: " << CORerrorAsString(Code) << CORbacktrace());
-   }
-}
-
-CORerror::CORerror(const CORerror& Error, int NewCode) :
-   m_Description(Error.m_Description),
-   m_File(Error.m_File),
-   m_Line(Error.m_Line),
-   m_Code(NewCode)
-{}
-
-CORerror::CORerror(const CORerror& Error) :
-   m_Description(Error.m_Description),
-   m_Code(Error.m_Code),
-   m_File(Error.m_File),
-   m_Line(Error.m_Line)
-{}
-
-CORerror::~CORerror() {
-}
-
-void CORerror::setDescription(const CORstring& Description){
-   m_Description = Description;
-}
-
-void CORerror::setCode(int NewCode){
-   m_Code = NewCode;
-}
-
-CORerror& CORerror::operator=(const CORerror& Error){
-   m_Description = Error.m_Description;
-   m_Code        = Error.m_Code;
-   m_File        = Error.m_File;
-   m_Line        = Error.m_Line;
-
-   return *this;
-}
-
-bool CORerror::operator==(const CORerror& Rhs) const{
-   return m_Code == Rhs.m_Code && m_Description == Rhs.m_Description;
-}
-
-CORostream& operator<<(CORostream& Stream, const CORerror& Error){
-   Stream << "Error Code: 0x" << hex << Error.code() << decimal << newline
-          << "Description: " << Error.description() << newline;
-   if (Error.file().size() > 0){
-      Stream << "Line: " << Error.line() << newline
-             << "File: " << Error.file() << newline;
-   }
-   return Stream;
 }
 
 extern "C" void CORabort(){

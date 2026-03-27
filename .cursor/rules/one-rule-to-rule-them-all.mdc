@@ -13,6 +13,7 @@ alwaysApply: true
 - Do not add `// Date:` lines to file headers.
 - For function and method definitions, put the opening `{` on the same line as the closing `)` or after the constructor initializer list.
 - Keep control-flow brace style unchanged unless explicitly requested.
+- When a function or method is expected to modify a caller-supplied value, prefer a non-const pointer parameter over a non-const reference so the mutation is obvious.
 - Favor small, readability-first refactors and clear comments only where they help.
 - Keep files ASCII unless there is a strong reason not to.
 - When updating makefiles, prefer clearer comments and simple structure over cleverness.

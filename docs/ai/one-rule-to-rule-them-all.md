@@ -20,6 +20,7 @@ This document lives at the top level of the repository, adjacent to `cpp` and `l
 - Do not add `// Date:` lines.
 - Put function/method opening braces on the same line as `)` or after the initializer list.
 - Leave control-flow brace style alone unless explicitly asked to change it.
+- When a function or method is expected to modify a caller-supplied value, prefer a non-const pointer parameter over a non-const reference so the mutation is obvious.
 - Favor readability and simple makefiles.
 
 ## Recreate On A New Machine

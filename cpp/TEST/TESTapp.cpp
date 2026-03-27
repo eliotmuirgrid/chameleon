@@ -45,13 +45,14 @@ bool TESTinit(int argc,const char** argv, CORmap<CORstring, CORauto<CORclosure0>
    COR_FUNCTION(TESTinit);
    SCKinitWinsock();
    CORcommandLine LineParser;
+   CORstring ParseError;
    CORlogAddCommandLineFlags(LineParser);
    LineParser.addFlagWithArgument("test", "Glob expression to use.");
    LineParser.addFlagWithoutArgument("lastfailed", "Rerun last failed tests from lastfailed.tmp file.");
    LineParser.addFlagWithoutArgument("showtests", "List the tests availale.");
-   LineParser.parseArgs(argc,argv);
-   if (LineParser.parsingErrorsPresent(CORcout)){
-      LineParser.showUsage(CORcout);
+   if (!LineParser.parseArgs(argc, argv, &ParseError)){
+      CORcout << ParseError << newline;
+      LineParser.showUsage(&CORcout);
       return false;
    }
    COR_LOG_INIT(argc, argv);
@@ -80,7 +81,10 @@ int TESTapp::run(int argc,const char** argv){
        }
        CORcout << "Running with threads " << m_TestCollection.size() << " test" << (m_TestCollection.size() != 1 ? "s." : ".") << newline;
        return TESTrunTestCollection(m_TestCollection);
-   }catch(CORerror& Error){
+   }catch(const TESTfailure& Failure){
+       CORcout << Failure << newline;
+       return EXIT_FAILURE;
+   }catch(const CORstring& Error){
        CORcout << Error << newline;
        return EXIT_FAILURE;
    }catch (...){
@@ -97,7 +101,10 @@ int TESTapp::runSingleThreaded(int argc,const char** argv){
        }
        CORcout << "Running on single thread " << m_TestCollection.size() << " test" << (m_TestCollection.size() != 1 ? "s." : ".") << newline;
        return TESTrunSingleThreadedTestCollection(m_TestCollection);
-   }catch(CORerror& Error){
+   }catch(const TESTfailure& Failure){
+       CORcout << Failure << newline;
+       return EXIT_FAILURE;
+   }catch(const CORstring& Error){
        CORcout << Error << newline;
        return EXIT_FAILURE;
    }catch (...){

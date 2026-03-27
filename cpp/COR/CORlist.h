@@ -341,12 +341,7 @@ public:
    typedef const Type* const_pointer;
 
    virtual ~CORlist() {
-      try {
-         this->clear(); 
-      }
-      catch (const CORerror& Error) {
-         //COR_LOG(Error);
-      }
+      this->clear(); 
    }
    Type& operator[](CORlistPlace Place) {
       CORPRECONDITION(Place != NULL);

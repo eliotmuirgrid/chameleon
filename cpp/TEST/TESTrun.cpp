@@ -94,8 +94,10 @@ TESTstatus TESTexecuteTest(const CORstring& Name, const CORclosure0* pFunc){
    TESTstatus Status;
    try{
       pFunc->run();
-   } catch (CORerror& Error){
-      Status.Fail = Error.description(); 
+   } catch (const TESTfailure& Failure){
+      Status.Fail = Failure.description();
+   } catch (const CORstring& Error){
+      Status.Fail = Error;
    } catch(...){
       Status.Fail = "Unhandled exception.";
    }
