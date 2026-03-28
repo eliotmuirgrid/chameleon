@@ -105,6 +105,7 @@ public:
    // to a value greater than zero if you would like indentation.  
    CORstring xml(int indent=0);
 
+   // Revisit this
    // WARNING - this function may throw exceptions.
    // This will convert the data found in a Lua table in the stack at
    // position i into this CORvar.  User data with __tostring defined is converted
@@ -130,7 +131,6 @@ public:
 
    CORvar::Type type() const { return type_; }
 
-   // These methods do not throw.
    bool isNone()       const { return type_ == None; }
    bool isNull()       const { return type_ == None; }
    bool isBoolean()    const { return type_ == Boolean; }
@@ -146,7 +146,7 @@ public:
    bool isCollection() const { return !isScalar(); }
    bool isLeaf()       const { return isScalar(); }
 
-   // Return value assuming this element is a scalar value. Does not throw.
+   // Return value assuming this element is a scalar value.
    bool      asBool()    const;
    long long asInt()     const;
    double    asDouble()  const;
@@ -158,20 +158,20 @@ public:
    // Note: this method does no conversions from other types.
    const CORstring& str() const;
 
-   // Return value assuming this element is a scalar value. Does not throw.
+   // Return value assuming this element is a scalar value. 
    operator bool()      const { return asBool();   }
    operator int()       const { return asInt();    } // potential for truncation
    operator long long() const { return asInt();    }
    operator double()    const { return asDouble(); }
    operator CORstring() const { return asString(); }
 
-   // Return child element assuming this element is a map. Does not throw.
+   // Return child element assuming this element is a map. 
    bool      getBool   (const CORstring& key) const;
    long long getInt    (const CORstring& key) const;
    double    getDouble (const CORstring& key) const;
    CORstring getString (const CORstring& key) const;
 
-   // Return child element assuming this element is an array. Does not throw.
+   // Return child element assuming this element is an array. 
    bool      getBool   (int idx) const;
    long long getInt    (int idx) const;
    double    getDouble (int idx) const;
@@ -279,7 +279,6 @@ public:
    CORvar& operator[](const CORstring& key);
    CORvar& operator[](const char* key) { return operator[](CORstring(key)); }
 
-   // These const attribute lookup operators never throw.
    // They return a reference to const CORvar of type CORvar::None if key or idx not found.
    const CORvar& operator[](int idx) const;
    const CORvar& operator[](const CORstring& key) const;

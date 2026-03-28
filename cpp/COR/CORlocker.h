@@ -6,31 +6,32 @@
 //
 // Description:
 //
-// RA II Locker class - designed to provide safe, exception-proof locking
-// of mutexes.
-// i.e. imagine we have class Foo which has a mutex member
-// and we are in a method of class Foo called X....
+// RAII Locker class - ensures that a mutex is properly unlocked
+// when execution leaves a scope, regardless of how the scope is exited.
+// Usage is recommended even in codebases without exceptions, because
+// it guarantees the mutex is always released even if you return early:
+//
+// Example usage:
 // void Foo::X()  {
 //   CORlocker Lock(m_Mutex);
-//   // The constructor of the the CORlocker object has locked the
-//   // mutex
-//   // :
-//   // We do some stuff, an error is encountered and an exception is
-//   // is thrown.
-//   // Because the Lock object is always destroyed when we exit the 
-//   // function we are guaranteed to always unlock the mutex
-//   // as we exit.
+//   // Critical section begins
+//   // ... do work ...
+//   // if we return early, the Lock destructor will unlock the mutex
+//   if (shouldExitEarly) return;
+//   // ... continue work ...
+//   // Critical section ends when Lock goes out of scope,
+//   // unlocking the mutex automatically
 // }
-// Without CORlocker...
+//
+// Without CORlocker, manual lock/unlock ordering is error-prone:
 // void Foo::X() {
-//    m_Mutex.lock();
-//    // we do some stuff, an error is encountered and an exception is thrown
-//    // so we *never* call the next line:
-//    m_Mutex.unlock();
-//    // oh bugger, the application freezes because the mutex is
-//    // is locked and other threads which try and invoke the lock() method
-//    // will hang indefinitely.
+//   m_Mutex.lock();
+//   // ... do work ...
+//   if (shouldExitEarly) return;  // Mutex is not unlocked!
+//   m_Mutex.unlock();
 // }
+//
+// Using CORlocker avoids mutex leaks in all code paths.
 // 
 // Author: Eliot Muir
 //---------------------------------------------------------------------------

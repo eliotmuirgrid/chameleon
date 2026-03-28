@@ -50,8 +50,7 @@ void CORsleep(int TimeOutInMilliSeconds ){
    tv.tv_sec = (CORuint64)Seconds;
    tv.tv_usec = (CORuint64)((Seconds - tv.tv_sec) * 1000000);
 
-   // no need to check return code and errno, as we don't care
-   // and will not throw an exception.
+   // no need to check return code and errno, as we don't car
    ::select(0, NULL, NULL, NULL, &tv);
 #endif
 }

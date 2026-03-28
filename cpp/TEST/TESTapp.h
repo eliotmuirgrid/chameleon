@@ -6,7 +6,6 @@
 //
 // Author: Eliot Muir
 //
-//
 // Description:
 //
 // This is the public interface to the TEST framework.

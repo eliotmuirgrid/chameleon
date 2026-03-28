@@ -86,21 +86,6 @@ CORstring CORerrorString(long ErrorCode){
 #endif
 }
 
-#ifdef _WIN32
-void CORthrowWin32Error(long ErrorCode, const char* Description, int LineNumber, const char* FileName){
-   CORsinkString ErrorSink;
-   CORostream MessageStream(ErrorSink);
-   if (Description){
-      MessageStream << Description;
-   }
-   if (LineNumber != -1 && (FileName != NULL)){
-      MessageStream << " on line " << LineNumber << " in " << FileName << " - ";
-   }
-      MessageStream << CORerrorString(ErrorCode);
-      throw ErrorSink.string();
-}
-#endif
-
 long CORlastError(){
 #ifdef _WIN32
    return static_cast<long>(::GetLastError());
