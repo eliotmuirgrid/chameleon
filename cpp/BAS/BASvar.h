@@ -1,7 +1,6 @@
-#ifndef _BAS_VAR_H_
-#define _BAS_VAR_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASvar
 // 
@@ -9,7 +8,7 @@
 // It's a generic container which is valuable for storing data.
 //-------------------------------------------------------
 
-#include "BASstring.h"
+#include <BAS/BASstring.h>
 
 class BASvar;
 
@@ -70,4 +69,3 @@ private:
 
 BASstream& operator<<(BASstream& Stream, const BASvar& Var);
 
-#endif

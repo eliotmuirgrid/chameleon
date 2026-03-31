@@ -1,16 +1,16 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASargParser
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BASargParser.h"
+#include <BAS/BASargParser.h>
 
 #include <string.h>
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 // We hard code tracing into the BASargParser

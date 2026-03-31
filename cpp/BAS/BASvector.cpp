@@ -1,14 +1,14 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASvector
 //
 // Implementation
 //-------------------------------------------------------
 
-#include "BASvector.h"
-#include "BASerror.h"
-#include "BAStrace.h"
+#include <BAS/BASvector.h>
+#include <BAS/BASerror.h>
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 void BAScheckBoundary(int i, int Size){

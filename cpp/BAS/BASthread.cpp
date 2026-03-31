@@ -1,14 +1,14 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASthread
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BASthread.h"
+#include <BAS/BASthread.h>
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 

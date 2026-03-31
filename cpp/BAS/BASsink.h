@@ -1,7 +1,6 @@
-#ifndef _BAS_SINK_H_
-#define _BAS_SINK_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASsink
 // 
@@ -17,4 +16,3 @@ public:
     virtual void flush()=0;
 };
 
-#endif

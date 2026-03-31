@@ -1,5 +1,5 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASmutex
 // 
@@ -11,7 +11,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 
-#include "BASmutex.h"
+#include <BAS/BASmutex.h>
 
 #define m_HANDLE (pthread_mutex_t*)&m_Handle
 

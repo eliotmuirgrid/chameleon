@@ -1,7 +1,6 @@
-#ifndef _BAS_TRACE_H_
-#define _BAS_TRACE_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BAStrace
 // 
@@ -21,9 +20,9 @@
 // call BASsetTracePattern directly with a glob expression that is used to match what files to display tracing from.
 //-------------------------------------------------------
 
-#include "BASstream.h"
+#include <BAS/BASstream.h>
 #include <stdio.h>
-#include "BASmutex.h"
+#include <BAS/BASmutex.h>
 
 // Call this to activate tracing if you need more control - using
 // BASargParser will make it difficult to trace the BASstring class etc.
@@ -81,4 +80,3 @@ private:
 
 void BASwriteIndent(BASsink* pSink, int Level);
 
-#endif

@@ -1,7 +1,6 @@
-#ifndef _BAS_STRING_H_
-#define _BAS_STRING_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASstring
 // 
@@ -69,4 +68,3 @@ BASstring operator+(const BASstring& Lhs, const BASstring& Rhs);
 BASstream& operator<<(BASstream& Stream, const BASstring& String);
 
 
-#endif

@@ -1,15 +1,14 @@
-#ifndef _BAS_SINK_STRING_H_
-#define _BAS_SINK_STRING_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASsinkString
 // 
 // Sink which writes to A BASstring
 //-------------------------------------------------------
 
-#include "BASsink.h"
-#include "BASstring.h"
+#include <BAS/BASsink.h>
+#include <BAS/BASstring.h>
 
 class BASsinkString : public BASsink{
 public:
@@ -24,4 +23,3 @@ private:
    BASstring m_String;
 };
 
-#endif

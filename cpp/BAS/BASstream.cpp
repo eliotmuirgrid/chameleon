@@ -1,14 +1,14 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASstream
 // 
 // Stream interface like iostream
 //-------------------------------------------------------
 
-#include "BASstream.h"
-#include "BASsink.h"
-#include "BASsinkStandardOut.h"
+#include <BAS/BASstream.h>
+#include <BAS/BASsink.h>
+#include <BAS/BASsinkStandardOut.h>
 
 #include <string.h>
 #include <stdio.h>

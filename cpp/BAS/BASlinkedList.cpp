@@ -1,13 +1,13 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASlinkedList
 // 
 // Implementation
 //-------------------------------------------------------
-#include "BASlinkedList.h"
+#include <BAS/BASlinkedList.h>
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 BASstream& operator<<(BASstream& Stream, const BASlink& Link){

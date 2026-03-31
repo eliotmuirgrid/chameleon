@@ -1,7 +1,6 @@
-#ifndef _BAS_CALL_H_
-#define _BAS_CALL_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BAScall
 //
@@ -89,4 +88,3 @@ public:
    static BAScall<BArgs...>* create(TObject* pObject, void (TObject::*pMethod)(BArgs...bargs, Args...args),Args...args) { return new typename BAScall<BArgs...>::template BAScallM<TObject, Args...>(pObject, pMethod, args...); } 
 };
 
-#endif

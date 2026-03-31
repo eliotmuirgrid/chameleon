@@ -1,13 +1,13 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASerror
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BASerror.h"
-#include "BAStrace.h"
+#include <BAS/BASerror.h>
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 BASerror::BASerror(const BASstring& Message, int Code) : m_Message(Message), m_Code(Code){

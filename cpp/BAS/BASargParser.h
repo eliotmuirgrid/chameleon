@@ -1,16 +1,15 @@
-#ifndef _BAS_ARG_PARSER_H_
-#define _BAS_ARG_PARSER_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASargParser
 // 
 // Command line argument parser
 //-------------------------------------------------------
 
-#include "BASavlTree.h"
-#include "BASstring.h"
-#include "BASavlTree.h"
+#include <BAS/BASavlTree.h>
+#include <BAS/BASstring.h>
+#include <BAS/BASavlTree.h>
 
 class BASstream;
 
@@ -46,4 +45,3 @@ private:
 
 BASstream& operator<<(BASstream& Stream, const BASargParser& Parser);
 
-#endif

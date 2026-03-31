@@ -21,7 +21,11 @@ This document lives at the top level of the repository, adjacent to `cpp` and `l
 - Put function/method opening braces on the same line as `)` or after the initializer list.
 - Leave control-flow brace style alone unless explicitly asked to change it.
 - When a function or method is expected to modify a caller-supplied value, prefer a non-const pointer parameter over a non-const reference so the mutation is obvious.
+- Use `CORlog` consistently in `cpp/`: put `COR_LOG_MODULE` in `.cpp` files only, use `COR_FUNCTION` and `COR_METHOD` for entry tracing, and pick the narrowest suitable tracing macro.
+- In executables that use `CORcommandLine`, call `CORlogAddCommandLineFlags(...)` before parsing and `COR_LOG_INIT(argc, argv)` after successful parsing.
 - Favor readability and simple makefiles.
+
+For slightly fuller tracing guidance, see `docs/ai/CORlog-tracing-best-practices.md`.
 
 ## Recreate On A New Machine
 

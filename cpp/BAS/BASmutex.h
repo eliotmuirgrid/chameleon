@@ -1,7 +1,6 @@
-#ifndef _BAS_MUTEX_H_
-#define _BAS_MUTEX_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASmutex
 // 
@@ -27,4 +26,3 @@ private:
    BASmutex* m_pMutex;   
 };
 
-#endif

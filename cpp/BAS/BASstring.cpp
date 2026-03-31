@@ -1,20 +1,20 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASstring
 // 
 // Implementation
 //-------------------------------------------------------
-#include "BASstring.h"
-#include "BASstream.h"
-#include "BASsink.h"
+#include <BAS/BASstring.h>
+#include <BAS/BASstream.h>
+#include <BAS/BASsink.h>
 
 // To get tracing working with BASstring one really has to do
 // it by calling the trace function directly since BASargParser
 // uses BASstring so tracing will be switched off before one gets
 // here.
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 #include <string.h>

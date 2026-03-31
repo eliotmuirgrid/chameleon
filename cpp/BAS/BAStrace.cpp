@@ -1,16 +1,16 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BAStrace
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
-#include "BASsinkStandardOut.h"
-#include "BASglob.h"
+#include <BAS/BASsinkStandardOut.h>
+#include <BAS/BASglob.h>
 
 #include <time.h>
 #include <stdio.h>  // for printf

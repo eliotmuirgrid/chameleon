@@ -1,7 +1,6 @@
-#ifndef _BAS_HASH_TABLE_H_
-#define _BAS_HASH_TABLE_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BAShashTable
 // 
@@ -134,4 +133,3 @@ private:
 };
 
 BASstream& operator<<(BASstream& Stream, const BAShashTableBase& Table);
-#endif

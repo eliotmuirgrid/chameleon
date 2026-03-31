@@ -1,7 +1,6 @@
-#ifndef _BAS_GLOB_H__
-#define _BAS_GLOB_H__
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASglob
 // 
@@ -10,4 +9,3 @@
 
 bool BASglobMatch(const char* pTarget, const char* pPattern);
 
-#endif

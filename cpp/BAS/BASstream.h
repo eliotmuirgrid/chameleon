@@ -1,7 +1,6 @@
-#ifndef _BAS_STREAM_H_
-#define _BAS_STREAM_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASstream
 // 
@@ -43,4 +42,3 @@ BASstream& newline(BASstream& Stream);
 
 extern BASstream BASout; 
 
-#endif

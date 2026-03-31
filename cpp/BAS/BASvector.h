@@ -1,14 +1,13 @@
-#ifndef _BAS_VECTOR_H_
-#define _BAS_VECTOR_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASvector
 // 
 // A resizable array.  Could be further optimized with in place operators, move constructors etc.
 //-------------------------------------------------------
 
-#include "BASstream.h"
+#include <BAS/BASstream.h>
 
 void BAScheckBoundary(int i, int m_Size);
 unsigned int BAScalculateCapacity(unsigned int v); 
@@ -69,4 +68,3 @@ BASstream operator<<(BASstream& Stream, const BASvector<VType>& Vector){
    Vector.printOn(Stream);
    return Stream;
 }
-#endif

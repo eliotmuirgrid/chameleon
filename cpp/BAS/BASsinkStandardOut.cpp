@@ -1,10 +1,10 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASsinkStandardOut
 //-------------------------------------------------------
 
-#include "BASsinkStandardOut.h"
+#include <BAS/BASsinkStandardOut.h>
 
 #include <unistd.h>
 

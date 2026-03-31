@@ -1,17 +1,17 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASavlTree
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
-#include "BASavlTree.h"
+#include <BAS/BASavlTree.h>
 
-#include "BASstring.h"
+#include <BAS/BASstring.h>
 
 BASavlNode::BASavlNode() : m_pLeft(NULL), m_pRight(NULL){
    BAS_METHOD(BASavlNode);

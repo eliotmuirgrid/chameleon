@@ -1,14 +1,14 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASglob
 // 
 // Implementation
 //-------------------------------------------------------
 
-#include "BASglob.h"
-#include "BAStrace.h"
-//#include "BASstring.h"
+#include <BAS/BASglob.h>
+#include <BAS/BAStrace.h>
+//#include <BAS/BASstring.h>
 //BAS_TRACE_INIT;
 
 #include <string.h>

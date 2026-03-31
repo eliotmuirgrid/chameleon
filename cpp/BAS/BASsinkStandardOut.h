@@ -1,14 +1,13 @@
-#ifndef _BAS_SINK_STANDARD_OUT_H_
-#define _BAS_SINK_STANDARD_OUT_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASsinkStandardOut
 // 
 // Sink which writes to standard out.
 //-------------------------------------------------------
 
-#include "BASsink.h"
+#include <BAS/BASsink.h>
 
 class BASsinkStandardOut : public BASsink{
 public:
@@ -19,4 +18,3 @@ public:
    virtual void flush();
 };
 
-#endif

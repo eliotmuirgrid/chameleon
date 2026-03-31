@@ -1,16 +1,16 @@
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASvar
 // 
 // Implementation
 //-------------------------------------------------------
-#include "BASvar.h"
-#include "BASvector.h"
-#include "BASavlTree.h"
-#include "BASsinkString.h"
+#include <BAS/BASvar.h>
+#include <BAS/BASvector.h>
+#include <BAS/BASavlTree.h>
+#include <BAS/BASsinkString.h>
 
-#include "BAStrace.h"
+#include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 BASvar::BASvar(){

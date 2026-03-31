@@ -14,6 +14,8 @@ alwaysApply: true
 - For function and method definitions, put the opening `{` on the same line as the closing `)` or after the constructor initializer list.
 - Keep control-flow brace style unchanged unless explicitly requested.
 - When a function or method is expected to modify a caller-supplied value, prefer a non-const pointer parameter over a non-const reference so the mutation is obvious.
+- In `cpp/`, use `CORlog` consistently: put `COR_LOG_MODULE` in `.cpp` files only, use `COR_FUNCTION`/`COR_METHOD` for function-entry tracing, and choose the narrowest level macro (`COR_DBG`, `COR_TRC`, `COR_INF`, `COR_WRN`, `COR_ERR`, `COR_VAR*`, `COR_*_DUMP`) that fits.
+- In executables that use `CORcommandLine`, call `CORlogAddCommandLineFlags(...)` before parsing and `COR_LOG_INIT(argc, argv)` after successful parse before relying on conditional tracing.
 - Favor small, readability-first refactors and clear comments only where they help.
 - Keep files ASCII unless there is a strong reason not to.
 - When updating makefiles, prefer clearer comments and simple structure over cleverness.

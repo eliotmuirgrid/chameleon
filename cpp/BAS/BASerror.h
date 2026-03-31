@@ -1,16 +1,15 @@
-#ifndef _BAS_ERROR_H__
-#define _BAS_ERROR_H__
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASerror
 // 
 // Exception class - KISS design.
 //-------------------------------------------------------
 
-#include "BASstring.h"
-#include "BASsinkString.h"
-#include "BASstream.h"
+#include <BAS/BASstring.h>
+#include <BAS/BASsinkString.h>
+#include <BAS/BASstream.h>
 
 class BASerror{
 public:
@@ -34,4 +33,3 @@ BASstream& operator<<(BASstream& Stream, const BASerror& Error);
       throw BASerror(Sink.string(), C);\
    }
 
-#endif

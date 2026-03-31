@@ -1,7 +1,6 @@
-#ifndef _BAS_OWNER_PTR_H_
-#define _BAS_OWNER_PTR_H_
+#pragma once
 //-------------------------------------------------------
-// Copyright (C) 2021 Eliot Muir.  All Rights Reserved
+// Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASownerPtr
 // 
@@ -65,4 +64,3 @@ private:
    TObject* m_pObject;
 };
 
-#endif
