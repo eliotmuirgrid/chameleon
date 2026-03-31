@@ -18,7 +18,7 @@
 //-------------------------------------------------------
 
 #include <BAS/BASstring.h>
-#include <BAS/BASerror.h>
+#include <BAS/BASassert.h>
 
 class BASstream;
 
@@ -113,7 +113,7 @@ public:
    const VType& operator[](const KType& Key) const{
       const BASitem* pItem = getItem(BAShash(Key), (void*)&Key);
       if (!pItem){
-        BAS_RAISE_ERROR("Key: " << Key << " not defined.", 0);
+        BAS_FAIL("Key: " << Key << " not defined.");
       }
       return ((BASitemT*)pItem)->m_Value;
    }

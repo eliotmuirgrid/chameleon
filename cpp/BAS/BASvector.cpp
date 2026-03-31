@@ -7,14 +7,14 @@
 //-------------------------------------------------------
 
 #include <BAS/BASvector.h>
-#include <BAS/BASerror.h>
+#include <BAS/BASassert.h>
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
 void BAScheckBoundary(int i, int Size){
    //BAS_FUNCTION(BAScheckBoundary);
    if (i >= Size){
-      BAS_RAISE_ERROR("Vector index " << i << " must be less than size " << Size, 0);
+      BAS_FAIL("Vector index " << i << " must be less than size " << Size);
    }
 }
 
