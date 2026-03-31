@@ -2,7 +2,7 @@
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
 // BASstring
-// 
+//
 // Implementation
 //-------------------------------------------------------
 #include <BAS/BASstring.h>
@@ -19,160 +19,286 @@ BAS_TRACE_INIT;
 
 #include <string.h>
 
-BASstring::BASstring(){
+static const int kBASSmallCapacity = 15;
+
+void BASstring::init() {
+   m_Size = 0;
+   m_Capacity = kSmallCapacity;
+   m_Data.Small[0] = 0;
+}
+
+void BASstring::ensureCapacity(int DesiredCapacity) {
+   if (DesiredCapacity > m_Capacity) {
+      int NewCapacity = m_Capacity;
+      BASgrowCapacity(&NewCapacity, DesiredCapacity);
+      setCapacity(NewCapacity);
+   }
+}
+
+BASstring::BASstring() {
    init();
    BAS_VAR3(m_Capacity, m_Size, data());
 }
 
-BASstring::BASstring(const char* pString){
-   BAS_METHOD(BASstring::BAString-char constructor);
+BASstring::BASstring(const BASstring& Orig) {
+   BAS_METHOD(BASstring::BASstring-copy);
+   init();
+   append(Orig);
+}
+
+BASstring::BASstring(const char* pString) {
+   BAS_METHOD(BASstring::BASstring-char);
    BAS_VAR(pString);
    init();
-   append(pString, strlen(pString));
+   append(pString);
 }
 
-BASstring::BASstring(const char* pString, int Size){
-   BAS_METHOD(BASstring::BASstring pString + Size);
+BASstring::BASstring(const char* pString, int Size) {
+   BAS_METHOD(BASstring::BASstring-bytes);
    BAS_VAR2(pString, Size);
    init();
-   append(pString, Size);
+   set(pString, Size);
 }
 
-BASstring::BASstring(const BASstring& Orig){
-   BAS_METHOD(BASstring::BASstring - BASstring);
+BASstring::BASstring(BAStextLiteral Literal) {
+   BAS_METHOD(BASstring::BASstring-literal);
    init();
-   append(Orig.data(), Orig.size());
+   append(Literal);
 }
 
-BASstring& BASstring::operator=(const char* pString){
-   BAS_METHOD(BASstring::operator= pString);
-   m_Size = 0;
-   append(pString, strlen(pString));
-   return *this;
-}
-
-// TODO - could optimize more for small strings.
-BASstring& BASstring::operator=(const BASstring& Orig){
-   BAS_METHOD(BASstring::operator= BASstring);
-   m_Size = 0;
-   append(Orig.data(), Orig.size());
-   return *this;
-}
-
-BASstring::~BASstring(){
+BASstring::~BASstring() {
    BAS_METHOD(BASstring::~BASstring);
-   if (m_Capacity >= sizeof(m_pData.ShortBuffer)){
+   if (!isSmall()) {
       BAS_TRC("Deleting heap");
-      delete []m_pData.pHeap;
-   } else{
+      delete [] m_Data.pHeap;
+   } else {
       BAS_TRC("Short string - so no heap.");
    }
 }
 
-BASstring& BASstring::append(const char* pData){
-   BAS_METHOD(BASstring::append-nosize);
-   return append(pData, strlen(pData));
-}
-
-BASstring& BASstring::append(const char* pData, int AddSize){
-   BAS_METHOD(BASstring::append);
-   BAS_VAR2(m_Capacity, m_Size);
-   BAS_VAR2(pData,AddSize);
-   BAS_VAR(data());
-   if (m_Size + AddSize > m_Capacity){
-      BAS_TRC("Increase capacity");
-      setCapacity(BASupperPowerOfTwo(m_Size+AddSize+1));
+BASstring& BASstring::operator=(const BASstring& Orig) {
+   BAS_METHOD(BASstring::operator=-BASstring);
+   if (this != &Orig) {
+      set(Orig.data(), Orig.size());
    }
-   BAS_TRC("Before copy");
-   strncpy((data() + m_Size), pData, AddSize);
-   BAS_TRC("After copy");
-   m_Size += AddSize;
-   data()[m_Size] = 0;  // NULL terminate
-   BAS_VAR2(m_Size, m_Capacity); 
-   BAS_VAR(data());
-   return *this;   
+   return *this;
 }
 
+BASstring& BASstring::operator=(const char* pString) {
+   BAS_METHOD(BASstring::operator=-char);
+   if (pString == NULL) {
+      clear();
+   } else {
+      set(pString, static_cast<int>(strlen(pString)));
+   }
+   return *this;
+}
 
-// Short --> Short
-// Short --> Long
-// Long --> Short
-// Long --> Long
-void BASstring::setCapacity(int NewCapacity){
+BASstring& BASstring::operator=(BAStextLiteral Literal) {
+   BAS_METHOD(BASstring::operator=-literal);
+   set(Literal.m_pData, Literal.m_Length);
+   return *this;
+}
+
+void BASstring::set(const char* pData, int Size) {
+   BAS_METHOD(BASstring::set);
+   clear();
+   append(pData, Size);
+}
+
+void BASstring::setCapacity(int NewCapacity) {
    BAS_METHOD(BASstring::setCapacity);
    BAS_VAR4(m_Capacity, m_Size, NewCapacity, data());
-   if (m_Capacity < sizeof(m_pData.ShortBuffer)){
-      if (NewCapacity < sizeof(m_pData.ShortBuffer)){
-         BAS_TRC("Short to short");
-         m_Capacity = NewCapacity;
+   if (NewCapacity < m_Size) {
+      NewCapacity = m_Size;
+   }
+   if (NewCapacity <= kSmallCapacity) {
+      if (isSmall()) {
+         m_Capacity = kSmallCapacity;
       } else {
-         BAS_TRC("Short to long");
-         char* pNewHeap = new char[NewCapacity];
-         strncpy(pNewHeap, data(), m_Size+1);
-         m_Capacity = NewCapacity;
-         m_pData.pHeap = pNewHeap;
+         char* pOldHeap = m_Data.pHeap;
+         ::memcpy(m_Data.Small, pOldHeap, static_cast<size_t>(m_Size) + 1);
+         delete [] pOldHeap;
+         m_Capacity = kSmallCapacity;
       }
       BAS_VAR3(m_Capacity, m_Size, data());
       return;
    }
-   // Coming from Long
-   if (NewCapacity < sizeof(m_pData.ShortBuffer)){
-      BAS_TRC("Long to Short");
-      char* pOldHeap = m_pData.pHeap;
-      m_Capacity = NewCapacity;
-      strncpy(m_pData.ShortBuffer, pOldHeap, m_Size+1);
-      delete pOldHeap;
-   } else {
-      BAS_TRC("Long to Long");
-      char* pOldHeap = m_pData.pHeap;
-      char* pNewHeap = new char[NewCapacity];
-      strncpy(pNewHeap, pOldHeap, m_Size+1);
-      m_Capacity = NewCapacity;
-      m_pData.pHeap = pNewHeap;
-      delete pOldHeap;
+
+   char* pNewHeap = new char[static_cast<size_t>(NewCapacity) + 1];
+   ::memcpy(pNewHeap, data(), static_cast<size_t>(m_Size) + 1);
+   if (!isSmall()) {
+      delete [] m_Data.pHeap;
    }
-   
+   m_Data.pHeap = pNewHeap;
+   m_Capacity = NewCapacity;
    BAS_VAR3(m_Capacity, m_Size, data());
 }
 
-BASstring& BASstring::operator+=(const char* pData){
-   return append(pData, strlen(pData));
+void BASstring::clear() {
+   BAS_METHOD(BASstring::clear);
+   m_Size = 0;
+   data()[0] = 0;
 }
 
-BASstring& BASstring::operator+=(const BASstring& Orig){
+void BASstring::zero() {
+   BAS_METHOD(BASstring::zero);
+   if (!isSmall()) {
+      delete [] m_Data.pHeap;
+   }
+   init();
+}
+
+BASstring& BASstring::append(const char* pString) {
+   BAS_METHOD(BASstring::append-string);
+   if (pString == NULL) {
+      return *this;
+   }
+   return append(pString, static_cast<int>(strlen(pString)));
+}
+
+BASstring& BASstring::append(const char* pData, int AddSize) {
+   BAS_METHOD(BASstring::append-bytes);
+   BAS_VAR2(m_Capacity, m_Size);
+   BAS_VAR2(pData, AddSize);
+   if (pData == NULL || AddSize <= 0) {
+      return *this;
+   }
+
+   const char* pCurrentData = data();
+   bool IsSelfAppend = (pData >= pCurrentData) && (pData < pCurrentData + m_Size);
+   if (IsSelfAppend) {
+      BASstring Copy(pData, AddSize);
+      return append(Copy.data(), Copy.size());
+   }
+
+   ensureCapacity(m_Size + AddSize);
+   ::memcpy(data() + m_Size, pData, static_cast<size_t>(AddSize));
+   m_Size += AddSize;
+   data()[m_Size] = 0;
+   BAS_VAR2(m_Size, m_Capacity);
+   BAS_VAR(data());
+   return *this;
+}
+
+BASstring& BASstring::append(const BASstring& Orig) {
+   BAS_METHOD(BASstring::append-BASstring);
    return append(Orig.data(), Orig.size());
 }
 
-int BASstring::compare(const BASstring& Lhs) const { 
-   BAS_METHOD(BASstring::compare);
-   return strcmp(data(), Lhs.data());
+BASstring& BASstring::append(BAStextLiteral Literal) {
+   BAS_METHOD(BASstring::append-literal);
+   return append(Literal.m_pData, Literal.m_Length);
 }
 
-bool BASstring::operator!=(const char* pData) const{
-   return strcmp(data(), pData) != 0;
-}
-
-bool BASstring::operator==(const BASstring& Rhs) const{
-   if (size() != Rhs.size()){
-      return false;
+BASstring& BASstring::append(int Count, char FillChar) {
+   BAS_METHOD(BASstring::append-fill);
+   if (Count <= 0) {
+      return *this;
    }
-   return memcmp(data(), Rhs.data(), size()) == 0; 
+   ensureCapacity(m_Size + Count);
+   ::memset(data() + m_Size, FillChar, static_cast<size_t>(Count));
+   m_Size += Count;
+   data()[m_Size] = 0;
+   return *this;
 }
 
+void BASstring::setSize(int NewSize) {
+   BAS_METHOD(BASstring::setSize);
+   if (NewSize < 0) {
+      NewSize = 0;
+   }
+   ensureCapacity(NewSize);
+   m_Size = NewSize;
+   data()[m_Size] = 0;
+}
 
+void BASstring::swap(BASstring* pOther) {
+   BAS_METHOD(BASstring::swap);
+   if (pOther == NULL || pOther == this) {
+      return;
+   }
+   BASstring Temp(*this);
+   *this = *pOther;
+   *pOther = Temp;
+}
 
-BASstring operator+(const BASstring& Lhs, const char*   pRhs  ) { BASstring X(Lhs); X+= pRhs; return X;}
-BASstring operator+(const BASstring& Lhs, const BASstring& Rhs) { BASstring X(Lhs); X+= Rhs; return X;}
+int BASstring::compare(const BASstring& Rhs) const {
+   BAS_METHOD(BASstring::compare-BASstring);
+   const int SharedSize = m_Size < Rhs.m_Size ? m_Size : Rhs.m_Size;
+   const int CompareResult = SharedSize > 0 ? ::memcmp(data(), Rhs.data(), static_cast<size_t>(SharedSize)) : 0;
+   if (CompareResult != 0) {
+      return CompareResult;
+   }
+   if (m_Size == Rhs.m_Size) {
+      return 0;
+   }
+   return m_Size < Rhs.m_Size ? -1 : 1;
+}
 
+int BASstring::compare(const char* pString) const {
+   BAS_METHOD(BASstring::compare-char);
+   if (pString == NULL) {
+      pString = "";
+   }
+   return ::strcmp(data(), pString);
+}
 
-BASstream& operator<<(BASstream& Stream, const BASstring& String){
+int BASgrowCapacity(int* pCapacity, int DesiredCapacity) {
+   BAS_FUNCTION(BASgrowCapacity);
+   if (pCapacity == NULL) {
+      return DesiredCapacity <= kBASSmallCapacity ? kBASSmallCapacity :
+         static_cast<int>(BASupperPowerOfTwo(static_cast<unsigned int>(DesiredCapacity + 1))) - 1;
+   }
+   if (DesiredCapacity <= kBASSmallCapacity) {
+      *pCapacity = kBASSmallCapacity;
+   } else {
+      *pCapacity = static_cast<int>(BASupperPowerOfTwo(static_cast<unsigned int>(DesiredCapacity + 1))) - 1;
+   }
+   return *pCapacity;
+}
+
+BASstring operator+(const BASstring& Lhs, const BASstring& Rhs) {
+   BASstring X(Lhs);
+   X += Rhs;
+   return X;
+}
+
+BASstring operator+(const BASstring& Lhs, const char* pRhs) {
+   BASstring X(Lhs);
+   X += pRhs;
+   return X;
+}
+
+BASstring operator+(const char* pLhs, const BASstring& Rhs) {
+   BASstring X(pLhs);
+   X += Rhs;
+   return X;
+}
+
+BASstring operator+(const BASstring& Lhs, BAStextLiteral Rhs) {
+   BASstring X(Lhs);
+   X += Rhs;
+   return X;
+}
+
+BASstring operator+(BAStextLiteral Lhs, const BASstring& Rhs) {
+   BASstring X(Lhs);
+   X += Rhs;
+   return X;
+}
+
+BASstream& operator<<(BASstream& Stream, const BASstring& String) {
    Stream.sink()->write(String.data(), String.size());
    return Stream;
 }
 
-unsigned int BASupperPowerOfTwo(unsigned int v){
+unsigned int BASupperPowerOfTwo(unsigned int v) {
    BAS_FUNCTION(BASupperPowerOfTwo);
    BAS_VAR(v);
+   if (v == 0) {
+      return 1;
+   }
    v--;
    v |= v >> 1;
    v |= v >> 2;
