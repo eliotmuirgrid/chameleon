@@ -18,7 +18,9 @@ struct GetHelper<0, BAStuple<T, Rest...>> { // Specialization for index 0
 
 template<int idx,typename T,typename... Rest>
 struct GetHelper<idx, BAStuple<T, Rest...>> { // GetHelper Implementation
-    static auto get(BAStuple<T, Rest...> &data) { return GetHelper<idx - 1, BAStuple<Rest...>>::get(data.rest); }
+    static auto get(BAStuple<T, Rest...> &data) -> decltype(GetHelper<idx - 1, BAStuple<Rest...>>::get(data.rest)) {
+       return GetHelper<idx - 1, BAStuple<Rest...>>::get(data.rest);
+    }
 };
 template<typename T,typename... Rest>
 struct BAStuple<T, Rest...> {
@@ -27,7 +29,9 @@ struct BAStuple<T, Rest...> {
     BAStuple(const T &f, const Rest &... r)  : first(f), rest(r...)  {}
 };
 template<int idx, template <typename...> class BAStuple, typename... Args>
-auto get(BAStuple<Args...> &t) { return GetHelper<idx, BAStuple<Args...>>::get(t); }
+auto get(BAStuple<Args...> &t) -> decltype(GetHelper<idx, BAStuple<Args...>>::get(t)) {
+   return GetHelper<idx, BAStuple<Args...>>::get(t);
+}
 
 template <int ... Ns> struct sequence {};
 // First define the template signature
