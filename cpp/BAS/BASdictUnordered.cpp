@@ -1,12 +1,12 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BAShashTable
+// BASdictUnordered
 //
 // Implementation
 //-------------------------------------------------------
 
-#include <BAS/BAShashTable.h>
+#include <BAS/BASdictUnordered.h>
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
@@ -20,7 +20,7 @@ unsigned long BASdjb2Hash(const char* str, int Size){
    for (;str != pEnd; str++){
       c = *str;
       hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-   }      
+   }
    return hash;
 }
 
@@ -124,7 +124,7 @@ void BAShashTableBase::printOn(BASstream& Stream) const{
 }
 
 void BAShashTableBase::setBucketCount(int NewCount){
-   BAS_METHOD(BAShashTable::setBucketCount);
+   BAS_METHOD(BASdictUnordered::setBucketCount);
    BAS_VAR(NewCount);
    BASitem** ppNewBuckets = new BASitem*[NewCount+1];
    for (int i=0; i < NewCount; i++){
@@ -141,7 +141,7 @@ void BAShashTableBase::setBucketCount(int NewCount){
          pItem->m_pNext = ppNewBuckets[j];
          ppNewBuckets[j]= pItem;
          pItem = pNextItem;
-      }   
+      }
    }
 
    delete []m_pBuckets;

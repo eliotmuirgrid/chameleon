@@ -7,9 +7,8 @@
 // Command line argument parser
 //-------------------------------------------------------
 
-#include <BAS/BASavlTree.h>
+#include <BAS/BASdictOrdered.h>
 #include <BAS/BASstring.h>
-#include <BAS/BASavlTree.h>
 
 class BASstream;
 
@@ -40,7 +39,7 @@ private:
    };
 
    BASstring m_Bin;
-   BASavlTree<BASstring, LineInfo> m_Flags;
+   BASdictOrdered<BASstring, LineInfo> m_Flags;
 };
 
 BASstream& operator<<(BASstream& Stream, const BASargParser& Parser);

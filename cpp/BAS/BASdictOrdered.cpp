@@ -1,15 +1,15 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BASavlTree
-// 
+// BASdictOrdered
+//
 // Implementation
 //-------------------------------------------------------
 
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
-#include <BAS/BASavlTree.h>
+#include <BAS/BASdictOrdered.h>
 
 #include <BAS/BASstring.h>
 
@@ -104,7 +104,7 @@ BASavlNode* BASinsert(BASavlNode* pNode, BASavlNode* pNewNode, BASavlCompare pCo
       BAS_TRC("New node. Count goes up by one.");
       (*pSize)++;
       return pNewNode;
-   } 
+   }
    int Compare = (*pCompFunc)((*pKeyFunc)(pNode),(*pKeyFunc)(pNewNode));
    if (Compare == 0){
       BAS_TRC("Replace");
@@ -155,18 +155,18 @@ int BASsCompare(const BASstring& Rhs, const BASstring& Lhs){
 
 
 BASstream& operator<<(BASstream& Stream, const BASavlNode& Node){
-   //Stream << Node.m_Key; 
+   //Stream << Node.m_Key;
    if (!Node.m_pRight && !Node.m_pLeft){
       return Stream; // empty node
    }
    Stream << "-->[";
    if (Node.m_pLeft){
       Stream << *(Node.m_pLeft);
-   } 
+   }
    Stream << ",";
    if (Node.m_pRight){
       Stream << *(Node.m_pRight);
-   } 
+   }
    Stream << "]";
    return Stream;
 }
@@ -187,21 +187,21 @@ bool BASavlIterator::next(){
    if (root()->m_pRight != NULL){
       goRight();
       return downLeft();
-   }  
+   }
    return upRight();
 }
 
 void BASavlIterator::goRight(){
    BAS_METHOD(BASavlIterator::goRight);
    m_StackPos++;
-   m_Stack[m_StackPos] = parent()->m_pRight; 
+   m_Stack[m_StackPos] = parent()->m_pRight;
 }
 
 bool BASavlIterator::downLeft(){
    BAS_METHOD(BASavlIterator::downLeft);
    while (root()->m_pLeft != NULL){
       m_StackPos++;
-      m_Stack[m_StackPos] = parent()->m_pLeft; 
+      m_Stack[m_StackPos] = parent()->m_pLeft;
    }
    return true;
 }

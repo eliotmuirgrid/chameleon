@@ -2,9 +2,9 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BASavlTree
+// BASdictOrdered
 //
-// An AVL tree.
+// An ordered dictionary implemented as an AVL tree.
 // https://www.youtube.com/watch?v=vRwi_UcZGjU
 //-------------------------------------------------------
 
@@ -26,7 +26,7 @@ template<class KType, class VType>
 class BASavlNodeT : public BASavlNode{
 public:
    BASavlNodeT(KType Key, VType Value) : BASavlNode(), m_Key(Key), m_Value(Value) {}
-   BASavlNodeT(KType Key) : BASavlNode(), m_Key(Key) {}   
+   BASavlNodeT(KType Key) : BASavlNode(), m_Key(Key) {}
 
    virtual void copy(BASavlNode& Orig){
       m_Value = ((BASavlNodeT<KType, VType>&)Orig).m_Value;
@@ -60,7 +60,7 @@ private:
    bool upRight();
    inline BASavlNode* root() { return m_Stack[m_StackPos];}
    inline const BASavlNode* root() const { return m_Stack[m_StackPos];}
-   
+
    inline BASavlNode* parent() { return m_Stack[m_StackPos-1];}
 
    BASavlNode* m_Stack[32];
@@ -71,7 +71,7 @@ template<class KType, class VType>
 class BASavlIteratorT : public BASavlIterator{
 public:
    BASavlIteratorT(BASavlNode* pRoot) : BASavlIterator(pRoot) {}
-   
+
    KType& key() { return ((BASavlNodeT<KType, VType>*)root())->m_Key; }
    VType& value() { return ((BASavlNodeT<KType, VType>*)root())->m_Value; }
 };
@@ -108,16 +108,16 @@ int BASsCompare(const KType& Rhs, const KType& Lhs){
 int BASsCompare(const BASstring& Rhs, const BASstring& Lhs);
 
 template<class KType, class VType>
-class BASavlTree : public BASavlTreeBase{
+class BASdictOrdered : public BASavlTreeBase{
 public:
-   BASavlTree() : BASavlTreeBase(&compare, &key) {}
+   BASdictOrdered() : BASavlTreeBase(&compare, &key) {}
 
    static const void* key(const BASavlNode* pNode){
-      return &((BASavlNodeT<KType, VType>*)pNode)->m_Key; 
+      return &((BASavlNodeT<KType, VType>*)pNode)->m_Key;
    }
-   
+
    static int compare(const void* pRKey, const void* pLKey){
-      return BASsCompare( *((const KType*)pRKey), *((const KType*)pLKey)); 
+      return BASsCompare(*((const KType*)pRKey), *((const KType*)pLKey));
    }
 
    void add(KType Key, VType Value){
@@ -137,9 +137,9 @@ public:
       BASavlNodeT<KType, VType>* pNode = ((BASavlNodeT<KType, VType>*)find((const void*)&Key));
       if (!pNode){
          pNode = new BASavlNodeT<KType, VType>(Key);
-         insert(pNode); // TODO - could optimize this!    
+         insert(pNode); // TODO - could optimize this!
       }
-      return pNode->m_Value; 
+      return pNode->m_Value;
    }
 
    BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
@@ -149,3 +149,5 @@ public:
    BASavlIteratorT<KType, VType> cend()   const { BASavlIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
 };
 
+template<class KType, class VType>
+using BASavlTree = BASdictOrdered<KType, VType>;

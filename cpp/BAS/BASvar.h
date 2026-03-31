@@ -13,7 +13,7 @@
 class BASvar;
 
 template<class BASvar> class BASvector;
-template<class BASstring, class BASvar> class BASavlTree;
+template<class BASstring, class BASvar> class BASdictOrdered;
 
 class BASstream;
 
@@ -43,7 +43,7 @@ public:
    double           asDouble() const { return m_Data.Double; }
    int              asInt()    const { return m_Data.Int;    }
    const BASstring& asString() const { return *m_Data.pString; }
-   const BASavlTree<BASstring, BASvar>& asTable() const { return *m_Data.pTable; }
+   const BASdictOrdered<BASstring, BASvar>& asTable() const { return *m_Data.pTable; }
    const BASvector<BASvar>& asVector() const { return *m_Data.pVec; }
 
 
@@ -52,7 +52,7 @@ public:
       double    Double;
       BASstring* pString;
       BASvector<BASvar>* pVec;
-      BASavlTree<BASstring, BASvar>* pTable;
+      BASdictOrdered<BASstring, BASvar>* pTable;
    };
 
    BASvar& operator=(int Value);

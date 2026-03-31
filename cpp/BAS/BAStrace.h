@@ -26,7 +26,7 @@
 
 // Call this to activate tracing if you need more control - using
 // BASargParser will make it difficult to trace the BASstring class etc.
-// Since that object uses BASstring and BASavlTree etc.
+// Since that object uses BASstring and BASdictOrdered etc.
 void BASsetTracePattern(const char* Pattern);
 
 extern BASstream BAStrace;

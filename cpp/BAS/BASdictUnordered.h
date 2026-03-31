@@ -2,13 +2,13 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BAShashTable
-// 
-// A hash table.
+// BASdictUnordered
+//
+// An unordered dictionary implemented as a hash table.
 //
 // As of yet no automatic resizing of the hash buckets.
 // You can stream the hash table against a BASstream ala:
-// BAShashTable<COLstring, int> Table(30);  // set bucket size of 30
+// BASdictUnordered<BASstring, int> Table(30);  // set bucket size of 30
 //
 // BAS_VAR(Table);
 //
@@ -69,19 +69,19 @@ public:
    void end() ;
    void operator++();
    bool operator!=(const BAShashTableBaseIterator& Rhs);
-   void show(BASstream& Stream); 
+   void show(BASstream& Stream);
 protected:
   BASitem* m_pItem;
 private:
    int m_BucketIndex;
-   BAShashTableBase* m_pTable; 
+   BAShashTableBase* m_pTable;
 };
 
 template<typename KType, typename VType>
-class BAShashTable : public BAShashTableBase {
+class BASdictUnordered : public BAShashTableBase {
 public:
-   BAShashTable(int BucketCount=23) : BAShashTableBase(BucketCount) {}
-   virtual ~BAShashTable() {clear(); }
+   BASdictUnordered(int BucketCount=23) : BAShashTableBase(BucketCount) {}
+   virtual ~BASdictUnordered() {clear(); }
 
    bool has(const KType& Key) const { return getItem(BAShash(Key), (void*)&Key) !=0; }
    bool remove(const KType& Key) { return removeItem(BAShash(Key), (void*)&Key); }
@@ -109,7 +109,7 @@ public:
    BAShashTableIterator end()   { return BAShashTableIterator(this, 0); }
    const BAShashTableIterator cbegin() const { return BAShashTableIterator(this);    }
    const BAShashTableIterator cend()   const { return BAShashTableIterator(this, 0); }
-   
+
    const VType& operator[](const KType& Key) const{
       const BASitem* pItem = getItem(BAShash(Key), (void*)&Key);
       if (!pItem){
@@ -131,5 +131,8 @@ public:
    virtual unsigned long hashItem(BASitem* pItem){ return BAShash(((BASitemT*)pItem)->m_Key);}
 private:
 };
+
+template<typename KType, typename VType>
+using BAShashTable = BASdictUnordered<KType, VType>;
 
 BASstream& operator<<(BASstream& Stream, const BAShashTableBase& Table);

@@ -9,6 +9,7 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
+#include <BAS/BASargParser.h>
 #include <BAS/BASstream.h>
 #include <BAS/BAScall.h>
 #include <BAS/BASclosure.h>
@@ -25,7 +26,18 @@ public:
    }
 };
 
-int main() {
+int main(int argc, const char** argv) {
+   BASargParser Args;
+   Args.addFlag("help", "Show usage and exit.");
+   if (!Args.parse(argc, argv)) {
+      BASout << Args;
+      return 1;
+   }
+   if (Args.present("help")) {
+      BASout << Args;
+      return 0;
+   }
+
    BASstring Message("Hello world from BASstring.");
    BASout << Message << newline;
 

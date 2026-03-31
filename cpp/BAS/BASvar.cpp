@@ -7,7 +7,7 @@
 //-------------------------------------------------------
 #include <BAS/BASvar.h>
 #include <BAS/BASvector.h>
-#include <BAS/BASavlTree.h>
+#include <BAS/BASdictOrdered.h>
 #include <BAS/BASsinkString.h>
 
 #include <BAS/BAStrace.h>
@@ -126,7 +126,7 @@ BASvar& BASvar::operator[](const BASstring& Key){
       break; // do nothing
    }
    if (NULL == m_Data.pTable){
-      m_Data.pTable = new BASavlTree<BASstring,BASvar>();
+      m_Data.pTable = new BASdictOrdered<BASstring,BASvar>();
    }
    return (*m_Data.pTable)[Key];
 }
