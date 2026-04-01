@@ -61,13 +61,21 @@ public:
 
    bool operator++() { return next(); }
 
+   // In-order predecessor. From end(), moves to the largest key; returns false if the
+   // tree is empty or if already before the smallest key (same representation as end()).
+   bool prev();
+   bool operator--() { return prev(); }
+
    bool operator==(const BASavlIterator& Rhs) const { return root() == Rhs.root(); }
    bool operator!=(const BASavlIterator& Rhs) const { return root() != Rhs.root(); }
 private:
    void pop();
    void goRight();
+   void goLeft();
    bool downLeft();
+   bool downRight();
    bool upRight();
+   bool upLeft();
    inline BASavlNode* root() { return m_Stack[m_StackPos];}
    inline const BASavlNode* root() const { return m_Stack[m_StackPos];}
 
@@ -96,6 +104,7 @@ public:
    void first() { m_Iterator.first(); }
    void end()   { m_Iterator.end(); }
    bool operator++() { return ++m_Iterator; }
+   bool operator--() { return --m_Iterator; }
 
    bool operator==(const BASavlConstIteratorT& Rhs) const { return m_Iterator == Rhs.m_Iterator; }
    bool operator!=(const BASavlConstIteratorT& Rhs) const { return m_Iterator != Rhs.m_Iterator; }
@@ -188,13 +197,26 @@ int BASsCompare(const BASstring& Rhs, const BASstring& Lhs);
 //   end() means "after the last item" -- only use it != m.end() in the for line,
 //   not it.key() / it.value() on the end position itself.
 //
+// Example D -- largest key to smallest (--it from end())
+// ------------------------------------------------------
+//   // Put --it inside the loop body after the end iterator: end() is not a real
+//   // element, so you step back before reading key() / value().
+//   for (auto it = m.end(); it != m.begin(); ) {
+//      --it;
+//      // it.key() / it.value() here: last key down to first
+//   }
+//   // Same idea with cend() / cbegin() for read-only access.
+//   // Do not use key()/value() on it when it still equals end() before the first --it.
+//   // Stepping back from begin() (-- on the smallest key) is undefined; prev() returns
+//   // false and leaves the iterator in an end-like state.
+//
 // Names you will see
 // ------------------
 // add(key, value)  -- insert or replace.
 // has(key)         -- true if that key is in the notebook.
 // value(key)       -- read the value; in debug builds, missing key is an error.
 // operator[](key)  -- get the value slot; creates key with a default value if new.
-// begin / end      -- start and end of a loop visiting keys in order (see Example C).
+// begin / end      -- forward order (Example C); use --it from end for reverse (Example D).
 // cbegin / cend    -- same idea, but you only read values, you do not change them.
 //
 // BASavlTree is another name for the same class type if you prefer that name.
@@ -203,6 +225,22 @@ int BASsCompare(const BASstring& Rhs, const BASstring& Lhs);
 //
 // Rare edge case: the iterator uses a small fixed stack inside; only absurdly deep
 // trees could hit its limit. Normal use is fine.
+//
+// AVL trees, duplicates, and this class
+// ---------------------------------------
+// Many AVL explanations and implementations treat the tree as a sorted set or map:
+// each key appears once. When people do need duplicate keys, common options are:
+// (1) store a count or list inside one node, (2) pick a tie-break so "equal" keys
+// always go left or right (so the tree still has a strict ordering rule), or
+// (3) use a different container for "many values per key" and keep the AVL unique.
+//
+// BASdictOrdered follows the unique-key map model on purpose. One key maps to one
+// value: lookup and size stay easy to reason about, and inserting the same key
+// again simply updates the value instead of growing the tree or branching the API
+// for ranges of equal keys. If you need several independent values for the same key,
+// that is a different problem (often a multimap or a map from key to a list); this
+// class stays small and predictable rather than baking duplicate-key policy into
+// the AVL core here.
 //
 template<class KType, class VType>
 class BASdictOrdered : public BASavlTreeBase{
@@ -253,7 +291,7 @@ public:
 
    // Where to start and stop when looping with a for (...; it != end(); ++it) pattern.
    BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
-   // Position after the last item (use only to compare in the for loop, not to read key/value).
+   // After the last item: do not read key/value until you --it (see Example D in the comment block above).
    BASavlIteratorT<KType, VType> end()   { BASavlIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
 
    // Same loop idea as begin/end, but you may not change values through these iterators.

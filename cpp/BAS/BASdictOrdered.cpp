@@ -203,6 +203,51 @@ bool BASavlIterator::next(){
    return upRight();
 }
 
+void BASavlIterator::goLeft(){
+   BAS_METHOD(BASavlIterator::goLeft);
+   BAS_ASSERT(m_StackPos + 1 < kBASavlIteratorStackDepth);
+   BAS_ASSERT(root() != NULL);
+   BAS_ASSERT(root()->m_pLeft != NULL);
+   m_StackPos++;
+   m_Stack[m_StackPos] = parent()->m_pLeft;
+}
+
+bool BASavlIterator::downRight(){
+   BAS_METHOD(BASavlIterator::downRight);
+   while (root() != NULL && root()->m_pRight != NULL){
+      BAS_ASSERT(m_StackPos + 1 < kBASavlIteratorStackDepth);
+      m_StackPos++;
+      m_Stack[m_StackPos] = parent()->m_pRight;
+   }
+   return root() != NULL;
+}
+
+bool BASavlIterator::upLeft(){
+   BAS_METHOD(BASavlIterator::upLeft);
+   while (m_StackPos > 1 && parent()->m_pLeft == root()){
+      pop();
+   }
+   pop();
+   return root() != NULL;
+}
+
+bool BASavlIterator::prev(){
+   BAS_METHOD(BASavlIterator::prev);
+   if (m_StackPos == 0){
+      m_StackPos = 1;
+      if (m_Stack[1] == NULL){
+         return false;
+      }
+      return downRight();
+   }
+   BAS_ASSERT(root() != NULL);
+   if (root()->m_pLeft != NULL){
+      goLeft();
+      return downRight();
+   }
+   return upLeft();
+}
+
 void BASavlIterator::goRight(){
    BAS_METHOD(BASavlIterator::goRight);
    BAS_ASSERT(m_StackPos + 1 < kBASavlIteratorStackDepth);
