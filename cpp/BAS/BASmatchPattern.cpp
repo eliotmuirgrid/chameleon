@@ -1,19 +1,19 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BASglob
-// 
+// BASmatchPattern
+//
 // Implementation
 //-------------------------------------------------------
 
-#include <BAS/BASglob.h>
+#include <BAS/BASmatchPattern.h>
 #include <BAS/BAStrace.h>
 //#include <BAS/BASstring.h>
 //BAS_TRACE_INIT;
 
 #include <string.h>
 
-bool BASmatchUntilChar(const char** ppTarget, char Char){
+static bool BASmatchUntilChar(const char** ppTarget, char Char){
   // BAS_FUNCTION(BASmatchUntilChar);
   // BAS_VAR2(*ppTarget, Char);
    while (*(*ppTarget) != Char){
@@ -25,9 +25,9 @@ bool BASmatchUntilChar(const char** ppTarget, char Char){
    return Result;
 }
 
-bool BASglob(const char* pTarget, const char* pPattern){
-   //BAS_FUNCTION(BASglob);
-   //BAS_VAR2(pTarget, pPattern);
+static bool matchSegment(const char* pTarget, const char* pPattern){
+   //BAS_FUNCTION(matchSegment);
+   // BAS_VAR2(pTarget, pPattern);
    const char* i= pPattern;
    const char* j= pTarget;
    while (*i != 0){
@@ -40,7 +40,7 @@ bool BASglob(const char* pTarget, const char* pPattern){
          }
          if (!BASmatchUntilChar(&j, *i)){
             return false;
-         } 
+         }
       } else {
          if (*i != *j){
         //    BAS_TRC("Expression does not match.");
@@ -54,8 +54,8 @@ bool BASglob(const char* pTarget, const char* pPattern){
    return true;
 }
 
-bool BASglobMatch(const char* pTarget, const char* pPattern){
-  // BAS_FUNCTION(BASglobMatch);
+bool BASmatchPattern(const char* pTarget, const char* pPattern){
+  // BAS_FUNCTION(BASmatchPattern);
    bool Match = false;
    //BAS_VAR(pPattern);
    char* Buffer = new char[strlen(pPattern)+1];
@@ -66,22 +66,22 @@ bool BASglobMatch(const char* pTarget, const char* pPattern){
     //  BAS_VAR(pToken);
       if (*pToken == '+'){
          pToken++;
-         if (BASglob(pTarget, pToken)){
+         if (matchSegment(pTarget, pToken)){
       //      BAS_TRC("Positive Match");
             Match = true;
          }
       } else if (*pToken == '-'){
          pToken++;
-         if (BASglob(pTarget, pToken)){
+         if (matchSegment(pTarget, pToken)){
       //      BAS_TRC("Negative match removed");
             Match = false;
          }
       } else {
-         if (BASglob(pTarget, pToken)){
+         if (matchSegment(pTarget, pToken)){
       //      BAS_TRC("Positive match");
             Match = true;
          }
-      }   
+      }
 		pToken = strtok(NULL, delim);
 	}
    delete []Buffer;

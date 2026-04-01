@@ -13,7 +13,20 @@ BAS_TRACE_INIT;
 
 #include <BAS/BASstring.h>
 
-BASavlNode::BASavlNode() : m_pLeft(NULL), m_pRight(NULL){
+static int BASavlChildHeight(BASavlNode* pNode){
+   return pNode ? pNode->m_Height : 0;
+}
+
+static void BASavlRefreshHeight(BASavlNode* pNode){
+   if (!pNode){
+      return;
+   }
+   int lh = BASavlChildHeight(pNode->m_pLeft);
+   int rh = BASavlChildHeight(pNode->m_pRight);
+   pNode->m_Height = 1 + (lh > rh ? lh : rh);
+}
+
+BASavlNode::BASavlNode() : m_pLeft(NULL), m_pRight(NULL), m_Height(1){
    BAS_METHOD(BASavlNode);
 }
 
@@ -33,17 +46,9 @@ BASavlTreeBase::~BASavlTreeBase(){
    delete m_pRoot;
 }
 
-int BASavlHeight(BASavlNode* pNode) {
-   BAS_FUNCTION(BASavlHeight);
-   if (pNode == NULL){ return 0; } // empty node - zero height
-   int LeftHeight  = BASavlHeight(pNode->m_pLeft);
-   int RightHeight = BASavlHeight(pNode->m_pRight);
-   return LeftHeight > RightHeight ? LeftHeight +1 : RightHeight + 1;
-}
-
 int BASavlDifference(BASavlNode* pNode){
    BAS_FUNCTION(BASavlDifference);
-   return BASavlHeight(pNode->m_pLeft) - BASavlHeight(pNode->m_pRight);
+   return BASavlChildHeight(pNode->m_pLeft) - BASavlChildHeight(pNode->m_pRight);
 }
 
 static BASavlNode* rr_rotat(BASavlNode* pParent) {
@@ -52,6 +57,8 @@ static BASavlNode* rr_rotat(BASavlNode* pParent) {
    t = pParent->m_pRight;
    pParent->m_pRight = t->m_pLeft;
    t->m_pLeft = pParent;
+   BASavlRefreshHeight(pParent);
+   BASavlRefreshHeight(t);
    return t;
 }
 
@@ -61,6 +68,8 @@ static BASavlNode* ll_rotat(BASavlNode* pParent) {
    t = pParent->m_pLeft;
    pParent->m_pLeft = t->m_pRight;
    t->m_pRight = pParent;
+   BASavlRefreshHeight(pParent);
+   BASavlRefreshHeight(t);
    return t;
 }
 
@@ -109,15 +118,18 @@ BASavlNode* BASinsert(BASavlNode* pNode, BASavlNode* pNewNode, BASavlCompare pCo
    if (Compare == 0){
       BAS_TRC("Replace");
       pNode->copy(*pNewNode);
+      delete pNewNode;
       return pNode;
    }
    if (Compare > 0){
       BAS_TRC("Insert to left");
       pNode->m_pLeft = BASinsert(pNode->m_pLeft, pNewNode, pCompFunc,pKeyFunc, pSize);
+      BASavlRefreshHeight(pNode);
       return BASavlBalance(pNode);
    }
    BAS_TRC("Insert to right");
    pNode->m_pRight = BASinsert(pNode->m_pRight, pNewNode, pCompFunc,pKeyFunc, pSize);
+   BASavlRefreshHeight(pNode);
    return BASavlBalance(pNode);
 }
 
@@ -193,6 +205,7 @@ bool BASavlIterator::next(){
 
 void BASavlIterator::goRight(){
    BAS_METHOD(BASavlIterator::goRight);
+   BAS_ASSERT(m_StackPos + 1 < kBASavlIteratorStackDepth);
    m_StackPos++;
    m_Stack[m_StackPos] = parent()->m_pRight;
 }
@@ -200,6 +213,7 @@ void BASavlIterator::goRight(){
 bool BASavlIterator::downLeft(){
    BAS_METHOD(BASavlIterator::downLeft);
    while (root()->m_pLeft != NULL){
+      BAS_ASSERT(m_StackPos + 1 < kBASavlIteratorStackDepth);
       m_StackPos++;
       m_Stack[m_StackPos] = parent()->m_pLeft;
    }

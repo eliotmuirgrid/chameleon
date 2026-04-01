@@ -2,9 +2,9 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BASglob
-// 
-// Global matching function.
+// BASmatchPattern
+//
+// Pattern matching for strings (glob-style segments with optional + / - token lists).
 //-------------------------------------------------------
 
-bool BASglobMatch(const char* pTarget, const char* pPattern);
+bool BASmatchPattern(const char* pTarget, const char* pPattern);

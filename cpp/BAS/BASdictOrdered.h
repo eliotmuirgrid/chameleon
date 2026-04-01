@@ -8,9 +8,14 @@
 // https://www.youtube.com/watch?v=vRwi_UcZGjU
 //-------------------------------------------------------
 
+#include <BAS/BASassert.h>
+
 class BASstring;
 
 class BASstream;
+
+// Max AVL height for n nodes is < 2 log2(n+2); 128 covers any practical tree size here.
+enum { kBASavlIteratorStackDepth = 128 };
 
 class BASavlNode{
 public:
@@ -20,6 +25,8 @@ public:
    virtual void copy(BASavlNode& Orig)=0;
    BASavlNode* m_pLeft;
    BASavlNode* m_pRight;
+   // Subtree height: 1 for a leaf, 1 + max(left height, right height) for internal nodes.
+   int m_Height;
 };
 
 template<class KType, class VType>
@@ -63,7 +70,7 @@ private:
 
    inline BASavlNode* parent() { return m_Stack[m_StackPos-1];}
 
-   BASavlNode* m_Stack[32];
+   BASavlNode* m_Stack[kBASavlIteratorStackDepth];
    int m_StackPos;
 };
 
@@ -120,6 +127,8 @@ private:
 
 BASstream& operator<<(BASstream& Stream, const BASavlNode& Node);
 
+// Default ordering for arithmetic keys. For other key types, provide an overload of
+// BASsCompare(const KType&, const KType&) in one translation unit (see BASstring in .cpp).
 template<class KType>
 int BASsCompare(const KType& Rhs, const KType& Lhs){
    return Rhs - Lhs;
@@ -149,10 +158,16 @@ public:
    }
 
    const VType& value(const KType& Key) const{
-      return ((BASavlNodeT<KType, VType>*)find((const void*)&Key))->m_Value;
+      const BASavlNode* pFound = find((const void*)&Key);
+      BAS_ASSERT(pFound != nullptr);
+      return ((BASavlNodeT<KType, VType>*)pFound)->m_Value;
    }
 
-   VType& value(const KType& Key)     { return ((BASavlNodeT<KType, VType>*)find((const void*)&Key))->m_Value;}
+   VType& value(const KType& Key){
+      BASavlNode* pFound = find((const void*)&Key);
+      BAS_ASSERT(pFound != nullptr);
+      return ((BASavlNodeT<KType, VType>*)pFound)->m_Value;
+   }
    VType& operator[](const KType& Key){
       BASavlNodeT<KType, VType>* pNode = ((BASavlNodeT<KType, VType>*)find((const void*)&Key));
       if (!pNode){

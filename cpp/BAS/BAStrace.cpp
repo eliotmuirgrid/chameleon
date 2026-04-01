@@ -11,7 +11,7 @@ BAS_TRACE_INIT;
 
 #include <BAS/BAScommandLine.h>
 #include <BAS/BASsinkStandardOut.h>
-#include <BAS/BASglob.h>
+#include <BAS/BASmatchPattern.h>
 
 #include <time.h>
 #include <stdio.h>  // for printf
@@ -94,7 +94,7 @@ void BASapplyTraceOption(const BAScommandLine& CommandLine){
 }
 
 bool BASloggingEnabled(const char* ModuleName, int* pResult){
-   if (BASglobMatch(ModuleName, s_TracePattern)){
+   if (BASmatchPattern(ModuleName, s_TracePattern)){
       *pResult = 1;
       return true;
    } else {
