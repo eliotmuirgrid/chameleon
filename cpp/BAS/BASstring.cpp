@@ -10,7 +10,7 @@
 #include <BAS/BASsink.h>
 
 // To get tracing working with BASstring one really has to do
-// it by calling the trace function directly since BASargParser
+// it by calling the trace function directly since BAScommandLine
 // uses BASstring so tracing will be switched off before one gets
 // here.
 

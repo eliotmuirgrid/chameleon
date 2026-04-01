@@ -9,8 +9,9 @@
 //
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
-#include <BAS/BASargParser.h>
+#include <BAS/BAScommandLine.h>
 #include <BAS/BASstream.h>
+#include <BAS/BAStrace.h>
 #include <BAS/BAScall.h>
 #include <BAS/BASstring.h>
 
@@ -30,13 +31,19 @@ public:
 };
 
 int main(int argc, const char** argv) {
-   BASargParser Args;
-   Args.addFlag("help", "Show usage and exit.");
-   if (!Args.parse(argc, argv)) {
+   BAScommandLine Args;
+   BASstring Error;
+   BASaddTraceOption(&Args);
+   Args.add("help", "Show usage and exit.");
+   if (!Args.parse(argc, argv, &Error)) {
+      if (!Error.empty()) {
+         BASout << Error << newline;
+      }
       BASout << Args;
       return 1;
    }
-   if (Args.present("help")) {
+   BASapplyTraceOption(Args);
+   if (Args.has("help")) {
       BASout << Args;
       return 0;
    }

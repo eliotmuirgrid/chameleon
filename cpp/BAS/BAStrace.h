@@ -16,7 +16,7 @@
 //  BAS_METHOD(Foo::MyMethod);     // Gives entry into a method and shows the this pointer and out of it
 //  BAS_VAR(AVariable);            // Gives name=value of a variable - use BAS_VAR2, BAS_VAR3 etc. to display 2, 3 variables etc.
 //
-// Tracing is enabled through the BASargParser which can be used to control the command line.  Or you can just
+// Tracing is enabled through the BAScommandLine which can be used to control the command line.  Or you can just
 // call BASsetTracePattern directly with a glob expression that is used to match what files to display tracing from.
 //-------------------------------------------------------
 
@@ -24,10 +24,14 @@
 #include <stdio.h>
 #include <BAS/BASmutex.h>
 
+class BAScommandLine;
+
 // Call this to activate tracing if you need more control - using
-// BASargParser will make it difficult to trace the BASstring class etc.
+// BAScommandLine will make it difficult to trace the BASstring class etc.
 // Since that object uses BASstring and BASdictOrdered etc.
 void BASsetTracePattern(const char* Pattern);
+void BASaddTraceOption(BAScommandLine* pCommandLine);
+void BASapplyTraceOption(const BAScommandLine& CommandLine);
 
 extern BASstream BAStrace;
 

@@ -9,6 +9,7 @@
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
+#include <BAS/BAScommandLine.h>
 #include <BAS/BASsinkStandardOut.h>
 #include <BAS/BASglob.h>
 
@@ -76,9 +77,20 @@ BASmodule::BASmodule(const char* pFileName){
 }
 
 static const char* s_TracePattern = "";
+static const char* s_pTraceDescription = "Turn on debug tracing of C++ code using glob match expression for files. i.e. --trace \"* -BASstring\" (match everything, exclude BASstring).";
 
 void BASsetTracePattern(const char* pPattern){
    s_TracePattern = strdup(pPattern);  // purposely leaked.
+}
+
+void BASaddTraceOption(BAScommandLine* pCommandLine){
+   pCommandLine->add("trace", s_pTraceDescription, "glob");
+}
+
+void BASapplyTraceOption(const BAScommandLine& CommandLine){
+   if (CommandLine.has("trace")){
+      BASsetTracePattern(CommandLine.get("trace").data());
+   }
 }
 
 bool BASloggingEnabled(const char* ModuleName, int* pResult){
