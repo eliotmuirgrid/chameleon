@@ -73,7 +73,27 @@ public:
    BASavlIteratorT(BASavlNode* pRoot) : BASavlIterator(pRoot) {}
 
    KType& key() { return ((BASavlNodeT<KType, VType>*)root())->m_Key; }
+   const KType& key() const { return ((BASavlNodeT<KType, VType>*)root())->m_Key; }
    VType& value() { return ((BASavlNodeT<KType, VType>*)root())->m_Value; }
+   const VType& value() const { return ((BASavlNodeT<KType, VType>*)root())->m_Value; }
+};
+
+template<class KType, class VType>
+class BASavlConstIteratorT {
+public:
+   BASavlConstIteratorT(BASavlNode* pRoot) : m_Iterator(pRoot) {}
+
+   void first() { m_Iterator.first(); }
+   void end()   { m_Iterator.end(); }
+   bool operator++() { return ++m_Iterator; }
+
+   bool operator==(const BASavlConstIteratorT& Rhs) const { return m_Iterator == Rhs.m_Iterator; }
+   bool operator!=(const BASavlConstIteratorT& Rhs) const { return m_Iterator != Rhs.m_Iterator; }
+
+   const KType& key()   const { return m_Iterator.key(); }
+   const VType& value() const { return m_Iterator.value(); }
+private:
+   BASavlIteratorT<KType, VType> m_Iterator;
 };
 
 typedef int (*BASavlCompare)(const void* pRKey, const void* pLKey);
@@ -145,8 +165,8 @@ public:
    BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
    BASavlIteratorT<KType, VType> end()   { BASavlIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
 
-   BASavlIteratorT<KType, VType> cbegin() const { BASavlIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
-   BASavlIteratorT<KType, VType> cend()   const { BASavlIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
+   BASavlConstIteratorT<KType, VType> cbegin() const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
+   BASavlConstIteratorT<KType, VType> cend()   const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
 };
 
 template<class KType, class VType>

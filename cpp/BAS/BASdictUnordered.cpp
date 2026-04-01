@@ -196,12 +196,12 @@ void BAShashTableBaseIterator::operator++(){
    BAS_VAR2(m_pItem, m_BucketIndex);
 }
 
-bool BAShashTableBaseIterator::operator!=(const BAShashTableBaseIterator& Rhs){
+bool BAShashTableBaseIterator::operator!=(const BAShashTableBaseIterator& Rhs) const{
    BAS_METHOD(BAShashTableBaseIterator::operator!=);
    return !(m_BucketIndex == Rhs.m_BucketIndex && m_pItem == Rhs.m_pItem);
 }
 
 
-void BAShashTableBaseIterator::show(BASstream& Stream){
+void BAShashTableBaseIterator::show(BASstream& Stream) const{
    m_pItem->show(Stream);
 }

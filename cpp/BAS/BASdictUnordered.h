@@ -33,7 +33,7 @@ class BASitem{
 public:
    BASitem() : m_pNext(0) {}
    virtual ~BASitem() {}
-   virtual void show(BASstream& Stream)=0;
+   virtual void show(BASstream& Stream) const=0;
    BASitem* m_pNext;
 };
 
@@ -68,8 +68,8 @@ public:
    void first() ;
    void end() ;
    void operator++();
-   bool operator!=(const BAShashTableBaseIterator& Rhs);
-   void show(BASstream& Stream);
+   bool operator!=(const BAShashTableBaseIterator& Rhs) const;
+   void show(BASstream& Stream) const;
 protected:
   BASitem* m_pItem;
 private:
@@ -91,7 +91,7 @@ public:
       BASitemT(const KType& Key, const VType& Value) : m_Key(Key), m_Value(Value) {}
       BASitemT(const KType& Key) : m_Key(Key) {}
       virtual ~BASitemT() {}
-      virtual void show(BASstream& Stream){ Stream << m_Key << " = " << m_Value;}
+      virtual void show(BASstream& Stream) const { Stream << m_Key << " = " << m_Value;}
       KType m_Key;
       VType m_Value;
    };
@@ -99,16 +99,28 @@ public:
    class BAShashTableIterator : public BAShashTableBaseIterator{
    public:
        BAShashTableIterator(BAShashTableBase* pTable) : BAShashTableBaseIterator(pTable) { }
-       BAShashTableIterator(BAShashTableBase* pTable, BASitem* pDummy) : BAShashTableBaseIterator(pTable, pDummy) { }
+       BAShashTableIterator(BAShashTableBase* pTable, const BASitem* pDummy) : BAShashTableBaseIterator(pTable, pDummy) { }
        const KType& key() const   { return ((BASitemT*)m_pItem)->m_Key;   }
        const VType& value() const { return ((BASitemT*)m_pItem)->m_Value; }
        VType& value()             { return ((BASitemT*)m_pItem)->m_Value; }
    };
 
+   class BASconstHashTableIterator {
+   public:
+      BASconstHashTableIterator(BAShashTableBase* pTable) : m_Iterator(pTable) { }
+      BASconstHashTableIterator(BAShashTableBase* pTable, const BASitem* pDummy) : m_Iterator(pTable, pDummy) { }
+      const KType& key() const   { return m_Iterator.key();   }
+      const VType& value() const { return m_Iterator.value(); }
+      void operator++() { ++m_Iterator; }
+      bool operator!=(const BASconstHashTableIterator& Rhs) const { return m_Iterator != Rhs.m_Iterator; }
+   private:
+      BAShashTableIterator m_Iterator;
+   };
+
    BAShashTableIterator begin() { return BAShashTableIterator(this);    }
    BAShashTableIterator end()   { return BAShashTableIterator(this, 0); }
-   const BAShashTableIterator cbegin() const { return BAShashTableIterator(this);    }
-   const BAShashTableIterator cend()   const { return BAShashTableIterator(this, 0); }
+   BASconstHashTableIterator cbegin() const { return BASconstHashTableIterator((BAShashTableBase*)this);    }
+   BASconstHashTableIterator cend()   const { return BASconstHashTableIterator((BAShashTableBase*)this, 0); }
 
    const VType& operator[](const KType& Key) const{
       const BASitem* pItem = getItem(BAShash(Key), (void*)&Key);

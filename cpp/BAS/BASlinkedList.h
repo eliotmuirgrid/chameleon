@@ -22,10 +22,12 @@ public:
    void addItem(BASlink* pLink);
    void removeItem(BASlink* pLink);
 
-   BASlink* head() const { return m_pHead; }
-   BASlink* tail() const { return m_pTail; }
+   BASlink* head() { return m_pHead; }
+   const BASlink* head() const { return m_pHead; }
+   BASlink* tail() { return m_pTail; }
+   const BASlink* tail() const { return m_pTail; }
 
-   int size() { return m_Size; }
+   int size() const { return m_Size; }
 
    void clear();
 
@@ -62,6 +64,18 @@ public:
    TValue& value()             { return ((BASlinkT<TValue>*)m_pLink)->Value; }
    const TValue& value() const { return ((BASlinkT<TValue>*)m_pLink)->Value; }
 };
+
+template <class TValue>
+class BASconstLinkedListIterator {
+public:
+   BASconstLinkedListIterator(const BASlink* pLink) : m_Iterator((BASlink*)pLink) {}
+   void operator++() { ++m_Iterator; }
+   bool operator==(const BASconstLinkedListIterator& Rhs) const { return m_Iterator == Rhs.m_Iterator; }
+   bool operator!=(const BASconstLinkedListIterator& Rhs) const { return m_Iterator != Rhs.m_Iterator; }
+   const TValue& value() const { return m_Iterator.value(); }
+private:
+   BASlinkedListIterator<TValue> m_Iterator;
+};
    
 template <class TValue>
 class BASlinkedList : public BASlinkedListBase{
@@ -78,8 +92,8 @@ public:
 
    BASlinkedListIterator<TValue> begin()              { return BASlinkedListIterator<TValue>(head()); }
    BASlinkedListIterator<TValue> end()                { return BASlinkedListIterator<TValue>(0); }
-   const BASlinkedListIterator<TValue> cbegin() const { return BASlinkedListIterator<TValue>(head()); }
-   const BASlinkedListIterator<TValue> cend()   const { return BASlinkedListIterator<TValue>(0); }
+   BASconstLinkedListIterator<TValue> cbegin() const  { return BASconstLinkedListIterator<TValue>(head()); }
+   BASconstLinkedListIterator<TValue> cend()   const  { return BASconstLinkedListIterator<TValue>(0); }
 
 private:
    virtual void destroyLink(BASlink* pLink){
