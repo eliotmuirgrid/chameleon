@@ -8,4 +8,3 @@
 //-------------------------------------------------------
 
 bool BASglobMatch(const char* pTarget, const char* pPattern);
-
