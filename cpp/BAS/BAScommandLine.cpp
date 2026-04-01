@@ -81,23 +81,16 @@ bool BAScommandLine::parse(int argc, const char** argv, BASstring* pError){
 
 bool BAScommandLine::has(const BASstring& Name) const{
    BAS_METHOD(BAScommandLine::has);
-   for(auto i=m_Options.cbegin(); i != m_Options.cend(); ++i){
-      if (i.key() == Name){
-         return i.value().IsPresent;
-      }
-   }
-   return false;
+   return m_Options.has(Name) && m_Options.value(Name).IsPresent;
 }
 
 const BASstring& BAScommandLine::get(const BASstring& Name) const{
    BAS_METHOD(BAScommandLine::get);
-   for(auto i=m_Options.cbegin(); i != m_Options.cend(); ++i){
-      if (i.key() == Name){
-         return i.value().Value;
-      }
+   if (!m_Options.has(Name)){
+      static BASstring Empty;
+      return Empty;
    }
-   static BASstring Empty;
-   return Empty;
+   return m_Options.value(Name).Value;
 }
 
 BASstring BAScommandLine::usage() const{

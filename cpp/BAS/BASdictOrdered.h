@@ -124,7 +124,7 @@ public:
       insert(new BASavlNodeT<KType, VType>(Key, Value));
    }
 
-   bool has(const KType& Key){
+   bool has(const KType& Key) const {
       return find((const void*)&Key) != 0;
    }
 
