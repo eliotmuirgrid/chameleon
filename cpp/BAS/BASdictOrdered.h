@@ -12,10 +12,9 @@
 //-------------------------------------------------------
 
 #include <BAS/BASassert.h>
+#include <BAS/BASstream.h>
 
 class BASstring;
-
-class BASstream;
 
 // Max AVL height for n nodes is < 2 log2(n+2); 128 covers any practical tree size here.
 enum { kBASavlIteratorStackDepth = 128 };
@@ -297,7 +296,21 @@ public:
    // Same loop idea as begin/end, but you may not change values through these iterators.
    BASavlConstIteratorT<KType, VType> cbegin() const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
    BASavlConstIteratorT<KType, VType> cend()   const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
+
+   // Human-readable dump: size, then key = value lines in ascending key order (requires << for KType and VType).
+   void printOn(BASstream& Stream) const {
+      Stream << "Size: " << size() << newline;
+      for (BASavlConstIteratorT<KType, VType> Iter = cbegin(); Iter != cend(); ++Iter) {
+         Stream << Iter.key() << " = " << Iter.value() << newline;
+      }
+   }
 };
+
+template<class KType, class VType>
+BASstream& operator<<(BASstream& Stream, const BASdictOrdered<KType, VType>& Dict) {
+   Dict.printOn(Stream);
+   return Stream;
+}
 
 template<class KType, class VType>
 using BASavlTree = BASdictOrdered<KType, VType>;

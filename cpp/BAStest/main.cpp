@@ -10,6 +10,8 @@
 // Author: Eliot Muir
 //---------------------------------------------------------------------------
 #include <BAS/BAScommandLine.h>
+#include <BAS/BASdictOrdered.h>
+#include <BAS/BASdictUnordered.h>
 #include <BAS/BASstream.h>
 #include <BAS/BAStrace.h>
 #include <BAS/BAScall.h>
@@ -61,6 +63,22 @@ int main(int argc, const char** argv) {
    auto pMethodCall = BAScallBind1(&Example, &BASexample::print, 99);
    BASrunGreeting(pMethodCall);
    delete pMethodCall;
+
+   BASout << "BASstream operator<< on dictionaries (same keys, different layouts):" << newline;
+
+   BASdictUnordered<BASstring, int> Unordered(8);
+   Unordered[BASstring("gamma")] = 3;
+   Unordered[BASstring("alpha")] = 1;
+   Unordered[BASstring("beta")] = 2;
+   BASout << "BASdictUnordered (size, buckets, then entries per bucket):" << newline;
+   BASout << Unordered << newline;
+
+   BASdictOrdered<BASstring, int> Ordered;
+   Ordered[BASstring("gamma")] = 3;
+   Ordered[BASstring("alpha")] = 1;
+   Ordered[BASstring("beta")] = 2;
+   BASout << "BASdictOrdered (size, then key = value in ascending key order):" << newline;
+   BASout << Ordered << newline;
 
    return 0;
 }
