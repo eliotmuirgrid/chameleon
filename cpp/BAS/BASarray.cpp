@@ -1,12 +1,12 @@
 //-------------------------------------------------------
-// Copyright (C) 2026 Eliot Muir.  All rights reserved.
+// Copyright (C) 2026 Eliot Muir. All rights reserved.
 //
-// BASvector
+// BASarray
 //
 // Implementation
 //-------------------------------------------------------
 
-#include <BAS/BASvector.h>
+#include <BAS/BASarray.h>
 #include <BAS/BASassert.h>
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
@@ -14,7 +14,7 @@ BAS_TRACE_INIT;
 void BAScheckBoundary(int i, int Size){
    //BAS_FUNCTION(BAScheckBoundary);
    if (i >= Size){
-      BAS_FAIL("Vector index " << i << " must be less than size " << Size);
+      BAS_FAIL("Array index " << i << " must be less than size " << Size);
    }
 }
 
