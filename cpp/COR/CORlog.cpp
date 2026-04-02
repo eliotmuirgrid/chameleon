@@ -48,12 +48,12 @@
 // It cannot be guaranteed that CORlog.cpp's static mutexes will be initialized
 // first, so unfortunately we have have this overhead in accessing mutexes.
 //
-static inline CORmutex& getTraceLogMutex() {
+static inline CORmutex& CORlogGetTraceLogMutex() {
    // mutex leaked by design to avoid crash after exit in static destructors
    static CORmutex* s_TraceLogMutex = new CORmutex;
    return *s_TraceLogMutex;
 }
-static inline CORmutex& getTraceTimeMutex() {
+static inline CORmutex& CORlogGetTraceTimeMutex() {
    // mutex leaked by design to avoid crash after exit in static destructors
    static CORmutex* s_TraceTimeMutex = new CORmutex;
    return *s_TraceTimeMutex;
@@ -135,16 +135,16 @@ static int                gStreamWantFlush = 0;
 // must leak thread local indent level due to static dtors that may trace
 static CORthreadLocalLong gTraceThreadLocalIndent(false);
 
-static time_t             gLastSecondsSinceEpoch = -1; // guarded by getTraceTimeMutex()
-static char               gLastTimeBuffer[40];         // guarded by getTraceTimeMutex()
+static time_t             gLastSecondsSinceEpoch = -1; // guarded by CORlogGetTraceTimeMutex()
+static char               gLastTimeBuffer[40];         // guarded by CORlogGetTraceTimeMutex()
 
-static CORarray<int*>    gLineEnableVector;   // guarded by getTraceLogMutex()
-static CORstring          gDbgArg;             // guarded by getTraceLogMutex()
-static CORstring          gTrcArg;             // guarded by getTraceLogMutex()
-static CORstring          gInfArg;             // guarded by getTraceLogMutex()
-static CORstring          gWrnArg;             // guarded by getTraceLogMutex()
-static CORstring          gErrArg;             // guarded by getTraceLogMutex()
-static CORstring          gFlushArg;           // guarded by getTraceLogMutex()
+static CORarray<int*>    gLineEnableVector;   // guarded by CORlogGetTraceLogMutex()
+static CORstring          gDbgArg;             // guarded by CORlogGetTraceLogMutex()
+static CORstring          gTrcArg;             // guarded by CORlogGetTraceLogMutex()
+static CORstring          gInfArg;             // guarded by CORlogGetTraceLogMutex()
+static CORstring          gWrnArg;             // guarded by CORlogGetTraceLogMutex()
+static CORstring          gErrArg;             // guarded by CORlogGetTraceLogMutex()
+static CORstring          gFlushArg;           // guarded by CORlogGetTraceLogMutex()
 
 // global tracing objects
 CORlog g_CORlog_DBG('D');
@@ -171,7 +171,7 @@ CORlogStream::CORlogStream(char level, const char* module) : CORostream(m_String
    {
       // Optimization: cache time string since it is the same 99% of the time.
       // Calling localtime and formatting the string is a very expensive operation.
-      CORlocker Lock(getTraceTimeMutex());
+      CORlocker Lock(CORlogGetTraceTimeMutex());
 
       if (now != gLastSecondsSinceEpoch) {
          // optimization to not recompute time string if time is the same
@@ -397,7 +397,7 @@ void CORlog::init(int argc, const char** argv) {
          inf += ' ' + Argument;
          wrn += ' ' + Argument;
          err += ' ' + Argument;
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gDbgArg = Argument;
       }
       if (s == "--t") {
@@ -405,23 +405,23 @@ void CORlog::init(int argc, const char** argv) {
          inf += ' ' + Argument;
          wrn += ' ' + Argument;
          err += ' ' + Argument;
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gTrcArg = Argument;
        }
       else if (s == "--i") {
          inf += ' ' + Argument;
          wrn += ' ' + Argument;
          err += ' ' + Argument;
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gInfArg = Argument;
       } else if (s == "--w") {
          wrn += ' ' + Argument;
          err += ' ' + Argument;
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gWrnArg = Argument;
       } else if (s == "--e") {
          err += ' ' + Argument;
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gErrArg = Argument;
       } else if (s == "--F") {
          const char ch = Argument.size() ? Argument[0] : '1';
@@ -437,7 +437,7 @@ void CORlog::init(int argc, const char** argv) {
             gStreamWantFlush = 1;
             break;
          }
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
          gFlushArg = Argument;
       }
       else if (s == "--n") {
@@ -491,7 +491,7 @@ void CORlog::init(int argc, const char** argv) {
    }
 
    {
-      CORlocker Lock(getTraceLogMutex());
+      CORlocker Lock(CORlogGetTraceLogMutex());
 
       // Enable errors and warnings automatically if any of --d, --t or --i is set.
       // To avoid this, just set --e ' ' which is a no-op.
@@ -524,7 +524,7 @@ void CORtrace(const CORstring& Expression){
       if (!pGlob) { return; }
    }
    CORcout << "Tracing on CHM_TRACE=" << pGlob << newline;
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
    g_CORlog_TRC.setFilter(pGlob);
    g_CORlog_INF.setFilter("");
    g_CORlog_DBG.setFilter("");
@@ -548,14 +548,14 @@ void CORsetTraceLogFile(const CORstring& FilePath){
    //XXX TODO: should lock log file to prevent reuse
 
    // NOTE: *must* leak because may be used after main().
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
    gStream = new CORostream(LogFile, true);
    gStreamWasSet = 1;
    gStreamWantFlush = 1; // Default flushing on .
 }
 
 void CORlog::getArgs(CORstring& d, CORstring& t, CORstring& i, CORstring& w, CORstring& e, CORstring& F) {
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
 #if 1
    d = gDbgArg;
    t = gTrcArg;
@@ -573,7 +573,7 @@ void CORlog::getArgs(CORstring& d, CORstring& t, CORstring& i, CORstring& w, COR
 }
 
 static void CORlog_Write(const CORstring& Data) {
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
    gStream->write(Data.c_str(), Data.size());
 }
 
@@ -586,7 +586,7 @@ void CORlog::reset(int argc, const char** argv){
       CORsleep(50); // lame attempt to wait for stray tracing on other threads
 
       {
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
 
          g_CORlog_DBG.setFilter("");
          g_CORlog_TRC.setFilter("");
@@ -633,7 +633,7 @@ void CORlog::reset(const CORstring& d, const CORstring& t, const CORstring& i, c
       argv[argc++] = F.c_str();
 
       {
-         CORlocker Lock(getTraceLogMutex());
+         CORlocker Lock(CORlogGetTraceLogMutex());
 
          g_CORlog_DBG.setFilter("");
          g_CORlog_TRC.setFilter("");
@@ -651,7 +651,7 @@ void CORlog::reset(const CORstring& d, const CORstring& t, const CORstring& i, c
 }
 
 void CORlog::setFilter(const CORstring& Filter) {
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
    m_Pattern = Filter;
 }
 
@@ -666,7 +666,7 @@ void CORlog::setFilter(const CORstring& Filter) {
 int CORlog::enabled(const char* module, int* logstate) const {
    CORstring Pattern;
    {
-      CORlocker Lock(getTraceLogMutex());
+      CORlocker Lock(CORlogGetTraceLogMutex());
       gLineEnableVector.push_back(logstate);
       Pattern = m_Pattern;
    }   
@@ -711,7 +711,7 @@ void CORlog::log(CORostream& Stream) {
    Stream << '\n';
    CORlogStream* LogStream = dynamic_cast<CORlogStream*>(&Stream);
    CORASSERT(LogStream);
-   CORlocker Lock(getTraceLogMutex());
+   CORlocker Lock(CORlogGetTraceLogMutex());
    gStream->write(LogStream->buffer(), LogStream->length());
    if (gStreamWantFlush)
    {
@@ -755,7 +755,7 @@ void CORlog::reopenFile() {
 
 static const int s_Max_COR_DUMP_WIDTH = 120;
 
-static int get_COR_DUMP_WIDTH() {
+static int CORlogGetDumpWidth() {
    const char* COR_DUMP_WIDTH_string = ::getenv("COR_DUMP_WIDTH");
    if (COR_DUMP_WIDTH_string == NULL) {
       return 16;
@@ -770,7 +770,7 @@ static int get_COR_DUMP_WIDTH() {
    return COR_DUMP_WIDTH;
 }
 
-static int get_COR_DUMP_MODE() {
+static int CORlogGetDumpMode() {
    const char* COR_DUMP_MODE_string = ::getenv("COR_DUMP_MODE");
    if (COR_DUMP_MODE_string == NULL) {
       return 0;
@@ -783,8 +783,8 @@ void CORlog::dump(const char* module, const void* pData, int nbytes) const {
    //const char COR_MODULE[] = "CORlog";
    //COR_FUNCTION(CORlog::dump);
    static const char Hex[] = "0123456789abcdef?";
-   static int s_COR_DUMP_WIDTH = ::get_COR_DUMP_WIDTH();
-   static int s_COR_DUMP_MODE  = ::get_COR_DUMP_MODE();
+   static int s_COR_DUMP_WIDTH = ::CORlogGetDumpWidth();
+   static int s_COR_DUMP_MODE  = ::CORlogGetDumpMode();
    if (nbytes <= 0 || pData == NULL) { return; }
    const unsigned char* data = (const unsigned char*)pData;
    char HexBuf[3 * s_Max_COR_DUMP_WIDTH + 16];

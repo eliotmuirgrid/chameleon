@@ -22,7 +22,7 @@
 
 // Rotation Primitives
 
-static void Balance1(CORavlTreePlace& p, bool& h)
+static void CORmapBalance1(CORavlTreePlace& p, bool& h)
 {
    CORavlTreePlace p1;
    CORavlTreePlace p2;
@@ -118,7 +118,7 @@ static void Balance1(CORavlTreePlace& p, bool& h)
    }
 }
 
-static void Balance2(CORavlTreePlace& p, bool& h)
+static void CORmapBalance2(CORavlTreePlace& p, bool& h)
 {
    CORavlTreePlace p1;
    CORavlTreePlace p2;
@@ -212,19 +212,19 @@ static void Balance2(CORavlTreePlace& p, bool& h)
    }
 }
 
-static bool Del(CORavlTreePlace& r, CORavlTreePlace& q, bool& h)
+static bool CORmapDel(CORavlTreePlace& r, CORavlTreePlace& q, bool& h)
 {
    if (r->Right)
    {
       // now going Right until we can't
-      bool res = Del(r->Right, q, h);
+      bool res = CORmapDel(r->Right, q, h);
       if (q->Left == r)
       {
          if (h)
-            Balance2(q->Left, h);
+            CORmapBalance2(q->Left, h);
       }
       else if (h)
-         Balance2(r, h);
+         CORmapBalance2(r, h);
       return res;
    }
    else
@@ -750,10 +750,10 @@ bool CORavlTreeBase::zapIt(CORavlTreeBaseContext& Context, // path down tree to 
       else  // nothing either side - ok this is a pain - recurse !!
       {
          kill_node = p;
-         result = Del(p->Left, p, Higher); // copy of killed node. Can result ever be false?!?
+         result = CORmapDel(p->Left, p, Higher); // copy of killed node. Can result ever be false?!?
          CurrNode = p;
          if (Higher)
-            Balance1(CurrNode, Higher);
+            CORmapBalance1(CurrNode, Higher);
       }
       destroyItem(kill_node);
    }
@@ -761,13 +761,13 @@ bool CORavlTreeBase::zapIt(CORavlTreeBaseContext& Context, // path down tree to 
    {
       result = zapIt(Context, CurrNode->Left, Higher);
       if (Higher)
-         Balance1(CurrNode, Higher);
+         CORmapBalance1(CurrNode, Higher);
    }
    else if (CurrNode->Right == Context.stack[Context.stack_place])
    {
       result = zapIt(Context, CurrNode->Right, Higher);
       if (Higher)
-         Balance2(CurrNode, Higher);
+         CORmapBalance2(CurrNode, Higher);
    }
    else
    {
@@ -796,13 +796,13 @@ bool CORavlTreeBase::zapIt(const void* Key,  // search for a Key
    {
       result = zapIt(Key, CurrNode->Left, Higher);
       if (Higher)
-         Balance1(CurrNode, Higher);
+         CORmapBalance1(CurrNode, Higher);
    }
    else if (comparism > 0)
    {
       result = zapIt(Key, CurrNode->Right, Higher);
       if (Higher)
-         Balance2(CurrNode, Higher);
+         CORmapBalance2(CurrNode, Higher);
    }
    else
    {
@@ -828,10 +828,10 @@ bool CORavlTreeBase::zapIt(const void* Key,  // search for a Key
       else  // nothing either side - ok this is a pain - recurse !!
       {
          kill_node = p;
-         result = Del(p->Left, p, Higher); // copy of killed node. Can result ever be false?!?
+         result = CORmapDel(p->Left, p, Higher); // copy of killed node. Can result ever be false?!?
          CurrNode = p;
          if (Higher)
-            Balance1(CurrNode, Higher);
+            CORmapBalance1(CurrNode, Higher);
       }
       destroyItem(kill_node);
    }

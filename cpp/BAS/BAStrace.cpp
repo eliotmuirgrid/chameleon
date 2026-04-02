@@ -23,7 +23,7 @@ BAS_TRACE_INIT;
 #include <string.h>
 #include <pthread.h>
 
-BASmutex s_LogMutex;
+BASpass s_TracePass;
 
 BASstream BAStrace(new BASsinkStandardOut(), false);  // purposely leaked.
 
@@ -105,7 +105,7 @@ bool BASloggingEnabled(const char* ModuleName, int* pResult){
 
 BASraiiFunc::BASraiiFunc(const char* Name, const char* pModule, int Line, bool Trace) : m_pModule(pModule), m_pName(Name), m_Trace(Trace) {
    if (Trace){
-      BASlocker Lock(s_LogMutex);
+      BASpassHold tracePassHold(s_TracePass);
       BAStimeStamp(pModule); BAStrace << ">" << Name << " Line:" << Line;
       s_BASindentLevel++;
    }
@@ -113,7 +113,7 @@ BASraiiFunc::BASraiiFunc(const char* Name, const char* pModule, int Line, bool T
 
 BASraiiFunc::BASraiiFunc(const char* Name, const char* pModule, int Line, const void* pInstance, bool Trace) : m_pModule(pModule), m_pName(Name), m_Trace(Trace) {
    if (Trace){
-      BASlocker Lock(s_LogMutex);
+      BASpassHold tracePassHold(s_TracePass);
       BAStimeStamp(pModule); BAStrace << ">" << Name << " Line:" << Line << " this=" << pInstance;
       s_BASindentLevel++;
    }
@@ -122,7 +122,7 @@ BASraiiFunc::BASraiiFunc(const char* Name, const char* pModule, int Line, const 
 BASraiiFunc::~BASraiiFunc(){
    if (m_Trace){
       s_BASindentLevel--;
-      BASlocker Lock(s_LogMutex);
+      BASpassHold tracePassHold(s_TracePass);
       BAStimeStamp(m_pModule); BAStrace << "<" << m_pName;
    }
 }

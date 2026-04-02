@@ -19,7 +19,7 @@ COR_LOG_MODULE;
 
 #include <string.h>
 
-static void adjustRangeForByte2(const unsigned char LeadByte, unsigned int* pLower, unsigned int* pUpper) {
+static void CORvarAdjustRangeForByte2(const unsigned char LeadByte, unsigned int* pLower, unsigned int* pUpper) {
 
   /* Syntax of valid UTF-8 Byte Sequences found at https://tools.ietf.org/html/rfc3629#section-4
    * which is why this range shifting must be done.
@@ -48,8 +48,8 @@ static void adjustRangeForByte2(const unsigned char LeadByte, unsigned int* pLow
    }
 }
 
-static signed int checkNextChars(int HowMany, const unsigned char FirstByte, const char* Source, int SourceIndex, char* Buffer, unsigned int* pBufferCount) {
-   COR_FUNCTION(checkNextChars);
+static signed int CORvarCheckNextChars(int HowMany, const unsigned char FirstByte, const char* Source, int SourceIndex, char* Buffer, unsigned int* pBufferCount) {
+   COR_FUNCTION(CORvarCheckNextChars);
    unsigned int& BufferCount = *pBufferCount;
    unsigned char Two =   Source[SourceIndex + 1];
    unsigned char Three = Source[SourceIndex + 2];
@@ -74,7 +74,7 @@ static signed int checkNextChars(int HowMany, const unsigned char FirstByte, con
          }
          break;
       case 2:
-         adjustRangeForByte2(FirstByte, &Lower2, &Upper2);
+         CORvarAdjustRangeForByte2(FirstByte, &Lower2, &Upper2);
          if ( (Lower2  <= Two && Two <= Upper2) &&
             (Lower <= Three && Three <= Upper) ) {
                Buffer[BufferCount++] = FirstByte;
@@ -87,7 +87,7 @@ static signed int checkNextChars(int HowMany, const unsigned char FirstByte, con
          }
          break;
       case 3:
-         adjustRangeForByte2(FirstByte, &Lower2, &Upper2);
+         CORvarAdjustRangeForByte2(FirstByte, &Lower2, &Upper2);
          if ( (Lower2  <= Two && Two <= Upper2)  &&
             (Lower <= Three && Three <= Upper) &&
             (Lower <= Four  && Four  <= Upper) ) {
@@ -171,17 +171,17 @@ void CORappendJsonString(CORstring* Out, const CORstring& In, bool WithQuotes, i
                           } else if (0xC2 <= Ch && Ch <= 0xDF) {
                              unsigned int NumNum = (unsigned int)Ch;
                              COR_TRC(Ch  << " (int value is: " << NumNum << ")" << " looks like the first byte of a two-byte sequence");
-                             i += checkNextChars(1, Ch, p, i, Buffer, &BufferCount);
+                             i += CORvarCheckNextChars(1, Ch, p, i, Buffer, &BufferCount);
 
                           } else if (0xE0 <= Ch && Ch <= 0xEF) {
                              unsigned int NumNum = (unsigned int)Ch;
                              COR_TRC(Ch  << " (int value is: " << NumNum << ")" << " looks like the first byte of a three-byte sequence");
-                             i += checkNextChars(2, Ch, p, i, Buffer, &BufferCount);
+                             i += CORvarCheckNextChars(2, Ch, p, i, Buffer, &BufferCount);
 
                           } else {
                              unsigned int NumNum = (unsigned int)Ch;
                              COR_TRC(Ch  << " (int value is: " << NumNum << ")" << " looks like the first byte of a four-byte sequence");
-                             i += checkNextChars(3, Ch, p, i, Buffer, &BufferCount);
+                             i += CORvarCheckNextChars(3, Ch, p, i, Buffer, &BufferCount);
                           }
 
                        } else { // Emit as \xXXX
@@ -548,7 +548,7 @@ CORstring CORvar::getString(int idx) const
    return CORstring();
 }
 
-static void indent(CORstring* out, int N)
+static void CORvarIndent(CORstring* out, int N)
 {
    const int INDENT = 4;
    const int max = 1000;
@@ -611,16 +611,16 @@ CORstring CORvar::json(int N, int encoding) const
          if (u_.vec_ && u_.vec_->size() > 0) {
             bool isFirst = true;
             s += '[';
-            if (N) { indent(&s,N); }
+            if (N) { CORvarIndent(&s,N); }
             for (CORvarVec::iterator it = u_.vec_->begin(); it != u_.vec_->end(); ++it) {
                if (!isFirst) {
                   s += ',';
-                  if (N) { indent(&s,N); }
+                  if (N) { CORvarIndent(&s,N); }
                }
                isFirst = false;
                s.append(it->json(N>0 ? N+1 : 0, encoding));
             }
-            if (N) { indent(&s,N-1); }
+            if (N) { CORvarIndent(&s,N-1); }
             s += ']';
          } else {
             // empty vector
@@ -633,11 +633,11 @@ CORstring CORvar::json(int N, int encoding) const
          if (u_.map_ && u_.map_->size() > 0) {
             bool isFirst = true;
             s += '{';
-            if (N) { indent(&s,N); }
+            if (N) { CORvarIndent(&s,N); }
             for (CORvarMap::iterator it = u_.map_->begin(); it != u_.map_->end(); ++it) {
                if (!isFirst) {
                   s += ',';
-                  if (N) { indent(&s,N); }
+                  if (N) { CORvarIndent(&s,N); }
                }
                isFirst = false;
                CORappendJsonString(&s, it->first, true, encoding);
@@ -645,7 +645,7 @@ CORstring CORvar::json(int N, int encoding) const
                if (N) s += ' ';
                s.append(it->second.json(N>0 ? N+1 : 0, encoding));
             }
-            if (N) { indent(&s,N-1); }
+            if (N) { CORvarIndent(&s,N-1); }
             s += '}';
          } else {
             // empty map
@@ -1006,7 +1006,7 @@ CORvar& CORvar::setType(CORvar::Type type)
 
 // Note: String payload can be binary.
 // Ordering is not lexical. "Z" is less than "ABC" due to shorter length.
-static inline int fastBinaryStringCompare(const CORstring& A, const CORstring& B) {
+static inline int CORvarFastBinaryStringCompare(const CORstring& A, const CORstring& B) {
    const int sizeA = A.size();
    const int sizeB = B.size();
    if (sizeA == sizeB) {
@@ -1024,7 +1024,7 @@ int CORvar::fastCompare(const CORvar& A, const CORvar& B) {
    case String: {
          const CORstring* pA = (CORstring*)A.u_.colstring_;
          const CORstring* pB = (CORstring*)B.u_.colstring_;
-         return fastBinaryStringCompare(*pA, *pB);
+         return CORvarFastBinaryStringCompare(*pA, *pB);
       }
    case Boolean:
    case Integer:
@@ -1047,7 +1047,7 @@ int CORvar::fastCompare(const CORvar& A, const CORvar& B) {
          CORvarMap::const_iterator itrA=A.map().begin(), itrB=B.map().begin(), endA=A.map().end();
          for (; itrA!=endA ; ++itrA, ++itrB) {
             // Assume that Map keys are binary
-            int ret = fastBinaryStringCompare(itrA->first, itrB->first);
+            int ret = CORvarFastBinaryStringCompare(itrA->first, itrB->first);
             if (ret) { return ret; }
             ret = fastCompare(itrA->second, itrB->second);
             if (ret) { return ret; }
@@ -1069,15 +1069,15 @@ CORostream& operator<<(CORostream& Stream, const CORvar& Var){
    enum { s_IsLitteEndianMachine = 0 };
 #endif
 
-static inline void AppendByte(CORstring* s, unsigned char v) {
+static inline void CORvarAppendByte(CORstring* s, unsigned char v) {
    *s += (char)v;
 }
 
-static void AppendVarInt(CORstring* s, CORint64 v)
+static void CORvarAppendVarInt(CORstring* s, CORint64 v)
 {
    char Buffer[16];
    if (v <= 0x7f) {
-      AppendByte(s, (unsigned char)(unsigned)v);
+      CORvarAppendByte(s, (unsigned char)(unsigned)v);
    } else {
       unsigned CORint64 u = v;
       int i = 0;
@@ -1091,7 +1091,7 @@ static void AppendVarInt(CORstring* s, CORint64 v)
    }
 }
 
-static void AppendDoubleLE(CORstring* s, double v)
+static void CORvarAppendDoubleLE(CORstring* s, double v)
 {
    char* p = (char*)&v;
    char buf[8];
@@ -1121,19 +1121,19 @@ void CORvar::toBinary(CORstring* Out) const
 {
    switch (type_) {
    case None:
-      AppendByte(Out, (unsigned char)None);
+      CORvarAppendByte(Out, (unsigned char)None);
       break;
    case String: {
          const CORstring& str = *(CORstring*)u_.colstring_;
          const int strSize = str.size();
          if (strSize <= 14) {
             // Lengths of 0 - 14 can be stored in the hi bits of the Type byte.
-            AppendByte(Out, (unsigned char)String | (strSize << 4));
+            CORvarAppendByte(Out, (unsigned char)String | (strSize << 4));
          } else {
             // A string length of 15 in the hi bits means "read the
             // string length from the varint that follows the Type byte."
-            AppendByte(Out, (unsigned char)String | 0xf0);
-            AppendVarInt(Out, str.size());  // string length
+            CORvarAppendByte(Out, (unsigned char)String | 0xf0);
+            CORvarAppendVarInt(Out, str.size());  // string length
          }
          Out->append(str);                  // string without nil
       }
@@ -1151,25 +1151,25 @@ void CORvar::toBinary(CORstring* Out) const
          if (AbsoluteValue <= 14) {
             // Absolute Values of 0 - 14 can be stored in the hi bits of
             // the Type byte.
-            AppendByte(Out, Type | ((unsigned)AbsoluteValue << 4));
+            CORvarAppendByte(Out, Type | ((unsigned)AbsoluteValue << 4));
          } else {
             // a value of 15 in the hi bits means "read the absolute value from
             // the varint that follows the Type byte."
-            AppendByte(Out, Type | 0xf0);
-            AppendVarInt(Out, AbsoluteValue);
+            CORvarAppendByte(Out, Type | 0xf0);
+            CORvarAppendVarInt(Out, AbsoluteValue);
          }
       }
       break;
    case Boolean:
       if (u_.int_) {
-         AppendByte(Out, (unsigned char)BooleanTrue);
+         CORvarAppendByte(Out, (unsigned char)BooleanTrue);
       } else {
-         AppendByte(Out, (unsigned char)BooleanFalse);
+         CORvarAppendByte(Out, (unsigned char)BooleanFalse);
       }
       break;
    case Double:
-      AppendByte(Out, (unsigned char)Double);
-      AppendDoubleLE(Out, u_.double_);
+      CORvarAppendByte(Out, (unsigned char)Double);
+      CORvarAppendDoubleLE(Out, u_.double_);
       break;
    case Array:
       if (u_.vec_ && u_.vec_->size() > 0) {
@@ -1177,11 +1177,11 @@ void CORvar::toBinary(CORstring* Out) const
          const unsigned NumElements = u_.vec_->size();
          if (NumElements <= 14) {
             // sizes 14 or smaller stored in hi bits of type byte
-            AppendByte(Out, (unsigned char)Array | (NumElements << 4));
+            CORvarAppendByte(Out, (unsigned char)Array | (NumElements << 4));
          } else {
             // type byte hi bits set to 15 meaning varint length following.
-            AppendByte(Out, (unsigned char)Array | 0xf0);
-            AppendVarInt(Out, NumElements); // varint number of elements
+            CORvarAppendByte(Out, (unsigned char)Array | 0xf0);
+            CORvarAppendVarInt(Out, NumElements); // varint number of elements
          }
          // append each element
          for (CORvarVec::iterator it = u_.vec_->begin(); it != u_.vec_->end(); ++it) {
@@ -1190,7 +1190,7 @@ void CORvar::toBinary(CORstring* Out) const
       } else {
          // This is an empty vector.
          // Hi bits of type byte are set to 0 indicating no elements following.
-         AppendByte(Out, (unsigned char)Array);
+         CORvarAppendByte(Out, (unsigned char)Array);
       }
       break;
    case Map:
@@ -1199,22 +1199,22 @@ void CORvar::toBinary(CORstring* Out) const
          const unsigned NumPairs = u_.map_->size();
          if (NumPairs <= 14) {
             // sizes 14 or smaller stored in hi bits of type byte
-            AppendByte(Out, (unsigned char)Map | (NumPairs << 4));
+            CORvarAppendByte(Out, (unsigned char)Map | (NumPairs << 4));
          } else {
             // type byte hi bits set to 15 meaning varint length following.
-            AppendByte(Out, (unsigned char)Map | 0xf0);
-            AppendVarInt(Out, NumPairs); // varint number of key/value pairs
+            CORvarAppendByte(Out, (unsigned char)Map | 0xf0);
+            CORvarAppendVarInt(Out, NumPairs); // varint number of key/value pairs
          }
          // append each key/value pair
          for (CORvarMap::iterator it = u_.map_->begin(); it != u_.map_->end(); ++it) {
-            AppendVarInt(Out, it->first.size()); // key length
+            CORvarAppendVarInt(Out, it->first.size()); // key length
             Out->append(it->first);              // key string without nil
             it->second.toBinary(Out);            // value
          }
       } else {
          // This is an empty map.
          // Hi bits of type byte are set to 0 indicating no pairs following.
-         AppendByte(Out, (unsigned char)Map);
+         CORvarAppendByte(Out, (unsigned char)Map);
       }
       break;
    default:

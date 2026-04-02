@@ -22,7 +22,7 @@
 
 #include <BAS/BASstream.h>
 #include <stdio.h>
-#include <BAS/BASmutex.h>
+#include <BAS/BASpass.h>
 
 class BAScommandLine;
 
@@ -37,7 +37,7 @@ extern BASstream BAStrace;
 
 void BAStimeStamp(const char* pModule);
 void BASmilliSeconds();
-extern BASmutex s_LogMutex;
+extern BASpass s_TracePass;
 
 class BASmodule{
 public:
@@ -53,7 +53,7 @@ bool BASloggingEnabled(const char* ModuleName, int* pResult);
    do {\
       static int BASdoLog;\
       if (BASdoLog > 0 || (BASdoLog == 0 && BASloggingEnabled(sModule.ModuleName, &BASdoLog)) ){\
-         BASlocker Lock(s_LogMutex);\
+         BASpassHold tracePassHold(s_TracePass);\
          BAStimeStamp(sModule.ModuleName); BAStrace << X;\
       }\
    } while(0)

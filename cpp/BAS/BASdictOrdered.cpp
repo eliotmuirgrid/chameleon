@@ -51,8 +51,8 @@ int BASavlDifference(BASavlNode* pNode){
    return BASavlChildHeight(pNode->m_pLeft) - BASavlChildHeight(pNode->m_pRight);
 }
 
-static BASavlNode* rr_rotat(BASavlNode* pParent) {
-   BAS_FUNCTION(rr_rotate);
+static BASavlNode* BASavlRotateRR(BASavlNode* pParent) {
+   BAS_FUNCTION(BASavlRotateRR);
    BASavlNode* t;
    t = pParent->m_pRight;
    pParent->m_pRight = t->m_pLeft;
@@ -62,8 +62,8 @@ static BASavlNode* rr_rotat(BASavlNode* pParent) {
    return t;
 }
 
-static BASavlNode* ll_rotat(BASavlNode* pParent) {
-   BAS_FUNCTION(ll_rotate);
+static BASavlNode* BASavlRotateLL(BASavlNode* pParent) {
+   BAS_FUNCTION(BASavlRotateLL);
    BASavlNode* t;
    t = pParent->m_pLeft;
    pParent->m_pLeft = t->m_pRight;
@@ -73,20 +73,20 @@ static BASavlNode* ll_rotat(BASavlNode* pParent) {
    return t;
 }
 
-static BASavlNode* lr_rotat(BASavlNode* pParent) {
-   BAS_FUNCTION(lr_rotat);
+static BASavlNode* BASavlRotateLR(BASavlNode* pParent) {
+   BAS_FUNCTION(BASavlRotateLR);
    BASavlNode* t;
    t = pParent->m_pLeft;
-   pParent->m_pLeft = rr_rotat(t);
-   return ll_rotat(pParent);
+   pParent->m_pLeft = BASavlRotateRR(t);
+   return BASavlRotateLL(pParent);
 }
 
-static BASavlNode* rl_rotat(BASavlNode* pParent) {
-   BAS_FUNCTION(rl_rotat);
+static BASavlNode* BASavlRotateRL(BASavlNode* pParent) {
+   BAS_FUNCTION(BASavlRotateRL);
    BASavlNode* t;
    t = pParent->m_pRight;
-   pParent->m_pRight = ll_rotat(t);
-   return rr_rotat(pParent);
+   pParent->m_pRight = BASavlRotateLL(t);
+   return BASavlRotateRR(pParent);
 }
 
 BASavlNode* BASavlBalance(BASavlNode* pNode) {
@@ -94,14 +94,14 @@ BASavlNode* BASavlBalance(BASavlNode* pNode) {
    int Balance = BASavlDifference(pNode);
    if (Balance > 1) {
       if (BASavlDifference(pNode->m_pLeft) > 0)
-         pNode = ll_rotat(pNode);
+         pNode = BASavlRotateLL(pNode);
       else
-         pNode = lr_rotat(pNode);
+         pNode = BASavlRotateLR(pNode);
    } else if (Balance < -1) {
       if (BASavlDifference(pNode->m_pRight) > 0)
-         pNode = rl_rotat(pNode);
+         pNode = BASavlRotateRL(pNode);
       else
-         pNode = rr_rotat(pNode);
+         pNode = BASavlRotateRR(pNode);
    }
    return pNode;
 }

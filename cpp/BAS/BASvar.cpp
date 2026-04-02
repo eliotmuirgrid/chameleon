@@ -36,8 +36,8 @@ BASvar::BASvar(const BASstring& Value){
    m_Type = BASvar::String;
 }
 
-static void CleanVar(BASvar::Variant* pVariant, BASvar::Type* pType){
-   BAS_FUNCTION(CleanVar);
+static void BASvarClean(BASvar::Variant* pVariant, BASvar::Type* pType){
+   BAS_FUNCTION(BASvarClean);
    BAS_VAR(*pType);
    switch(*pType){
    case BASvar::String:
@@ -63,7 +63,7 @@ static void CleanVar(BASvar::Variant* pVariant, BASvar::Type* pType){
 
 BASvar::~BASvar(){
    BAS_METHOD(BASvar::~BASvar);
-   CleanVar(&m_Data, &m_Type);
+   BASvarClean(&m_Data, &m_Type);
 }
 
 BASvar& BASvar::operator[](int i){
@@ -133,7 +133,7 @@ BASvar& BASvar::operator[](const BASstring& Key){
 
 BASvar& BASvar::operator=(int Value){
    BAS_METHOD(BASvar::operator=int);
-   CleanVar(&m_Data, &m_Type);
+   BASvarClean(&m_Data, &m_Type);
    m_Data.Int = Value;
    m_Type = BASvar::Integer;
    return *this;
@@ -141,7 +141,7 @@ BASvar& BASvar::operator=(int Value){
 
 BASvar& BASvar::operator=(double Value){
    BAS_METHOD(BASvar::operator=int);
-   CleanVar(&m_Data, &m_Type);
+   BASvarClean(&m_Data, &m_Type);
    m_Data.Double = Value;
    m_Type = BASvar::Double;
    return *this;
@@ -149,7 +149,7 @@ BASvar& BASvar::operator=(double Value){
 
 BASvar& BASvar::operator=(const BASstring& Value){
    BAS_METHOD(BASvar::operator=int);
-   CleanVar(&m_Data, &m_Type);
+   BASvarClean(&m_Data, &m_Type);
    m_Data.pString = new BASstring(Value);
    m_Type = BASvar::String;
    return *this;

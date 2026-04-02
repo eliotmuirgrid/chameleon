@@ -55,7 +55,7 @@ void CORsleep(int TimeOutInMilliSeconds ){
 #endif
 }
 
-static int getVarNameLength(const char* Position){
+static int CORutilsGetVarNameLength(const char* Position){
    int VarLength = 0;
    while (Position[0] && Position[0] != '}'){
       ++VarLength;
@@ -71,7 +71,7 @@ CORstring CORexpandEnvironmentVariables(const CORstring& Original){
       while (char Ch = Position[0]){
          if (Ch == '$'){
             int VarNameLength = 0;
-            if (Position[1] == '{' && ((VarNameLength = getVarNameLength(Position+2)) >= 0)) {
+            if (Position[1] == '{' && ((VarNameLength = CORutilsGetVarNameLength(Position+2)) >= 0)) {
                CORstring VarName = CORstring(Position+2, VarNameLength);
                if (const char* VarValue = ::getenv(VarName.c_str())){
                   Expanded += VarValue;
@@ -95,7 +95,7 @@ CORstring CORexpandEnvironmentVariablesUsingCache(const CORstring& Original, con
       while (char Ch = Position[0]){
          if (Ch == '$'){
             int VarNameLength = 0;
-            if (Position[1] == '{' && ((VarNameLength = getVarNameLength(Position+2)) >= 0)) {
+            if (Position[1] == '{' && ((VarNameLength = CORutilsGetVarNameLength(Position+2)) >= 0)) {
                CORstring VarName = CORstring(Position+2, VarNameLength);
                COR_VAR(VarName);
                if (CachedVars.exists(VarName)){
@@ -113,7 +113,7 @@ CORstring CORexpandEnvironmentVariablesUsingCache(const CORstring& Original, con
 }
 
 // pattern is text, except that it contains question marks that match any character.
-static bool subpatternMatches(const char* Pattern, const char* Module, int Length){
+static bool CORutilsSubpatternMatches(const char* Pattern, const char* Module, int Length){
    for (; Length && *Pattern && *Module; ++Pattern, ++Module, --Length){
       if (*Pattern != *Module && *Pattern != '?'){
          return false;
@@ -147,7 +147,7 @@ static bool CORsubpatternNotFound(const char* pPattern, bool TargetFound, bool* 
 
 static bool CORtargetFound(const char*& pTarget, const char*& pModule, int TargetLength, bool IsTargetAtEnd) {
    while(*pModule) {
-      if(subpatternMatches(pTarget, pModule, TargetLength) && (!IsTargetAtEnd || CORisNullByte(&pModule[TargetLength]))) {
+      if(CORutilsSubpatternMatches(pTarget, pModule, TargetLength) && (!IsTargetAtEnd || CORisNullByte(&pModule[TargetLength]))) {
          // Target pattern found in Module
          pModule += TargetLength;
          return true;

@@ -41,7 +41,7 @@ COR_LOG_MODULE;
 #include <COR/CORtimeStamp.h>
 
 #ifdef _WIN32
-static inline void FileTimeToUnixTime(CORuint64* result, const FILETIME* in) {
+static inline void CORtimeStampFileTimeToUnixTime(CORuint64* result, const FILETIME* in) {
    const CORuint64 DELTA_EPOCH_IN_USEC = 11644473600000000 /*LL*/;
    CORuint64 v = in->dwHighDateTime;
    v = v << 32;
@@ -65,7 +65,7 @@ void CORcurrentTimeStamp(CORtimeStamp* out) {
    SystemTimeToFileTime(&st, &ftime);
 # endif
    CORuint64 now = 0;
-   FileTimeToUnixTime(&now, &ftime);
+   CORtimeStampFileTimeToUnixTime(&now, &ftime);
    out->tv_sec  = now / 1000000;
    out->tv_usec = now % 1000000;
 #else

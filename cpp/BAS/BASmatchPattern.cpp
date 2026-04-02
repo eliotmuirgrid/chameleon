@@ -25,8 +25,8 @@ static bool BASmatchUntilChar(const char** ppTarget, char Char){
    return Result;
 }
 
-static bool matchSegment(const char* pTarget, const char* pPattern){
-   //BAS_FUNCTION(matchSegment);
+static bool BASmatchSegment(const char* pTarget, const char* pPattern){
+   //BAS_FUNCTION(BASmatchSegment);
    // BAS_VAR2(pTarget, pPattern);
    const char* i= pPattern;
    const char* j= pTarget;
@@ -66,18 +66,18 @@ bool BASmatchPattern(const char* pTarget, const char* pPattern){
     //  BAS_VAR(pToken);
       if (*pToken == '+'){
          pToken++;
-         if (matchSegment(pTarget, pToken)){
+         if (BASmatchSegment(pTarget, pToken)){
       //      BAS_TRC("Positive Match");
             Match = true;
          }
       } else if (*pToken == '-'){
          pToken++;
-         if (matchSegment(pTarget, pToken)){
+         if (BASmatchSegment(pTarget, pToken)){
       //      BAS_TRC("Negative match removed");
             Match = false;
          }
       } else {
-         if (matchSegment(pTarget, pToken)){
+         if (BASmatchSegment(pTarget, pToken)){
       //      BAS_TRC("Positive match");
             Match = true;
          }

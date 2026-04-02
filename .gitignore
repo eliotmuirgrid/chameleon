@@ -28,3 +28,7 @@ Thumbs.db
 # Temporary files from C++ compilation
 *.d
 *.o
+
+# Default C++ test executables (make/makefile.common uses TARGET ?= test)
+cpp/**/test
+cpp/**/test.exe
