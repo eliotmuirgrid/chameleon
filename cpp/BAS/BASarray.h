@@ -10,7 +10,7 @@
 // 3. RESIZABLE: If you run out of lockers, the wall "expands" automatically 
 //    to make room for more, keeping all your gear in one continuous row.
 //
-// Example usage (illustrative; adapt types and BASstream sink as needed). Locals use
+// Example usage (illustrative; adapt types and BASstream destination as needed). Locals use
 // leading capitals to match project style.
 //
 //   // Start empty, then pre-size if you already know roughly how many items are coming.

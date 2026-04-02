@@ -7,34 +7,32 @@
 //-------------------------------------------------------
 
 #include <BAS/BASstream.h>
-#include <BAS/BASsink.h>
-#include <BAS/BASsinkStandardOut.h>
+#include <BAS/BASdestination.h>
+#include <BAS/BASdestinationStandardOut.h>
 
 #include <string.h>
 #include <stdio.h>
 
-BASstream BASout(new BASsinkStandardOut(), true);
+BASstream BASout(new BASdestinationStandardOut(), true);
 
-BASstream::BASstream(BASsink& Sink) : m_pSink(&Sink), m_IsOwner(false){
-
+BASstream::BASstream(BASdestination& Destination) : m_pDestination(&Destination), m_IsOwner(false) {
 }
 
-BASstream::BASstream(BASsink* pSink, bool IsOwner) : m_pSink(pSink), m_IsOwner(IsOwner) {
-
+BASstream::BASstream(BASdestination* pDestination, bool IsOwner) : m_pDestination(pDestination), m_IsOwner(IsOwner) {
 }
 
-BASstream::~BASstream(){
-   if (m_IsOwner){
-      delete m_pSink;
+BASstream::~BASstream() {
+   if (m_IsOwner) {
+      delete m_pDestination;
    }
 }
 
-BASsink* BASstream::sink(){
-   return m_pSink;
+BASdestination* BASstream::destination() {
+   return m_pDestination;
 }
 
 BASstream& operator<<(BASstream& Stream, const char* pString){
-   Stream.sink()->write(pString, strlen(pString));
+   Stream.destination()->write(pString, strlen(pString));
    return Stream;
 }
 
@@ -42,15 +40,15 @@ BASstream& operator<<(BASstream& Stream, const char* pString){
 BASstream& operator<<(BASstream& Stream, int Number){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%d", Number);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
 BASstream& operator<<(BASstream& Stream, bool Value){
    if (Value){
-      Stream.sink()->write("true", 4);
+      Stream.destination()->write("true", 4);
    } else {
-      Stream.sink()->write("false", 5);
+      Stream.destination()->write("false", 5);
    }
    return Stream;
 }
@@ -58,28 +56,28 @@ BASstream& operator<<(BASstream& Stream, bool Value){
 BASstream& operator<<(BASstream& Stream, long Number){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%ld", Number);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
 BASstream& operator<<(BASstream& Stream, unsigned int Number){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%u", Number);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
 BASstream& operator<<(BASstream& Stream, unsigned long Number){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%lu", Number);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
 BASstream& operator<<(BASstream& Stream, double Number){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%f", Number);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
@@ -87,22 +85,22 @@ BASstream& operator<<(BASstream& Stream, double Number){
 BASstream& operator<<(BASstream& Stream, const void* pPointer){
    char Buffer[32];
    int Size = snprintf(Buffer, sizeof(Buffer), "%p", pPointer);
-   Stream.sink()->write(Buffer, Size);
+   Stream.destination()->write(Buffer, Size);
    return Stream;
 }
 
 BASstream& operator<<(BASstream& Stream, char Character){
-   Stream.sink()->write(&Character, 1);
+   Stream.destination()->write(&Character, 1);
    return Stream;
 }
 
 BASstream& newline(BASstream& Stream) {
-   Stream.sink()->write("\n", 1);
+   Stream.destination()->write("\n", 1);
    return Stream;
 }
 
 BASstream& flush(BASstream& Stream) {
-   Stream.sink()->flush();
+   Stream.destination()->flush();
    return Stream;
 }
 

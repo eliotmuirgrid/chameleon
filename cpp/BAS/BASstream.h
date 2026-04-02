@@ -7,19 +7,19 @@
 // Stream inteface like iostream
 //-------------------------------------------------------
 
-class BASsink;
+class BASdestination;
 
 class BASstream{
 public:
-   BASstream(BASsink& Sink);  // does not take ownership
-   BASstream(BASsink* pSink, bool IsOwner);
+   BASstream(BASdestination& Destination);  // does not take ownership
+   BASstream(BASdestination* pDestination, bool IsOwner);
    ~BASstream();
 
-   BASsink* sink();
-   
+   BASdestination* destination();
+
 private:
    bool m_IsOwner;
-   BASsink* m_pSink; 
+   BASdestination* m_pDestination;
 };
 
 BASstream& operator<<(BASstream& Stream, const char* pString);

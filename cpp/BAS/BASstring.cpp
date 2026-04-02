@@ -7,7 +7,7 @@
 //-------------------------------------------------------
 #include <BAS/BASstring.h>
 #include <BAS/BASstream.h>
-#include <BAS/BASsink.h>
+#include <BAS/BASdestination.h>
 
 // To get tracing working with BASstring one really has to do
 // it by calling the trace function directly since BAScommandLine
@@ -289,7 +289,7 @@ BASstring operator+(BAStextLiteral Lhs, const BASstring& Rhs) {
 }
 
 BASstream& operator<<(BASstream& Stream, const BASstring& String) {
-   Stream.sink()->write(String.data(), String.size());
+   Stream.destination()->write(String.data(), String.size());
    return Stream;
 }
 

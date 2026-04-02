@@ -10,7 +10,7 @@
 BAS_TRACE_INIT;
 
 #include <BAS/BAScommandLine.h>
-#include <BAS/BASsinkStandardOut.h>
+#include <BAS/BASdestinationStandardOut.h>
 #include <BAS/BASmatchPattern.h>
 
 #include <time.h>
@@ -25,7 +25,7 @@ BAS_TRACE_INIT;
 
 BASpass s_TracePass;
 
-BASstream BAStrace(new BASsinkStandardOut(), false);  // purposely leaked.
+BASstream BAStrace(new BASdestinationStandardOut(), false);  // purposely leaked.
 
 static thread_local int s_BASindentLevel=0;
 
@@ -63,7 +63,7 @@ void BAStimeStamp(const char* pModule){
    snprintf(Buffer, sizeof(Buffer), "%03i", ms);  // zero pad the millseconds
    BAStrace << Buffer << " " << (void*)BASthreadId() << " ";
    BAStrace << pModule << " ";  // TODO should output size.
-   BASwriteIndent(BAStrace.sink(), s_BASindentLevel);
+   BASwriteIndent(BAStrace.destination(), s_BASindentLevel);
 }
 
 BASmodule::BASmodule(const char* pFileName){
@@ -130,6 +130,6 @@ BASraiiFunc::~BASraiiFunc(){
 #define G ". . . . . . . . . . . . . . . . . . . . . . . . . "
 static const char* s_pIndent = G G G G G G G G G G G G G G G G G G G G G G G G G G G G G G;
 
-void BASwriteIndent(BASsink* pSink, int Level){
-   pSink->write(s_pIndent, Level*2);
+void BASwriteIndent(BASdestination* pDestination, int Level){
+   pDestination->write(s_pIndent, Level*2);
 }

@@ -2,24 +2,24 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir.  All rights reserved.
 //
-// BASsinkString
-// 
-// Sink which writes to A BASstring
+// BASdestinationString
+//
+// Destination which appends into a BASstring.
 //-------------------------------------------------------
 
-#include <BAS/BASsink.h>
+#include <BAS/BASdestination.h>
 #include <BAS/BASstring.h>
 
-class BASsinkString : public BASsink{
+class BASdestinationString : public BASdestination{
 public:
-   BASsinkString() {}
-   virtual ~BASsinkString() {}
+   BASdestinationString() {}
+   virtual ~BASdestinationString() {}
 
    virtual void write(const char* pData, int Size) { m_String.append(pData, Size); }
    virtual void flush() {}
 
    const BASstring& string() { return m_String; }
+
 private:
    BASstring m_String;
 };
-

@@ -82,5 +82,5 @@ private:
 
 #define BAS_METHOD(NAME) static int BASfOn; BASraiiFunc ggFFF(#NAME, sModule.ModuleName, __LINE__, this, (BASfOn > 0) || BASloggingEnabled(sModule.ModuleName, &BASfOn))
 
-void BASwriteIndent(BASsink* pSink, int Level);
+void BASwriteIndent(BASdestination* pDestination, int Level);
 
