@@ -4,7 +4,7 @@
 //
 // BASdestination
 //
-// Destination virtual interface (where BASstream output is written).
+// Destination virtual interface (where BASwriter output is written).
 //-------------------------------------------------------
 
 class BASdestination{

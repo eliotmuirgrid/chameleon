@@ -62,7 +62,7 @@
 //   b.clear();                            // length to zero, keep capacity
 //   b.zero();                             // release heap storage if any, back to empty
 //
-//   BASout << b << newline;               // stream output (needs BASstream overload in scope)
+//   BASout << b << newline;               // formatted output (needs BASwriter overload in scope)
 //
 // Technical summary:
 // - Small string optimization
@@ -76,7 +76,7 @@
 // - Keep storage separate from algorithms
 //-------------------------------------------------------
 
-class BASstream;
+class BASwriter;
 
 // Literal optimization.
 //
@@ -203,5 +203,5 @@ BASstring operator+(const char* pLhs, const BASstring& Rhs);
 BASstring operator+(const BASstring& Lhs, BAStextLiteral Rhs);
 BASstring operator+(BAStextLiteral Lhs, const BASstring& Rhs);
 
-// Stream output
-BASstream& operator<<(BASstream& Stream, const BASstring& String);
+// Writer output
+BASwriter& operator<<(BASwriter& Writer, const BASstring& String);

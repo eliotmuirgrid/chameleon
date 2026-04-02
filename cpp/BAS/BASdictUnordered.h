@@ -7,7 +7,7 @@
 // An unordered dictionary implemented as a hash table.
 //
 // As of yet no automatic resizing of the hash buckets.
-// You can stream the hash table against a BASstream ala:
+// You can print the hash table to a BASwriter ala:
 // BASdictUnordered<BASstring, int> Table(30);  // set bucket size of 30
 //
 // BAS_VAR(Table);
@@ -20,7 +20,7 @@
 #include <BAS/BASstring.h>
 #include <BAS/BASassert.h>
 
-class BASstream;
+class BASwriter;
 
 // First we define our hash function
 unsigned long BASdjb2Hash(const char* str, int Size);
@@ -33,7 +33,7 @@ class BASitem{
 public:
    BASitem() : m_pNext(0) {}
    virtual ~BASitem() {}
-   virtual void show(BASstream& Stream) const=0;
+   virtual void show(BASwriter& Writer) const=0;
    BASitem* m_pNext;
 };
 
@@ -43,7 +43,7 @@ public:
    virtual ~BAShashTableBase();
    int size() const { return m_Size; }
    void clear();
-   void printOn(BASstream& Stream) const;
+   void printOn(BASwriter& Writer) const;
    int bucketCount() const { return m_BucketCount; }
    void setBucketCount(int NewCount);
 protected:
@@ -69,7 +69,7 @@ public:
    void end() ;
    void operator++();
    bool operator!=(const BAShashTableBaseIterator& Rhs) const;
-   void show(BASstream& Stream) const;
+   void show(BASwriter& Writer) const;
 protected:
   BASitem* m_pItem;
 private:
@@ -91,7 +91,7 @@ public:
       BASitemT(const KType& Key, const VType& Value) : m_Key(Key), m_Value(Value) {}
       BASitemT(const KType& Key) : m_Key(Key) {}
       virtual ~BASitemT() {}
-      virtual void show(BASstream& Stream) const { Stream << m_Key << " = " << m_Value;}
+      virtual void show(BASwriter& Writer) const { Writer << m_Key << " = " << m_Value;}
       KType m_Key;
       VType m_Value;
    };
@@ -147,4 +147,4 @@ private:
 template<typename KType, typename VType>
 using BAShashTable = BASdictUnordered<KType, VType>;
 
-BASstream& operator<<(BASstream& Stream, const BAShashTableBase& Table);
+BASwriter& operator<<(BASwriter& Writer, const BAShashTableBase& Table);

@@ -12,7 +12,7 @@
 #include <BAS/BAScommandLine.h>
 #include <BAS/BASdictOrdered.h>
 #include <BAS/BASdictUnordered.h>
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 #include <BAS/BAStrace.h>
 #include <BAS/BAScall.h>
 #include <BAS/BASstring.h>
@@ -64,7 +64,7 @@ int main(int argc, const char** argv) {
    BASrunGreeting(pMethodCall);
    delete pMethodCall;
 
-   BASout << "BASstream operator<< on dictionaries (same keys, different layouts):" << newline;
+   BASout << "BASwriter operator<< on dictionaries (same keys, different layouts):" << newline;
 
    BASdictUnordered<BASstring, int> Unordered(8);
    Unordered[BASstring("gamma")] = 3;

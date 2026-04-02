@@ -12,7 +12,7 @@
 //-------------------------------------------------------
 
 #include <BAS/BASassert.h>
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 
 class BASstring;
 
@@ -136,7 +136,7 @@ private:
    int              m_Size;
 };
 
-BASstream& operator<<(BASstream& Stream, const BASavlNode& Node);
+BASwriter& operator<<(BASwriter& Writer, const BASavlNode& Node);
 
 // Default ordering for built-in number types. For other key types (e.g. BASstring),
 // this project defines BASsCompare in a .cpp file; for your own key type, add one
@@ -298,18 +298,18 @@ public:
    BASavlConstIteratorT<KType, VType> cend()   const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
 
    // Human-readable dump: size, then key = value lines in ascending key order (requires << for KType and VType).
-   void printOn(BASstream& Stream) const {
-      Stream << "Size: " << size() << newline;
+   void printOn(BASwriter& Writer) const {
+      Writer << "Size: " << size() << newline;
       for (BASavlConstIteratorT<KType, VType> Iter = cbegin(); Iter != cend(); ++Iter) {
-         Stream << Iter.key() << " = " << Iter.value() << newline;
+         Writer << Iter.key() << " = " << Iter.value() << newline;
       }
    }
 };
 
 template<class KType, class VType>
-BASstream& operator<<(BASstream& Stream, const BASdictOrdered<KType, VType>& Dict) {
-   Dict.printOn(Stream);
-   return Stream;
+BASwriter& operator<<(BASwriter& Writer, const BASdictOrdered<KType, VType>& Dict) {
+   Dict.printOn(Writer);
+   return Writer;
 }
 
 template<class KType, class VType>

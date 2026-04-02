@@ -6,7 +6,7 @@
 // Implementation
 //-------------------------------------------------------
 #include <BAS/BASstring.h>
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 #include <BAS/BASdestination.h>
 
 // To get tracing working with BASstring one really has to do
@@ -288,9 +288,9 @@ BASstring operator+(BAStextLiteral Lhs, const BASstring& Rhs) {
    return X;
 }
 
-BASstream& operator<<(BASstream& Stream, const BASstring& String) {
-   Stream.destination()->write(String.data(), String.size());
-   return Stream;
+BASwriter& operator<<(BASwriter& Writer, const BASstring& String) {
+   Writer.destination()->write(String.data(), String.size());
+   return Writer;
 }
 
 unsigned int BASupperPowerOfTwo(unsigned int v) {

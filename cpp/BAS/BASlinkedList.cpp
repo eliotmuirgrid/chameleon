@@ -10,9 +10,9 @@
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 
-BASstream& operator<<(BASstream& Stream, const BASlink& Link){
-   Stream << "L: P=" << Link.pPrevious << " N=" << Link.pNext;
-   return Stream;
+BASwriter& operator<<(BASwriter& Writer, const BASlink& Link){
+   Writer << "L: P=" << Link.pPrevious << " N=" << Link.pNext;
+   return Writer;
 }
 
 

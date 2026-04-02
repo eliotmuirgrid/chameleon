@@ -8,21 +8,21 @@
 //-------------------------------------------------------
 
 #include <BAS/BASdestinationString.h>
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 
 void BASabortWithMessage(const BASstring& Message);
 
 #define BAS_ASSERT(Condition) \
    if (!(Condition)) { \
       BASdestinationString Destination; \
-      BASstream Stream(Destination); \
-      Stream << __FILE__ << ':' << __LINE__ << " Assertion failed: " << #Condition; \
+      BASwriter Writer(Destination); \
+      Writer << __FILE__ << ':' << __LINE__ << " Assertion failed: " << #Condition; \
       BASabortWithMessage(Destination.string()); \
    }
 
 #define BAS_FAIL(Message) \
    BASdestinationString Destination; \
-   BASstream Stream(Destination); \
-   Stream << Message << " " << __FILE__ << ':' << __LINE__; \
+   BASwriter Writer(Destination); \
+   Writer << Message << " " << __FILE__ << ':' << __LINE__; \
    BASabortWithMessage(Destination.string());
 

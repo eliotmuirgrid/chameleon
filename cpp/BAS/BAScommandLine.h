@@ -65,7 +65,7 @@
 #include <BAS/BASdictOrdered.h>
 #include <BAS/BASstring.h>
 
-class BASstream;
+class BASwriter;
 
 class BAScommandLine {
 public:
@@ -107,6 +107,6 @@ private:
    BASdictOrdered<BASstring, BASoption> m_Options;
 };
 
-// Stream the same text returned by usage().
-BASstream& operator<<(BASstream& stream, const BAScommandLine& cmd);
+// Write the same text returned by usage().
+BASwriter& operator<<(BASwriter& writer, const BAScommandLine& cmd);
 

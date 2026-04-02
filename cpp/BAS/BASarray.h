@@ -10,7 +10,7 @@
 // 3. RESIZABLE: If you run out of lockers, the wall "expands" automatically 
 //    to make room for more, keeping all your gear in one continuous row.
 //
-// Example usage (illustrative; adapt types and BASstream destination as needed). Locals use
+// Example usage (illustrative; adapt types and BASwriter destination as needed). Locals use
 // leading capitals to match project style.
 //
 //   // Start empty, then pre-size if you already know roughly how many items are coming.
@@ -47,7 +47,7 @@
 //   BASout << Target << newline;      // dump size, capacity, and each index for debugging
 //-----------------------------------------------------------------------------
 
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 
 // Internal helper templates for move semantics
 template<typename T> struct BASRemoveReference      { typedef T Type; };
@@ -241,10 +241,10 @@ public:
       checkCapacity(DesiredCapacity);
    }
 
-   void printOn(BASstream& Stream) const {
-      Stream << "Array Size=" << m_Size << ", Capacity=" << m_Capacity;
+   void printOn(BASwriter& Writer) const {
+      Writer << "Array Size=" << m_Size << ", Capacity=" << m_Capacity;
       for (int i = 0; i < m_Size; ++i) {
-         Stream << newline << " " << i << " " << m_pItems[i];
+         Writer << newline << " " << i << " " << m_pItems[i];
       }
    }
 
@@ -254,10 +254,10 @@ private:
    int    m_Capacity; // The total number of lockers built
 };
 
-// Stream output: write a human-readable dump of this array to a BASstream (size,
-// capacity, one line per index). Returns Stream so you can chain: out << a << x.
+// Writer output: write a human-readable dump of this array to a BASwriter (size,
+// capacity, one line per index). Returns the writer so you can chain: out << a << x.
 template<typename VType>
-BASstream& operator<<(BASstream& Stream, const BASarray<VType>& Array) {
-   Array.printOn(Stream);
-   return Stream;
+BASwriter& operator<<(BASwriter& Writer, const BASarray<VType>& Array) {
+   Array.printOn(Writer);
+   return Writer;
 }

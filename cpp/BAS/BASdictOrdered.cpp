@@ -166,21 +166,21 @@ int BASsCompare(const BASstring& Rhs, const BASstring& Lhs){
 }
 
 
-BASstream& operator<<(BASstream& Stream, const BASavlNode& Node){
-   //Stream << Node.m_Key;
+BASwriter& operator<<(BASwriter& Writer, const BASavlNode& Node){
+   // Writer << Node.m_Key;
    if (!Node.m_pRight && !Node.m_pLeft){
-      return Stream; // empty node
+      return Writer; // empty node
    }
-   Stream << "-->[";
+   Writer << "-->[";
    if (Node.m_pLeft){
-      Stream << *(Node.m_pLeft);
+      Writer << *(Node.m_pLeft);
    }
-   Stream << ",";
+   Writer << ",";
    if (Node.m_pRight){
-      Stream << *(Node.m_pRight);
+      Writer << *(Node.m_pRight);
    }
-   Stream << "]";
-   return Stream;
+   Writer << "]";
+   return Writer;
 }
 
 BASavlIterator::BASavlIterator(BASavlNode* pRoot) : m_StackPos(1){

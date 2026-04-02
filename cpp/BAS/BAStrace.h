@@ -20,7 +20,7 @@
 // call BASsetTracePattern directly with a glob expression that is used to match what files to display tracing from.
 //-------------------------------------------------------
 
-#include <BAS/BASstream.h>
+#include <BAS/BASwriter.h>
 #include <stdio.h>
 #include <BAS/BASpass.h>
 
@@ -33,7 +33,7 @@ void BASsetTracePattern(const char* Pattern);
 void BASaddTraceOption(BAScommandLine* pCommandLine);
 void BASapplyTraceOption(const BAScommandLine& CommandLine);
 
-extern BASstream BAStrace;
+extern BASwriter BAStrace;
 
 void BAStimeStamp(const char* pModule);
 void BASmilliSeconds();

@@ -25,7 +25,7 @@ BAS_TRACE_INIT;
 
 BASpass s_TracePass;
 
-BASstream BAStrace(new BASdestinationStandardOut(), false);  // purposely leaked.
+BASwriter BAStrace(new BASdestinationStandardOut(), false);  // purposely leaked.
 
 static thread_local int s_BASindentLevel=0;
 

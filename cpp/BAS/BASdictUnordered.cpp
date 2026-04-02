@@ -102,24 +102,24 @@ bool BAShashTableBase::removeItem(unsigned long Hash, void* pKey) {
    return false;
 }
 
-void BAShashTableBase::printOn(BASstream& Stream) const{
+void BAShashTableBase::printOn(BASwriter& Writer) const{
    int Count = 0;
-   Stream << "Size:   " << m_Size << newline
+   Writer << "Size:   " << m_Size << newline
          <<  "Buckets:" << m_BucketCount << newline;
    for (int i=0; i < m_BucketCount; i++){
       BASitem* pItem = m_pBuckets[i];
-      Stream << "Bucket[" << i << "]" << newline;
+      Writer << "Bucket[" << i << "]" << newline;
       while (pItem){
          Count++;
-         Stream << " ";
-         pItem->show(Stream);
-         Stream << newline;
+         Writer << " ";
+         pItem->show(Writer);
+         Writer << newline;
          pItem = pItem->m_pNext;
       }
    }
-   Stream << "Count: " << Count << newline;
+   Writer << "Count: " << Count << newline;
    if (Count != m_Size){
-      Stream << "CRAP - count of items != size" << newline;
+      Writer << "CRAP - count of items != size" << newline;
    }
 }
 
@@ -149,9 +149,9 @@ void BAShashTableBase::setBucketCount(int NewCount){
    m_BucketCount = NewCount;
 }
 
-BASstream& operator<<(BASstream& Stream, const BAShashTableBase& Table){
-   Table.printOn(Stream);
-   return Stream;
+BASwriter& operator<<(BASwriter& Writer, const BAShashTableBase& Table){
+   Table.printOn(Writer);
+   return Writer;
 }
 
 BAShashTableBaseIterator::BAShashTableBaseIterator(BAShashTableBase* pTable) : m_pTable(pTable){
@@ -202,6 +202,6 @@ bool BAShashTableBaseIterator::operator!=(const BAShashTableBaseIterator& Rhs) c
 }
 
 
-void BAShashTableBaseIterator::show(BASstream& Stream) const{
-   m_pItem->show(Stream);
+void BAShashTableBaseIterator::show(BASwriter& Writer) const{
+   m_pItem->show(Writer);
 }
