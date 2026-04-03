@@ -10,7 +10,7 @@
 BAS_TRACE_INIT;
 
 #include <BAS/BAScommandLine.h>
-#include <BAS/BASdestinationStandardOut.h>
+#include <BAS/BASdestinationFilePipe.h>
 #include <BAS/BASmatchPattern.h>
 
 #include <time.h>
@@ -22,10 +22,11 @@ BAS_TRACE_INIT;
 #include <time.h>
 #include <string.h>
 #include <pthread.h>
+#include <unistd.h>
 
 BASpass s_TracePass;
 
-BASwriter BAStrace(new BASdestinationStandardOut(), false);  // purposely leaked.
+BASwriter BAStrace(new BASdestinationFilePipe(STDOUT_FILENO), false);  // purposely leaked.
 
 static thread_local int s_BASindentLevel=0;
 

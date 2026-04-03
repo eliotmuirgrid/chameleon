@@ -8,12 +8,13 @@
 
 #include <BAS/BASwriter.h>
 #include <BAS/BASdestination.h>
-#include <BAS/BASdestinationStandardOut.h>
+#include <BAS/BASdestinationFilePipe.h>
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-BASwriter BASout(new BASdestinationStandardOut(), true);
+BASwriter BASout(new BASdestinationFilePipe(STDOUT_FILENO), true);
 
 BASwriter::BASwriter(BASdestination& Destination) : m_pDestination(&Destination), m_IsOwner(false) {
 }
