@@ -21,9 +21,9 @@ static void BASavlRefreshHeight(BASavlNode* pNode){
    if (!pNode){
       return;
    }
-   int lh = BASavlChildHeight(pNode->m_pLeft);
-   int rh = BASavlChildHeight(pNode->m_pRight);
-   pNode->m_Height = 1 + (lh > rh ? lh : rh);
+   int LeftHeight = BASavlChildHeight(pNode->m_pLeft);
+   int RightHeight = BASavlChildHeight(pNode->m_pRight);
+   pNode->m_Height = 1 + (LeftHeight > RightHeight ? LeftHeight : RightHeight);
 }
 
 BASavlNode::BASavlNode() : m_pLeft(NULL), m_pRight(NULL), m_Height(1){
@@ -53,39 +53,39 @@ int BASavlDifference(BASavlNode* pNode){
 
 static BASavlNode* BASavlRotateRR(BASavlNode* pParent) {
    BAS_FUNCTION(BASavlRotateRR);
-   BASavlNode* t;
-   t = pParent->m_pRight;
-   pParent->m_pRight = t->m_pLeft;
-   t->m_pLeft = pParent;
+   BASavlNode* Temp;
+   Temp = pParent->m_pRight;
+   pParent->m_pRight = Temp->m_pLeft;
+   Temp->m_pLeft = pParent;
    BASavlRefreshHeight(pParent);
-   BASavlRefreshHeight(t);
-   return t;
+   BASavlRefreshHeight(Temp);
+   return Temp;
 }
 
 static BASavlNode* BASavlRotateLL(BASavlNode* pParent) {
    BAS_FUNCTION(BASavlRotateLL);
-   BASavlNode* t;
-   t = pParent->m_pLeft;
-   pParent->m_pLeft = t->m_pRight;
-   t->m_pRight = pParent;
+   BASavlNode* Temp;
+   Temp = pParent->m_pLeft;
+   pParent->m_pLeft = Temp->m_pRight;
+   Temp->m_pRight = pParent;
    BASavlRefreshHeight(pParent);
-   BASavlRefreshHeight(t);
-   return t;
+   BASavlRefreshHeight(Temp);
+   return Temp;
 }
 
 static BASavlNode* BASavlRotateLR(BASavlNode* pParent) {
    BAS_FUNCTION(BASavlRotateLR);
-   BASavlNode* t;
-   t = pParent->m_pLeft;
-   pParent->m_pLeft = BASavlRotateRR(t);
+   BASavlNode* Temp;
+   Temp = pParent->m_pLeft;
+   pParent->m_pLeft = BASavlRotateRR(Temp);
    return BASavlRotateLL(pParent);
 }
 
 static BASavlNode* BASavlRotateRL(BASavlNode* pParent) {
    BAS_FUNCTION(BASavlRotateRL);
-   BASavlNode* t;
-   t = pParent->m_pRight;
-   pParent->m_pRight = BASavlRotateLL(t);
+   BASavlNode* Temp;
+   Temp = pParent->m_pRight;
+   pParent->m_pRight = BASavlRotateLL(Temp);
    return BASavlRotateRR(pParent);
 }
 

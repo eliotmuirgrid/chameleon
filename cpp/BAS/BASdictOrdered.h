@@ -11,7 +11,7 @@
 // https://www.youtube.com/watch?v=vRwi_UcZGjU
 //-------------------------------------------------------
 
-#include <BAS/BASassert.h>
+#include <BAS/BASerror.h>
 #include <BAS/BASwriter.h>
 
 class BASstring;

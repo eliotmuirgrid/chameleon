@@ -40,8 +40,8 @@ BASwriter& operator<<(BASwriter& Writer, const char* pString){
 
 BASwriter& operator<<(BASwriter& Writer, int Number){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%d", Number);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%d", Number);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 
@@ -56,37 +56,37 @@ BASwriter& operator<<(BASwriter& Writer, bool Value){
 
 BASwriter& operator<<(BASwriter& Writer, long Number){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%ld", Number);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%ld", Number);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 
 BASwriter& operator<<(BASwriter& Writer, unsigned int Number){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%u", Number);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%u", Number);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 
 BASwriter& operator<<(BASwriter& Writer, unsigned long Number){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%lu", Number);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%lu", Number);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 
 BASwriter& operator<<(BASwriter& Writer, double Number){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%f", Number);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%f", Number);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 
 
 BASwriter& operator<<(BASwriter& Writer, const void* pPointer){
    char Buffer[32];
-   int Size = snprintf(Buffer, sizeof(Buffer), "%p", pPointer);
-   Writer.destination()->write(Buffer, Size);
+   int Length = snprintf(Buffer, sizeof(Buffer), "%p", pPointer);
+   Writer.destination()->write(Buffer, Length);
    return Writer;
 }
 

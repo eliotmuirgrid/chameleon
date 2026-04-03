@@ -124,7 +124,7 @@ BASstring BAScommandLine::usage() const{
    return Result;
 }
 
-BASwriter& operator<<(BASwriter& writer, const BAScommandLine& cmd){
-   writer << cmd.usage();
-   return writer;
+BASwriter& operator<<(BASwriter& Writer, const BAScommandLine& cmd){
+   Writer << cmd.usage();
+   return Writer;
 }

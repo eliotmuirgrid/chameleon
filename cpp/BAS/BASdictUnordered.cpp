@@ -13,15 +13,15 @@ BAS_TRACE_INIT;
 #include <string.h>
 
 //http://www.cse.yorku.ca/~oz/hash.html
-unsigned long BASdjb2Hash(const char* str, int Size){
-   unsigned long hash = 5381;
-   int c;
-   const char* pEnd = str+Size;
-   for (;str != pEnd; str++){
-      c = *str;
-      hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+unsigned long BASdjb2Hash(const char* Text, int Size){
+   unsigned long HashValue = 5381;
+   int Byte;
+   const char* EndPtr = Text+Size;
+   for (;Text != EndPtr; Text++){
+      Byte = *Text;
+      HashValue = ((HashValue << 5) + HashValue) + Byte; /* hash * 33 + c */
    }
-   return hash;
+   return HashValue;
 }
 
 BAShashTableBase::BAShashTableBase(int BucketCount) : m_BucketCount(BucketCount), m_Size(0) {

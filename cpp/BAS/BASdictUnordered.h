@@ -18,7 +18,7 @@
 //-------------------------------------------------------
 
 #include <BAS/BASstring.h>
-#include <BAS/BASassert.h>
+#include <BAS/BASerror.h>
 
 class BASwriter;
 

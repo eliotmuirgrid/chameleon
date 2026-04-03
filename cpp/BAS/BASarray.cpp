@@ -7,7 +7,7 @@
 //-------------------------------------------------------
 
 #include <BAS/BASarray.h>
-#include <BAS/BASassert.h>
+#include <BAS/BASerror.h>
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
 

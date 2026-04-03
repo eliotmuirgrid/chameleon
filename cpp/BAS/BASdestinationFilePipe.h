@@ -25,13 +25,14 @@
 //   err << "problem" << newline;
 //
 //   // A file opened elsewhere (you own the fd; the destination does not close it).
-//   // Prefer BASfileOpen / BASfileClose (see BASfile.h) for a portable int fd.
-//   int fd = BASfileOpen("/tmp/log.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+//   // Prefer BASfileOpenWrite / BASfileClose (see BASfile.h) for a portable int fd.
+//   BASstring Err;
+//   int fd = BASfileOpenWrite(BASstring("/tmp/log.txt"), BASfileCreateMode_DefaultDataFile, &Err);
 //   if (fd >= 0) {
 //      { BASwriter log(new BASdestinationFilePipe(fd), true);
 //        log << "line" << newline << flush;
 //      }  // writer deletes the BASdestinationFilePipe; fd stays open
-//      BASfileClose(fd);
+//      BASfileClose(fd, nullptr);
 //   }
 //
 //   // Stack destination, writer does not own the destination object.
