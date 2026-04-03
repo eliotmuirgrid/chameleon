@@ -85,7 +85,7 @@ void BASsetTracePattern(const char* pPattern){
 }
 
 void BASaddTraceOption(BAScommandLine* pCommandLine){
-   pCommandLine->add("trace", s_pTraceDescription, "glob");
+   pCommandLine->add("trace", s_pTraceDescription, "glob match expression");
 }
 
 void BASapplyTraceOption(const BAScommandLine& CommandLine){
