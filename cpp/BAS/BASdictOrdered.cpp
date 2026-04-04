@@ -189,8 +189,8 @@ BASavlIterator::BASavlIterator(BASavlNode* pRoot) : m_StackPos(1){
    m_Stack[1] = pRoot;
 }
 
-void BASavlIterator::first(){
-   BAS_METHOD(BASavlIterator::first);
+void BASavlIterator::positionAtBegin(){
+   BAS_METHOD(BASavlIterator::positionAtBegin);
    downLeft();
 }
 

@@ -54,13 +54,13 @@ public:
       Link* m_pParent;
       BASavlNode* m_pNode;
    };
-   void first();
-   void end() { m_StackPos = 0;}
+   void positionAtBegin();
+   void positionAtEnd() { m_StackPos = 0;}
    bool next();
 
    bool operator++() { return next(); }
 
-   // In-order predecessor. From end(), moves to the largest key; returns false if the
+   // In-order predecessor. From positionAtEnd(), moves to the largest key; returns false if the
    // tree is empty or if already before the smallest key (same representation as end()).
    bool prev();
    bool operator--() { return prev(); }
@@ -100,8 +100,8 @@ class BASavlConstIteratorT {
 public:
    BASavlConstIteratorT(BASavlNode* pRoot) : m_Iterator(pRoot) {}
 
-   void first() { m_Iterator.first(); }
-   void end()   { m_Iterator.end(); }
+   void positionAtBegin() { m_Iterator.positionAtBegin(); }
+   void positionAtEnd()   { m_Iterator.positionAtEnd(); }
    bool operator++() { return ++m_Iterator; }
    bool operator--() { return --m_Iterator; }
 
@@ -289,13 +289,16 @@ public:
    }
 
    // Where to start and stop when looping with a for (...; it != end(); ++it) pattern.
-   BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
+   BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.positionAtBegin(); return i; }
    // After the last item: do not read key/value until you --it (see Example D in the comment block above).
-   BASavlIteratorT<KType, VType> end()   { BASavlIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
+   BASavlIteratorT<KType, VType> end()   { BASavlIteratorT<KType, VType> i(m_pRoot); i.positionAtEnd(); return i; }
+
+   BASavlConstIteratorT<KType, VType> begin() const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.positionAtBegin(); return i; }
+   BASavlConstIteratorT<KType, VType> end()   const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.positionAtEnd(); return i; }
 
    // Same loop idea as begin/end, but you may not change values through these iterators.
-   BASavlConstIteratorT<KType, VType> cbegin() const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.first(); return i; }
-   BASavlConstIteratorT<KType, VType> cend()   const { BASavlConstIteratorT<KType, VType> i(m_pRoot); i.end(); return i; }
+   BASavlConstIteratorT<KType, VType> cbegin() const { return begin(); }
+   BASavlConstIteratorT<KType, VType> cend()   const { return end(); }
 
    // Human-readable dump: size, then key = value lines in ascending key order (requires << for KType and VType).
    void printOn(BASwriter& Writer) const {

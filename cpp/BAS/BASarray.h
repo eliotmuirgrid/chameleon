@@ -30,7 +30,7 @@
 //   if (!PreSized.empty()) {
 //      int Sum = 0;
 //      for (int* Cursor = PreSized.begin(); Cursor != PreSized.end(); ++Cursor) { Sum += *Cursor; }
-//      // const BASarray<int>& View = PreSized;  then View.cbegin() / View.cend() for read-only
+//      // const BASarray<int>& View = PreSized;  then View.begin()/View.end() or View.cbegin()/View.cend()
 //   }
 //
 //   PreSized.clear();                  // size 0, buffer kept — fast to fill again on the next pass
@@ -234,6 +234,8 @@ public:
    const VType* cend()   const { return m_pItems + m_Size; }
    VType* begin() { return m_pItems; }
    VType* end()   { return m_pItems + m_Size; }
+   const VType* begin() const { return m_pItems; }
+   const VType* end() const { return m_pItems + m_Size; }
 
    // Ensures a specific number of lockers are physically built.
    // This does NOT change the size (how many items are inside).

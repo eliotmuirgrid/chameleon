@@ -15,6 +15,7 @@
 #include <BAS/BASwriter.h>
 #include <BAS/BAStrace.h>
 #include <BAS/BAScall.h>
+#include <BAS/BASeventLoop.h>
 #include <BAS/BASstring.h>
 
 static void BAShello(const BASstring& Prefix, int Value) {
@@ -32,11 +33,24 @@ public:
    }
 };
 
+static BASeventLoop* gBASeventLoopForTest = nullptr;
+
+static void BASeventLoopTestPosted() {
+   BASout << "BASeventLoop: posted task ran." << newline;
+}
+
+static void BASeventLoopTestStop() {
+   if (gBASeventLoopForTest) {
+      gBASeventLoopForTest->stop();
+   }
+}
+
 int main(int argc, const char** argv) {
    BAScommandLine Args;
    BASstring Error;
    BASaddTraceOption(&Args);
    Args.add("help", "Show usage and exit.");
+   Args.add("event-loop", "Run BASeventLoop smoke test (tasks + timer).");
    if (!Args.parse(argc, argv, &Error)) {
       if (!Error.empty()) {
          BASout << Error << newline;
@@ -47,6 +61,26 @@ int main(int argc, const char** argv) {
    BASapplyTraceOption(Args);
    if (Args.has("help")) {
       BASout << Args;
+      return 0;
+   }
+
+   if (Args.has("event-loop")) {
+      BASeventLoop Loop;
+      gBASeventLoopForTest = &Loop;
+      if (!Loop.init(&Error)) {
+         if (!Error.empty()) {
+            BASout << Error << newline;
+         }
+         gBASeventLoopForTest = nullptr;
+         return 1;
+      }
+      Loop.postTask(BAScallBind0(&BASeventLoopTestPosted));
+      Loop.scheduleTimer(50000, BAScallBind0(&BASeventLoopTestStop));
+      BASout << "BASeventLoop: run()" << newline;
+      Loop.run();
+      gBASeventLoopForTest = nullptr;
+      Loop.shutdown();
+      BASout << "BASeventLoop: finished." << newline;
       return 0;
    }
 

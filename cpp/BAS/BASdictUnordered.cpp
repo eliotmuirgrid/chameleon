@@ -156,12 +156,12 @@ BASwriter& operator<<(BASwriter& Writer, const BAShashTableBase& Table){
 
 BAShashTableBaseIterator::BAShashTableBaseIterator(BAShashTableBase* pTable) : m_pTable(pTable){
    BAS_METHOD(BAShashTableBaseIterator);
-   first();
+   positionAtBegin();
 }
 
 BAShashTableBaseIterator::BAShashTableBaseIterator(BAShashTableBase* pTable, const BASitem* pDummy) : m_pTable(pTable){
    BAS_METHOD(BAShashTableBaseIterator);
-   end();
+   positionAtEnd();
 }
 
 
@@ -169,15 +169,15 @@ BAShashTableBaseIterator::~BAShashTableBaseIterator(){
    BAS_METHOD(~BAShashTableBaseIterator);
 }
 
-void BAShashTableBaseIterator::first() {
-   BAS_METHOD(BAShashTableBaseIterator::first);
+void BAShashTableBaseIterator::positionAtBegin() {
+   BAS_METHOD(BAShashTableBaseIterator::positionAtBegin);
    m_pItem = m_pTable->m_pBuckets[0];
    m_BucketIndex = 0;
    ++(*this);
 }
 
-void BAShashTableBaseIterator::end() {
-   BAS_METHOD(BAShashTableBaseIterator::end);
+void BAShashTableBaseIterator::positionAtEnd() {
+   BAS_METHOD(BAShashTableBaseIterator::positionAtEnd);
    m_pItem = NULL;
    m_BucketIndex = m_pTable->bucketCount();
 }

@@ -92,8 +92,10 @@ public:
 
    BASlinkedListIterator<TValue> begin()              { return BASlinkedListIterator<TValue>(head()); }
    BASlinkedListIterator<TValue> end()                { return BASlinkedListIterator<TValue>(0); }
-   BASconstLinkedListIterator<TValue> cbegin() const  { return BASconstLinkedListIterator<TValue>(head()); }
-   BASconstLinkedListIterator<TValue> cend()   const  { return BASconstLinkedListIterator<TValue>(0); }
+   BASconstLinkedListIterator<TValue> begin() const   { return BASconstLinkedListIterator<TValue>(head()); }
+   BASconstLinkedListIterator<TValue> end() const     { return BASconstLinkedListIterator<TValue>(0); }
+   BASconstLinkedListIterator<TValue> cbegin() const  { return begin(); }
+   BASconstLinkedListIterator<TValue> cend()   const  { return end(); }
 
 private:
    virtual void destroyLink(BASlink* pLink){

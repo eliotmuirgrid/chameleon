@@ -65,14 +65,14 @@ public:
    BAShashTableBaseIterator(BAShashTableBase* pTable);
    BAShashTableBaseIterator(BAShashTableBase* pTable, const BASitem* pItem);   // trick for making end()
    virtual ~BAShashTableBaseIterator();
-   void first() ;
-   void end() ;
    void operator++();
    bool operator!=(const BAShashTableBaseIterator& Rhs) const;
    void show(BASwriter& Writer) const;
 protected:
   BASitem* m_pItem;
 private:
+   void positionAtBegin();
+   void positionAtEnd();
    int m_BucketIndex;
    BAShashTableBase* m_pTable;
 };
@@ -119,8 +119,10 @@ public:
 
    BAShashTableIterator begin() { return BAShashTableIterator(this);    }
    BAShashTableIterator end()   { return BAShashTableIterator(this, 0); }
-   BASconstHashTableIterator cbegin() const { return BASconstHashTableIterator((BAShashTableBase*)this);    }
-   BASconstHashTableIterator cend()   const { return BASconstHashTableIterator((BAShashTableBase*)this, 0); }
+   BASconstHashTableIterator begin() const { return BASconstHashTableIterator((BAShashTableBase*)this);    }
+   BASconstHashTableIterator end()   const { return BASconstHashTableIterator((BAShashTableBase*)this, 0); }
+   BASconstHashTableIterator cbegin() const { return begin(); }
+   BASconstHashTableIterator cend()   const { return end(); }
 
    const VType& operator[](const KType& Key) const{
       const BASitem* pItem = getItem(BAShash(Key), (void*)&Key);
