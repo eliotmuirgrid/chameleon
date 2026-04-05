@@ -7,19 +7,21 @@
 // BASeventLoopDispatch (epoll+kqueue, etc.).
 //
 // Ownership: postTask() and scheduleTimer() take ownership of the BAScall0* (delete
-// after run). Run the loop from one thread; post/schedule/stop may be called from any.
+// after run or cancel). Run the loop from one thread; post/schedule/stop may be called from any.
+// scheduleTimer returns the timer name (empty if scheduling failed). A non-empty Name must be
+// unique among pending timers; if Name is default/empty, a unique BASguid name is assigned.
 //
 // Tasks: BASlinkedList<BAScall0*>; timers: BASeventTimerCalendar.
 //-------------------------------------------------------
 
 #include <stdint.h>
 
+#include <BAS/BASstring.h>
 #include <BAS/BASeventTimerCalendar.h>
 #include <BAS/BASlinkedList.h>
 #include <BAS/BASpass.h>
 
 class BAScall0;
-class BASstring;
 class BASeventLoopDispatch;
 
 class BASeventLoop {
@@ -34,9 +36,8 @@ public:
    void stop();
 
    void postTask(BAScall0* pCall);
-   void scheduleTimer(uint64_t delay_us, BAScall0* pCall);
-
-   static uint64_t nowMonotonicUs();
+   BASstring scheduleTimer(uint64_t delay_us, BAScall0* pCall, const BASstring& Name = BASstring());
+   bool cancelTimer(const BASstring& Name);
 
 private:
    BASeventLoop(const BASeventLoop&);
@@ -47,6 +48,8 @@ private:
    int pollWait(int timeout_ms);
    void processPostedTasks();
    void processDueTimers(uint64_t now_us);
+
+   static uint64_t nowMonotonicUs();
 
    BASeventLoopDispatch* m_pDispatch;
    BASpass m_Pass;

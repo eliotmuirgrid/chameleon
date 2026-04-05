@@ -2,21 +2,26 @@
 //-------------------------------------------------------
 // Copyright (C) 2026 Eliot Muir. All rights reserved.
 //
-// BASeventTimerCalendar — min-heap of one-shot timers ordered by expiry (monotonic
-// microseconds). Heap storage is a BASarray of pointers; each BASeventTimerEntry is
-// allocated by the caller (typically with new). clearDeletingCalls() deletes each
+// BASeventTimerCalendar — one-shot timers ordered by expiry (monotonic microseconds).
+// Timers with the same expiry share one AVL key; values are BASeventTimerEntry*
+// pointers in a BASarray (BASdictOrderedValues). Optional unique names (per calendar)
+// are indexed in m_ByName for debugging and cancel-by-name. earliestExpiryUs() is the
+// smallest key; popIfDue removes one due entry. clearDeletingCalls() deletes each
 // entry's BAScall0 and the entry — used on shutdown.
 //-------------------------------------------------------
 
 #include <stdint.h>
 
-#include <BAS/BASarray.h>
+#include <BAS/BASdictOrdered.h>
+#include <BAS/BASdictUnordered.h>
+#include <BAS/BASstring.h>
 
 class BAScall0;
 
 struct BASeventTimerEntry {
    uint64_t expiry_us;
    BAScall0* pCall;
+   BASstring name;
 };
 
 class BASeventTimerCalendar {
@@ -27,18 +32,20 @@ public:
    BASeventTimerCalendar(const BASeventTimerCalendar&) = delete;
    BASeventTimerCalendar& operator=(const BASeventTimerCalendar&) = delete;
 
-   bool empty() const { return m_Heap.empty(); }
+   bool empty() const { return m_ByExpiry.size() == 0; }
    uint64_t earliestExpiryUs() const;
 
-   void push(BASeventTimerEntry* pEntry);
+   bool push(BASeventTimerEntry* pEntry, BASstring* pError = nullptr);
    BASeventTimerEntry* popIfDue(uint64_t now_us);
+
+   bool hasTimerName(const BASstring& name) const;
+   bool detachNamedTimer(const BASstring& name, BASeventTimerEntry** ppOut);
 
    void clearDeletingCalls();
 
 private:
-   BASeventTimerEntry* popMinRaw();
-   void siftUp(int index);
-   void siftDown(int index);
+   bool removeEntry(BASeventTimerEntry* pEntry);
 
-   BASarray<BASeventTimerEntry*> m_Heap;
+   BASdictOrderedValues<uint64_t, BASeventTimerEntry*> m_ByExpiry;
+   BASdictUnordered<BASstring, BASeventTimerEntry*> m_ByName;
 };

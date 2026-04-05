@@ -8,6 +8,7 @@
 #include <BAS/BASarray.h>
 #include <BAS/BAScall.h>
 #include <BAS/BASeventLoopDispatch.h>
+#include <BAS/BASguid.h>
 #include <BAS/BASstring.h>
 
 #include <new>
@@ -18,6 +19,18 @@
 
 #include <BAS/BAStrace.h>
 BAS_TRACE_INIT;
+
+static uint64_t BASeventLoopNowMonotonicUs() {
+#ifndef _WIN32
+   struct timespec ts;
+   if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0) {
+      return 0;
+   }
+   return (uint64_t)ts.tv_sec * 1000000ULL + (uint64_t)ts.tv_nsec / 1000ULL;
+#else
+   return 0;
+#endif
+}
 
 static BAScall0* BASeventLoopPopFrontTask(BASlinkedList<BAScall0*>& Tasks) {
    if (Tasks.size() == 0) {
@@ -76,18 +89,6 @@ void BASeventLoop::shutdown() {
       m_Calendar.clearDeletingCalls();
    }
    m_Initialized = 0;
-}
-
-uint64_t BASeventLoop::nowMonotonicUs() {
-#ifndef _WIN32
-   struct timespec ts;
-   if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0) {
-      return 0;
-   }
-   return (uint64_t)ts.tv_sec * 1000000ULL + (uint64_t)ts.tv_nsec / 1000ULL;
-#else
-   return 0;
-#endif
 }
 
 void BASeventLoop::wakeup() {
@@ -162,7 +163,7 @@ void BASeventLoop::run() {
             break;
          }
          const bool hasTasks = m_Tasks.size() > 0;
-         const uint64_t now_us = nowMonotonicUs();
+         const uint64_t now_us = BASeventLoopNowMonotonicUs();
          if (hasTasks) {
             timeout_ms = 0;
          } else if (!m_Calendar.empty()) {
@@ -190,7 +191,7 @@ void BASeventLoop::run() {
 
       processPostedTasks();
 
-      const uint64_t after_us = nowMonotonicUs();
+      const uint64_t after_us = BASeventLoopNowMonotonicUs();
       processDueTimers(after_us);
 
       {
@@ -230,26 +231,72 @@ void BASeventLoop::postTask(BAScall0* pCall) {
    wakeup();
 }
 
-void BASeventLoop::scheduleTimer(uint64_t delay_us, BAScall0* pCall) {
+BASstring BASeventLoop::scheduleTimer(uint64_t delay_us, BAScall0* pCall, const BASstring& Name) {
    BAS_METHOD(BASeventLoop::scheduleTimer);
+   BASstring result;
    if (!m_Initialized || !m_pDispatch || !pCall) {
       if (pCall) {
          delete pCall;
       }
-      return;
+      return result;
    }
    BASeventTimerEntry* te = nullptr;
    try {
       te = new BASeventTimerEntry();
    } catch (const std::bad_alloc&) {
       delete pCall;
-      return;
+      return result;
    }
    te->pCall = pCall;
+   const bool userNamed = !Name.empty();
+   if (userNamed) {
+      te->name = Name;
+   } else {
+      te->name = BASguid(36);
+   }
    {
       BASpassHold Hold(m_Pass);
-      te->expiry_us = nowMonotonicUs() + delay_us;
-      m_Calendar.push(te);
+      te->expiry_us = BASeventLoopNowMonotonicUs() + delay_us;
+      BASstring err;
+      int autoNameRetries = 0;
+      for (;;) {
+         if (m_Calendar.push(te, &err)) {
+            result = te->name;
+            break;
+         }
+         if (userNamed) {
+            delete te;
+            delete pCall;
+            return result;
+         }
+         if (++autoNameRetries > 16) {
+            delete te;
+            delete pCall;
+            return result;
+         }
+         te->name = BASguid(36);
+      }
    }
    wakeup();
+   return result;
+}
+
+bool BASeventLoop::cancelTimer(const BASstring& name) {
+   BAS_METHOD(BASeventLoop::cancelTimer);
+   if (!m_Initialized || !m_pDispatch || name.empty()) {
+      return false;
+   }
+   BASeventTimerEntry* e = nullptr;
+   {
+      BASpassHold Hold(m_Pass);
+      if (!m_Calendar.detachNamedTimer(name, &e)) {
+         return false;
+      }
+   }
+   if (e->pCall) {
+      delete e->pCall;
+   }
+   delete e;
+   wakeup();
+   return true;
 }

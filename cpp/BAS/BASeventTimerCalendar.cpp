@@ -15,88 +15,117 @@ BASeventTimerCalendar::~BASeventTimerCalendar() {
 }
 
 uint64_t BASeventTimerCalendar::earliestExpiryUs() const {
-   if (m_Heap.empty()) {
+   if (m_ByExpiry.size() == 0) {
       return 0;
    }
-   return m_Heap[0]->expiry_us;
+   return m_ByExpiry.cbegin().key();
 }
 
-void BASeventTimerCalendar::siftUp(int index) {
-   while (index > 0) {
-      const int parent = (index - 1) / 2;
-      if (m_Heap[parent]->expiry_us <= m_Heap[index]->expiry_us) {
-         break;
-      }
-      BASeventTimerEntry* t = m_Heap[index];
-      m_Heap[index] = m_Heap[parent];
-      m_Heap[parent] = t;
-      index = parent;
-   }
-}
-
-void BASeventTimerCalendar::siftDown(int index) {
-   for (;;) {
-      const int left = index * 2 + 1;
-      const int right = left + 1;
-      int smallest = index;
-      const int n = m_Heap.size();
-      if (left < n && m_Heap[left]->expiry_us < m_Heap[smallest]->expiry_us) {
-         smallest = left;
-      }
-      if (right < n && m_Heap[right]->expiry_us < m_Heap[smallest]->expiry_us) {
-         smallest = right;
-      }
-      if (smallest == index) {
-         break;
-      }
-      BASeventTimerEntry* t = m_Heap[index];
-      m_Heap[index] = m_Heap[smallest];
-      m_Heap[smallest] = t;
-      index = smallest;
-   }
-}
-
-void BASeventTimerCalendar::push(BASeventTimerEntry* pEntry) {
+bool BASeventTimerCalendar::push(BASeventTimerEntry* pEntry, BASstring* pError) {
    if (!pEntry) {
-      return;
+      return false;
    }
-   m_Heap.push(pEntry);
-   siftUp(m_Heap.size() - 1);
-}
-
-BASeventTimerEntry* BASeventTimerCalendar::popMinRaw() {
-   if (m_Heap.empty()) {
-      return nullptr;
+   if (!pEntry->name.empty()) {
+      if (m_ByName.has(pEntry->name)) {
+         if (pError) {
+            pError->clear();
+            pError->append("duplicate timer name: ");
+            pError->append(pEntry->name);
+         }
+         return false;
+      }
    }
-   BASeventTimerEntry* root = m_Heap[0];
-   if (m_Heap.size() == 1) {
-      m_Heap.pop();
-      return root;
+   m_ByExpiry.add(pEntry->expiry_us, pEntry);
+   if (!pEntry->name.empty()) {
+      m_ByName[pEntry->name] = pEntry;
    }
-   m_Heap[0] = m_Heap[m_Heap.size() - 1];
-   m_Heap.pop();
-   siftDown(0);
-   return root;
+   return true;
 }
 
 BASeventTimerEntry* BASeventTimerCalendar::popIfDue(uint64_t now_us) {
-   if (m_Heap.empty()) {
+   if (m_ByExpiry.size() == 0) {
       return nullptr;
    }
-   if (m_Heap[0]->expiry_us > now_us) {
+   const uint64_t exp = m_ByExpiry.cbegin().key();
+   if (exp > now_us) {
       return nullptr;
    }
-   return popMinRaw();
+   BASarray<BASeventTimerEntry*>& arr = m_ByExpiry.values(exp);
+   BASeventTimerEntry* e = arr.back();
+   arr.pop();
+   if (!e->name.empty()) {
+      m_ByName.remove(e->name);
+   }
+   if (arr.size() == 0) {
+      m_ByExpiry.erase(exp);
+   }
+   return e;
+}
+
+bool BASeventTimerCalendar::hasTimerName(const BASstring& name) const {
+   if (name.empty()) {
+      return false;
+   }
+   return m_ByName.has(name);
+}
+
+bool BASeventTimerCalendar::detachNamedTimer(const BASstring& name, BASeventTimerEntry** ppOut) {
+   if (!ppOut || name.empty()) {
+      return false;
+   }
+   if (!m_ByName.has(name)) {
+      return false;
+   }
+   BASeventTimerEntry* e = m_ByName[name];
+   if (!removeEntry(e)) {
+      return false;
+   }
+   *ppOut = e;
+   return true;
+}
+
+bool BASeventTimerCalendar::removeEntry(BASeventTimerEntry* pEntry) {
+   if (!pEntry) {
+      return false;
+   }
+   const uint64_t exp = pEntry->expiry_us;
+   if (!m_ByExpiry.has(exp)) {
+      return false;
+   }
+   BASarray<BASeventTimerEntry*>& arr = m_ByExpiry.values(exp);
+   for (int i = 0; i < arr.size(); ++i) {
+      if (arr[i] != pEntry) {
+         continue;
+      }
+      arr.erase(i);
+      if (!pEntry->name.empty()) {
+         m_ByName.remove(pEntry->name);
+      }
+      if (arr.size() == 0) {
+         m_ByExpiry.erase(exp);
+      }
+      return true;
+   }
+   return false;
 }
 
 void BASeventTimerCalendar::clearDeletingCalls() {
-   while (!m_Heap.empty()) {
-      BASeventTimerEntry* e = popMinRaw();
-      if (e) {
-         if (e->pCall) {
-            delete e->pCall;
+   while (m_ByExpiry.size() > 0) {
+      const uint64_t k = m_ByExpiry.cbegin().key();
+      BASarray<BASeventTimerEntry*>& arr = m_ByExpiry.values(k);
+      while (arr.size() > 0) {
+         BASeventTimerEntry* e = arr.back();
+         arr.pop();
+         if (e) {
+            if (!e->name.empty()) {
+               m_ByName.remove(e->name);
+            }
+            if (e->pCall) {
+               delete e->pCall;
+            }
+            delete e;
          }
-         delete e;
       }
+      m_ByExpiry.erase(k);
    }
 }

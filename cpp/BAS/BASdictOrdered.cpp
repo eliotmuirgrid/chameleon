@@ -139,6 +139,74 @@ void BASavlTreeBase::insert(BASavlNode* pNewNode){
    m_pRoot = BASinsert(m_pRoot, pNewNode, m_pCompareFunc, m_pKeyFunc, &m_Size);
 }
 
+static BASavlNode* BASavlMinNode(BASavlNode* pNode) {
+   if (!pNode) {
+      return NULL;
+   }
+   while (pNode->m_pLeft) {
+      pNode = pNode->m_pLeft;
+   }
+   return pNode;
+}
+
+static BASavlNode* BASerase(BASavlNode* pNode, const void* pKey, BASavlCompare pCompFunc,
+   BASavlExtractKey pKeyFunc, int* pSize, bool* pRemoved) {
+   BAS_FUNCTION(BASerase);
+   if (!pNode) {
+      *pRemoved = false;
+      return NULL;
+   }
+   int Compare = (*pCompFunc)((*pKeyFunc)(pNode), pKey);
+   if (Compare > 0) {
+      pNode->m_pLeft = BASerase(pNode->m_pLeft, pKey, pCompFunc, pKeyFunc, pSize, pRemoved);
+      if (!*pRemoved) {
+         return pNode;
+      }
+      BASavlRefreshHeight(pNode);
+      return BASavlBalance(pNode);
+   }
+   if (Compare < 0) {
+      pNode->m_pRight = BASerase(pNode->m_pRight, pKey, pCompFunc, pKeyFunc, pSize, pRemoved);
+      if (!*pRemoved) {
+         return pNode;
+      }
+      BASavlRefreshHeight(pNode);
+      return BASavlBalance(pNode);
+   }
+   *pRemoved = true;
+   if (!pNode->m_pLeft) {
+      BASavlNode* pRight = pNode->m_pRight;
+      pNode->m_pRight = NULL;
+      delete pNode;
+      (*pSize)--;
+      return pRight;
+   }
+   if (!pNode->m_pRight) {
+      BASavlNode* pLeft = pNode->m_pLeft;
+      pNode->m_pLeft = NULL;
+      delete pNode;
+      (*pSize)--;
+      return pLeft;
+   }
+   BASavlNode* pSucc = BASavlMinNode(pNode->m_pRight);
+   BAS_ASSERT(pSucc != NULL);
+   pNode->copy(*pSucc);
+   bool removedSucc = false;
+   const void* pSuccKey = (*pKeyFunc)(pSucc);
+   pNode->m_pRight = BASerase(pNode->m_pRight, pSuccKey, pCompFunc, pKeyFunc, pSize, &removedSucc);
+   BAS_ASSERT(removedSucc);
+   (void)removedSucc;
+   BASavlRefreshHeight(pNode);
+   return BASavlBalance(pNode);
+}
+
+bool BASavlTreeBase::erase(const void* pKey) {
+   BAS_METHOD(BASavlTreeBase::erase);
+   bool removed = false;
+   m_pRoot = BASerase(m_pRoot, pKey, m_pCompareFunc, m_pKeyFunc, &m_Size, &removed);
+   return removed;
+}
+
 BASavlNode* BASfind(BASavlNode* pNode, const void* pKey, BASavlCompare pCompFunc, BASavlExtractKey pKeyFunc){
    BAS_FUNCTION(BASfind);
    if (pNode == NULL){

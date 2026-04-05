@@ -11,6 +11,7 @@
 // https://www.youtube.com/watch?v=vRwi_UcZGjU
 //-------------------------------------------------------
 
+#include <BAS/BASarray.h>
 #include <BAS/BASerror.h>
 #include <BAS/BASwriter.h>
 
@@ -37,8 +38,10 @@ public:
    BASavlNodeT(KType Key, VType Value) : BASavlNode(), m_Key(Key), m_Value(Value) {}
    BASavlNodeT(KType Key) : BASavlNode(), m_Key(Key) {}
 
-   virtual void copy(BASavlNode& Orig){
-      m_Value = ((BASavlNodeT<KType, VType>&)Orig).m_Value;
+   virtual void copy(BASavlNode& Orig) {
+      BASavlNodeT<KType, VType>& o = (BASavlNodeT<KType, VType>&)Orig;
+      m_Key = o.m_Key;
+      m_Value = o.m_Value;
    }
 
    KType m_Key;
@@ -128,6 +131,7 @@ public:
 protected:
    void insert(BASavlNode* pNewNode);
    BASavlNode* find(const void* Key) const;
+   bool erase(const void* pKey);
 
    BASavlNode* m_pRoot;
 private:
@@ -235,11 +239,9 @@ int BASsCompare(const BASstring& Rhs, const BASstring& Lhs);
 //
 // BASdictOrdered follows the unique-key map model on purpose. One key maps to one
 // value: lookup and size stay easy to reason about, and inserting the same key
-// again simply updates the value instead of growing the tree or branching the API
-// for ranges of equal keys. If you need several independent values for the same key,
-// that is a different problem (often a multimap or a map from key to a list); this
-// class stays small and predictable rather than baking duplicate-key policy into
-// the AVL core here.
+// again simply updates the value instead of growing the tree. If you need several
+// independent values for the same key in one ordered structure, use
+// BASdictOrderedValues<K,V> (one tree node per key; values live in a BASarray<V>).
 //
 template<class KType, class VType>
 class BASdictOrdered : public BASavlTreeBase{
@@ -288,6 +290,9 @@ public:
       return pNode->m_Value;
    }
 
+   // Remove the key from the map if present. Returns true if a node was removed.
+   bool erase(const KType& Key) { return BASavlTreeBase::erase((const void*)&Key); }
+
    // Where to start and stop when looping with a for (...; it != end(); ++it) pattern.
    BASavlIteratorT<KType, VType> begin() { BASavlIteratorT<KType, VType> i(m_pRoot); i.positionAtBegin(); return i; }
    // After the last item: do not read key/value until you --it (see Example D in the comment block above).
@@ -309,6 +314,119 @@ public:
    }
 };
 
+// BASdictOrderedValues<KType, VType> — ordered map with multiple values per key.
+// The AVL tree still has at most one node per key; duplicate keys append to that
+// node's BASarray<VType>. size() is the number of distinct keys; totalValues()
+// sums array lengths.
+//
+// add(key, value) — appends value to the list for key (creates the key if missing).
+// values(key) — all values stored under key (asserts in debug if key is missing).
+// operator[](key) — returns the BASarray& for key, creating an empty entry if needed.
+//
+template<class KType, class VType>
+class BASdictOrderedValues : public BASavlTreeBase {
+public:
+   BASdictOrderedValues() : BASavlTreeBase(&compare, &key) {}
+
+   static const void* key(const BASavlNode* pNode) {
+      return &((BASavlNodeT<KType, BASarray<VType>>*)pNode)->m_Key;
+   }
+
+   static int compare(const void* pRKey, const void* pLKey) {
+      return BASsCompare(*((const KType*)pRKey), *((const KType*)pLKey));
+   }
+
+   void add(KType Key, VType Value) {
+      BASavlNodeT<KType, BASarray<VType>>* pNode =
+         (BASavlNodeT<KType, BASarray<VType>>*)find((const void*)&Key);
+      if (pNode) {
+         pNode->m_Value.push(Value);
+         return;
+      }
+      BASarray<VType> values;
+      values.push(Value);
+      insert(new BASavlNodeT<KType, BASarray<VType>>(Key, BASmove(values)));
+   }
+
+   bool erase(const KType& Key) { return BASavlTreeBase::erase((const void*)&Key); }
+
+   bool has(const KType& Key) const {
+      return find((const void*)&Key) != 0;
+   }
+
+   const BASarray<VType>& values(const KType& Key) const {
+      const BASavlNode* pFound = find((const void*)&Key);
+      BAS_ASSERT(pFound != nullptr);
+      return ((BASavlNodeT<KType, BASarray<VType>>*)pFound)->m_Value;
+   }
+
+   BASarray<VType>& values(const KType& Key) {
+      BASavlNode* pFound = find((const void*)&Key);
+      BAS_ASSERT(pFound != nullptr);
+      return ((BASavlNodeT<KType, BASarray<VType>>*)pFound)->m_Value;
+   }
+
+   BASarray<VType>& operator[](const KType& Key) {
+      BASavlNodeT<KType, BASarray<VType>>* pNode =
+         (BASavlNodeT<KType, BASarray<VType>>*)find((const void*)&Key);
+      if (!pNode) {
+         pNode = new BASavlNodeT<KType, BASarray<VType>>(Key);
+         insert(pNode);
+      }
+      return pNode->m_Value;
+   }
+
+   int totalValues() const {
+      int n = 0;
+      for (BASavlConstIteratorT<KType, BASarray<VType>> Iter = cbegin(); Iter != cend();
+           ++Iter) {
+         n += Iter.value().size();
+      }
+      return n;
+   }
+
+   BASavlIteratorT<KType, BASarray<VType>> begin() {
+      BASavlIteratorT<KType, BASarray<VType>> i(m_pRoot);
+      i.positionAtBegin();
+      return i;
+   }
+
+   BASavlIteratorT<KType, BASarray<VType>> end() {
+      BASavlIteratorT<KType, BASarray<VType>> i(m_pRoot);
+      i.positionAtEnd();
+      return i;
+   }
+
+   BASavlConstIteratorT<KType, BASarray<VType>> begin() const {
+      BASavlConstIteratorT<KType, BASarray<VType>> i(m_pRoot);
+      i.positionAtBegin();
+      return i;
+   }
+
+   BASavlConstIteratorT<KType, BASarray<VType>> end() const {
+      BASavlConstIteratorT<KType, BASarray<VType>> i(m_pRoot);
+      i.positionAtEnd();
+      return i;
+   }
+
+   BASavlConstIteratorT<KType, BASarray<VType>> cbegin() const {
+      return begin();
+   }
+
+   BASavlConstIteratorT<KType, BASarray<VType>> cend() const {
+      return end();
+   }
+
+   void printOn(BASwriter& Writer) const {
+      Writer << "Keys: " << size() << ", values: " << totalValues() << newline;
+      for (BASavlConstIteratorT<KType, BASarray<VType>> Iter = cbegin(); Iter != cend();
+           ++Iter) {
+         Writer << Iter.key() << " =" << newline;
+         Writer << Iter.value() << newline;
+      }
+   }
+};
+
 template<class KType, class VType>
 BASwriter& operator<<(BASwriter& Writer, const BASdictOrdered<KType, VType>& Dict) {
    Dict.printOn(Writer);
@@ -316,4 +434,13 @@ BASwriter& operator<<(BASwriter& Writer, const BASdictOrdered<KType, VType>& Dic
 }
 
 template<class KType, class VType>
+BASwriter& operator<<(BASwriter& Writer, const BASdictOrderedValues<KType, VType>& Dict) {
+   Dict.printOn(Writer);
+   return Writer;
+}
+
+template<class KType, class VType>
 using BASavlTree = BASdictOrdered<KType, VType>;
+
+template<class KType, class VType>
+using BASavlTreeValues = BASdictOrderedValues<KType, VType>;
