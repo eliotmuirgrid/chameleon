@@ -1,6 +1,6 @@
 # How AI can degrade meaning
 
-AI can feel fast and capable, but underneath that speed there are real weaknesses. This page uses plain language; a few useful terms are explained as we go.
+**Summary:** AI can feel fast and fluent, but it may **lose information** along the way—dropping details, skipping steps, or smoothing text so it **looks** right while being **incomplete or off**. Those failures are often **hard to spot** at a glance. Small slips can **stack up** until ideas get **messier** and harder to trust. **People** still matter: checking against reality, fixing what broke, and **rebuilding** missing context. Everything below explains *how* that happens and defines a few useful words (including **entropy**) in plain language.
 
 ---
 
