@@ -1,6 +1,6 @@
 # How I write these pages
 
-I use a small set of steps over and over. It is a **pipeline**: rough input, then assembly-line refinements, until the communication is **clear enough to share**. Nothing here is magic—it is **iteration** (ChatGPT for drafting and distilling, then **Cursor** for editing and structure).
+I use a small set of steps over and over. It is a **pipeline**: rough input, then assembly-line refinements, until the communication is **clear enough to share**. Nothing here is magic—it is **iteration**. The **precise tools** matter **less** than the **thought process** (seed → distill → constrain → shape → share → revise). What follows names **ChatGPT** and **Cursor** because that is what I use; you could swap in other assistants or editors and keep the same rhythm.
 
 ---
 
@@ -20,11 +20,11 @@ ChatGPT turns that into a fuller, smoother message (same intent, better shape). 
 
 ## Step 3 — Distill keywords
 
-I ask for a tight list of **keywords** that capture the idea. Example prompt:
+First I ask for a tight list of **keywords** that capture the idea. Example prompt:
 
 > Distill this into a set of keywords—I often use you for this exact purpose.
 
-Typical **response** (short list):
+A typical **response** looks like this:
 
 - Clarity  
 - Speed  
@@ -39,11 +39,15 @@ Typical **response** (short list):
 - Dictation → organization  
 - Thought → text → improvement  
 
+Those words are **anchors** for the next step. Some of them will sound unfamiliar to many readers if you leave them bare on the page—but that is fine here. The list is not the final voice; it is a **map** of what matters.
+
 ---
 
-## Step 4 — Generate a plain-English draft using those words
+## Step 4 — Turn the keywords into plain-English prose
 
-I feed the keywords back in with constraints: a few paragraphs, **plain English**, readable to someone with a high-school-level education, using the words to **seed** the points without sounding like jargon.
+Next I feed the same keywords back in with a stricter constraint: a few paragraphs of **plain English**—clear enough for someone with a **high-school-level** reading level—while still using the list to **seed** the ideas (not to sound like jargon).
+
+I would ask for that **even if** the audience were the strongest PhDs in the room. **Simpler is almost always clearer**, and it matches an **80/20** instinct for communication: a little extra care up front reaches far more people, with less noise.
 
 Example prompt shape:
 
@@ -57,6 +61,10 @@ That pass produced the **long draft** that became the core of [A. Communicate be
 ## Step 5 — Move to Cursor and a Markdown file
 
 I open **Cursor** (an AI-assisted editor), create a new file such as `A.Communicate_better_faster_with_AI.md`, and paste the draft.
+
+**Markdown** is a simple way to add structure in **plain text**: light conventions (`#` for headings, `**bold**` for emphasis, `-` for lists) instead of a heavy word processor. Files usually end in `.md`; the source stays readable as-is, and tools like GitHub or many editors can **render** it into clean, scannable pages. **These pages are written in Markdown.**
+
+That choice matters here: you can open and edit the file with nothing more than a text editor—no special vendor lock-in—and the same bytes are easy for **both people and AI** to read, quote, and reshape. Binary or heavily wrapped formats (typical **Word** or **PDF** workflows) usually need extra software or conversion before you can treat the text as plain, processable language. For drafting, revising, and getting help from an assistant, Markdown tends to be the smoother path end to end.
 
 ---
 
@@ -86,4 +94,6 @@ That became the section **“Doesn’t this weaken your thinking?”** on the A 
 
 ## What to take away
 
-The pipeline is: **rough → expanded → keywords → constrained draft → Markdown file → formatted page → human test → targeted revision.** The tool does not replace you; it **compresses** and **structures** what you already mean, and each round **trains** how you think about the next one.
+The steps, in order: start **rough** → get a **fuller** version → pull out **keywords** → write a **plain draft** that follows clear rules → move it into a **Markdown file** → **tidy** the layout → let a **real person** read it → **fix** what still feels off.
+
+The software is not doing your thinking for you. It helps you **tighten** and **organize** what you already meant to say. Each time you run through the steps, you usually get a little **sharper** the next time.
