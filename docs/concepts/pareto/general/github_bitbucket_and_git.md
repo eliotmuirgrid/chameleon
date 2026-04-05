@@ -18,6 +18,7 @@ If **most** of how you work lives **only** inside **that website’s** special s
 
 ---
 
-## Related
+## See also
 
-- [Git](git.md) · [Open systems vs closed systems](open_versus_closed.md) · [Wix vs plain files](wix.md) · [Markdown](markdown.md)
+- **[Git](git.md)** — Git **by itself**, in plain English (history and files **without** GitHub or Bitbucket).  
+- [Open systems vs closed systems](open_versus_closed.md) · [Wix vs plain files](wix.md) · [Markdown](markdown.md)
