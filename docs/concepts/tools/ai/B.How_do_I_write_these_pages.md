@@ -14,17 +14,27 @@ I start in ChatGPT with something informal—often dictated or typed quickly—l
 
 ## Step 2 — Let the model expand and clean it
 
-ChatGPT turns that into a fuller, smoother message (same intent, better shape). I treat this as the first **organized** version of the idea—not the final page, but a usable draft I can steer.
+ChatGPT turns the seed into a fuller, smoother message (same intent, better shape). I treat that as the first **organized** version of the idea—not the final page, but a draft I can steer.
+
+**What came back** from the Step 1 prompt:
+
+> Could I help you use ChatGPT as part of how we communicate? I genuinely enjoy hearing your voice, but I find I can process text much faster—and with ChatGPT, it becomes easier to organize thoughts and express them clearly without losing meaning.
+>
+> It could be a really useful part of how we connect. You could speak your ideas using dictation, give it a few rough points, and let it shape them into something structured. Then you can quickly review it, adjust anything that doesn’t feel quite right, and send it. It keeps things natural, but adds clarity and speed.
+>
+> If it helps, I’m happy to set you up with the paid version on your phone—the one that supports dictation smoothly. It makes the whole process feel effortless, like thinking out loud but communicating with precision.
 
 ---
 
 ## Step 3 — Distill keywords
 
-First I ask for a tight list of **keywords** that capture the idea. Example prompt:
+The keywords are **distilled from the Step 2 draft**, not from the rough seed in Step 1. Concretely: they summarize the **three paragraphs** in the **What came back** blockquote in Step 2 (voice vs text, dictation workflow, offer to help with the app). I either keep that reply in the same ChatGPT thread so “this” still refers to it, or **paste those paragraphs in** so the model is looking at the same text.
+
+Example prompt:
 
 > Distill this into a set of keywords—I often use you for this exact purpose.
 
-A typical **response** looks like this:
+A typical **response** (labels for *that* expanded message) looks like this:
 
 - Clarity  
 - Speed  
@@ -39,7 +49,7 @@ A typical **response** looks like this:
 - Dictation → organization  
 - Thought → text → improvement  
 
-Those words are **anchors** for the next step. Some of them will sound unfamiliar to many readers if you leave them bare on the page—but that is fine here. The list is not the final voice; it is a **map** of what matters.
+In other words, this list **compresses the Step 2 message** into labels. Those words are **anchors** for Step 4. Some of them will sound unfamiliar to many readers if you leave them bare on the page—but that is fine here. The list is not the final voice; it is a **map** of what matters.
 
 ---
 
