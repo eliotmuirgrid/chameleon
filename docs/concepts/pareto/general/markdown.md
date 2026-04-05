@@ -38,6 +38,13 @@ Writing **software that renders HTML “the way browsers do”**—and stays **c
 
 ---
 
+## See also
+
+- [Open systems vs closed systems](open_versus_closed.md) — the **big picture** behind plain files vs locked platforms.  
+- [Git](git.md) — tracking **changes** to those files.
+
+---
+
 ## Quick definitions
 
 | Word | Simple meaning |

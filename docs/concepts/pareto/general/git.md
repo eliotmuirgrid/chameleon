@@ -33,3 +33,9 @@ You point it at a **folder** (any files and subfolders you choose). There is not
 ## One-line picture
 
 > Git is a **general-purpose**, very **smart “save history”** for **almost anything** you create—as long as it lives in files.
+
+---
+
+## See also
+
+- [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — how **websites** like GitHub relate to **Git** (and where **lock-in** can still creep in).
