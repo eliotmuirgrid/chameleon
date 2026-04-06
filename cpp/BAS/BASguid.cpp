@@ -39,19 +39,19 @@ static void BASguidFormatUuidV4(const unsigned char b[16], BASstring* pOut) {
    for (int i = 0; i < 4; ++i) {
       BASguidAppendHexByte(pOut, b[i]);
    }
-   pOut->append(BAS_T("-"));
+   pOut->append("-");
    for (int i = 4; i < 6; ++i) {
       BASguidAppendHexByte(pOut, b[i]);
    }
-   pOut->append(BAS_T("-"));
+   pOut->append("-");
    for (int i = 6; i < 8; ++i) {
       BASguidAppendHexByte(pOut, b[i]);
    }
-   pOut->append(BAS_T("-"));
+   pOut->append("-");
    for (int i = 8; i < 10; ++i) {
       BASguidAppendHexByte(pOut, b[i]);
    }
-   pOut->append(BAS_T("-"));
+   pOut->append("-");
    for (int i = 10; i < 16; ++i) {
       BASguidAppendHexByte(pOut, b[i]);
    }

@@ -45,10 +45,10 @@
 //   BASstring a;                          // empty
 //   BASstring b("hello");                 // from a C string (copied)
 //   BASstring c("ab\0cd", 4);             // four bytes, may contain embedded '\0'
-//   BASstring d = BAS_T("literal");       // compile-time length (no strlen at runtime)
+//   BASstring d("literal");               // from a C string (copied; strlen once)
 //
 //   b += ", world";                       // append C string
-//   b += BAS_T("!");                      // append literal
+//   b += "!";                             // append literal
 //   b += c;                               // append another BASstring
 //   BASstring path = a + "/" + b;         // concatenation (also: char* on either side)
 //
@@ -78,21 +78,8 @@
 
 class BASwriter;
 
-// Literal optimization.
-//
-// Use BAS_T("abc") to construct or append string literals without calling
-// strlen() at runtime.
-//
-// Why avoid strlen here: strlen walks the bytes until it finds '\0', so the cost is O(n)
-// and paid every time you need the length. A string literal is fixed at compile time; its
-// length is sizeof("literal") - 1 (the compiler counts bytes, including the trailing '\0',
-// then we subtract one). BAS_T passes pointer + length into BAStextLiteral so copies and
-// appends use that count directly with no scan.
-//
-// Example:
-//    BASstring S = BAS_T("abc");
-//    S += BAS_T("def");
-//
+// Optional: BAS_T("abc") - pass pointer + compile-time length into BAStextLiteral so
+// construction/append skips strlen(). Most code uses ordinary string literals instead.
 // Do not use BAStextLiteral directly outside the BAS library.
 
 struct BAStextLiteral {
