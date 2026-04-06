@@ -32,3 +32,6 @@ Thumbs.db
 # Default C++ test executables (make/makefile.common uses TARGET ?= test)
 cpp/**/test
 cpp/**/test.exe
+
+# Tracker executable (cpp/tracker/makefile TARGET := tracker)
+cpp/**/tracker
