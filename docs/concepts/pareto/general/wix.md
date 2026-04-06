@@ -57,4 +57,4 @@ Markdown and Git are **not** tied to one company’s screen. **Portable** here m
 - **Wix (closed)** — fast path **inside one system**; less to learn **up front**; **someone else** sets the fence.  
 - **Markdown + Git (open)** — **you** own the **files** and **history**; **you** choose **any** editor, script, or **AI** (including the **best models** as they come out) to **read, edit, and reshape** your information—**no** platform has to sign off first.
 
-For the same idea stated in general terms (not only Wix), see [Open systems vs closed systems](open_versus_closed.md).
+For the same idea stated in general terms (not only Wix), see [Open systems vs closed systems](open_versus_closed.md). For a **team wiki** with a similar **closed** pattern (**Atlassian Confluence**), see [Confluence](confluence.md).
