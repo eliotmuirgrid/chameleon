@@ -39,7 +39,7 @@ public:
    BASstring scheduleTimer(uint64_t delay_us, BAScall0* pCall, const BASstring& Name = BASstring());
    bool cancelTimer(const BASstring& Name);
 
-private:
+private:What 
    BASeventLoop(const BASeventLoop&);
    BASeventLoop& operator=(const BASeventLoop&);
 

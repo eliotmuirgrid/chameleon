@@ -26,7 +26,6 @@ static void TSVtrimTrailingEmptyLines(BASarray<BASstring>* pLines) {
 }
 
 bool TSVparse(const BASstring& Content, TSVtable* pTable, BASstring* pError) {
-   (void)pError;
    BAS_ASSERT(pTable);
    pTable->clear();
    if (Content.size() == 0) {

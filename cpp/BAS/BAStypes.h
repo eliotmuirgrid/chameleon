@@ -4,7 +4,6 @@
 //
 // BAStypes
 //
-// Plain language:
 //   Computers store whole numbers in fixed-size chunks of bits. Bigger chunks can
 //   hold larger values. Some types allow negative numbers; others (names starting
 //   with BASuint) only allow zero and positive values, which is common for sizes
