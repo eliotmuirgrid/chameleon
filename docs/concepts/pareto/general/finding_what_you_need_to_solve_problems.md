@@ -44,6 +44,7 @@ Across domains, a practical principle matches the kitchen picture in [general-pu
 |-------|----------------|
 | Decluttering as retrieval—not minimalism for its own sake | [Decluttering and retrieval](decluttering_and_retrieval.md) |
 | Fair exchange of value (trust at work and elsewhere) | [Theory of reciprocity](theory_of_reciprocity.md) |
+| What actually limits flow (bottleneck) | [Bottleneck](bottleneck.md) |
 | Find the bottleneck first (systems thinking) | [Theory of constraints](theory_of_constraints.md) |
 | General tools vs many gadgets (kitchen analogy) | [General-purpose tools](general_purpose.md) |
 | Why portable, open files help you find and reuse ideas | [Open systems vs closed systems](open_versus_closed.md) |

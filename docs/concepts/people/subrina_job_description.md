@@ -9,7 +9,7 @@ Subrina is employed as an assistant with a clear mandate: **use systems thinking
 Two principles anchor that approach:
 
 1. [**Theory of reciprocity**](../pareto/general/theory_of_reciprocity.md). The arrangement should strengthen both sides: Eliot's effectiveness improves, and Subrina gets clarity, growth, and work that feels worth doing.
-2. [**Theory of constraints**](../pareto/general/theory_of_constraints.md). Instead of polishing everything at once, you find the **main bottleneck**, relieve it, then let the next bottleneck appear. The system improves in focused steps rather than scattered effort.
+2. [**Theory of constraints**](../pareto/general/theory_of_constraints.md). Instead of polishing everything at once, you find the main [**bottleneck**](../pareto/general/bottleneck.md), relieve it, then let the next bottleneck appear. The system improves in focused steps rather than scattered effort.
 
 The aim is a **dynamic model**: alignment over busywork, clarity over complexity, and steady refinement over brittle long-range plans. Success is not only "more done," but a setup that **naturally** produces better results with less friction over time.
 
@@ -22,6 +22,12 @@ So far, Subrina has brought a **distinct and valuable set of perspectives** into
 From a systems perspective, this kind of diversity is an **asset**. Where one part of the system may prioritize structure, logic, and function, she naturally brings attention to **form, feel, and human perception**. That balance matters. Systems that only optimize for function can become rigid or uninviting, while systems that integrate aesthetic awareness tend to be more engaging, more intuitive, and ultimately more effective in how they interact with people.
 
 The key is to **recognize** this not as a side contribution, but as a **core capability**. By giving her **space** to express and refine that aesthetic lens—whether in communication, presentation, organization, or even how ideas are framed—you **increase the overall quality** of the system. It becomes not just something that **works**, but something that **resonates**.
+
+---
+
+## Example (bottleneck in practice)
+
+A concrete case of **finding and relieving a bottleneck**—including a long-overdue **dental checkup**, a minimal **Cayman** health plan, and using **lunch** to **hand off appointment details** so the rest of the flow could run—is on a separate page: [Example: relieving a bottleneck (dental care)](example_bottleneck_dental_care.md). That example ties together [bottleneck](../pareto/general/bottleneck.md) and [theory of constraints](../pareto/general/theory_of_constraints.md) in a real situation.
 
 ---
 
