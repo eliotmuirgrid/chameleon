@@ -30,5 +30,6 @@ Across these examples, the pattern is the same: **find the constraint**, **focus
 
 ## See also
 
+- [Theory of reciprocity](theory_of_reciprocity.md) — fair exchange; often paired with constraint thinking in how work is designed.
 - [Subrina job description](../people/subrina_job_description.md) — reciprocity and theory of constraints as working principles.
 - [General-purpose tools vs many specialised tools](general_purpose.md) — kitchen example; constraints often show up as “what is actually limiting flow?”

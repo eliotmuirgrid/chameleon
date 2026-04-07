@@ -8,7 +8,7 @@ Subrina is employed as an assistant with a clear mandate: **use systems thinking
 
 Two principles anchor that approach:
 
-1. **Reciprocity.** The arrangement should strengthen both sides: Eliot's effectiveness improves, and Subrina gets clarity, growth, and work that feels worth doing.
+1. [**Theory of reciprocity**](../pareto/general/theory_of_reciprocity.md). The arrangement should strengthen both sides: Eliot's effectiveness improves, and Subrina gets clarity, growth, and work that feels worth doing.
 2. [**Theory of constraints**](../pareto/general/theory_of_constraints.md). Instead of polishing everything at once, you find the **main bottleneck**, relieve it, then let the next bottleneck appear. The system improves in focused steps rather than scattered effort.
 
 The aim is a **dynamic model**: alignment over busywork, clarity over complexity, and steady refinement over brittle long-range plans. Success is not only "more done," but a setup that **naturally** produces better results with less friction over time.
