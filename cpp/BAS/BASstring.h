@@ -143,6 +143,9 @@ public:
    void setSize(int NewSize);
    // Swap contents in O(1) time.
    void swap(BASstring* pOther);
+   // In-place ASCII case conversion: 'A'–'Z' / 'a'–'z' only; other bytes unchanged.
+   void toLowercase();
+   void toUppercase();
 
    // Comparison
    // Note:

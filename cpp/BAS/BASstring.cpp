@@ -223,6 +223,26 @@ void BASstring::swap(BASstring* pOther) {
    *pOther = Temp;
 }
 
+void BASstring::toLowercase() {
+   BAS_METHOD(BASstring::toLowercase);
+   char* p = data();
+   for (int I = 0; I < m_Size; ++I) {
+      if (p[I] >= 'A' && p[I] <= 'Z') {
+         p[I] = static_cast<char>(p[I] - 'A' + 'a');
+      }
+   }
+}
+
+void BASstring::toUppercase() {
+   BAS_METHOD(BASstring::toUppercase);
+   char* p = data();
+   for (int I = 0; I < m_Size; ++I) {
+      if (p[I] >= 'a' && p[I] <= 'z') {
+         p[I] = static_cast<char>(p[I] - 'a' + 'A');
+      }
+   }
+}
+
 int BASstring::compare(const BASstring& Rhs) const {
    BAS_METHOD(BASstring::compare-BASstring);
    const int SharedSize = m_Size < Rhs.m_Size ? m_Size : Rhs.m_Size;
