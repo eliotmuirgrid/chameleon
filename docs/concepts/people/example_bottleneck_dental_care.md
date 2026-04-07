@@ -30,4 +30,5 @@ Overall, it illustrates her stepping in with **accountability** and **resourcefu
 
 - [Bottleneck](../pareto/general/bottleneck.md)
 - [Theory of constraints](../pareto/general/theory_of_constraints.md)
+- [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md) — business **follow-up** and **structure** as constraints.
 - [Subrina job description](subrina_job_description.md)

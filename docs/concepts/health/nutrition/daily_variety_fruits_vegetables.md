@@ -21,3 +21,5 @@ Because they are **high in fiber and water**, they help **regulate blood sugar**
 ## See also
 
 - [Nutrition (concepts)](README.md) — index for this topic area.
+- [Glucose spikes](glucose_spikes.md) — how fiber-rich plants help steady blood sugar.
+- [Muscle energy at rest and when used](../muscle_energy_at_rest_and_use.md) — varied, adequate nutrition supports recovery and **active** muscle over time.
