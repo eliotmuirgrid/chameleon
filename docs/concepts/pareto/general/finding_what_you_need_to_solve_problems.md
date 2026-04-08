@@ -50,6 +50,7 @@ Across domains, a practical principle matches the kitchen picture in [general-pu
 | Race conditions in programs (intermittent bugs) | [Race conditions in software](race_conditions_in_software.md) |
 | General tools vs many gadgets (kitchen analogy) | [General-purpose tools](general_purpose.md) |
 | Why portable, open files help you find and reuse ideas | [Open systems vs closed systems](open_versus_closed.md) |
+| Named companies in examples (Audiophile, Eddies) | [Company (concepts)](../../company/README.md) |
 | Communication (people and AI) | [Communication (concepts)](../../communication/README.md) |
 | Health concepts | [Health (concepts)](../../health/README.md) |
 | Nutrition concepts | [Nutrition (concepts)](../../health/nutrition/README.md) |

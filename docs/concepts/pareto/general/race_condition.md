@@ -28,7 +28,9 @@ That is a **race condition** in the wild: **outcome** depends on **how two slow 
 
 ## Named vendors: Audiophile and Eddies
 
-**[Audiophile](example_bottleneck_order_followup_audiophile.md)** is one real case where **order follow-up** is the bottleneck. **Eddies** is **another** vendor: **not** a direct competitor, but **another** plausible solution path for the **same** underlying problem. It **also** shows an **ordering bottleneck**—delayed replies, **tentative** slots, and confirmation still pending before anything is **firm**.
+For **what each business is** in this notebook, see the vendor concepts **[Audiophile](../../company/audiophile.md)** and **[Eddies](../../company/eddies.md)** ([Company (concepts)](../../company/README.md)).
+
+**Audiophile** is one real case where **order follow-up** is the bottleneck—worked through in [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md). **Eddies** is **another** vendor: **not** a direct competitor, but **another** plausible solution path for the **same** underlying problem. It **also** shows an **ordering bottleneck**—delayed replies, **tentative** slots, and confirmation still pending before anything is **firm**.
 
 Illustrative email (ordering / scheduling thread):
 
@@ -60,4 +62,5 @@ When **Eddies** and **Audiophile** (and any **other** paths) are **in parallel**
 - [Race conditions in software](race_conditions_in_software.md) — **threads**, **timing**, and **hard-to-reproduce** bugs in code.
 - [Bottleneck](bottleneck.md)
 - [Theory of constraints](theory_of_constraints.md)
+- [Audiophile](../../company/audiophile.md) · [Eddies](../../company/eddies.md) — **vendor** concepts (who each business **is** in this notebook); [Company (concepts)](../../company/README.md).
 - [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — **follow-up** and **structure** limiting how fast a vendor can move.
