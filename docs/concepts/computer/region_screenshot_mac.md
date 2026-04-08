@@ -1,14 +1,12 @@
-# Screenshot part of the screen
+# Screenshot part of the screen on an Apple Computer
 
-These steps are for **Apple computers** running **macOS**. If those terms are unfamiliar, read [Apple computers (read this if any of this is new)](README.md#apple-computers-read-this-if-any-of-this-is-new) first.
-
-**Goal:** save **only part** of the screen—a box you draw with the mouse or trackpad—not a picture of everything at once.
+**Goal:** save **only part** of the screen—a box you draw—not a picture of the whole display at once.  This is for an Apple computer - not for other computers like those that run Windows.
 
 ---
 
 ## Take the picture
 
-1. Press **Shift**, **Command (⌘)**, and **4** together. (**Command** is the key labeled **⌘**, next to the space bar on Apple keyboards.)  
+1. Press **Shift**, **Command (⌘)**, and **4** together. (Look for the key with the **⌘** symbol next to the space bar.)  
 2. Let go. The pointer turns into a **plus sign** you can drag.  
 3. Click and drag a box around what you want. Let go when the box looks right.
 
@@ -20,13 +18,13 @@ To **stop** without saving, press **Escape**.
 
 ## Where it goes
 
-The picture usually lands on your **Desktop** (the main background area where files can sit) with a name like “Screen Shot” and the date and time. Sometimes a **tiny preview** pops up in a corner first—you can click it to change the picture, or ignore it and use the file on the Desktop.
+The picture usually appears on your **Desktop** with a name like “Screen Shot” and the date and time. Sometimes a **small preview** shows in a corner first—you can click it to adjust the picture, or ignore it and use the file on the Desktop.
 
 ---
 
 ## More choices (optional)
 
-**Shift + Command + 5** opens a **strip of buttons** at the bottom of the screen if you want timers or other choices. For a simple box shot, **Shift + Command + 4** is enough.
+**Shift + Command + 5** opens extra options at the bottom of the screen (timer, whole screen, and so on). For a simple box, **Shift + Command + 4** is enough.
 
 ---
 
