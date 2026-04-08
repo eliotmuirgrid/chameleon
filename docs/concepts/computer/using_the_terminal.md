@@ -8,7 +8,10 @@ Read [The command line](command_line.md) if the idea of typing to the computer i
 
 ## Open Terminal
 
-Press **Command + Space**, type **Terminal**, press **Enter**. A window opens with a blinking cursor. You are ready.
+To open Terminal (or any app), you first need to know how to search for and open applications on a Mac.  
+See: [Open apps on a Mac with Spotlight](open_apps_with_spotlight_mac.md).
+
+Once you have Terminal open (using the steps in that page), you are ready to continue.
 
 ---
 
