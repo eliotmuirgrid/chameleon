@@ -1,12 +1,16 @@
-# Open apps on a Mac with Spotlight
+# Open apps with search (Spotlight) on a Mac
+
+These steps are for **Apple computers** running **macOS**. New to those names? Read [Apple computers (read this if any of this is new)](README.md#apple-computers-read-this-if-any-of-this-is-new) first.
 
 **Goal:** find and open an app by **typing its name** instead of hunting through folders.
+
+**Spotlight** is the **search bar built into macOS**. You do not install it separately—it is already there.
 
 ---
 
 ## Open the search bar
 
-Press **Command (⌘) + Space**. A search bar appears.
+Press **Command (⌘) + Space**. (**Command** is the key labeled **⌘**, next to the space bar on Apple keyboards.) A search bar appears.
 
 Or click the **magnifying glass** at the **top right** of the screen.
 
@@ -16,7 +20,7 @@ Press **Escape** to close the bar if you opened it by mistake.
 
 ## Type what you want
 
-Type the app name—**Safari**, **Mail**, **Terminal**, and so on. You can stop after a few letters if the right name shows up.
+Type the app name. Examples that come with many Macs include **Safari** (Apple’s web browser), **Mail**, and **Terminal**. You can stop after a few letters if the right name shows up.
 
 ---
 

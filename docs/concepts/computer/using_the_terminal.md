@@ -1,6 +1,8 @@
-# Using the terminal (macOS)
+# Using the terminal
 
-**Goal:** open Terminal on your Mac and run three small commands—**where am I**, **what’s here**, **go to a folder**. That is all this page asks.
+These steps are for **Apple computers** using **macOS** only. If you are not sure what that means, read [Apple computers (read this if any of this is new)](README.md#apple-computers-read-this-if-any-of-this-is-new) first.
+
+**Goal:** open an app called **Terminal** and run three small commands—**where am I**, **what’s here**, **go to a folder**. That is all this page asks.
 
 Read [The command line](command_line.md) if the idea of typing to the computer is new.
 
@@ -8,10 +10,11 @@ Read [The command line](command_line.md) if the idea of typing to the computer i
 
 ## Open Terminal
 
-To open Terminal (or any app), you first need to know how to search for and open applications on a Mac.  
-See: [Open apps on a Mac with Spotlight](open_apps_with_spotlight_mac.md).
+**Terminal** is an app that comes with macOS. To open it (or any app), use the built-in search called **Spotlight**:
 
-Once you have Terminal open (using the steps in that page), you are ready to continue.
+See: [Open apps with search (Spotlight) on a Mac](open_apps_with_spotlight_mac.md).
+
+Once Terminal is open, continue below.
 
 ---
 
@@ -25,9 +28,9 @@ You only need three words for now:
 | `ls` | What is in this folder? |
 | `cd` | Go into a folder (example below) |
 
-Type `pwd`, press **Enter**, and read the path. That is your home folder.
+Type `pwd`, press **Enter**, and read the path. That is your **home** folder (your main user area).
 
-Type `ls`, press **Enter**, and you will see names like Desktop and Documents—same idea as Finder, as text.
+Type `ls`, press **Enter**, and you will see names like **Desktop** and **Documents**—the same folders you might see in the **Finder** (Apple’s file browser), shown as text.
 
 To visit your Desktop, type `cd Desktop`, press **Enter**, then type `ls` again to see what is on the Desktop. To step back to your home folder, type `cd ..` and press **Enter**.
 
@@ -43,7 +46,7 @@ Wrong folder after `cd`? Type `cd` alone and press **Enter**—that usually take
 
 ## Paste and safety
 
-You can **paste** with **Command + V**. Before you paste a line from the internet, read it and only use sources you trust. If the Mac asks for your password, stop unless you know why.
+You can **paste** with **Command + V** (the **Command** key is labeled **⌘** and sits next to the space bar on Apple keyboards). Before you paste a line from the internet, read it and only use sources you trust. If the computer asks for your **password**, stop unless you know why that step is safe.
 
 ---
 
