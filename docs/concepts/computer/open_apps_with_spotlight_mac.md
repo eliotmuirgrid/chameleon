@@ -36,4 +36,4 @@ You avoid opening Finder, clicking Applications, and scrolling. One shortcut, a 
 
 ---
 
-**Check your understanding:** Name two different ways to open Spotlight (one with the keyboard, one with the mouse).
+**Show you have this down:** Open Spotlight, type something in the search bar so it is clearly yours, then take a **screenshot** of that screen ([how to capture part of the screen](region_screenshot_mac.md)) and **send it to a friend** so they can see you know how to get there.
