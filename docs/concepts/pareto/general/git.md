@@ -1,6 +1,6 @@
 # Git (in plain terms)
 
-**Summary:** Git is a **general-purpose** tool—it **remembers every version** of your files so you can **see what changed**, **go back in time**, and **work with others** without constantly overwriting each other’s work. It is **not built for one job**: you can point it at **any** folder (code, writing, research, design, personal projects, and more).
+**Summary:** **Git** is a **widely used program** that **implements** [source control](source_control.md)—it **remembers versions** of your files so you can **see what changed**, **go back in time**, and **work with others** without constantly overwriting each other’s work. It is **not** the same as the **abstract idea** of source control (see [source control](source_control.md)); other tools (Mercurial, Subversion, and others) implement that idea differently. Git is **general-purpose**: you can point it at **any** folder (code, writing, research, design, personal projects, and more).
 
 ---
 
@@ -40,4 +40,5 @@ You point it at a **folder** (any files and subfolders you choose). There is not
 
 ## See also
 
+- [Source control (the idea)](source_control.md) — the **general concept**; Git is **one** implementation.  
 - [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — hosting sites **on top** of Git; what you **own** vs what the **site** adds.

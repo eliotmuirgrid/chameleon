@@ -1,6 +1,6 @@
 # GitHub, Bitbucket, and Git (what is what)
 
-**Summary:** **[Git](git.md)** is the program that **tracks changes** to your files. **GitHub** and **Bitbucket** are **websites** that **store your project online** and give you a **simple web interface**. You **do not** need them for Git. The **risk** is depending on **extras that exist only on one site**—then **moving** gets harder. See [Open systems vs closed systems](open_versus_closed.md).
+**Summary:** [Source control](source_control.md) is the **general idea** of **version history** and **coordinated change**. **[Git](git.md)** is **one** program that **implements** that idea. **GitHub** and **Bitbucket** are **websites** that **store your project online** and give you a **simple web interface** over Git. You **do not** need them for Git. The **risk** is depending on **extras that exist only on one site**—then **moving** gets harder. See [Open systems vs closed systems](open_versus_closed.md).
 
 ---
 
@@ -20,5 +20,6 @@ If **most** of how you work lives **only** inside **that website’s** special s
 
 ## See also
 
+- [Source control (the idea)](source_control.md) — concept **before** any one tool.  
 - **[Git](git.md)** — Git **by itself**, in plain English (history and files **without** GitHub or Bitbucket).  
 - [Open systems vs closed systems](open_versus_closed.md) · [Wix vs plain files](wix.md) · [Confluence](confluence.md) (Atlassian wiki) · [Markdown](markdown.md)
