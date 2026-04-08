@@ -1,9 +1,15 @@
 # The command line
 
-Think of the command line as **having a conversation with your computer in typing**. Instead of clicking through menus, you type a short line of instruction, press Enter, and the computer answers in the same window—often with a list of files, a confirmation, or a clear message if something went wrong. You are not doing anything exotic; you are just using another door into the same machine you already know from icons and windows.
+**Goal:** understand what the command line is—no setup, no commands to remember yet.
 
-That typing happens in a small window most people call a **terminal**. Behind the scenes, the computer matches what you typed to a small program that runs and shows you the result. You do not need to know the names of those inner pieces to get started. If a help article says “open Terminal and paste this line,” that line is the whole trick—you run it, see what happens, and move on.
+Think of it as **talking to your computer by typing** instead of clicking. You type a short line, press Enter, and the computer answers in the same window. You are still using the same Mac; this is just another way in.
 
-It can look plain compared with colorful apps. That is normal. Many step-by-step guides (for backups, fixes, or setup tasks) are written this way because **the steps are easy to copy** and **everyone gets the same words**, which cuts down on “where do I click?” confusion.
+That typing usually happens in a window called **Terminal**. Help articles often say “paste this line into Terminal”—you do not need to know how it works inside; you run the line and read the result.
 
-You do not have to memorize anything to begin. When you are ready to try it on a Mac, [Using the terminal](using_the_terminal.md) walks through simple actions like seeing your folder and moving between folders—one step at a time.
+Many guides use typing because **everyone follows the same words**, which is simpler than describing a long trail of clicks.
+
+When you want to try a few safe steps on a Mac, go to [Using the terminal](using_the_terminal.md).
+
+---
+
+**Check your understanding:** In your own words, what happens after you type a line and press Enter in a terminal window?
