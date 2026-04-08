@@ -47,4 +47,5 @@ Across **training**, **roles**, and **structure**, the same question applies: **
 - [Bottleneck](bottleneck.md)
 - [Theory of constraints](theory_of_constraints.md)
 - [Attention as a bottleneck and executive support](attention_bottleneck_executive_support.md) — when **focus** is the constraint; **support** for **external** friction.
+- [Race condition](race_condition.md) — **parallel** vendor paths (here and **Eddies**); **timing-dependent** decisions when **several** slow **ordering** pipelines run at once.
 - [Example: relieving a bottleneck (dental care)](../people/example_bottleneck_dental_care.md) — a different domain; **information** and **handoff** as constraints.

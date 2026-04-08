@@ -46,6 +46,8 @@ Across domains, a practical principle matches the kitchen picture in [general-pu
 | Fair exchange of value (trust at work and elsewhere) | [Theory of reciprocity](theory_of_reciprocity.md) |
 | What actually limits flow (bottleneck) | [Bottleneck](bottleneck.md) |
 | Find the bottleneck first (systems thinking) | [Theory of constraints](theory_of_constraints.md) |
+| Parallel slow processes; outcome depends on timing | [Race condition](race_condition.md) |
+| Race conditions in programs (intermittent bugs) | [Race conditions in software](race_conditions_in_software.md) |
 | General tools vs many gadgets (kitchen analogy) | [General-purpose tools](general_purpose.md) |
 | Why portable, open files help you find and reuse ideas | [Open systems vs closed systems](open_versus_closed.md) |
 | Communication (people and AI) | [Communication (concepts)](../../communication/README.md) |

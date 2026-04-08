@@ -22,3 +22,4 @@ In [theory of constraints](theory_of_constraints.md), the same idea is usually c
 - [Example: relieving a bottleneck (dental care)](../people/example_bottleneck_dental_care.md) — a real case, including **information** and **handoff** as the limiting factor.
 - [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — **business** throughput limited by **follow-up**, **roles**, and **structure**.
 - [Attention as a bottleneck and executive support](attention_bottleneck_executive_support.md) — when **attention** is the scarce resource; **support** for **external** broken systems.
+- [Race condition](race_condition.md) — when **parallel** slow processes make **outcomes** depend on **timing** (e.g. two vendor quotes).
