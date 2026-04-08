@@ -1,39 +1,37 @@
 # Open apps on a Mac with Spotlight
 
-**Goal:** use **Spotlight**—the Mac’s built-in search—to find and open any app without digging through folders.
+**Goal:** find and open an app by **typing its name** instead of hunting through folders.
 
 ---
 
-## Open Spotlight
+## Open the search bar
 
-Press **Command (⌘) + Space** on the keyboard. A small search bar appears in the middle of the screen (or near the top, depending on your macOS version).
+Press **Command (⌘) + Space**. A search bar appears.
 
-You can also open the same search bar by clicking the **magnifying glass** icon in the **top-right** of the screen (in the menu bar).
+Or click the **magnifying glass** at the **top right** of the screen.
 
-That bar is **Spotlight**. You can close it anytime with **Escape** if you change your mind.
-
----
-
-## Type the app name
-
-Start typing the name of the app you want, for example **Terminal**, **Safari**, or **Mail**.
-
-Spotlight shows matches as you type. You do not need the full name—**Term** is often enough for Terminal.
+Press **Escape** to close the bar if you opened it by mistake.
 
 ---
 
-## Open the app
+## Type what you want
 
-When the right app is highlighted (usually the first result), press **Enter**. The app opens.
-
-If several items match, use the **Up** and **Down** arrow keys to move the highlight, then press **Enter**.
+Type the app name—**Safari**, **Mail**, **Terminal**, and so on. You can stop after a few letters if the right name shows up.
 
 ---
 
-## Why this is handy
+## Open it
 
-You avoid opening Finder, clicking Applications, and scrolling. One shortcut, a few letters, **Enter**—done.
+When you see the app you want (usually at the top of the list), press **Enter**.
+
+If the list is long, use the **Up** and **Down** arrows to move to the right line, then press **Enter**.
 
 ---
 
-**Show you have this down:** Open Spotlight, type something in the search bar so it is clearly yours, then take a **screenshot** of that screen ([how to capture part of the screen](region_screenshot_mac.md)) and **send it to a friend** so they can see you know how to get there.
+## Why bother
+
+You skip a lot of clicking through windows. Shortcut, type a little, **Enter**.
+
+---
+
+**Show you have this down:** Open the search bar, type something so it is clearly yours, then take a **picture of that** ([steps here](region_screenshot_mac.md)) and **send it to a friend**.
