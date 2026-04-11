@@ -4,9 +4,11 @@ We will create a **set of concepts** around **nutrition** in this folder—short
 
 ## Pages
 
-- [Daily variety of fruits and vegetables](daily_variety_fruits_vegetables.md) — fresh produce, nutrients, gut health, energy stability, resilience.
-- [Glucose spikes](glucose_spikes.md) — what sharp rises in blood sugar are, what tends to cause them, and concepts to blunt them (fiber, mixed meals, whole foods, movement, GI/GL).
+- [Carbohydrates](carbohydrates.md) — fuel for brain and muscles; enough vs none in a deficit; recovery and stability.
+- [Calorie deficit](calorie_deficit.md) — calories in vs out; why scarcity taps fat and can cost muscle (deep history in Africa).
+- [Daily variety of fruits and vegetables](daily_variety_fruits_vegetables.md) — diverse whole foods, broad nutrients; your body takes what it needs.
+- [Glucose spikes](glucose_spikes.md) — a sharp, fast rise in blood glucose after eating.
 
 ## Related (broader health)
 
-- [Muscle energy at rest and when used](../muscle_energy_at_rest_and_use.md) — muscles as steady and spike **fuel users**; links to movement after meals.
+- [Muscle energy at rest and when used](../muscle_energy_at_rest_and_use.md) — muscle fuel use **at rest** (including BMR, realistic numbers vs fat, systemic benefits) and **when active**; glucose uptake and movement after meals.
