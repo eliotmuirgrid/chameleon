@@ -1,0 +1,16 @@
+Food,Grams,Protein_g,Fat_g,Carbs_g,Calories_kcal
+"Lunch batch (whole pan, before split)",,,,,
+"Jerk chicken (Chicken row; jerk marinade/sugar not in foods.tsv)",287,89,10,0,474
+"Cherry tomatoes",160,1,0,6,29
+"Peas, sweet",79,4,1,12,66
+"Red onion",48,1,0,4,19
+"Zucchini (Cucumber proxy per foods.tsv)",158,1,0,6,24
+"Lunch batch total",,96,11,28,612
+"Eliot — 61% chicken, 50% veg (see 2026-04-12-summary.md)",,,,,
+"Jerk chicken (Eliot share)",175,54,6,0,289
+"Cherry tomatoes (Eliot share)",80,1,0,3,15
+"Peas, sweet (Eliot share)",40,2,1,6,33
+"Red onion (Eliot share)",24,0,0,2,10
+"Zucchini (Eliot share)",79,1,0,3,12
+"Eliot lunch total",,58,7,14,359
+"Papaya (Eliot)",71,0,0,8,31

@@ -11,3 +11,7 @@
 ## Examples
 
 - Two people each keep their own food log, but the file names and columns line up—`targets_eliot.tsv` and `targets_subrina.tsv`—so you are not learning two different systems.
+
+## See also
+
+- [Immediate solutions](immediate_solutions.md) — sometimes you **ship a quick fix** first, then **converge** on symmetry or a cleaner shape once the problem is clear.

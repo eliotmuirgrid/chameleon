@@ -23,3 +23,7 @@ As your thinking improves, you get better at seeing the **big picture**—unders
 Instead of feeling overwhelmed by details, you grasp what matters quickly and use it effectively.
 
 > Raising consciousness isn’t mysterious—it’s what happens when a mind becomes more **organized**, more **connected**, and better at understanding itself and the world.
+
+## See also
+
+- [Why raise your consciousness?](why_raise_your_consciousness.md)
