@@ -5,8 +5,12 @@ Food,Grams,Protein_g,Fat_g,Carbs_g,Calories_kcal
 "Peas, sweet (Subrina share)",39,2,0,6,33
 "Red onion (Subrina share)",24,1,0,2,10
 "Zucchini (Subrina share)",79,0,0,3,12
-"Lunch total",,38,4,14,254
+"Potatoe, Sweet (Subrina share ~57%)",160,3,0,32,138
+"Butter (Subrina share 6 g, 50%)",6,0,5,0,43
+"Marinade on chicken (Subrina ~39% of marinade kcal)",0,0,0,4,15
+"Lunch total",,41,9,50,450
 "Papaya",182,1,0,20,78
 "Blueberries",46,0,0,7,26
 "Honey",36,0,0,30,109
-"Lunch + papaya + blueberries + honey (this file only; add breakfast from summary)",,39,4,71,467
+"Beer, Corona Extra (205 ml ≈ g; foods.tsv)",205,1,0,8,85
+"Lunch + papaya + blueberries + honey + beer (this file only; add breakfast from summary)",,43,9,115,748
