@@ -17,5 +17,5 @@ A **small packet** is a **little unit** of work, data, or responsibility sent or
 
 ## See also
 
-- [Pipeline](../system/troubleshooting/pipeline.md) — ordered steps where each stage feeds the next; small packets often **flow through** a pipeline.
-- [Immediate solutions](../system/design/immediate_solutions.md) — when a **tiny fix now** unblocks the next step without waiting for the full design.
+- [Pipeline](../troubleshooting/pipeline.md) — ordered steps where each stage feeds the next; small packets often **flow through** a pipeline.
+- [Immediate solutions](immediate_solutions.md) — when a **tiny fix now** unblocks the next step without waiting for the full design.

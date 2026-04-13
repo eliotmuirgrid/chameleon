@@ -38,6 +38,6 @@ Can you **change or verify one thing** (one rule, one bug, one clause, one perso
 
 - [Symmetry](../symmetry.md) — when two parts **should** match on purpose.
 - [Immediate solutions](../immediate_solutions.md) — fix one slice without redesigning everything.
-- [Small packet](../../../design/small_packet.md) — small units; separation is **which** unit owns **which** job.
+- [Small packet](../small_packet.md) — small units; separation is **which** unit owns **which** job.
 
 *Hub (all entry points):* [Separation of concerns](../separation_of_concerns.md)

@@ -29,4 +29,4 @@ Dense packing **saves space** but **hides** structure. Decompression **buys visi
 ## See also
 
 - [Decluttering and retrieval](decluttering_and_retrieval.md) — fewer places to look **after** the work; pairs with temporary spread-out.
-- [Small packet](../../design/small_packet.md) — the opposite instinct sometimes: **small units** in motion; decompression is the **spread-out** phase when a packet is **opened**.
+- [Small packet](../../system/design/small_packet.md) — the opposite instinct sometimes: **small units** in motion; decompression is the **spread-out** phase when a packet is **opened**.
