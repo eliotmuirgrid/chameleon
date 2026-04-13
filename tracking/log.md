@@ -8,7 +8,7 @@
 | 2026-03-16 | Protein Shake | Organic Whey Protein | Two measures | 28.0 | 21 | 1.5 | 3 | 110 |
 | 2026-03-16 | Protein Shake | Blueberries | Weighed | 73.5 | 0.5 | 0.2 | 10.7 | 41.9 |
 | 2026-03-16 | Protein Shake | Milk, Almond Unsweetened | Two cups | 474.0 | 15.6 | 39.3 | 15.6 | 59.2 |
-| 2026-03-16 | Salmon with Peas | Salmon |  | 197.5 |  |  |  |  |
+| 2026-03-16 | Salmon with Peas | Fish, Salmon |  | 197.5 | 39.5 | 25.7 | 0 | 410.8 |
 | 2026-03-16 | Salmon with Peas | Potatoe, Sweet |  | 200.0 | 3.2 | 0.2 | 40.2 | 172 |
 | 2026-03-16 | Salmon with Peas | Olive oil | Small spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-03-16 | Salmon with Peas | Peas |  | 145.5 | 7.9 | 0.6 | 21.8 | 122.2 |
@@ -27,13 +27,13 @@
 | 2026-03-17 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 30.0 | 3.3 | 2.1 | 20.8 | 117 |
 | 2026-03-17 | Yogurt Breakfast | Peanut Butter | Barely a teaspoon - measure! | 10.5 | 2.6 | 5.3 | 2.1 | 62 |
 | 2026-03-17 | Flatwhite | Milk, Almond Unsweetened | 150 mls - same as grams | 150.0 | 5 | 12.5 | 5 | 18.8 |
-| 2026-03-17 | Salmon | Salmon |  | 414.5 |  |  |  |  |
+| 2026-03-17 | Salmon | Fish, Salmon |  | 414.5 | 82.9 | 53.9 | 0 | 862.2 |
 | 2026-03-17 | Potatoe, Sweet | Potatoe, Sweet |  | 200.0 | 3.2 | 0.2 | 40.2 | 172 |
 | 2026-03-17 | Potatoe, Sweet | Olive oil | Small spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-03-17 | Cucumber Salad | Cucumber |  | 160.0 | 1.1 | 0.2 | 5.8 | 24 |
 | 2026-03-17 | Cucumber Salad | Tomato |  | 180.0 | 1.6 | 0.4 | 7 | 32.4 |
 | 2026-03-17 | Cucumber Salad | Olive oil | Small spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
-| 2026-03-17 | Red Wine | Red Wine |  | 125.0 |  |  |  |  |
+| 2026-03-17 | Red Wine | Wine, Red |  | 125.0 | 0 | 0 | 3.2 | 106.2 |
 | 2026-03-18 | Flatwhite | Milk, Almond Unsweetened | 150 mls - same as grams | 100.0 | 3.3 | 8.3 | 3.3 | 12.5 |
 | 2026-03-18 | Yogurt Breakfast | Yogurt, Plain Nonfat | Just over a cup | 207.0 | 8.5 | 1.9 | 12.2 | 97.5 |
 | 2026-03-18 | Yogurt Breakfast | Blueberries | About one quarter a square container. | 100.0 | 0.7 | 0.3 | 14.5 | 57 |
@@ -49,14 +49,14 @@
 | 2026-03-18 | Beans | Beans, French |  | 150.0 | 3.6 | 0.3 | 10.6 | 44.1 |
 | 2026-03-18 | Butter | Butter |  | 5.5 | 0 | 4.5 | 0 | 39.4 |
 | 2026-03-18 | Popcorn (air popped) | Popcorn |  | 37.5 | 3.8 | 1.4 | 27.2 | 121.9 |
-| 2026-03-18 | Red Wine | Red Wine |  | 125.0 |  |  |  |  |
+| 2026-03-18 | Red Wine | Wine, Red |  | 125.0 | 0 | 0 | 3.2 | 106.2 |
 | 2026-03-19 | Eggwhite Omellette | Eggwhite | From 5 eggs | 145.0 | 15.9 | 0.3 | 1 | 75.4 |
 | 2026-03-19 | Eggwhite Omellette | Mushrooms | A bowlful - dry - water added 20 g | 163.0 | 5.1 | 0.5 | 5.4 | 35.9 |
 | 2026-03-19 | Eggwhite Omellette | Asparagus | About 11 | 245.0 | 5.4 | 0.2 | 9.6 | 49 |
 | 2026-03-19 | Eggwhite Omellette | Olive oil | Spoon of olive oil | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-03-19 | Eggwhite Omellette | Potatoe, Sweet | Cubes covering bottom of dish | 102.0 | 1.6 | 0.1 | 20.5 | 87.7 |
 | 2026-03-19 | Eggwhite Omellette | Egg yolk | Two egg yolks | 9.0 | 1.4 | 2.4 | 0.3 | 29 |
-| 2026-03-19 | Salmon with Rice and Brocoli | Salmon |  | 192.0 |  |  |  |  |
+| 2026-03-19 | Salmon with Rice and Brocoli | Fish, Salmon |  | 192.0 | 38.4 | 25 | 0 | 399.4 |
 | 2026-03-19 | Salmon with Rice and Brocoli | Rice, Jasberry | 1/3 cup | 65.5 | 4.4 | 2.9 | 49.5 | 247.5 |
 | 2026-03-19 | Salmon with Rice and Brocoli | Olive oil | Small spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-03-19 | Salmon with Rice and Brocoli | Broccoli |  | 230.0 | 6.4 | 0.9 | 15.2 | 78.2 |
@@ -85,7 +85,7 @@
 | 2026-03-21 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 31.0 | 3.4 | 2.1 | 21.5 | 120.9 |
 | 2026-03-21 | Yogurt Breakfast | Peanut Butter | Barely a teaspoon - measure! | 10.0 | 2.5 | 5 | 2 | 59 |
 | 2026-03-21 | Flatwhite | Milk, Almond Unsweetened | 100 mls - same as grams | 100.0 | 3.3 | 8.3 | 3.3 | 12.5 |
-| 2026-03-21 | Salmon | Salmon |  | 142.5 |  |  |  |  |
+| 2026-03-21 | Salmon | Fish, Salmon |  | 142.5 | 28.5 | 18.5 | 0 | 296.4 |
 | 2026-03-21 | Fish, Snapper | Fish, Snapper |  | 133.5 | 34.7 | 3.2 | 0 | 170.9 |
 | 2026-03-21 | Potatoe, Sweet | Potatoe, Sweet |  | 193.0 | 3.1 | 0.2 | 38.8 | 166 |
 | 2026-03-21 | Asparagus | Asparagus | Wet - stalks cut off | 426.5 | 9.4 | 0.4 | 16.6 | 85.3 |
@@ -94,7 +94,7 @@
 | 2026-03-22 | Yogurt Breakfast | Blueberries | About one quarter a square container. | 100.0 | 0.7 | 0.3 | 14.5 | 57 |
 | 2026-03-22 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 31.0 | 3.4 | 2.1 | 21.5 | 120.9 |
 | 2026-03-22 | Yogurt Breakfast | Peanut Butter | Barely a teaspoon - measure! | 10.0 | 2.5 | 5 | 2 | 59 |
-| 2026-03-22 | Salmon | Salmon |  | 150.0 |  |  |  |  |
+| 2026-03-22 | Salmon | Fish, Salmon |  | 150.0 | 30 | 19.5 | 0 | 312 |
 | 2026-03-22 | Potatoes | Potatoes |  | 170.7 | 3.4 | 0.2 | 29 | 131.4 |
 | 2026-03-22 | Brocolli | Broccoli | Small crown | 122.8 | 3.4 | 0.5 | 8.1 | 41.8 |
 | 2026-03-22 | Olive oil | Olive oil | Spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
@@ -107,7 +107,7 @@
 | 2026-03-23 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 31.0 | 3.4 | 2.1 | 21.5 | 120.9 |
 | 2026-03-23 | Yogurt Breakfast | Peanut Butter | Barely a teaspoon - measure! | 10.0 | 2.5 | 5 | 2 | 59 |
 | 2026-03-23 | Flatwhite | Milk, Almond Unsweetened | 100 mls - same as grams | 100.0 | 3.3 | 8.3 | 3.3 | 12.5 |
-| 2026-03-23 | Salmon | Salmon |  | 250.0 |  |  |  |  |
+| 2026-03-23 | Salmon | Fish, Salmon |  | 250.0 | 50 | 32.5 | 0 | 520 |
 | 2026-03-23 | Rice, Jasberry | Rice, Jasberry |  | 60.0 | 4 | 2.6 | 45.4 | 226.7 |
 | 2026-03-23 | Peas, Snap | Peas, Snap |  | 109.0 | 2.6 | 0 | 7.7 | 44.9 |
 | 2026-03-23 | Mushrooms | Mushrooms |  | 95.0 | 2.9 | 0.3 | 3.1 | 20.9 |
@@ -157,7 +157,7 @@
 | 2026-03-26 | Cottage Cheese Snack | Blueberries |  | 126.0 | 0.9 | 0.4 | 18.3 | 71.8 |
 | 2026-03-26 | Turkey | Turkey, Ground |  | 250.0 | 53.5 | 22.5 | 0 | 432.5 |
 | 2026-03-26 | Potatoes | Potatoes |  | 150.0 | 3 | 0.1 | 25.5 | 115.5 |
-| 2026-03-26 | Turkey, Ground Dinner | Salmon |  | 284.0 |  |  |  |  |
+| 2026-03-26 | Turkey, Ground Dinner | Fish, Salmon |  | 284.0 | 56.8 | 36.9 | 0 | 590.7 |
 | 2026-03-26 | Turkey, Ground Dinner | Chicken |  | 0.0 | 0 | 0 | 0 | 0 |
 | 2026-03-26 | Turkey, Ground Dinner | Beans, French |  | 157.0 | 3.8 | 0.3 | 11.1 | 46.2 |
 | 2026-03-26 | Olive oil | Olive oil | Spoon | 4.5 | 0 | 4.5 | 0 | 39.8 |
@@ -191,8 +191,8 @@
 | 2026-03-28 | Turkey, Ground Dinner | Peppers, Sweet |  | 170.0 | 1.7 | 0.5 | 10.2 | 52.7 |
 | 2026-03-28 | Turkey, Ground Dinner | Mushrooms |  | 113.0 | 3.5 | 0.3 | 3.7 | 24.9 |
 | 2026-03-28 | Cupcake | Cupcake | 1 | 23.7 | 0.7 | 5.3 | 11.7 | 96.8 |
-| 2026-03-28 | Red Wine | Red Wine |  | 100.0 |  |  |  |  |
-| 2026-03-29 | Salmon | Salmon |  | 285.0 |  |  |  |  |
+| 2026-03-28 | Red Wine | Wine, Red |  | 100.0 | 0 | 0 | 2.6 | 85 |
+| 2026-03-29 | Salmon | Fish, Salmon |  | 285.0 | 57 | 37.1 | 0 | 592.8 |
 | 2026-03-29 | Potatoes | Potatoes |  | 150.0 | 3 | 0.1 | 25.5 | 115.5 |
 | 2026-03-29 | Tomatoes | Tomato |  | 104.0 | 0.9 | 0.2 | 4.1 | 18.7 |
 | 2026-03-29 | Corn | Corn |  | 55.5 | 1.9 | 0 | 10.5 | 47.7 |
@@ -201,7 +201,7 @@
 | 2026-03-29 |  | Mushrooms |  | 53.5 | 1.7 | 0.2 | 1.8 | 11.8 |
 | 2026-03-29 | Cupcake | Cupcake | 1 | 23.7 | 0.7 | 5.3 | 11.7 | 96.8 |
 | 2026-03-29 | Flatwhite | Milk, Planet Oatmilk original | 100 mls - same as grams | 100.0 | 0.8 | 1.3 | 9.2 | 50 |
-| 2026-03-29 | Salmon | Salmon |  | 243.5 |  |  |  |  |
+| 2026-03-29 | Salmon | Fish, Salmon |  | 243.5 | 48.7 | 31.7 | 0 | 506.5 |
 | 2026-03-29 | Potatoes | Potatoes |  | 46.5 | 0.9 | 0 | 7.9 | 35.8 |
 | 2026-03-29 | Parsnips | Parsnips |  | 107.0 | 1.3 | 0.3 | 19.3 | 80.2 |
 | 2026-03-29 | Brocolli | Broccoli | Small crown | 136.0 | 3.8 | 0.5 | 9 | 46.2 |
@@ -220,7 +220,7 @@
 | 2026-03-30 | Olive oil | Olive oil | About one quarter a square container. | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-03-30 | Potatoes | Potatoes |  | 251.5 | 5 | 0.3 | 42.8 | 193.7 |
 | 2026-03-30 | Brocolli | Broccoli | Small crown | 136.0 | 3.8 | 0.5 | 9 | 46.2 |
-| 2026-03-30 | Salmon | Salmon |  | 152.0 |  |  |  |  |
+| 2026-03-30 | Salmon | Fish, Salmon |  | 152.0 | 30.4 | 19.8 | 0 | 316.2 |
 | 2026-03-30 | Olive oil | Olive oil | Half spoon | 2.3 | 0 | 2.3 | 0 | 20.3 |
 | 2026-03-31 | Flatwhite | Milk, Planet Oatmilk original | 100 mls - same as grams | 100.0 | 0.8 | 1.3 | 9.2 | 50 |
 | 2026-03-31 | Yogurt Breakfast | Yogurt, Plain Nonfat | Next time keep the yogurt to just 150g | 206.0 | 8.4 | 1.9 | 12.2 | 97 |
@@ -247,7 +247,7 @@
 | 2026-04-01 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 31.0 | 3.4 | 2.1 | 21.5 | 120.9 |
 | 2026-04-01 | Yogurt Breakfast | Peanut Butter |  | 10.0 | 2.5 | 5 | 2 | 59 |
 | 2026-04-01 | Potatoes | Potatoes |  | 224.7 | 4.5 | 0.2 | 38.2 | 173 |
-| 2026-04-01 | Salmon | Salmon |  | 310.0 |  |  |  |  |
+| 2026-04-01 | Salmon | Fish, Salmon |  | 310.0 | 62 | 40.3 | 0 | 644.8 |
 | 2026-04-01 | Brocolli | Broccoli |  | 150.0 | 4.2 | 0.6 | 9.9 | 51 |
 | 2026-04-01 | Olive oil | Olive oil |  | 2.3 | 0 | 2.3 | 0 | 20.3 |
 | 2026-04-01 | Onion, Red | Onion, Red |  | 91.0 | 1 | 0.1 | 8.5 | 36.4 |
@@ -263,7 +263,7 @@
 | 2026-04-02 | Olive oil | Olive oil |  | 3.0 | 0 | 3 | 0 | 26.5 |
 | 2026-04-02 | Egg | Egg |  | 72.7 | 9.2 | 6.9 | 0.5 | 104 |
 | 2026-04-02 | Eggwhite | Eggwhite |  | 134.0 | 14.7 | 0.3 | 0.9 | 69.7 |
-| 2026-04-02 | Salmon | Salmon |  | 31.0 |  |  |  |  |
+| 2026-04-02 | Salmon | Fish, Salmon |  | 31.0 | 6.2 | 4 | 0 | 64.5 |
 | 2026-04-02 | Yogurt Breakfast | Yogurt, Plain Nonfat | Next time keep the yogurt to just 150g | 206.0 | 8.4 | 1.9 | 12.2 | 97 |
 | 2026-04-02 | Yogurt Breakfast | Blueberries | About one quarter a square container. | 100.0 | 0.7 | 0.3 | 14.5 | 57 |
 | 2026-04-02 | Yogurt Breakfast | Steelcut Oats | 5 and half level big spoons | 31.0 | 3.4 | 2.1 | 21.5 | 120.9 |
@@ -276,7 +276,7 @@
 | 2026-04-03 | Peppers | Peppers, Sweet |  | 112.7 | 1.1 | 0.3 | 6.8 | 34.9 |
 | 2026-04-03 | Eggwhite | Eggwhite |  | 60.0 | 6.6 | 0.1 | 0.4 | 31.2 |
 | 2026-04-03 | Butter | Butter |  | 10.7 | 0.1 | 8.7 | 0 | 76.7 |
-| 2026-04-03 | Salmon | Salmon |  | 37.0 |  |  |  |  |
+| 2026-04-03 | Salmon | Fish, Salmon |  | 37.0 | 7.4 | 4.8 | 0 | 77 |
 | 2026-04-03 | Olive oil | Olive oil |  | 4.5 | 0 | 4.5 | 0 | 39.8 |
 | 2026-04-03 | Yogurt Breakfast | Yogurt, Plain Nonfat | Next time keep the yogurt to just 150g | 206.0 | 8.4 | 1.9 | 12.2 | 97 |
 | 2026-04-03 | Yogurt Breakfast | Blueberries | About one quarter a square container. | 100.0 | 0.7 | 0.3 | 14.5 | 57 |
@@ -304,7 +304,7 @@
 | 2026-04-04 | Flatwhite | Milk, Almond Unsweetened | 100 mls - same as grams | 100.0 | 3.3 | 8.3 | 3.3 | 12.5 |
 | 2026-04-04 | Strawberry | Strawberry | 1 large strawberry | 49.0 | 0.3 | 0.1 | 3.8 | 15.7 |
 | 2026-04-04 | Potatoe, Sweet | Potatoe, Sweet |  | 238.0 | 3.8 | 0.2 | 47.8 | 204.7 |
-| 2026-04-04 | Salmon | Salmon |  | 51.0 |  |  |  |  |
+| 2026-04-04 | Salmon | Fish, Salmon |  | 51.0 | 10.2 | 6.6 | 0 | 106.1 |
 | 2026-04-04 | Tuna | Fish, Tuna |  | 110.0 | 31.9 | 1.1 | 0 | 145.2 |
 | 2026-04-04 | Chicken | Chicken |  | 105.5 | 32.7 | 3.8 | 0 | 174.1 |
 | 2026-04-04 | Steak, Burger | Steak, Burger |  | 77.5 | 13.5 | 17 | 0.5 | 205 |
@@ -312,7 +312,7 @@
 | 2026-04-04 | Mushrooms | Mushrooms |  | 148.7 | 4.6 | 0.4 | 4.9 | 32.7 |
 | 2026-04-04 | Onion, Red | Onion, Red |  | 56.7 | 0.6 | 0.1 | 5.3 | 22.7 |
 | 2026-04-04 | Avocado | Avocado |  | 45.0 | 0.9 | 6.8 | 4 | 72 |
-| 2026-04-04 | Salmon, Bellies | Salmon, Bellies |  | 192.0 |  |  |  |  |
+| 2026-04-04 | Salmon, Bellies | Fish, Salmon bellies |  | 192.0 | 34.6 | 48 | 0 | 614.4 |
 | 2026-04-04 | Mushrooms | Mushrooms |  | 100.0 | 3.1 | 0.3 | 3.3 | 22 |
 | 2026-04-04 | Gelato | Gelato |  | 100.0 | 4 | 7 | 30 | 190 |
 | 2026-04-04 | Peppers, Sweet | Peppers, Sweet |  | 94.5 | 0.9 | 0.3 | 5.7 | 29.3 |
