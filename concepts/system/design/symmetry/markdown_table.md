@@ -1,6 +1,6 @@
-# Markdown Table Format
+# [Symmetry](../symmetry.md) > Markdown Table Format
 
-Always use **Markdown tables** as an application of finding symmetry.
+Always use [Markdown tables](https://www.markdownguide.org/extended-syntax/#tables) as an application of finding symmetry.
 
 This decision is for people doing real work (like nutrition planning). A good table should be easy to scan in seconds, easy to check, and easy to discuss.
 
