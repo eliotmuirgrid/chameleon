@@ -22,7 +22,6 @@
 | 2026-04-10 | Blueberries |  | 100 | 1 | 0 | 15 | 57 |
 | 2026-04-10 | Papaya |  | 100 | 0 | 0 | 11 | 43 |
 | 2026-04-10 | Whey protein |  | 42 | 32 | 2 | 4 | 165 |
-| 2026-04-10 | Total | row total |  | 180 | 79 | 191 | 1946 |
 | 2026-04-10 | Zucchini | 1/3 of 195g batch | 65 | 1 | 0 | 2 | 11 |
 | 2026-04-10 | Corn | 1/3 of 159g | 53 | 2 | 0 | 10 | 46 |
 | 2026-04-10 | Mushrooms | 1/3 of 156g | 52 | 2 | 0 | 2 | 11 |
@@ -43,7 +42,6 @@
 | 2026-04-10 | Mushrooms |  | 72 | 2 | 0 | 2 | 16 |
 | 2026-04-10 | Red onion |  | 79 | 1 | 0 | 7 | 32 |
 | 2026-04-10 | Burger patty | ~410 kcal, same basis as Eliot 1/4 x4 |  | 20 | 24 | 28 | 410 |
-| 2026-04-10 | Total | row total |  | 105 | 99 | 166 | 1885 |
 | 2026-04-12 | Lunch batch | whole pan, before split |  |  |  |  |  |
 | 2026-04-12 | Jerk chicken | Chicken row; jerk marinade/sugar not in foods.md | 287 | 89 | 10 | 0 | 474 |
 | 2026-04-12 | Cherry tomatoes |  | 160 | 1 | 0 | 6 | 29 |
@@ -76,7 +74,6 @@
 | 2026-04-12 | Bagel, sweet | Eliot-only; foods.md | 62 | 6 | 2 | 33 | 168 |
 | 2026-04-12 | Cheese, Cream | Eliot-only; foods.md | 12 | 1 | 4 | 1 | 42 |
 | 2026-04-12 | Fish, Salmon | Eliot-only; Fish Salmon row foods.md | 51 | 10 | 7 | 0 | 106 |
-| 2026-04-12 | Lunch — 39% chicken, 50% veg | see 2026-04-12-shared.md |  |  |  |  |  |
 | 2026-04-12 | Jerk chicken | Subrina share | 112 | 35 | 4 | 0 | 185 |
 | 2026-04-12 | Cherry tomatoes | Subrina share | 80 | 0 | 0 | 3 | 14 |
 | 2026-04-12 | Peas, sweet | Subrina share | 39 | 2 | 0 | 6 | 33 |
@@ -94,4 +91,3 @@
 | 2026-04-12 | Cheese, Cream | scraping ~5 g; foods.md | 5 | 0 | 2 | 0 | 18 |
 | 2026-04-12 | Watermelon | two small pieces ~120 g est.; foods.md | 120 | 1 | 0 | 9 | 36 |
 | 2026-04-12 | Avocado | foods.md | 33 | 1 | 5 | 3 | 53 |
-| 2026-04-12 | Lunch + papaya + blueberries + honey + beer + bagel etc. | this file only; add breakfast from summary |  | 51 | 18 | 163 | 1039 |
