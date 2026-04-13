@@ -33,5 +33,3 @@ Thumbs.db
 cpp/**/test
 cpp/**/test.exe
 
-# Tracker executable (cpp/tracker/makefile TARGET := tracker)
-cpp/**/tracker/tracker
