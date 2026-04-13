@@ -1,0 +1,8 @@
+| Metric | Target | Notes |  |  |
+| --- | --- | --- | --- | --- |
+| Carbohydrates_g | 200 | daily target — fuel for resistance training; adjust up on heavy or long sessions |  |  |
+| Protein_g | 115 | daily target — support lean mass / recomposition (~1.8 g/kg at ~64 kg bodyweight) |  |  |
+| Fat_g | 65 | daily target — health |  hormones |  fat-soluble vitamins; not a deficit-focused cap |
+| Fiber_g | 28 | daily target — women’s adequate intake; prefer whole foods |  |  |
+| Alcohol_g | 0 | daily target |  |  |
+| Calories_kcal_target | 2200 | daily approximate maintenance at 141 lb / light–moderate activity; optional small surplus (~+100–200 kcal) if prioritizing lean gain |  |  |

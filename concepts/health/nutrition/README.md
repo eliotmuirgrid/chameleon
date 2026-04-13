@@ -4,7 +4,7 @@ We will create a **set of concepts** around **nutrition** in this folder—short
 
 ## Pages
 
-- [Shared nutrition plan (draft) — Eliot & Subrina](shared_nutrition_plan_eliot_subrina.md) — fat loss + muscle (Eliot) vs strength / composition (Subrina); **family breakfast = anchor meal**; **custom dishes OK**; **dairy in quantity for Eliot; Subrina limits dairy (butter in cooking fine)**; links to tracker `targets_eliot.tsv` / `targets_subrina.tsv`.
+- [Shared nutrition plan (draft) — Eliot & Subrina](shared_nutrition_plan_eliot_subrina.md) — fat loss + muscle (Eliot) vs strength / composition (Subrina); **family breakfast = anchor meal**; **custom dishes OK**; **dairy in quantity for Eliot; Subrina limits dairy (butter in cooking fine)**; links to tracker `targets_eliot.md` / `targets_subrina.md`.
 - [Carbohydrates](carbohydrates.md) — fuel for brain and muscles; enough vs none in a deficit; recovery and stability.
 - [Calorie deficit](calorie_deficit.md) — calories in vs out; why scarcity taps fat and can cost muscle (deep history in Africa).
 - [Daily variety of fruits and vegetables](daily_variety_fruits_vegetables.md) — diverse whole foods, broad nutrients; your body takes what it needs.

@@ -1,6 +1,6 @@
 # Shared nutrition plan — Eliot & Subrina
 
-**Status:** Draft for discussion. Numbers live in the tracker as `**targets_eliot.tsv`** and `**targets_subrina.tsv**` (`tracking/`). This note ties goals to food concepts—not a prescription.
+**Status:** Draft for discussion. Numbers live in the tracker as `**targets_eliot.md`** and `**targets_subrina.md**` (`tracking/`). This note ties goals to food concepts—not a prescription.
 
 ---
 
@@ -18,7 +18,7 @@ You share meals but have **different primary goals**:
 
 | Theme              | Eliot                                                                                               | Subrina                                                                   |
 | ------------------ | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| **Energy**         | Deficit vs **your** TDEE (cap in `targets_eliot.tsv`)                                               | Roughly **maintenance** or **small surplus** if lean gain is the priority |
+| **Energy**         | Deficit vs **your** TDEE (cap in `targets_eliot.md`)                                               | Roughly **maintenance** or **small surplus** if lean gain is the priority |
 | **Protein**        | **First priority** in a deficit                                                                     | **High** relative to body weight for recomposition                        |
 | **Carbs**          | **Sufficient**, not zero — supports training and muscle sparing ([Carbohydrates](carbohydrates.md)) | **Sufficient** for sessions; can flex with workload                       |
 | **Fat**            | Enough for health; capped to fit calories                                                           | Enough for health; not driven by a sharp deficit                          |
@@ -33,13 +33,13 @@ You share meals but have **different primary goals**:
 
 | File                                                                             | Purpose                                         |
 | -------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `[tracking/targets_eliot.tsv](../../../../tracking/targets_eliot.tsv)`     | Eliot’s daily macro / calorie / fiber targets   |
-| `[tracking/targets_subrina.tsv](../../../../tracking/targets_subrina.tsv)` | Subrina’s daily macro / calorie / fiber targets |
-| `[tracking/foods.tsv](../../../../tracking/foods.tsv)`                     | Shared density table for logging                |
-| Daily logs                                                                       | `YYYY-MM-DD.tsv` per person where needed        |
+| `[tracking/targets_eliot.md](../../../../tracking/targets_eliot.md)`     | Eliot’s daily macro / calorie / fiber targets   |
+| `[tracking/targets_subrina.md](../../../../tracking/targets_subrina.md)` | Subrina’s daily macro / calorie / fiber targets |
+| `[tracking/foods.md](../../../../tracking/foods.md)`                     | Shared density table for logging                |
+| Daily logs                                                                       | `YYYY-MM-DD-data.md` per person where needed        |
 
 
-**Naming:** Use `**targets_eliot.tsv`** and `**targets_subrina.tsv**` only (no shared single `targets.tsv`) so tracker layout stays symmetric.
+**Naming:** Use `**targets_eliot.md`** and `**targets_subrina.md**` only (no shared single `targets.md`) so tracker layout stays symmetric.
 
 ---
 

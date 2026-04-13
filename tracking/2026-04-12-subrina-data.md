@@ -1,0 +1,21 @@
+| Food | Grams | Protein_g | Fat_g | Carbs_g | Calories_kcal |
+| --- | --- | --- | --- | --- | --- |
+| Lunch — 39% chicken, 50% veg (see 2026-04-12-shared.md) |  |  |  |  |  |
+| Jerk chicken (Subrina share) | 112 | 35 | 4 | 0 | 185 |
+| Cherry tomatoes (Subrina share) | 80 | 0 | 0 | 3 | 14 |
+| Peas, sweet (Subrina share) | 39 | 2 | 0 | 6 | 33 |
+| Red onion (Subrina share) | 24 | 1 | 0 | 2 | 10 |
+| Zucchini (Subrina share) | 79 | 0 | 0 | 3 | 12 |
+| Potatoe, Sweet (Subrina share ~57%) | 160 | 3 | 0 | 32 | 138 |
+| Butter (Subrina share 6 g, 50%) | 6 | 0 | 5 | 0 | 43 |
+| Marinade on chicken (Subrina ~39% of marinade kcal) | 0 | 0 | 0 | 4 | 15 |
+| Lunch total |  | 41 | 9 | 50 | 450 |
+| Papaya | 182 | 1 | 0 | 20 | 78 |
+| Blueberries | 46 | 0 | 0 | 7 | 26 |
+| Honey | 36 | 0 | 0 | 30 | 109 |
+| Beer, Corona Extra (205 ml ≈ g; foods.md) | 205 | 1 | 0 | 8 | 85 |
+| Bagel, sweet (foods.md) | 68 | 6 | 2 | 36 | 184 |
+| Cheese, Cream (scraping ~5 g; foods.md) | 5 | 0 | 2 | 0 | 18 |
+| Watermelon (two small pieces ~120 g est.; foods.md) | 120 | 1 | 0 | 9 | 36 |
+| Avocado (foods.md) | 33 | 1 | 5 | 3 | 53 |
+| Lunch + papaya + blueberries + honey + beer + bagel etc. (this file only; add breakfast from summary) |  | 51 | 18 | 163 | 1039 |

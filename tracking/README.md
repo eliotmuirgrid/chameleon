@@ -8,16 +8,16 @@ Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not**
 
 | File | Role |
 |------|------|
-| [`targets_eliot.tsv`](targets_eliot.tsv) | Eliot’s daily targets |
-| [`targets_subrina.tsv`](targets_subrina.tsv) | Subrina’s daily targets |
-| [`foods.tsv`](foods.tsv) | Shared density table for logging |
-| `YYYY-MM-DD.tsv` | Eliot’s lines for that day |
-| `YYYY-MM-DD-subrina.tsv` | Subrina’s lines for that day |
+| [`targets_eliot.md`](targets_eliot.md) | Eliot’s daily targets |
+| [`targets_subrina.md`](targets_subrina.md) | Subrina’s daily targets |
+| [`foods.md`](foods.md) | Shared density table for logging |
+| `YYYY-MM-DD-data.md` | Eliot’s lines for that day |
+| `YYYY-MM-DD-subrina-data.md` | Subrina’s lines for that day |
 | `YYYY-MM-DD-summary.md` | Optional **hub** for that day (links to per-person reports + shared reference) |
 | `YYYY-MM-DD-summary-eliot.md` / `…-subrina.md` | That person’s day vs **their** targets |
 | `YYYY-MM-DD-shared.md` | Shared meals & split rules *(reference only)* |
 
-Eliot-only snacks, beer, or add-ons go in **Eliot’s** `.tsv` only; Subrina-only items go in **`-subrina.tsv`** only. Shared meals are split using the rules in that day’s **`YYYY-MM-DD-shared.md`** (or the hub **`YYYY-MM-DD-summary.md`** that links to it).
+Eliot-only snacks, beer, or add-ons go in **Eliot’s raw table `.md`** only; Subrina-only items go in **`-subrina-data.md`** only. Shared meals are split using the rules in that day’s **`YYYY-MM-DD-shared.md`** (or the hub **`YYYY-MM-DD-summary.md`** that links to it).
 
 ## Concepts
 

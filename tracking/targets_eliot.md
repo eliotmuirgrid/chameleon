@@ -1,0 +1,8 @@
+| Metric | Target | Notes |
+| --- | --- | --- |
+| Carbohydrates_g | 150 | daily target — sufficient fuel for resistance training and recovery; see docs/concepts/health/nutrition/carbohydrates.md |
+| Protein_g | 180 | daily target — priority in a deficit to support muscle retention / gain (~1.8 g/kg at ~99 kg bodyweight) |
+| Fat_g | 60 | daily target — adequate for hormones and fat-soluble vitamins; cap helps calorie deficit |
+| Fiber_g | 30 | daily target — whole foods; men often cite ~30–38 g as a practical aim |
+| Alcohol_g | 0 | daily target |
+| Calories_kcal_max | 2000 | stay at or below (not a floor) — fat loss needs fewer calories than you burn in a day; refine with trend and energy |
