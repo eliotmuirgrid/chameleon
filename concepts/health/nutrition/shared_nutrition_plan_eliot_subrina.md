@@ -1,6 +1,6 @@
 # Shared nutrition plan — Eliot & Subrina
 
-**Status:** Draft for discussion. Numbers live in the tracker as `**targets_eliot.tsv`** and `**targets_subrina.tsv**` (`cpp/tracker/`). This note ties goals to food concepts—not a prescription.
+**Status:** Draft for discussion. Numbers live in the tracker as `**targets_eliot.tsv`** and `**targets_subrina.tsv**` (`tracking/`). This note ties goals to food concepts—not a prescription.
 
 ---
 
@@ -33,9 +33,9 @@ You share meals but have **different primary goals**:
 
 | File                                                                             | Purpose                                         |
 | -------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `[cpp/tracker/targets_eliot.tsv](../../../../cpp/tracker/targets_eliot.tsv)`     | Eliot’s daily macro / calorie / fiber targets   |
-| `[cpp/tracker/targets_subrina.tsv](../../../../cpp/tracker/targets_subrina.tsv)` | Subrina’s daily macro / calorie / fiber targets |
-| `[cpp/tracker/foods.tsv](../../../../cpp/tracker/foods.tsv)`                     | Shared density table for logging                |
+| `[tracking/targets_eliot.tsv](../../../../tracking/targets_eliot.tsv)`     | Eliot’s daily macro / calorie / fiber targets   |
+| `[tracking/targets_subrina.tsv](../../../../tracking/targets_subrina.tsv)` | Subrina’s daily macro / calorie / fiber targets |
+| `[tracking/foods.tsv](../../../../tracking/foods.tsv)`                     | Shared density table for logging                |
 | Daily logs                                                                       | `YYYY-MM-DD.tsv` per person where needed        |
 
 

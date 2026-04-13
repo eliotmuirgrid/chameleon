@@ -1,8 +1,8 @@
 # Tracker (macros & day logs)
 
-Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not** identical: each person has **their own** goals, so the tracker applies [**Separation of concerns**](../../concepts/system/design/separation_of_concerns.md) — **separate reports per person** instead of one blended “household” total.
+Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not** identical: each person has **their own** goals, so the tracker applies [**Separation of concerns**](../concepts/system/design/separation_of_concerns.md) — **separate reports per person** instead of one blended “household” total.
 
-**Why:** [Diet reports example](../../concepts/system/design/separation_of_concerns/diet_report.md) explains the two questions (shared batch vs each person vs targets) and how files map to that.
+**Why:** [Diet reports example](../concepts/system/design/separation_of_concerns/diet_report.md) explains the two questions (shared batch vs each person vs targets) and how files map to that.
 
 ## Files
 
@@ -21,4 +21,4 @@ Eliot-only snacks, beer, or add-ons go in **Eliot’s** `.tsv` only; Subrina-onl
 
 ## Concepts
 
-- [`shared_nutrition_plan_eliot_subrina.md`](../../concepts/health/nutrition/shared_nutrition_plan_eliot_subrina.md) — shared plan context.
+- [`shared_nutrition_plan_eliot_subrina.md`](../concepts/health/nutrition/shared_nutrition_plan_eliot_subrina.md) — shared plan context.
