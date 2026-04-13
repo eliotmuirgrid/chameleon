@@ -32,5 +32,6 @@ If you cannot **quickly and consistently find** something, you do not really **h
 
 ## See also
 
+- [Separation of concerns](../../system/design/separation_of_concerns/concept.md) — **split different jobs** so they do not tangle; wrong couplings add **noise** and make systems harder to change—same direction as fighting entropy here.
 - [Decompression](decompression.md) — **temporarily** spreading a packed collection into a **working layout** (then often re-packing); complements the long-term **smaller search space** goal here.
 - [Finding what you need to solve problems](finding_what_you_need_to_solve_problems.md) — the broader pattern (home is one place it shows up).
