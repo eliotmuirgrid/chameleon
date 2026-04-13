@@ -11,13 +11,12 @@ Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not**
 | [`targets_eliot.md`](targets_eliot.md) | Eliot’s daily targets |
 | [`targets_subrina.md`](targets_subrina.md) | Subrina’s daily targets |
 | [`foods.md`](foods.md) | Shared density table for logging |
-| `YYYY-MM-DD-data.md` | Eliot’s lines for that day |
-| `YYYY-MM-DD-subrina-data.md` | Subrina’s lines for that day |
+| [`data.md`](data.md) | Consolidated raw table for all dates; first columns are **Date** and **Person** |
 | `YYYY-MM-DD-summary.md` | Optional **hub** for that day (links to per-person reports + shared reference) |
 | `YYYY-MM-DD-summary-eliot.md` / `…-subrina.md` | That person’s day vs **their** targets |
 | `YYYY-MM-DD-shared.md` | Shared meals & split rules *(reference only)* |
 
-Eliot-only snacks, beer, or add-ons go in **Eliot’s raw table `.md`** only; Subrina-only items go in **`-subrina-data.md`** only. Shared meals are split using the rules in that day’s **`YYYY-MM-DD-shared.md`** (or the hub **`YYYY-MM-DD-summary.md`** that links to it).
+Eliot-only snacks, beer, or add-ons are rows with **Person = Eliot**; Subrina-only items use **Person = Subrina** in [`data.md`](data.md). Shared meals are split using the rules in that day’s **`YYYY-MM-DD-shared.md`** (or the hub **`YYYY-MM-DD-summary.md`** that links to it).
 
 ## Concepts
 

@@ -2,7 +2,7 @@
 
 [**← Day hub**](2026-04-12-summary.md) · [**Subrina’s report**](2026-04-12-summary-subrina.md) · [**Shared cooking reference**](2026-04-12-shared.md)
 
-Targets from [`targets_eliot.md`](targets_eliot.md). Raw log: [`2026-04-12-data.md`](2026-04-12-data.md). This report is **Eliot only** — [Separation of concerns](../concepts/system/design/separation_of_concerns.md) · [diet pattern](../concepts/system/design/separation_of_concerns/diet_report.md).
+Targets from [`targets_eliot.md`](targets_eliot.md). Raw log: [`data.md`](data.md) *(filter `Date = 2026-04-12`, `Person = Eliot`)*. This report is **Eliot only** — [Separation of concerns](../concepts/system/design/separation_of_concerns.md) · [diet pattern](../concepts/system/design/separation_of_concerns/diet_report.md).
 
 Context: [`shared_nutrition_plan_eliot_subrina.md`](../concepts/health/nutrition/shared_nutrition_plan_eliot_subrina.md).
 
@@ -26,7 +26,7 @@ Context: [`shared_nutrition_plan_eliot_subrina.md`](../concepts/health/nutrition
 | Bucket | ~kcal | ~P | ~C | ~F | Notes |
 |--------|------:|---:|---:|---:|-------|
 | **Breakfast** *(shared batch + Eliot-only add-ons)* | **~1032** | **~65** | **~105** | **~40** | Scramble + veg + potato/parsnip + cottage cheese, berries, oats, fruit punch — see [shared breakfast](2026-04-12-shared.md#shared-breakfast-batch). |
-| **Lunch** *(split from shared pan)* | **~536** | **~60** | **~44** | **~13** | Jerk chicken, veg, sweet potato, butter, marinade — [`2026-04-12-data.md`](2026-04-12-data.md) · [split rules](2026-04-12-shared.md#lunch--jerk-chicken--veg-batch-split). |
+| **Lunch** *(split from shared pan)* | **~536** | **~60** | **~44** | **~13** | Jerk chicken, veg, sweet potato, butter, marinade — [`data.md`](data.md) *(2026-04-12 · Eliot)* · [split rules](2026-04-12-shared.md#lunch--jerk-chicken--veg-batch-split). |
 | **Snacks / evening** *(logged Eliot-only)* | **~780** | **~52** | **~79** | **~25** | Papaya, beer, extra cottage cheese + berries + strawberry + oats, two salmon portions, bagel + cream cheese. |
 
 **Day total *(breakfast + lunch + snacks above)*:** **~2348 kcal** · **~177 g P** · **~228 g C** · **~78 g F**.

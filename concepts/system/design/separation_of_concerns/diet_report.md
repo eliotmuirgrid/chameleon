@@ -20,7 +20,7 @@ Same idea as the [hub](../separation_of_concerns.md): **one home for one job**�
 ## How that maps to files
 
 - **Targets (two homes):** [`targets_eliot.md`](../../../../tracking/targets_eliot.md) and [`targets_subrina.md`](../../../../tracking/targets_subrina.md) — different numbers on purpose.
-- **Raw day logs (one file per person):** e.g. `YYYY-MM-DD-data.md` (Eliot) and `YYYY-MM-DD-subrina-data.md` (Subrina) in [`tracking/`](../../../../tracking/) — Eliot-only or Subrina-only lines stay in the right file.
+- **Raw logs (one consolidated table):** [`data.md`](../../../../tracking/data.md) in [`tracking/`](../../../../tracking/) with **Date** first and **Person** second — filter rows per person/day as needed.
 - **Day write-ups (optional):** either **one** `YYYY-MM-DD-summary.md` with **two** sections plus shared detail, or **split files** — `YYYY-MM-DD-summary.md` as a **hub**, `YYYY-MM-DD-summary-eliot.md`, `YYYY-MM-DD-summary-subrina.md`, and `YYYY-MM-DD-shared.md` for batch/split math only ([example](../../../../tracking/2026-04-12-summary.md)).
 
 Shared breakfast/lunch math (splits, batch totals) lives in **shared** (or the shared section of a monolithic summary); **each person’s** file compares **their** intake to **their** targets.

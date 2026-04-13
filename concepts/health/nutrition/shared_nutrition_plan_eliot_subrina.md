@@ -36,7 +36,7 @@ You share meals but have **different primary goals**:
 | `[tracking/targets_eliot.md](../../../../tracking/targets_eliot.md)`     | Eliot’s daily macro / calorie / fiber targets   |
 | `[tracking/targets_subrina.md](../../../../tracking/targets_subrina.md)` | Subrina’s daily macro / calorie / fiber targets |
 | `[tracking/foods.md](../../../../tracking/foods.md)`                     | Shared density table for logging                |
-| Daily logs                                                                       | `YYYY-MM-DD-data.md` per person where needed        |
+| Daily logs                                                                       | [`tracking/data.md`](../../../../tracking/data.md) with **Date** first and **Person** second |
 
 
 **Naming:** Use `**targets_eliot.md`** and `**targets_subrina.md**` only (no shared single `targets.md`) so tracker layout stays symmetric.
