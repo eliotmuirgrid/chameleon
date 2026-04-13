@@ -13,4 +13,8 @@ Food,Grams,Protein_g,Fat_g,Carbs_g,Calories_kcal
 "Blueberries",46,0,0,7,26
 "Honey",36,0,0,30,109
 "Beer, Corona Extra (205 ml ≈ g; foods.tsv)",205,1,0,8,85
-"Lunch + papaya + blueberries + honey + beer (this file only; add breakfast from summary)",,43,9,115,748
+"Bagel, sweet (foods.tsv)",68,6,2,36,184
+"Cheese, Cream (scraping ~5 g; foods.tsv)",5,0,2,0,18
+"Watermelon (two small pieces ~120 g est.; foods.tsv)",120,1,0,9,36
+"Avocado (foods.tsv)",33,1,5,3,53
+"Lunch + papaya + blueberries + honey + beer + bagel etc. (this file only; add breakfast from summary)",,51,18,163,1039

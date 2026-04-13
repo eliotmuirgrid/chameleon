@@ -23,3 +23,11 @@ Food,Grams,Protein_g,Fat_g,Carbs_g,Calories_kcal
 "Eliot lunch total",,60,13,44,536
 "Papaya (Eliot)",71,0,0,8,31
 "Beer, Corona Extra (Eliot-only, 150 ml ≈ g; foods.tsv)",150,0,0,6,63
+"Cottage cheese (Eliot-only; foods.tsv)",200,23,4,9,159
+"Blueberries (Eliot-only; foods.tsv)",50,0,0,7,29
+"Strawberry (Eliot-only; foods.tsv)",50,0,0,4,16
+"Steelcut oats dry (Eliot-only; foods.tsv)",16,2,1,11,62
+"Smoked salmon (50 g; Fish Salmon row foods.tsv)",50,10,7,0,104
+"Bagel, sweet (Eliot-only; foods.tsv)",62,6,2,33,168
+"Cheese, Cream (Eliot-only; foods.tsv)",12,1,4,1,42
+"Salmon (Eliot-only; Fish Salmon row foods.tsv)",51,10,7,0,106
