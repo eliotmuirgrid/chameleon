@@ -29,4 +29,4 @@ That is not a sign of personal failure; it is **infrastructure** for a world whe
 - [Bottleneck](bottleneck.md)
 - [Theory of constraints](theory_of_constraints.md)
 - [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — a **business** whose throughput is limited by follow-up and structure (different shape, same idea: find the constraint).
-- [Subrina job description](../people/subrina_job_description.md) — assistant / research role in a living system; overlaps with **support** and **operational** load.
+- [Subrina job description](../../entity/people/subrina_job_description.md) — assistant / research role in a living system; overlaps with **support** and **operational** load.

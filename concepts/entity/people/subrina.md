@@ -8,8 +8,8 @@ Subrina is employed as an assistant with a clear mandate: **use systems thinking
 
 Two principles anchor that approach:
 
-1. [**Theory of reciprocity**](../pareto/general/theory_of_reciprocity.md). The arrangement should strengthen both sides: Eliot's effectiveness improves, and Subrina gets clarity, growth, and work that feels worth doing.
-2. [**Theory of constraints**](../pareto/general/theory_of_constraints.md). Instead of polishing everything at once, you find the main [**bottleneck**](../pareto/general/bottleneck.md), relieve it, then let the next bottleneck appear. The system improves in focused steps rather than scattered effort.
+1. [**Theory of reciprocity**](../../pareto/general/theory_of_reciprocity.md). The arrangement should strengthen both sides: Eliot's effectiveness improves, and Subrina gets clarity, growth, and work that feels worth doing.
+2. [**Theory of constraints**](../../pareto/general/theory_of_constraints.md). Instead of polishing everything at once, you find the main [**bottleneck**](../../pareto/general/bottleneck.md), relieve it, then let the next bottleneck appear. The system improves in focused steps rather than scattered effort.
 
 The aim is a **dynamic model**: alignment over busywork, clarity over complexity, and steady refinement over brittle long-range plans. Success is not only "more done," but a setup that **naturally** produces better results with less friction over time.
 
@@ -27,7 +27,7 @@ The key is to **recognize** this not as a side contribution, but as a **core cap
 
 ## Example (bottleneck in practice)
 
-A concrete case of **finding and relieving a bottleneck**—including a long-overdue **dental checkup**, a minimal **Cayman** health plan, and using **lunch** to **hand off appointment details** so the rest of the flow could run—is on a separate page: [Example: relieving a bottleneck (dental care)](example_bottleneck_dental_care.md). That example ties together [bottleneck](../pareto/general/bottleneck.md) and [theory of constraints](../pareto/general/theory_of_constraints.md) in a real situation.
+A concrete case of **finding and relieving a bottleneck**—including a long-overdue **dental checkup**, a minimal **Cayman** health plan, and using **lunch** to **hand off appointment details** so the rest of the flow could run—is on a separate page: [Example: relieving a bottleneck (dental care)](subrina/dental_care_bottleneck.md). That example ties together [bottleneck](../../pareto/general/bottleneck.md) and [theory of constraints](../../pareto/general/theory_of_constraints.md) in a real situation.
 
 ---
 
@@ -57,5 +57,5 @@ These principles are core to how we operate as an organization, and Subrina woul
 
 Assistant researcher, reporting to **Eliot Muir** (founder and CEO, iNTERFACEWARE).
 
-**Related:** When the **constraint** is **focus and attention**, a standard **protocol** is **executive-style support** for **external** broken systems—see [Attention as a bottleneck and executive support](../pareto/general/attention_bottleneck_executive_support.md). If those systems ran smoothly, **less** of that kind of role would be needed.
+**Related:** When the **constraint** is **focus and attention**, a standard **protocol** is **executive-style support** for **external** broken systems—see [Attention as a bottleneck and executive support](../../pareto/general/attention_bottleneck_executive_support.md). If those systems ran smoothly, **less** of that kind of role would be needed.
 

@@ -1,6 +1,6 @@
 # Example: relieving a bottleneck (dental care)
 
-This page is a **worked example** of a [bottleneck](../pareto/general/bottleneck.md) in a real situation—how it showed up, how it was **relieved**, and how that ties to [**theory of constraints**](../pareto/general/theory_of_constraints.md). It sits in context of [Subrina's job description](subrina_job_description.md).
+This page is a **worked example** of a [bottleneck](../../../pareto/general/bottleneck.md) in a real situation—how it showed up, how it was **relieved**, and how that ties to [**theory of constraints**](../../../pareto/general/theory_of_constraints.md). It sits in context of [Subrina's job description](../subrina.md).
 
 ---
 
@@ -14,7 +14,7 @@ She also navigated the **financial constraints** of a **minimal health plan**—
 
 ## Where the bottleneck actually was
 
-This is [**theory of constraints**](../pareto/general/theory_of_constraints.md) **in action**. The limit on the system was not only "nobody put it on the calendar"; it included **getting the right information across at the right time**. **Over lunch**, Subrina was able to **communicate the appointment details** clearly to the CEO—so the bottleneck was relieved through a **real handoff** that let the rest of the system (follow-through, payment, showing up) actually run. Address **that** [bottleneck](../pareto/general/bottleneck.md), and overall flow improves.
+This is [**theory of constraints**](../../../pareto/general/theory_of_constraints.md) **in action**. The limit on the system was not only "nobody put it on the calendar"; it included **getting the right information across at the right time**. **Over lunch**, Subrina was able to **communicate the appointment details** clearly to the CEO—so the bottleneck was relieved through a **real handoff** that let the rest of the system (follow-through, payment, showing up) actually run. Address **that** [bottleneck](../../../pareto/general/bottleneck.md), and overall flow improves.
 
 ---
 
@@ -26,9 +26,5 @@ Overall, it illustrates her stepping in with **accountability** and **resourcefu
 
 ---
 
-## See also
+**Inline references:** [Bottleneck](../../../pareto/general/bottleneck.md), [Theory of constraints](../../../pareto/general/theory_of_constraints.md), [Example: order follow-up as a bottleneck (Audiophile)](../../../pareto/general/example_bottleneck_order_followup_audiophile.md), [Subrina job description](../subrina.md).
 
-- [Bottleneck](../pareto/general/bottleneck.md)
-- [Theory of constraints](../pareto/general/theory_of_constraints.md)
-- [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md) — business **follow-up** and **structure** as constraints.
-- [Subrina job description](subrina_job_description.md)

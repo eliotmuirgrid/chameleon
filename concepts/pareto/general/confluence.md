@@ -10,7 +10,7 @@
 - **What you do:** Create **spaces** and **pages** in a **web** UI; **link** pages; **permissions** for teams.  
 - **Where it runs:** **On Atlassian’s** infrastructure (cloud) or **self-hosted** in some setups—either way, the **experience** is **their** product, **not** “a folder of files on your disk” by default.
 
-For how **Bitbucket** (Git hosting) relates to **Git** itself—same vendor family, different product—see [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md).
+For how **Bitbucket** (Git hosting) relates to **Git** itself—same vendor family, different product—see [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md).
 
 ---
 
@@ -33,6 +33,6 @@ The **product** is different from a site builder, but the **shape** is similar t
 - [Open systems vs closed systems](open_versus_closed.md)  
 - [Wix vs plain files](wix.md) — same **closed** pattern, different category  
 - [Markdown](markdown.md) · [Source control](source_control.md) · [Git](git.md)  
-- [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — **Atlassian** context  
+- [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md) — **Atlassian** context  
 
 **How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../C.how_this_all_started.md).

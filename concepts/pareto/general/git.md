@@ -34,11 +34,11 @@ You point it at a **folder** (any files and subfolders you choose). There is not
 
 > Git is a **general-purpose**, very **smart “save history”** for **almost anything** you create—as long as it lives in files.
 
-**GitHub** and **Bitbucket** are **websites** that use Git—they are **not** required to use Git on your own machine. How those layers fit together is in [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md).
+**GitHub** and **Bitbucket** are **websites** that use Git—they are **not** required to use Git on your own machine. How those layers fit together is in [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md).
 
 ---
 
 ## See also
 
 - [Source control (the idea)](source_control.md) — the **general concept**; Git is **one** implementation.  
-- [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — hosting sites **on top** of Git; what you **own** vs what the **site** adds.
+- [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md) — hosting sites **on top** of Git; what you **own** vs what the **site** adds.

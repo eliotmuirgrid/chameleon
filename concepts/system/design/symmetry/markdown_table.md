@@ -1,26 +1,57 @@
 # Markdown Table Format
 
-**Concept:** Prefer **Markdown tables** over legacy delimiter formats like **CSV** and **TSV** when the goal is shared readability for both **humans** and **AI**.
+Always use **Markdown tables** as an application of finding symmetry.
 
-Markdown tables keep structure **visible** at a glance: headers are obvious, columns line up in rendered form, and intent is easier to scan without first parsing delimiters.
+This decision is for people doing real work (like nutrition planning). A good table should be easy to scan in seconds, easy to check, and easy to discuss.
 
----
+Markdown tables are easier to read on sight. People can understand the structure right away, and systems that use **artificial intelligence (AI)** can keep the meaning with less guesswork. Platforms like [GitHub, Bitbucket, and Git](../../../entity/software/github_bitbucket_and_git.md) and editors like [Cursor](../../../entity/software/cursor.md) already render Markdown tables clearly.
 
-## Why this often makes more sense
+You can see the use of [tracking/log.md](../../../../tracking/log.md)
 
-- **Faster human scanning** — rows and columns are readable in-place, especially in docs and reviews.
-- **Clearer AI context** — model prompts and summaries often retain table meaning better when structure is explicit in text.
-- **Better discussion surface** — comments, notes, and links can sit near the table naturally inside Markdown pages.
+## Example: Markdown table
 
----
+```md
+| Food | Grams | Protein_g | Calories_kcal |
+| --- | ---: | ---: | ---: |
+| Fish, Salmon | 200 | 40 | 416 |
+| Blueberries | 100 | 0.7 | 57 |
+```
 
-## Legacy compatibility
+You can see headers, rows, and columns immediately.
 
-Legacy delimiter formats are mainly for interoperability with legacy software. As modern tooling improves, this need keeps shrinking. Prefer a **Markdown-first** workflow and only translate to CSV/TSV at the boundary when an old system still demands it.
+## Decision
 
----
+Use Markdown tables as the default format for shared data in this project.
+
+## Older formats (for reference only)
+
+If you run into older files, here is what they mean:
+
+- **Comma-separated values (CSV)** means columns are split by commas.
+- **Tab-separated values (TSV)** means columns are split by tab characters.
+
+### Comma-separated values (CSV)
+
+```text
+Food,Grams,Protein_g,Calories_kcal
+Fish, Salmon,200,40,416
+Blueberries,100,0.7,57
+```
+
+You have to parse commas correctly, and values with commas can be confusing.
+
+### Tab-separated values (TSV)
+
+```text
+Food	Grams	Protein_g	Calories_kcal
+Fish, Salmon	200	40	416
+Blueberries	100	0.7	57
+```
+
+This is cleaner than CSV for commas inside values, but tabs are still not as visually clear as a Markdown table.
 
 ## See also
 
 - [Symmetry](../symmetry.md) — keep the same structure across related files so one learning transfers to the next.
 - [Separation of concerns](../separation_of_concerns/concept.md) — keep raw machine storage and human-facing explanation as separate concerns when needed.
+

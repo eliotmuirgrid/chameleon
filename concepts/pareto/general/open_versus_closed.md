@@ -70,6 +70,6 @@ Documents repeat the pattern—**open** formats vs **closed** ones:
 | Markdown vs Word/PDF/HTML | [Markdown](markdown.md) |
 | Kitchen-style “general-purpose” tools | [general-purpose tools](general_purpose.md) |
 | Wix as closed vs Markdown / source control as open | [Wix vs plain files](wix.md) |
-| Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) |
+| Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md) |
 | Atlassian Confluence (team wiki, closed) | [Confluence](confluence.md) |
 | Concepts site: idea vs how we hosted it | [How this all started](../C.how_this_all_started.md) |

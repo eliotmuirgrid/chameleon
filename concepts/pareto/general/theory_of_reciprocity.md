@@ -23,6 +23,6 @@ A healthy workplace **maintains this balance over time**. It is not only a trans
 
 ## See also
 
-- [Subrina job description](../people/subrina_job_description.md) — reciprocity as a named principle alongside theory of constraints.
+- [Subrina job description](../../entity/people/subrina_job_description.md) — reciprocity as a named principle alongside theory of constraints.
 - [Bottleneck](bottleneck.md) — the part of the system that limits flow.
 - [Theory of constraints](theory_of_constraints.md) — often paired when designing how work and systems improve together.

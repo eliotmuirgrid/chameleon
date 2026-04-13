@@ -8,4 +8,4 @@ It lets you change things freely, knowing you can always recover an earlier vers
 
 The same idea applies when several people work on the same project: the system keeps a clear history of who changed what, so you are not stuck with last-save-wins across a pile of copies.
 
-Different programs implement this like Git. You only need the idea first; [Git (in plain terms)](git.md) is how this repo usually does it. Hosting sites on top of Git are in [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md). For the broader “open files” picture, see [Open systems vs closed systems](open_versus_closed.md).
+Different programs implement this like Git. You only need the idea first; [Git (in plain terms)](git.md) is how this repo usually does it. Hosting sites on top of Git are in [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md). For the broader “open files” picture, see [Open systems vs closed systems](open_versus_closed.md).
