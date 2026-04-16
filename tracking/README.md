@@ -18,6 +18,16 @@ Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not**
 
 Eliot-only snacks, beer, or add-ons are rows with **Person = Eliot**; Subrina-only items use **Person = Subrina** in [`data.md`](data.md). Shared meals are split using the rules in that day’s **`YYYY-MM-DD-shared.md`** (or the hub **`YYYY-MM-DD-summary.md`** that links to it).
 
+## Hard rule for new foods
+
+Every new food name must be added to [`foods.md`](foods.md) before it is used in logs as a canonical item.
+
+- Eliot-owned entries: if a new item appears in an Eliot row first, Eliot adds it to `foods.md`.
+- Subrina-owned entries: if a new item appears in a Subrina row first, Subrina adds it to `foods.md`.
+- Shared meals: add the new item once in `foods.md` when the shared batch is first logged, then both people can reference that same canonical name.
+
+If exact nutrition is not yet confirmed, add a temporary estimate in `foods.md` and mark it clearly in the log comment, then replace it when label or trusted reference values are available.
+
 ## Concepts
 
 - [`shared_nutrition_plan_eliot_subrina.md`](../concepts/health/nutrition/shared_nutrition_plan_eliot_subrina.md) — shared plan context.

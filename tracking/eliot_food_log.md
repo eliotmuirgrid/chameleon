@@ -92,5 +92,43 @@
 | 2026-04-12 | Cheese, Cream                | scraping ~5 g; foods.md                                                | 5     | 0         | 2     | 0       | 18            |
 | 2026-04-12 | Watermelon                   | two small pieces ~120 g est.; foods.md                                 | 120   | 1         | 0     | 9       | 36            |
 | 2026-04-12 | Avocado                      | foods.md                                                               | 33    | 1         | 5     | 3       | 53            |
+| 2026-04-13 | Rice, Jasberry               | 1/2 cup cooked total, split 50/50; Eliot share (~1/4 cup)             | 40    | 1         | 1     | 10      | 50            |
+| 2026-04-13 | Rice, Jasberry               | 1/2 cup cooked total, split 50/50; Subrina share (~1/4 cup)           | 40    | 1         | 1     | 10      | 50            |
+| 2026-04-13 | Chicken                      | 435 g batch, 50/50 split; Eliot share                                 | 218   | 68        | 8     | 0       | 360           |
+| 2026-04-13 | Chicken                      | 435 g batch, 50/50 split; Subrina share                                | 217   | 67        | 8     | 0       | 358           |
+| 2026-04-13 | Zucchini                     | cucumber proxy per foods.md                                            | 168   | 1         | 0     | 6       | 25            |
+| 2026-04-13 | Tomato                       | foods.md                                                               | 175   | 2         | 0     | 7       | 32            |
+| 2026-04-13 | Red onion                    | foods.md                                                               | 61    | 1         | 0     | 6       | 24            |
+| 2026-04-13 | Corn                         | foods.md                                                               | 77    | 3         | 0     | 15      | 66            |
+| 2026-04-13 | Olive oil                    | foods.md                                                               | 4.5   | 0         | 5     | 0       | 40            |
+| 2026-04-13 | Cottage cheese               | foods.md                                                               | 200   | 23        | 4     | 9       | 159           |
+| 2026-04-13 | Blueberries                  | foods.md                                                               | 100   | 1         | 0     | 15      | 57            |
+| 2026-04-13 | Chicken                      | lunch; foods.md                                                        | 180   | 56        | 6     | 0       | 297           |
+| 2026-04-13 | Beans, black                 | lunch; cooked, USDA-style est. (not in foods.md)                       | 120   | 11        | 1     | 28      | 158           |
+| 2026-04-13 | Chickpeas                    | lunch; cooked, USDA-style est. (not in foods.md)                       | 50    | 4         | 1     | 14      | 82            |
+| 2026-04-13 | Mushrooms                    | lunch; foods.md                                                        | 100   | 3         | 0     | 3       | 22            |
+| 2026-04-13 | Peppers, Sweet               | lunch; foods.md                                                        | 70    | 1         | 0     | 4       | 22            |
+| 2026-04-13 | Red onion                    | lunch; foods.md                                                        | 25    | 0         | 0     | 2       | 10            |
+| 2026-04-13 | Milk, Planet Oat original    | coffee; 200 ml ≈ g; foods.md                                           | 200   | 2         | 3     | 18      | 100           |
+| 2026-04-13 | Cottage cheese               | evening snack; foods.md                                                | 200   | 23        | 9     | 4       | 159           |
+| 2026-04-13 | Tangerine                    | segments; USDA-style est. (not in foods.md)                            | 95    | 1         | 0     | 13      | 50            |
+| 2026-04-14 | Calalou                      | not in foods.md                                                         | 45    |           |       |         |               |
+| 2026-04-14 | Corn                         | foods.md                                                                | 87    | 3         | 0     | 17      | 75            |
+| 2026-04-14 | Egg mix (8 eggs, 6 yolks out) | Eliot share; 421 g cracked eggs; 333 g remaining after removing 6 yolks; algebra gives ~38.0 g/white and ~14.7 g/yolk; equivalent to 4 whites + 1 yolk | 166.5 | 19        | 4     | 2       | 126           |
+| 2026-04-14 | Egg mix (8 eggs, 6 yolks out) | Subrina share; 421 g cracked eggs; 333 g remaining after removing 6 yolks; algebra gives ~38.0 g/white and ~14.7 g/yolk; equivalent to 4 whites + 1 yolk | 166.5 | 19        | 4     | 2       | 126           |
+| 2026-04-14 | Potatoe, Sweet               | Eliot share; 219 g total; 50/50 split                                   | 109.5 | 2         | 0     | 22      | 94            |
+| 2026-04-14 | Potatoe, Sweet               | Subrina share; 219 g total; 50/50 split                                 | 109.5 | 2         | 0     | 22      | 94            |
+| 2026-04-14 | Carrot                       | foods.md                                                                 | 143   | 1         | 0     | 14      | 59            |
+| 2026-04-14 | Butter                       | foods.md                                                                 | 12    | 0         | 10    | 0       | 86            |
+| 2026-04-14 | Peppers, Sweet               | foods.md                                                                 | 159   | 2         | 0     | 10      | 49            |
+| 2026-04-14 | Strawberry                   | foods.md                                                                 | 92    | 1         | 0     | 7       | 29            |
+| 2026-04-14 | Cottage cheese               | foods.md                                                                 | 100   | 12        | 2     | 4       | 80            |
+| 2026-04-14 | Peas                         | Eliot share; 43 g total; 50/50 split                                     | 21.5  | 1         | 0     | 3       | 18            |
+| 2026-04-14 | Peas                         | Subrina share; 43 g total; 50/50 split                                   | 21.5  | 1         | 0     | 3       | 18            |
+| 2026-04-14 | Cottage cheese               | foods.md                                                                  | 200   | 23        | 4     | 9       | 159           |
+| 2026-04-14 | Blueberries                  | frozen; foods.md                                                          | 100   | 1         | 0     | 15      | 57            |
+| 2026-04-14 | Peanut butter                | foods.md                                                                  | 12    | 3         | 6     | 2       | 71            |
+| 2026-04-14 | Steelcut oats dry            | raw oats; foods.md                                                        | 30    | 3         | 2     | 21      | 117           |
+| 2026-04-14 | Milk, Planet Oat original    | flatwhite; standard recipe; 100 ml ≈ g; foods.md                         | 100   | 1         | 1     | 9       | 50            |
 
 

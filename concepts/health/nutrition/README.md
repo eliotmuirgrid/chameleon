@@ -9,6 +9,7 @@ We will create a **set of concepts** around **nutrition** in this folder—short
 - [Calorie deficit](calorie_deficit.md) — calories in vs out; why scarcity taps fat and can cost muscle (deep history in Africa).
 - [Daily variety of fruits and vegetables](daily_variety_fruits_vegetables.md) — diverse whole foods, broad nutrients; your body takes what it needs.
 - [Glucose spikes](glucose_spikes.md) — a sharp, fast rise in blood glucose after eating.
+- [Zeroing (taring) a scale](tare_scale.md) — how to zero container weight so logged grams represent food only.
 
 ## Related (broader health)
 

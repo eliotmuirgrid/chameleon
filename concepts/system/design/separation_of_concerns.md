@@ -1,6 +1,6 @@
 # Separation of concerns
 
-Systems that **separate** concerns **cleanly**—in a **logical**, **simple** way—are **easier to understand**, **simpler to maintain**, and less likely to **slide into disorder** over time—related to [**entropy**](../../pareto/general/decluttering_and_retrieval.md#entropy-and-search-space) (things drifting toward mess unless you push back).
+Systems that **separate** concerns **cleanly**—in a **logical**, **simple** way—are **easier to understand**, **simpler to maintain**, and less likely to **slide into disorder** over time—related to [**entropy**](entropy.md) (things drifting toward mess unless you push back).
 
 Think of it as giving everything its **own home**, so you can reach for **one** thing without making a mess of the rest.
 
@@ -15,5 +15,7 @@ When **different needs** live in **different spots**, you can **change one corne
 ---
 
 **Read next:** the pattern without domain detail—[**Concept**](separation_of_concerns/concept.md).
+
+**Concept writing rules:** [**Concept standard**](../../concept.md)
 
 **Examples:** [**Code**](separation_of_concerns/code.md) · [**Diet reports**](separation_of_concerns/diet_report.md)

@@ -7,6 +7,14 @@ Short notes on **how systems are shaped**—architecture, design ideas, and trad
 - [Symmetry](design/symmetry.md) — two sides built the same way so one lesson covers both; when to match on purpose and when not to.
 - [Immediate solutions](design/immediate_solutions.md) — fix urgent problems fast with **resources at hand**; when that helps and when to be careful.
 - [Separation of concerns](design/separation_of_concerns/concept.md) — split **different jobs** so each can be named and adjusted without tangling the rest; [hub with links to examples](design/separation_of_concerns.md).
+- [Cognitive load](design/cognitive_load/README.md) — how much thinking effort a system demands at one time.
+- [Entropy](design/entropy.md) — drift toward disorder unless active maintenance pushes back.
+
+## Algorithms
+
+- [Algorithms (index)](algorithms/README.md) — repeatable step-by-step problem-solving methods.
+- [Recursion](algorithms/recursion.md) — solve by reducing to smaller same-shape subproblems until a stop rule.
+- [Binary search](algorithms/binary_search.md) — search sorted data by halving the remaining range each step.
 
 ## Troubleshooting
 
