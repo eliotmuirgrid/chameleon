@@ -35,7 +35,7 @@ Lower cognitive load usually gives:
 
 ## See also
 
-- [Simple English](simple_english.md)
+- [Simple English](../../../communication/simple_english.md)
 - [Separation of concerns](../separation_of_concerns.md)
 - [Small packet](../small_packet.md)
 - [Symmetry](../symmetry.md)

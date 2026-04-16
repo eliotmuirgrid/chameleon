@@ -5,7 +5,7 @@ This is the single source of truth for writing concept pages in this repository.
 ## Rules
 
 1. **General case first** - define the concept so it works across domains before any domain example.
-2. **Simple English first** - use high-school English and the 80/20 language rule. See also: [Simple English guidelines](system/design/cognitive_load/simple_english.md).
+2. **Simple English first** - use high-school English and the 80/20 language rule. See also: [Simple English guidelines](communication/simple_english.md).
 3. **Define terms once** - if a specialist term is required, define it in one short line.
 4. **One concept per page** - do not mix concept, implementation, and deep examples on the same page.
 5. **Core before derived** - state the principle before tools, methods, or workflows derived from it.

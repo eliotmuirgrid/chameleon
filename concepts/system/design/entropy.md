@@ -38,6 +38,6 @@ If "no" appears, entropy is increasing and the simplification should stop.
 ## See also
 
 - [Cognitive load](cognitive_load/README.md)
-- [Simple English (80/20 language rule)](cognitive_load/simple_english.md)
+- [Simple English (80/20 language rule)](../../communication/simple_english.md)
 - [Separation of concerns](separation_of_concerns.md)
 - [Decluttering and retrieval](../../pareto/general/decluttering_and_retrieval.md#entropy-and-search-space)

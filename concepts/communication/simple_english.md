@@ -16,8 +16,8 @@ Use the smallest set of words that most people understand.
 
 ## See also
 
-- [Cognitive load](README.md)
-- [Entropy](../entropy.md)
-- [Recursion](../../algorithms/recursion.md)
-- [Separation of concerns](../separation_of_concerns.md)
-- [Concept standard](../../../concept.md)
+- [Cognitive load](../system/design/cognitive_load/README.md)
+- [Entropy](../system/design/entropy.md)
+- [Recursion](../system/algorithms/recursion.md)
+- [Separation of concerns](../system/design/separation_of_concerns.md)
+- [Concept standard](../concept.md)

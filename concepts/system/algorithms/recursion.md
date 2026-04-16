@@ -32,6 +32,6 @@ To count down from 3:
 
 - [Binary search](binary_search.md)
 - [Cognitive load](../design/cognitive_load/README.md)
-- [Simple English (80/20 language rule)](../design/cognitive_load/simple_english.md)
+- [Simple English (80/20 language rule)](../../communication/simple_english.md)
 - [Entropy](../design/entropy.md)
 - [Separation of concerns](../design/separation_of_concerns.md)
