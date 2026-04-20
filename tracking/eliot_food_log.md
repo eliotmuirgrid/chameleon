@@ -130,5 +130,6 @@
 | 2026-04-14 | Peanut butter                | foods.md                                                                  | 12    | 3         | 6     | 2       | 71            |
 | 2026-04-14 | Steelcut oats dry            | raw oats; foods.md                                                        | 30    | 3         | 2     | 21      | 117           |
 | 2026-04-14 | Milk, Planet Oat original    | flatwhite; standard recipe; 100 ml ≈ g; foods.md                         | 100   | 1         | 1     | 9       | 50            |
+| 2026-04-19 | Butter                       | Subrina; foods.md                                                       | 4     | 0         | 3     | 0       | 29            |
 
 

@@ -9,13 +9,18 @@ This is the single source of truth for writing concept pages in this repository.
 3. **Define terms once** - if a specialist term is required, define it in one short line.
 4. **One concept per page** - do not mix concept, implementation, and deep examples on the same page.
 5. **Core before derived** - state the principle before tools, methods, or workflows derived from it.
-6. **Transfer test** - include a quick check that the concept still makes sense in another domain.
-7. **Link out for depth** - keep the page light; use "See also" links for detail pages.
+6. **Use two layers for depth** - keep core explanation in `<concept>.md` and move optional depth into `<concept>/` pages.
+7. **Transfer test** - include a quick check that the concept still makes sense in another domain.
+8. **Link out for depth** - keep the page light; use "See also" links for detail pages.
 
 ## Required page shape
 
 1. **Concept** - one short definition.
 2. **See also** - links to why, method, examples, and related concepts.
+
+## Detail page pattern
+
+Use the detail-page pattern documented here: [Concept - Detail Pages](concept/detail.md).
 
 ## Quality gate before publish
 
@@ -25,3 +30,7 @@ This is the single source of truth for writing concept pages in this repository.
 - Does the page stay focused on one concept?
 
 These rules apply separation of concerns to concept writing itself.
+
+## See also
+
+- [Concept - Detail Pages](concept/detail.md)
