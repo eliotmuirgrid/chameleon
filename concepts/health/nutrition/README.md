@@ -11,6 +11,7 @@ We will create a **set of concepts** around **nutrition** in this folder—short
 - [Glucose spikes](glucose_spikes.md) — a sharp, fast rise in blood glucose after eating.
 - [Zeroing (taring) a scale](tare_scale.md) — how to zero container weight so logged grams represent food only.
 - [Nutritional tracking realities](nutritional_tracking_realities.md) — build a tracking system that still works on busy, imperfect days.
+- [Soup — calories per serving](soup_calories_per_serving.md) — example of [proportional allocation](../../system/design/proportional_allocation.md) for a mixed batch.
 
 ## Related (broader health)
 

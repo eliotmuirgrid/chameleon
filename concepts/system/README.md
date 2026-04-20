@@ -9,6 +9,7 @@ Short notes on **how systems are shaped**—architecture, design ideas, and trad
 - [Separation of concerns](design/separation_of_concerns/concept.md) — split **different jobs** so each can be named and adjusted without tangling the rest; [hub with links to examples](design/separation_of_concerns.md).
 - [Cognitive load](design/cognitive_load/README.md) — how much thinking effort a system demands at one time.
 - [Entropy](design/entropy.md) — drift toward disorder unless active maintenance pushes back.
+- [Proportional allocation](design/proportional_allocation.md) — split a total across parts by **share of size** (e.g. calories per serving from batch weight).
 
 ## Algorithms
 
