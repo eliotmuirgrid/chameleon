@@ -6,3 +6,4 @@ This folder holds **communication** ideas that apply **both to people and to AI*
 
 - [Specific praise](specific_praise.md) — why concrete feedback beats vague compliments; examples for employees, children, and AI.
 - [Simple English (80/20 language rule)](simple_english.md) — use the smallest common language that preserves meaning.
+- [Adaptive communication](adaptive_communication.md) — keep the message true while adapting delivery style to different people.

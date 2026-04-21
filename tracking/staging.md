@@ -13,12 +13,13 @@ These are shared equally between Eliot and Subrina.
 - 4 whole eggs weighed: **214g**
 - After removing 2 yolks, remaining eggs weighed: **181g**
 - Removed yolks (excess): **33g** (214g - 181g)
+- Small egg-white spill occurred during yolk removal (minor loss).
 - Shared egg mix (egg whites + 2 yolks): **181g total** -> **90.5g each**
 - Subrina extra yolks: **+33g**
 
-Final allocation:
-- Eliot: **90.5g** egg mix
-- Subrina: **123.5g** total (**90.5g shared mix + 33g extra yolks**)
+Final allocation (updated):
+- Eliot: **all eggs** (entire prepared egg portion)
+- Subrina: **0g eggs**
 
 ## Eliot-Only Add-on
 
@@ -31,3 +32,8 @@ Final allocation:
 ## Eliot-Only Add-on
 
 - Smoked salmon: **29g** (Eliot only)
+
+## Breakfast Today
+
+- Zucchini: **306g**
+- Tomato: **321g**
