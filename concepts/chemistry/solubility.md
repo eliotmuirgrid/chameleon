@@ -1,0 +1,9 @@
+# Solubility
+
+**Solubility** is how much of one substance (the **solute**) can dissolve in another (the **solvent**) under specific conditions, especially **temperature** and **pressure**.
+
+For gases in water, temperature is a key factor: as water gets warmer, it usually holds **less dissolved gas**.
+
+## Subpages
+
+- [CO2 solubility and temperature](solubility/co2.md) — why cold drinks stay fizzy longer and warm drinks go flat faster.
