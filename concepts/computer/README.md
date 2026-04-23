@@ -23,6 +23,10 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 - [Install WhatsApp on an Apple computer](install_whatsapp_on_mac.md) — App Store or official download, then link to your phone.
 - [Screenshot part of the screen](region_screenshot_mac.md) — **Shift + ⌘ + 4**, drag a box; optional **Shift + ⌘ + 5** for more choices.
 
+## Storage (names and formats)
+
+- [Common filesystem names (quick reference)](storage/common_filesystem_names.md) — short identities for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs** when cross-platform pages need a link target.
+
 ## Git
 
 - [Git (concepts)](git/README.md) — Git itself, `core.ignorecase`, and GitHub/Bitbucket vs local Git. Git implements [source control (the idea)](../pareto/general/source_control.md); the index above is the usual entry point.

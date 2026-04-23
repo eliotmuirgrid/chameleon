@@ -16,7 +16,7 @@ Big topics **pull in** prerequisites, second tools, and edge cases. If all of th
 
 ## What to do in practice
 
-Use the **template and ordered checks** on [Recursive decomposition — practice checklist](recursive_decomposition_practice.md): hub shape, four recursive rules, and when to **stop** splitting.
+Use the **template and ordered checks** on [Recursive decomposition — practice checklist](recursive_decomposition_practice.md): hub shape, four recursive rules, **iterative passes** (structure first, then **term audit**), and when to **stop** splitting.
 
 Keep **tool logic** and **environment rules** in **different** pages when both matter; the distinction is [Tool internal model and environment](internal_model_and_environment.md).
 

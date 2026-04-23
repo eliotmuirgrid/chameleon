@@ -1,24 +1,24 @@
 # Filesystem case on major desktop OS families
 
-Optional depth for [Git `core.ignorecase` and filesystems](../git_core_ignorecase.md). This page holds **only** how common **local filesystems** treat **letter case** in file and folder names. Git’s reaction to those rules stays on the hub page.
+Optional depth for [Git `core.ignorecase` and filesystems](../git_core_ignorecase.md). This page holds **only** how common **local filesystems** treat **letter case** in file and folder names. Git’s reaction to those rules stays on the hub page. **Proper names** below link to short identities on [Common filesystem names (quick reference)](../../storage/common_filesystem_names.md).
 
 ---
 
 ## Windows (typical desktop install)
 
-On the usual **NTFS** setup for Windows desktops, the filesystem is **case-preserving** and **case-insensitive**: `Notes.txt` and `notes.txt` refer to the **same** file. Some installs and APIs differ; the point for portable work is the **default** most collaborators see.
+On the usual [**NTFS**](../../storage/common_filesystem_names.md#ntfs) setup for Windows desktops, the filesystem is **case-preserving** and **case-insensitive**: `Notes.txt` and `notes.txt` refer to the **same** file. Some installs and APIs differ; the point for portable work is the **default** most collaborators see.
 
 ---
 
 ## macOS (typical single-volume install)
 
-Most Macs use **APFS** or older **HFS+** volumes formatted **case-insensitive, case-preserving**: again, `Readme.md` and `README.md` collide as **one** path. You **can** create **case-sensitive** APFS volumes; treat that as a deliberate exception when reasoning about “what most Mac users have.”
+Most Macs use [**APFS**](../../storage/common_filesystem_names.md#apfs) or older [**HFS+**](../../storage/common_filesystem_names.md#hfs) volumes formatted **case-insensitive, case-preserving**: again, `Readme.md` and `README.md` collide as **one** path. You **can** create **case-sensitive** APFS volumes; treat that as a deliberate exception when reasoning about “what most Mac users have.”
 
 ---
 
 ## Linux (typical native filesystem)
 
-Common layouts on **ext4**, **XFS**, **Btrfs**, and similar treat names as **case-sensitive**: `File.txt` and `file.txt` are **two different** paths. That is the environment many **servers** and **CI** runners use.
+Common layouts on [**ext4**](../../storage/common_filesystem_names.md#ext4), [**XFS**](../../storage/common_filesystem_names.md#xfs), [**Btrfs**](../../storage/common_filesystem_names.md#btrfs), and similar treat names as **case-sensitive**: `File.txt` and `file.txt` are **two different** paths. That is the environment many **servers** and **CI** runners use.
 
 ---
 
