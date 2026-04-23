@@ -23,7 +23,7 @@ That shape lines up with the [concept standard](../concept.md), [Simple English 
 
 1. **Spot overload** — If one paragraph **must** explain two different systems (for example **Git** and **kernel path rules**) to make sense, **stop**. Move the second system to its own page and link back. The signal matches [Special case: overloaded concepts](overloaded_concept.md).
 
-2. **Spot prerequisites** — Terms that act like **black boxes** (for example a normalization rule, a disk structure name) and **carry** the argument belong on their **own** page if they are not the topic under hand. On the hub, **link** them; do not **define** them at length in passing.
+2. **Spot prerequisites** — Terms that act like **black boxes** (for example a normalization rule, a disk structure name) and **carry** the argument belong on their **own** page if they are not the topic under hand. On the hub, **link** them; do not **define** them at length in passing. When many **named identities** (formats, vendors, APIs) already sit in **one glossary file**, run [Glossary packet split](#glossary-packet-split) below instead of growing that file.
 
 3. **Parentage** — Every page you **split out** should link **up** to the hub (or parent) that motivated it, so the [web](breakup_concepts_into_web.md) stays navigable both ways.
 
@@ -37,16 +37,34 @@ You stop when extra pages would only repeat **primitives** you can name in one l
 
 ---
 
+## Glossary packet split
+
+Some pages are not quite a free-form [kitchen sink page](kitchen_sink_page.md), but they **stack** many **parallel** definitions—**NTFS**, **ext4**, six acronyms in a row—because “they are all filesystems.” That is still **one scroll** and still pushes links toward **heading anchors** inside a long file. Same problem class: **many named identities** in one file instead of **one home per name**.
+
+**Better pattern (generalized):**
+
+1. **Hub** — Short `Topic.md` with **one sentence** identity for the **family** (“common filesystems for cross-platform readers”) and **no** long definitions in the body.
+2. **Folder** — `Topic/` matching the hub name (same pattern as [Concept - Detail Pages](detail.md)).
+3. **One file per named identity** — `Topic/ntfs.md`, `Topic/apfs.md`, … each small, each linking **up** to the hub and sideways where useful.
+4. **Index** — `Topic/README.md` listing links (optional but helpful when there are several children).
+5. **Redirect stub** — If an old **kitchen-sink filename** is linked from outside the repo, replace its body with “moved to hub” prose instead of breaking paths silently.
+
+**Worked example:** [Common filesystems (cross-platform)](../computer/storage/common_filesystems.md) with identities under [`common_filesystems/`](../computer/storage/common_filesystems/README.md); callers link to **files** (for example from [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md)).
+
+**Why:** [Files are more stable than headings](kitchen_sink_page.md#linking)—anchors drift when headings get renamed; a path to `ext4.md` stays honest.
+
+---
+
 ## Iterative passes (not one-shot)
 
 Decomposition works best as a **short loop**, not a single heroic split.
 
-1. **Pass A — Structure** — Apply the four **recursive checks** above: overload, prerequisites, parentage, boundary. Split **threads** onto the right pages.
+1. **Pass A — Structure** — Apply the four **recursive checks** above: overload, prerequisites, parentage, boundary. Split **threads** onto the right pages. Prefer a **small index** plus **separate identity pages** over one long mixed file—a [kitchen sink page](kitchen_sink_page.md). If the file is instead a **glossary of parallel names** (same kind of thing, many headings), use [Glossary packet split](#glossary-packet-split): hub, folder, **one file per name**, optional redirect for the old path.
 
 2. **Pass B — Term audit** — Reread the draft **only** for **opaque tokens**: **acronyms**, **product or format names**, **APIs**, anything a **high-school reader** would have to guess. For each token, choose **one**:
    - **Inline gloss** — one clause in **plain English** on **first** use, if the idea is **local** to this page; or
    - **Link** — to an existing concept page or glossary packet; or
-   - **New small page** — if the name will **reuse** across the repo (example: [Common filesystem names (quick reference)](../computer/storage/common_filesystem_names.md) feeding [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md)).
+   - **New small page** — if the name will **reuse** across the repo. Prefer **one file per identity** after a [glossary packet split](#glossary-packet-split) (example: [ext4](../computer/storage/common_filesystems/ext4.md) from [Common filesystems (cross-platform)](../computer/storage/common_filesystems.md), linked from [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md)).
 
 3. **Pass C — Re-run the gate** — After links land, read again: did any paragraph **smuggle** a second system back in? Did a link **replace** needed context with a **dead name**? Repeat **B** until the page reads clean or you consciously **defer** work (note *where* the next pass should start).
 
@@ -62,7 +80,7 @@ Markdown does **not** expand terms by itself. What you can add **around** the re
 |----------|----------------|------|
 | **This checklist** in Pass B | Humans and assistants **know** to run a second pass | Cheap; relies on discipline |
 | **Cursor rule or Agent Skill** | After editing `concepts/`, “run term audit: list acronyms/proper nouns without links; stub or link” | One-time setup; behavior follows the rule |
-| **Curated wordlist + script** | CI fails if `NTFS` appears without link to `common_filesystem_names.md` | Brittle (false positives, misses synonyms) |
+| **Curated wordlist + script** | CI fails if `NTFS` appears without link to `common_filesystems/ntfs.md` (or chosen canonical path) | Brittle (false positives, misses synonyms) |
 | **LLM in CI** | Theoretically full expansion | Slow, flaky, expensive for a notes repo |
 
-**Practical default:** encode **Pass B** in a **project rule** or **skill** so assistants **always** iterate; keep **human-curated** glossary pages (like common filesystem names) for families of terms that repeat. **True** automation without a maintainer list tends to be **noise**; **semi-automatic** (rule + glossary + links) matches how this tree already grows.
+**Practical default:** encode **Pass B** in a **project rule** or **skill** so assistants **always** iterate; when a glossary grows, **split** it per [Glossary packet split](#glossary-packet-split) (see [Common filesystems (cross-platform)](../computer/storage/common_filesystems.md)). **True** automation without a maintainer list tends to be **noise**; **semi-automatic** (rule + stable file targets + links) matches how this tree already grows.

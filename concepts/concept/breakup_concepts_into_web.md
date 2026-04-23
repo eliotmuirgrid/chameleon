@@ -16,15 +16,17 @@ Big topics **pull in** prerequisites, second tools, and edge cases. If all of th
 
 ## What to do in practice
 
-Use the **template and ordered checks** on [Recursive decomposition — practice checklist](recursive_decomposition_practice.md): hub shape, four recursive rules, **iterative passes** (structure first, then **term audit**), and when to **stop** splitting.
+Use the **template and ordered checks** on [Recursive decomposition — practice checklist](recursive_decomposition_practice.md): hub shape, four recursive rules, **[Glossary packet split](recursive_decomposition_practice.md#glossary-packet-split)** when one file lists many **named identities**, **iterative passes** (structure first, then **term audit**), and when to **stop** splitting.
 
 Keep **tool logic** and **environment rules** in **different** pages when both matter; the distinction is [Tool internal model and environment](internal_model_and_environment.md).
 
 ---
 
-## Worked example (do not copy the threads into this page)
+## Worked examples (do not copy the threads into this page)
 
 **Filesystem letter case** across **Windows**, **macOS**, and **Linux** is **not** defined here—that was an old “start here” exercise and it **duplicated** work that already lives under Git. For the **three OS filesystem** thread alone, read [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md). For **Git** plus **overload** plus **assistants’ checklist**, read [Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md). That pair is the **living** version of “break Thread A / B / C apart.”
+
+**Glossary packet split:** when many **filesystem proper names** lived in one quick-reference file, they were refactored into a **hub** ([Common filesystems (cross-platform)](../computer/storage/common_filesystems.md)) plus **one identity file each** under [`common_filesystems/`](../computer/storage/common_filesystems/README.md), with a **redirect stub** for the old filename. That matches the [glossary packet split](recursive_decomposition_practice.md#glossary-packet-split) on the practice checklist and the [kitchen sink page](kitchen_sink_page.md) idea: **stable links go to files**, not long in-file anchors.
 
 ---
 

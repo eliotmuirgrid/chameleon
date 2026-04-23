@@ -7,7 +7,7 @@ Use a two-layer structure:
 - A main concept page for the core idea (`<concept>.md`).
 - A matching folder for optional depth (`<concept>/`).
 
-This keeps the core easy to read while still allowing depth. It matches [separation of concerns](../system/design/separation_of_concerns.md): definition on the hub page, illustrations and long transfers on linked pages. The [concept standard](../concept.md) encodes the same split; when one page keeps sprouting tangents, treat that as [Special case: overloaded concepts](overloaded_concept.md) and split instead of growing one file.
+This keeps the core easy to read while still allowing depth. It matches [separation of concerns](../system/design/separation_of_concerns.md): definition on the hub page, illustrations and long transfers on linked pages. The [concept standard](../concept.md) encodes the same split; when one page keeps sprouting tangents, treat that as [Special case: overloaded concepts](overloaded_concept.md) and split instead of growing one file. That split also avoids a [kitchen sink page](kitchen_sink_page.md), where many related ideas share one long file instead of an index plus separate identity pages.
 
 ## Why
 
@@ -44,4 +44,4 @@ Ask:
 
 Do not stack long analogies, domain transfers, and implementation detail on the main hub when they could live in `abc/<topic>.md` with one short bridge paragraph on `abc.md`.
 
-When a single page keeps **sprouting** many half-explained tangents, treat that as a signal to **split** and **link** instead of growing one file—see [Special case: overloaded concepts](overloaded_concept.md).
+When a single page keeps **sprouting** many half-explained tangents, treat that as a signal to **split** and **link** instead of growing one file—see [Special case: overloaded concepts](overloaded_concept.md) and [Kitchen sink page](kitchen_sink_page.md).

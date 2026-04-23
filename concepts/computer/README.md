@@ -25,7 +25,7 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 
 ## Storage (names and formats)
 
-- [Common filesystem names (quick reference)](storage/common_filesystem_names.md) — short identities for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs** when cross-platform pages need a link target.
+- [Common filesystems (cross-platform)](storage/common_filesystems.md) — hub for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs**; one **identity file** each under [`storage/common_filesystems/`](storage/common_filesystems/README.md). Old path: [Common filesystem names (redirect)](storage/common_filesystem_names.md).
 
 ## Git
 
