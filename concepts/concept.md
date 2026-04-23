@@ -9,9 +9,9 @@ This is the single source of truth for writing concept pages in this repository.
 3. **Define terms once** - if a specialist term is required, define it in one short line.
 4. **One concept per page** - do not mix concept, implementation, and deep examples on the same page.
 5. **Core before derived** - state the principle before tools, methods, or workflows derived from it.
-6. **Use two layers for depth** - keep core explanation in `<concept>.md` and move optional depth into `<concept>/` pages; see [Concept - Detail Pages](concept/detail.md).
+6. **Use two layers for depth** - keep core explanation in `<concept>.md` and move optional depth into `<concept>/` pages; see [Concept - Detail Pages](Concepts/ideas/detail.md).
 7. **Transfer test** - include a quick check that the concept still makes sense in another domain.
-8. **Link out for depth** - keep the page light; weave related pages into the body with [inline links](concept/inline_links.md) instead of stacking a separate link list unless the page is a pure index.
+8. **Link out for depth** - keep the page light; weave related pages into the body with [inline links](Concepts/ideas/inline_links.md) instead of stacking a separate link list unless the page is a pure index.
 
 ## Required page shape
 
@@ -20,19 +20,19 @@ This is the single source of truth for writing concept pages in this repository.
 
 ## Detail page pattern
 
-Use the detail-page pattern documented here: [Concept - Detail Pages](concept/detail.md).
+Use the detail-page pattern documented here: [Concept - Detail Pages](Concepts/ideas/detail.md).
 
 ## Quality gate before publish
 
 - Can a bright high-school reader understand it?
 - Is this the least information needed to be correct?
 - Is deep detail moved to linked pages?
-- For growing topics, does optional depth live under `<concept>/` per [Concept - Detail Pages](concept/detail.md)?
-- If the page keeps branching into many unrelated threads, is it time to split per [Special case: overloaded concepts](concept/overloaded_concept.md)?
+- For growing topics, does optional depth live under `<concept>/` per [Concept - Detail Pages](Concepts/ideas/detail.md)?
+- If the page keeps branching into many unrelated threads, is it time to split per [Special case: overloaded concepts](Concepts/ideas/overloaded_concept.md)?
 - Does the page stay focused on one concept?
-- Are you avoiding a [kitchen sink page](concept/kitchen_sink_page.md) where many identities share one file instead of a small index plus separate homes?
-- If one file is a **glossary of parallel names** (formats, vendors, APIs), is it time for a [glossary packet split](concept/recursive_decomposition_practice.md#glossary-packet-split) into a hub plus **one file per identity**?
-- On **identity** pages, do **mechanism words** (for example **journaled**) link through an [abstraction ladder](concept/recursive_decomposition_practice.md#iterative-passes-not-one-shot) (**general → domain → leaf**) per check **5** on the [practice checklist](concept/recursive_decomposition_practice.md)?
-- For path **case** language (**case-sensitive**, **case-insensitive**, …), is [Letter case (for paths and names)](computer/letter_case.md) linked before **derived** terms, per check **6** and **Pass E** on the [practice checklist](concept/recursive_decomposition_practice.md)?
+- Are you avoiding a [kitchen sink page](Concepts/ideas/kitchen_sink_page.md) where many identities share one file instead of a small index plus separate homes?
+- If one file is a **glossary of parallel names** (formats, vendors, APIs), is it time for a [glossary packet split](Concepts/ideas/recursive_decomposition_practice.md#glossary-packet-split) into a hub plus **one file per identity**?
+- On **identity** pages, do **mechanism words** (for example **journaled**) link through an [abstraction ladder](Concepts/ideas/recursive_decomposition_practice.md#iterative-passes-not-one-shot) (**general → domain → leaf**) per check **5** on the [practice checklist](Concepts/ideas/recursive_decomposition_practice.md)?
+- For path **case** language (**case-sensitive**, **case-insensitive**, …), is [Letter case (for paths and names)](computer/letter_case.md) linked before **derived** terms, per check **6** and **Pass E** on the [practice checklist](Concepts/ideas/recursive_decomposition_practice.md)?
 
-These rules apply [separation of concerns](system/design/separation_of_concerns.md) to concept writing itself. Supporting writer notes: [Concept - Detail Pages](concept/detail.md), [Special case: overloaded concepts](concept/overloaded_concept.md), [Kitchen sink page](concept/kitchen_sink_page.md), [Recursive concept decomposition](concept/breakup_concepts_into_web.md) with [practice checklist](concept/recursive_decomposition_practice.md) and [internal model vs environment](concept/internal_model_and_environment.md), [Letter case (for paths and names)](computer/letter_case.md) (example **lexical ladder** for path vocabulary), [Journaling](system/design/journaling.md) / [Journaled filesystem](computer/storage/journaled_filesystem.md) (example **abstraction ladder**), [Concept - Inline Links](concept/inline_links.md), [Concept - Relative Links](concept/relative_links.md).
+These rules apply [separation of concerns](system/design/separation_of_concerns.md) to concept writing itself. Supporting writer notes: [Concept - Detail Pages](Concepts/ideas/detail.md), [Special case: overloaded concepts](Concepts/ideas/overloaded_concept.md), [Kitchen sink page](Concepts/ideas/kitchen_sink_page.md), [Recursive concept decomposition](Concepts/ideas/breakup_concepts_into_web.md) with [practice checklist](Concepts/ideas/recursive_decomposition_practice.md) and [internal model vs environment](Concepts/ideas/internal_model_and_environment.md), [Letter case (for paths and names)](computer/letter_case.md) (example **lexical ladder** for path vocabulary), [Journaling](system/design/journaling.md) / [Journaled filesystem](computer/storage/journaled_filesystem.md) (example **abstraction ladder**), [Concept - Inline Links](Concepts/ideas/inline_links.md), [Concept - Relative Links](Concepts/ideas/relative_links.md).

@@ -2,11 +2,11 @@
 
 ## Concept
 
-**Common filesystems** here means: short **identity** pages for **filesystem proper names** you meet when you talk about **paths**, [letter case](../letter_case.md), and **disks** across **Windows**, **Mac**, and **Linux**. Each format gets **its own file** so links stay **stable** and readers are not fed a [kitchen sink page](../../concept/kitchen_sink_page.md) of mixed definitions.
+**Common filesystems** here means: short **identity** pages for **filesystem proper names** you meet when you talk about **paths**, [letter case](../letter_case.md), and **disks** across **Windows**, **Mac**, and **Linux**. Each format gets **its own file** so links stay **stable** and readers are not fed a [kitchen sink page](../../Concepts/ideas/kitchen_sink_page.md) of mixed definitions.
 
 ## Why split
 
-One long glossary **feels** fast to write; it **loads** [cognitive load](../../system/design/cognitive_load/README.md) and pushes links toward **fragile heading anchors**. A **hub** plus **one page per identity** matches [Concept - Detail Pages](../../concept/detail.md) and the **glossary packet split** on [Recursive decomposition — practice checklist](../../concept/recursive_decomposition_practice.md).
+One long glossary **feels** fast to write; it **loads** [cognitive load](../../system/design/cognitive_load/README.md) and pushes links toward **fragile heading anchors**. A **hub** plus **one page per identity** matches [Concept - Detail Pages](../../Concepts/ideas/detail.md) and the **glossary packet split** on [Recursive decomposition — practice checklist](../../Concepts/ideas/recursive_decomposition_practice.md).
 
 ## Pages
 

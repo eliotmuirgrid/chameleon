@@ -22,4 +22,6 @@ Index with short blurbs: [Letter case (index)](letter_case/README.md).
 
 ## Related
 
-[Simple English (80/20 language rule)](../communication/simple_english.md); [Recursive decomposition — practice checklist](../../concept/recursive_decomposition_practice.md) (check **6**, **Pass E**).
+[Simple English (80/20 language rule)](../communication/simple_english.md); [Recursive decomposition — practice checklist](../../Concepts/ideas/recursive_decomposition_practice.md) (check **6**, **Pass E**).
+
+**Same boundary shape:** [USB-C charger compatibility](../electricity/usb-c-power.md) negotiates **electrical profiles** across plug and device; [Adaptive communication](../communication/adaptive_communication.md) negotiates **human style** while keeping the message true. Here the “profiles” are [case-sensitive](letter_case/case_sensitive_comparison.md) vs [case-insensitive](letter_case/case_insensitive_comparison.md) path rules; Git’s layer is [Git `core.ignorecase` and filesystems](git/git_core_ignorecase.md).

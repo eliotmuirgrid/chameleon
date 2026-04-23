@@ -34,3 +34,5 @@ Common layouts on [**ext4**](../../storage/common_filesystems/ext4.md), [**XFS**
 ## Why this matters outside Git
 
 Any tool that must **sync**, **copy**, or **version** trees across machines inherits a **boundary**: the **same string** of path components can mean **one file** on one OS and **two files** on another. Git sits on that boundary; the hub page names how Git adapts.
+
+For the same **compatibility / profile** idea in other domains, see [USB-C charger compatibility](../../../electricity/usb-c-power.md) (electrical **profiles**) and [Adaptive communication](../../../communication/adaptive_communication.md) (human **style**), both linked from the [Letter case (for paths and names)](../../letter_case.md) hub as parallel readings.

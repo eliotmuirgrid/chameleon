@@ -19,4 +19,4 @@ This turns the bathroom from a static install into an evolving system.
 
 Even items that are not in their "final" position can still provide value: mounted components can be used, tested, and improved immediately.
 
-Over time, repeated small corrections move the project toward a practical [equilibrium](../../design/equilibrium.md): stable function, acceptable cost, and manageable effort. The same loop lives in the main [iteration](../iteration.md) note; ordered stages are the [pipeline](../../troubleshooting/pipeline.md) pattern; optional depth follows [Concept - Detail Pages](../../../concept/detail.md). The home pattern for modular mounts is [slatboard](../../../home/slatboard.md).
+Over time, repeated small corrections move the project toward a practical [equilibrium](../../design/equilibrium.md): stable function, acceptable cost, and manageable effort. The same loop lives in the main [iteration](../iteration.md) note; ordered stages are the [pipeline](../../troubleshooting/pipeline.md) pattern; optional depth follows [Concept - Detail Pages](../../../Concepts/ideas/detail.md). The home pattern for modular mounts is [slatboard](../../../home/slatboard.md).

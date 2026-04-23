@@ -4,7 +4,7 @@
 
 **One sentence:** Git stores and exchanges history in a **portable** way, but every checkout lands on a **real filesystem**—and the three big **desktop families** do **not** agree whether [letter case](../letter_case.md) in a path is **significant** for **same-file** decisions (see [case-sensitive](../letter_case/case_sensitive_comparison.md) vs [case-insensitive](../letter_case/case_insensitive_comparison.md)). `core.ignorecase` is Git’s way of **recording which world** your working tree lives in so it does not fight the disk.
 
-This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../concept/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](git_core_ignorecase/filesystem_case_by_os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../concept/detail.md).
+This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../Concepts/ideas/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](git_core_ignorecase/filesystem_case_by_os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../Concepts/ideas/detail.md).
 
 ---
 
@@ -43,3 +43,9 @@ For what **abstraction** means in general, see [Abstraction](../../system/design
 ## Takeaway
 
 `ignorecase` reflects an **OS constraint**, not a style preference. **Discipline** still matters: treat paths as **stable identifiers** and use a **consistent convention** (often all lowercase). When [letter case](../letter_case.md) carries no meaning in your tree, the leaky boundary hurts less and behavior stays **predictable** across environments.
+
+---
+
+## Same shape elsewhere
+
+Other notes in this repo use the same **match the hidden profile** picture: [USB-C charger compatibility](../../electricity/usb-c-power.md) (charger and device must overlap on **power profiles**), and [Adaptive communication](../../communication/adaptive_communication.md) (adjust **delivery**, not facts, to the listener). Vocabulary for path **case** stays on [Letter case (for paths and names)](../letter_case.md).
