@@ -5,5 +5,5 @@ Git and the layers around it (hosting, cross-platform filename behavior). These 
 ## Pages
 
 - [Git (in plain terms)](git.md) — what Git does: history, merge, general-purpose use.
-- [Git `core.ignorecase` and filesystems](git_core_ignorecase.md) — case-sensitive vs case-insensitive paths; example of a [leaky abstraction](../../system/design/leaky_abstraction.md).
+- [Git `core.ignorecase` and filesystems](git_core_ignorecase.md) — portable Git paths vs **three OS families**’ filesystem case rules; [overloaded concept](../../concept/overloaded_concept.md) with a [filesystem-only detail page](git_core_ignorecase/filesystem_case_by_os.md); also a [leaky abstraction](../../system/design/leaky_abstraction.md) example.
 - [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — local Git vs optional hosting sites.

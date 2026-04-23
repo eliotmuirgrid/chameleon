@@ -56,5 +56,3 @@ When **Eddies** and **Audiophile** (and any **other** paths) are **in parallel**
 - **Honest** expectations when **external** [bottlenecks](bottleneck.md) are **known**—parallel requests buy **optionality**, not **speed**, unless at least one path is **actually** fast.
 
 The same timing shape in code is [race conditions in software](race_conditions_in_software.md). [Theory of constraints](theory_of_constraints.md) names the wider improvement loop. **Vendors** in this notebook: [Audiophile](../../entity/company/audiophile.md), [Eddies](../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/README.md)). **Follow-up bottleneck** story: [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md).
-
----
