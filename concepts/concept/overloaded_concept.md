@@ -10,6 +10,6 @@ The goal is **not** to remove complexity. The goal is to **move complexity into 
 
 This idea should be applied to new concepts whenever they are added.
 
-**Concrete example in this repo:** [Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md) bundles **(a)** how **Windows, macOS, and Linux** typically treat **case** in filenames, **(b)** how **Git** keeps a **portable** path model across clones, and **(c)** what the **`core.ignorecase`** setting is for. The page names that overload up front, points assistants at **which thread belongs where**, and links filesystem-only depth to [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md).
+**Concrete example in this repo:** [Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md) bundles **(a)** how **Windows, macOS, and Linux** typically treat [letter case](../computer/letter_case.md) in filenames, **(b)** how **Git** keeps a **portable** path model across clones, and **(c)** what the **`core.ignorecase`** setting is for. The page names that overload up front, points assistants at **which thread belongs where**, and links filesystem-only depth to [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md).
 
 For the **step habit** (split, link, repeat), see [Recursive concept decomposition (break up into a web)](breakup_concepts_into_web.md).

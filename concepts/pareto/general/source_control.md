@@ -10,4 +10,4 @@ The same idea applies when several people work on the same project: the system k
 
 Different programs implement this like Git. You only need the idea first; [Git (in plain terms)](../../computer/git/git.md) is how this repo usually does it. Hosting sites on top of Git are in [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md). For the broader “open files” picture, see [Open systems vs closed systems](open_versus_closed.md).
 
-When the same project moves between machines, filename **case** can behave differently by OS; Git’s [`core.ignorecase`](../../computer/git/git_core_ignorecase.md) tracks that reality—discipline in naming still matters for predictable results.
+When the same project moves between machines, [letter case](../../computer/letter_case.md) in filenames can behave differently by OS; Git’s [`core.ignorecase`](../../computer/git/git_core_ignorecase.md) tracks that reality—discipline in naming still matters for predictable results.

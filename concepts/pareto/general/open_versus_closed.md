@@ -51,7 +51,7 @@ Longer analogies and format discussion follow the [two-layer detail pattern](../
 |-------|----------------|
 | Source control (general idea) | [Source control](source_control.md) |
 | Git in plain English | [Git](../../computer/git/git.md) |
-| Git `core.ignorecase` (case-sensitive vs case-insensitive filesystems) | [Git core.ignorecase](../../computer/git/git_core_ignorecase.md) |
+| Git `core.ignorecase` ([letter case](../../computer/letter_case.md): [case-sensitive](../../computer/letter_case/case_sensitive_comparison.md) vs [case-insensitive](../../computer/letter_case/case_insensitive_comparison.md) filesystems) | [Git core.ignorecase](../../computer/git/git_core_ignorecase.md) |
 | Markdown vs Word/PDF/HTML | [Markdown](markdown.md) |
 | Kitchen-style “general-purpose” tools | [general-purpose tools](general_purpose.md) |
 | Kitchen analogy (detail) | [Kitchen analogy](open_versus_closed/kitchen_analogy.md) |

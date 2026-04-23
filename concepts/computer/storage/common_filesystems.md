@@ -2,7 +2,7 @@
 
 ## Concept
 
-**Common filesystems** here means: short **identity** pages for **filesystem proper names** you meet when you talk about **paths**, **case**, and **disks** across **Windows**, **Mac**, and **Linux**. Each format gets **its own file** so links stay **stable** and readers are not fed a [kitchen sink page](../../concept/kitchen_sink_page.md) of mixed definitions.
+**Common filesystems** here means: short **identity** pages for **filesystem proper names** you meet when you talk about **paths**, [letter case](../letter_case.md), and **disks** across **Windows**, **Mac**, and **Linux**. Each format gets **its own file** so links stay **stable** and readers are not fed a [kitchen sink page](../../concept/kitchen_sink_page.md) of mixed definitions.
 
 ## Why split
 
@@ -21,4 +21,4 @@ Optional index with short blurbs: [Common filesystems (index)](common_filesystem
 - [XFS](common_filesystems/xfs.md)
 - [Btrfs](common_filesystems/btrfs.md)
 
-For **how case behaves** on typical desktop installs, read [Filesystem case on major desktop OS families](../git/git_core_ignorecase/filesystem_case_by_os.md).
+For **vocabulary** (what “case” means, then sensitive vs insensitive), start at [Letter case (for paths and names)](../letter_case.md). For **how that plays out** on typical desktop installs, read [Filesystem case on major desktop OS families](../git/git_core_ignorecase/filesystem_case_by_os.md).

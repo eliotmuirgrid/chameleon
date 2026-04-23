@@ -8,4 +8,4 @@ When a leak appears, you fix it by **learning the hidden layer** just enough, **
 
 ## Example in this repo
 
-- [Git `core.ignorecase` and filesystems](../../computer/git/git_core_ignorecase.md) — Git’s idea of a path vs how macOS, Windows, and Linux actually treat filename **case**.
+- [Git `core.ignorecase` and filesystems](../../computer/git/git_core_ignorecase.md) — Git’s idea of a path vs how macOS, Windows, and Linux actually treat [letter case](../../computer/letter_case.md) in filenames.

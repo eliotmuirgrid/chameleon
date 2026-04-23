@@ -10,4 +10,4 @@ When the two layers are **folded into one paragraph**, people argue about “wha
 
 ## Example in this repo
 
-[Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md) tells **Git’s portable path story** and points filesystem-only detail to [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md). The hub page also says **who should read which thread** so the internal model and the environment do not compete in one block of text.
+[Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md) tells **Git’s portable path story** and points filesystem-only detail to [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md). Shared vocabulary for path spelling starts at [Letter case (for paths and names)](../computer/letter_case.md). The hub page also says **who should read which thread** so the internal model and the environment do not compete in one block of text.

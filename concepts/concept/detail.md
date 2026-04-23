@@ -7,7 +7,7 @@ Use a two-layer structure:
 - A main concept page for the core idea (`<concept>.md`).
 - A matching folder for optional depth (`<concept>/`).
 
-This keeps the core easy to read while still allowing depth. It matches [separation of concerns](../system/design/separation_of_concerns.md): definition on the hub page, illustrations and long transfers on linked pages. The [concept standard](../concept.md) encodes the same split; when one page keeps sprouting tangents, treat that as [Special case: overloaded concepts](overloaded_concept.md) and split instead of growing one file. That split also avoids a [kitchen sink page](kitchen_sink_page.md), where many related ideas share one long file instead of an index plus separate identity pages.
+This keeps the core easy to read while still allowing depth. It matches [separation of concerns](../system/design/separation_of_concerns.md): definition on the hub page, illustrations and long transfers on linked pages. The [concept standard](../concept.md) encodes the same split; when one page keeps sprouting tangents, treat that as [Special case: overloaded concepts](overloaded_concept.md) and split instead of growing one file. That split also avoids a [kitchen sink page](kitchen_sink_page.md), where many related ideas share one long file instead of an index plus separate identity pages. For **vocabulary order** (define a **base** term before **derived** adjectives—for example [letter case](../computer/letter_case.md) before **case-insensitive**), follow check **6** and **Pass E** on the [Recursive decomposition — practice checklist](recursive_decomposition_practice.md).
 
 ## Why
 

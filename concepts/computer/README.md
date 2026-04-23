@@ -23,9 +23,14 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 - [Install WhatsApp on an Apple computer](install_whatsapp_on_mac.md) — App Store or official download, then link to your phone.
 - [Screenshot part of the screen](region_screenshot_mac.md) — **Shift + ⌘ + 4**, drag a box; optional **Shift + ⌘ + 5** for more choices.
 
+## Paths and letter case
+
+- [Letter case (for paths and names)](letter_case.md) — what **case** means for names, then [case-sensitive](letter_case/case_sensitive_comparison.md) / [case-insensitive](letter_case/case_insensitive_comparison.md) / [case-preserving](letter_case/case_preserving_storage.md) comparison rules before OS or Git detail.
+
 ## Storage (names and formats)
 
 - [Common filesystems (cross-platform)](storage/common_filesystems.md) — hub for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs**; one **identity file** each under [`storage/common_filesystems/`](storage/common_filesystems/README.md). Old path: [Common filesystem names (redirect)](storage/common_filesystem_names.md).
+- [Journaled filesystem](storage/journaled_filesystem.md) — how a **log-before-trust** design fits filesystems; general pattern in [Journaling](../system/design/journaling.md).
 
 ## Git
 
