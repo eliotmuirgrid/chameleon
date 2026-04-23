@@ -151,7 +151,7 @@ include ../make/makefile.core
 
 From there the machinery discovers sources, compiles, and links `test` or `test.exe` on Windows. The approach stays fast and direct: no nested extra `make` invocations on Windows, GNU make plus the platform compiler, `.d` files on macOS and Linux for minimal rebuilds, optional [ccache](D.ccache.md) when installed, and `wildcard` so source lists maintain themselves. One deliberate choice is to avoid intermediate static libraries for this path. Everything goes into a single executable, which is often simpler to ship and reason about.
 
-The upstream `makefile.core` lives at [makefile.core on GitHub](https://github.com/eliotmuirgrid/core/blob/main/make/makefile.core); this repository keeps the same layer at `cpp/make/makefile.core`. For a hands-on path, the C++ tracing sandbox is a good entry point once you know where your team points newcomers.
+The upstream `makefile.core` lives at [makefile.core](../makefile.core); this repository keeps the same layer at `cpp/make/makefile.core`. For a hands-on path, the C++ tracing sandbox is a good entry point once you know where your team points newcomers.
 
 ---
 

@@ -35,3 +35,4 @@ These rules apply [separation of concerns](system/design/separation_of_concerns.
 
 - [Concept - Detail Pages](concept/detail.md)
 - [Concept - Inline Links](concept/inline_links.md)
+- [Concept - Relative Links](concept/relative_links.md)
