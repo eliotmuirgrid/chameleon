@@ -4,6 +4,10 @@
 
 For gases in water, temperature is a key factor: as water gets warmer, it usually holds **less dissolved gas**.
 
+Physics explanation:
+
+- [How solubility works (physics)](../physics/solubility_mechanism.md) — particle motion, collisions, and equilibrium behind dissolving.
+
 ## Subpages
 
 - [CO2 solubility and temperature](solubility/co2.md) — why cold drinks stay fizzy longer and warm drinks go flat faster.

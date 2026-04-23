@@ -34,3 +34,4 @@ These rules apply separation of concerns to concept writing itself.
 ## See also
 
 - [Concept - Detail Pages](concept/detail.md)
+- [Concept - Inline Links](concept/inline_links.md)
