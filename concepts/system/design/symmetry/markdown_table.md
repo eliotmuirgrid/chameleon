@@ -4,7 +4,7 @@ Always use [Markdown tables](https://www.markdownguide.org/extended-syntax/#tabl
 
 This decision is for people doing real work (like nutrition planning). A good table should be easy to scan in seconds, easy to check, and easy to discuss.
 
-Markdown tables are easier to read on sight. People can understand the structure right away, and systems that use **artificial intelligence (AI)** can keep the meaning with less guesswork. Platforms like [GitHub, Bitbucket, and Git](../../../entity/software/github_bitbucket_and_git.md) and editors like [Cursor](../../../entity/software/cursor.md) already render Markdown tables clearly.
+Markdown tables are easier to read on sight. People can understand the structure right away, and systems that use **artificial intelligence (AI)** can keep the meaning with less guesswork. Platforms like [GitHub, Bitbucket, and Git](../../../computer/git/github_bitbucket_and_git.md) and editors like [Cursor](../../../entity/software/cursor.md) already render Markdown tables clearly.
 
 You can see the use of [tracking/log.md](../../../../tracking/log.md)
 

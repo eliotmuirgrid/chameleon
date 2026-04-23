@@ -22,12 +22,12 @@ Confluence was **easy** to **start** in, but **linking** pages, **restructuring*
 
 ## What we use now (same idea, different implementation)
 
-This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](pareto/general/source_control.md) implemented with **[Git](pareto/general/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How_do_I_write_these_pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
+This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](pareto/general/source_control.md) implemented with **[Git](computer/git/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How_do_I_write_these_pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
 
 ---
 
 ## See also
 
 - [Confluence](pareto/general/confluence.md) — the **old** wiki technology  
-- [Markdown](pareto/general/markdown.md) · [Source control](pareto/general/source_control.md) · [Git](pareto/general/git.md) — **current** building blocks  
+- [Markdown](pareto/general/markdown.md) · [Source control](pareto/general/source_control.md) · [Git](computer/git/git.md) — **current** building blocks  
 - [Open systems vs closed systems](pareto/general/open_versus_closed.md) — **why** this matters  

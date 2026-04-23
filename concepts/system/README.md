@@ -13,6 +13,8 @@ Topics that accumulate examples or long transfers should use the [two-layer deta
 - [Entropy](design/entropy.md) — drift toward disorder unless active maintenance pushes back.
 - [Equilibrium](design/equilibrium.md) — steady balance where opposing flows (in/out, create/fix, drift/maintenance) are roughly equal.
 - [Proportional allocation](design/proportional_allocation.md) — split a total across parts by **share of size** (e.g. calories per serving from batch weight).
+- [Abstraction](design/abstraction.md) — hide detail behind a simpler surface so you can reason with less at once.
+- [Leaky abstraction](design/leaky_abstraction.md) — when hidden reality breaks through and you must deal with it anyway.
 
 ## Algorithms
 

@@ -53,6 +53,7 @@ You can **paste** with **Command + V** (the **Command** key is labeled **⌘** a
 ## See also
 
 - [The command line](command_line.md) — the big picture in friendly terms.
+- [Spaces in file names and the command line](filename_spaces_command_line.md) — why paths with spaces need quotes or care.
 
 ---
 

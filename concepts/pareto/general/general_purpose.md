@@ -60,6 +60,6 @@ Sometimes a **narrow** tool is right: **accessibility** (a grip-friendly opener)
 
 A **small general-purpose** toolkit works like a **language with a small grammar** you master deeply: you can say **many** things. A **closet of specialised** gadgets is more like **memorizing phrases** for exact scenes: you are **helpless** when the scene changes. In the kitchen—and beyond—**general-purpose** tools **pay rent** every week; **specialised** tools often **pay only on rare Tuesdays**.
 
-For a related idea in software, see [source control](source_control.md) (the **concept**) and [Git](git.md) (**one** widely used **implementation**): a **general-purpose** history tool for **any** folder of files, not one narrow job. The same **kitchen vs software** pattern appears in [Open systems vs closed systems](open_versus_closed.md) (chef’s knife vs garlic press, then files and platforms).
+For a related idea in software, see [source control](source_control.md) (the **concept**) and [Git](../../computer/git/git.md) (**one** widely used **implementation**): a **general-purpose** history tool for **any** folder of files, not one narrow job. The same **kitchen vs software** pattern appears in [Open systems vs closed systems](open_versus_closed.md) (chef’s knife vs garlic press, then files and platforms).
 
 For the broader problem—**finding the thing you need** (facts, tools, people, objects) before you can finish solving something—see [Finding what you need to solve problems](finding_what_you_need_to_solve_problems.md).

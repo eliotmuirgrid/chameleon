@@ -22,5 +22,5 @@
 
 ## See also
 
-- [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — hosting and source control layers around your project history.
+- [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) — hosting and source control layers around your project history.
 - [Markdown table format](../../system/design/symmetry/markdown_table.md) — why this repo favors readable table structure for both people and tools.

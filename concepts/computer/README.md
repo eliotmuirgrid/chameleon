@@ -19,9 +19,14 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 - [The command line](command_line.md) — what the command line is, in plain language (no commands required).
 - [Open apps with search (Spotlight) on a Mac](open_apps_with_spotlight_mac.md) — keyboard or magnifying glass, then type a name and **Enter**.
 - [Using the terminal](using_the_terminal.md) — on **macOS** only: open Terminal, then three commands (`pwd`, `ls`, `cd`).
+- [Spaces in file names and the command line](filename_spaces_command_line.md) — why spaces split arguments and how to avoid pain (naming, quotes).
 - [Install WhatsApp on an Apple computer](install_whatsapp_on_mac.md) — App Store or official download, then link to your phone.
 - [Screenshot part of the screen](region_screenshot_mac.md) — **Shift + ⌘ + 4**, drag a box; optional **Shift + ⌘ + 5** for more choices.
 
+## Git
+
+- [Git (concepts)](git/README.md) — Git itself, `core.ignorecase`, and GitHub/Bitbucket vs local Git.
+
 ## See also
 
-- [Source control (the idea)](../pareto/general/source_control.md) · [Git (in plain terms)](../pareto/general/git.md) — often used from a terminal.
+- [Source control (the idea)](../pareto/general/source_control.md) — the abstract idea; [Git (concepts)](git/README.md) is how this repo usually implements it.

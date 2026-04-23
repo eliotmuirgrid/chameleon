@@ -29,6 +29,8 @@ When there are several detail pages, add `abc/README.md` as a small index that l
 
 Domain-specific algorithm examples can live under a parent folder that matches the main algorithm page (for example [Iteration](../system/algorithms/iteration.md) with [Bathroom build](../system/algorithms/iteration/bathroom_build.md)).
 
+Related pages for one tool or stack can share a folder and index without a single `abc.md` sibling at the same level, when the folder is already grouped under a parent topic—for example [Git (concepts)](../computer/git/README.md) under [Computer (concepts)](../computer/README.md).
+
 ## Quick test
 
 Ask:
@@ -40,6 +42,8 @@ Ask:
 ## Anti-pattern
 
 Do not stack long analogies, domain transfers, and implementation detail on the main hub when they could live in `abc/<topic>.md` with one short bridge paragraph on `abc.md`.
+
+When a single page keeps **sprouting** many half-explained tangents, treat that as a signal to **split** and **link** instead of growing one file—see [Special case: overloaded concepts](overloaded_concept.md).
 
 ## See also
 

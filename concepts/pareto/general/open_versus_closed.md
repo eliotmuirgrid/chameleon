@@ -10,7 +10,7 @@ An **open system** can **take in** information, **send it out**, and **change** 
 
 Examples in this folder:
 
-- **[Source control](source_control.md)** — the **idea** of **version history** and **mergeable** change; **[Git](git.md)** is a common **implementation**.  
+- **[Source control](source_control.md)** — the **idea** of **version history** and **mergeable** change; **[Git](../../computer/git/git.md)** is a common **implementation**.  
 - **[Markdown](markdown.md)** — **plain text** with simple structure; easy to **convert**, **search**, and **hand to AI**.  
 - The **general-purpose** idea — a **few** flexible tools, many jobs — in [general-purpose tools](general_purpose.md).
 
@@ -50,14 +50,15 @@ Longer analogies and format discussion follow the [two-layer detail pattern](../
 | Topic | Where to read |
 |-------|----------------|
 | Source control (general idea) | [Source control](source_control.md) |
-| Git in plain English | [Git](git.md) |
+| Git in plain English | [Git](../../computer/git/git.md) |
+| Git `core.ignorecase` (case-sensitive vs case-insensitive filesystems) | [Git core.ignorecase](../../computer/git/git_core_ignorecase.md) |
 | Markdown vs Word/PDF/HTML | [Markdown](markdown.md) |
 | Kitchen-style “general-purpose” tools | [general-purpose tools](general_purpose.md) |
 | Kitchen analogy (detail) | [Kitchen analogy](open_versus_closed/kitchen_analogy.md) |
 | File formats open vs closed (detail) | [File formats](open_versus_closed/file_formats.md) |
 | Slatboard as an open physical system (home -> healthcare transfer) | [Slatboard](../../home/slatboard.md) |
 | Wix as closed vs Markdown / source control as open | [Wix vs plain files](wix.md) |
-| Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md) |
+| Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) |
 | Atlassian Confluence (team wiki, closed) | [Confluence](confluence.md) |
 | Concepts site: idea vs how we hosted it | [How this all started](../C.how_this_all_started.md) |
 | Concept writing: two-layer depth | [Concept - Detail Pages](../../concept/detail.md) |

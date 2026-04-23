@@ -32,7 +32,7 @@ Writing **software that renders HTML “the way browsers do”**—and stays **c
 ## Why Markdown is a better default
 
 - **Plain text** — What you save **is** what you see. **Less clutter** inside the file.  
-- **History** — Pairs well with [source control](source_control.md) (here, [Git](git.md)): you can **follow changes** over time.  
+- **History** — Pairs well with [source control](source_control.md) (here, [Git](../../computer/git/git.md)): you can **follow changes** over time.  
 - **Search, scripts, AI** — Easy to **find text** and **hand it to a program** without extra steps.  
 - **General-purpose by design** — You learn **one habit** (headings, lists, emphasis) and reuse it everywhere. That is **less to remember** than learning separate tools or export paths for each project. Same spirit as keeping a **chef’s knife** instead of ten single-job slicers—see [general-purpose tools](general_purpose.md).
 
@@ -41,7 +41,7 @@ Writing **software that renders HTML “the way browsers do”**—and stays **c
 ## See also
 
 - [Open systems vs closed systems](open_versus_closed.md) — the **big picture** behind plain files vs locked platforms.  
-- [Source control](source_control.md) — the **idea**; [Git](git.md) — tracking **changes** to those files in practice.
+- [Source control](source_control.md) — the **idea**; [Git](../../computer/git/git.md) — tracking **changes** to those files in practice.
 
 ---
 

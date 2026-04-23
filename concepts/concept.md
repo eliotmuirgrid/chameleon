@@ -28,6 +28,7 @@ Use the detail-page pattern documented here: [Concept - Detail Pages](concept/de
 - Is this the least information needed to be correct?
 - Is deep detail moved to linked pages?
 - For growing topics, does optional depth live under `<concept>/` per [Concept - Detail Pages](concept/detail.md)?
+- If the page keeps branching into many unrelated threads, is it time to split per [Special case: overloaded concepts](concept/overloaded_concept.md)?
 - Does the page stay focused on one concept?
 
 These rules apply [separation of concerns](system/design/separation_of_concerns.md) to concept writing itself.
@@ -35,5 +36,6 @@ These rules apply [separation of concerns](system/design/separation_of_concerns.
 ## See also
 
 - [Concept - Detail Pages](concept/detail.md) - hub page plus `<concept>/` depth; index README when there are many detail files.
+- [Special case: overloaded concepts](concept/overloaded_concept.md) - when one page branches too much; split and link instead of piling on.
 - [Concept - Inline Links](concept/inline_links.md)
 - [Concept - Relative Links](concept/relative_links.md)

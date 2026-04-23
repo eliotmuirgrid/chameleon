@@ -12,4 +12,10 @@ When you want to try a few safe steps on an **Apple computer running macOS**, go
 
 ---
 
+## See also
+
+- [Spaces in file names and the command line](filename_spaces_command_line.md) — how the shell splits on spaces and why that affects paths.
+
+---
+
 **Check your understanding:** In your own words, what happens after you type a line and press Enter in a terminal window?
