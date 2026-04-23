@@ -9,7 +9,7 @@
 You share meals but have **different primary goals**:
 
 - **Eliot (54, ~219 lb):** Move toward a **healthier body composition** — **lose fat** while **building or preserving muscle**. That implies a **calorie deficit** versus maintenance, **high protein**, and **enough carbohydrate** to train and recover (see [Carbohydrates](carbohydrates.md)). **Adequate fat** supports hormones and absorption of fat-soluble vitamins; **fiber** (from whole plants) supports satiety, gut health, and cardiometabolic markers.
-- **Subrina (26, ~141 lb):** **Not** focused on weight loss. Goal is **strength** and **better body composition** (more muscle relative to fat). Training emphasis includes **left/right symmetry** so one side does not compensate for the other—that is mainly **program design** (unilateral work, volume balance, possible physio input), with **nutrition** supporting **recovery** and **protein** for tissue adaptation.
+- **Subrina (26, ~141 lb):** **Not** focused on weight loss. Goal is **strength** and **better body composition** (more muscle relative to fat). Training emphasis includes **left/right [symmetry](../../system/design/symmetry.md)** so one side does not compensate for the other—that is mainly **program design** (unilateral work, volume balance, possible physio input), with **nutrition** supporting **recovery** and **protein** for tissue adaptation.
 
 ---
 
@@ -49,7 +49,7 @@ You share meals but have **different primary goals**:
 2. **Training schedule** — Which days are **hard** lower-body / upper-body / full body? That drives **carb timing** (still daily totals first).
 3. **Medical context** — Meds, lipids, blood pressure, diabetes risk, kidney function (relevant to very high protein), eating history.
 4. **Food culture & kitchen** — Who cooks, batch-cook vs daily, budget, foods you **won’t** eat.
-5. **Symmetry work (Subrina)** — **Which** side/movements feel weak or asymmetric? A coach or PT can translate that into **exercise selection**; nutrition only supplies **fuel and protein** for adaptation.
+5. **[Symmetry](../../system/design/symmetry.md) work (Subrina)** — **Which** side/movements feel weak or asymmetric? A coach or PT can translate that into **exercise selection**; nutrition only supplies **fuel and protein** for adaptation.
 6. **Rate of loss (Eliot)** — Target **~0.25–0.75%** body weight per week as a sustainable band (rule of thumb), adjusted by **scale trend** and **gym performance**.
 
 ---

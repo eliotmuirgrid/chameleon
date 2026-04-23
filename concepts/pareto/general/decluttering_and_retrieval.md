@@ -31,7 +31,7 @@ Without a reliable way to retrieve an item, it is effectively lost, even if it i
 
 ## Entropy and search space
 
-The deeper issue is entropy: things drift toward disorder over time.
+The deeper issue is [entropy](../../system/design/entropy.md): things drift toward disorder over time.
 
 Each extra item increases the number of places something could be.
 

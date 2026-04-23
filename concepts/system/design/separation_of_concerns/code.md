@@ -4,7 +4,7 @@ Back to: [Concept](concept.md)
 
 ---
 
-In code, **separation of concerns** usually means **splitting modules by job**: authentication is not payment processing; persistence is not UI layout. Each layer or package answers **one** kind of question, exposes a **clear boundary**, and hides its internals. That way you can **fix billing** without accidentally breaking **login**, and **tests** can target one concern at a time.
+In code, [**separation of concerns**](concept.md) usually means **splitting modules by job**: authentication is not payment processing; persistence is not UI layout. Each layer or package answers **one** kind of question, exposes a **clear boundary**, and hides its internals. That way you can **fix billing** without accidentally breaking **login**, and **tests** can target one concern at a time.
 
 The same structural move appears in a tight **legal contract**: obligations, risks, and remedies in **separate** clauses—not one paragraph that does everything.
 

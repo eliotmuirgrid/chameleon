@@ -29,7 +29,7 @@ Use the detail-page pattern documented here: [Concept - Detail Pages](concept/de
 - Is deep detail moved to linked pages?
 - Does the page stay focused on one concept?
 
-These rules apply separation of concerns to concept writing itself.
+These rules apply [separation of concerns](system/design/separation_of_concerns.md) to concept writing itself.
 
 ## See also
 

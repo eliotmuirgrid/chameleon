@@ -11,7 +11,7 @@ This keeps the core easy to read while still allowing depth.
 
 ## Why
 
-- Lowers cognitive load.
+- Lowers [cognitive load](../system/design/cognitive_load/README.md).
 - Keeps one concept page focused on one concept.
 - Lets readers choose depth based on need.
 

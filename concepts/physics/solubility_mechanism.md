@@ -9,7 +9,7 @@ After a while, these two flows can balance:
 - **In**: particles dissolving into the liquid
 - **Out**: particles leaving the liquid
 
-When "in" and "out" are equal, the system is at balance (equilibrium). The amount dissolved at that point is the solubility for those conditions.
+When "in" and "out" are equal, the system is at balance ([equilibrium](../system/design/equilibrium.md)). The amount dissolved at that point is the solubility for those conditions.
 
 Temperature changes this balance:
 

@@ -6,7 +6,7 @@ For gases in water, temperature is a key factor: as water gets warmer, it usuall
 
 Physics explanation:
 
-- [How solubility works (physics)](../physics/solubility_mechanism.md) — particle motion, collisions, and equilibrium behind dissolving.
+- [How solubility works (physics)](../physics/solubility_mechanism.md) — particle motion, collisions, and [equilibrium](../system/design/equilibrium.md) behind dissolving.
 
 ## Subpages
 

@@ -2,7 +2,7 @@
 
 ## Concept
 
-This is a real-world case of [USB-C power compatibility](../usb-c-power.md), showing that just having the right plug shape does not mean your device will charge—a good reminder that [symmetry in appearance does not guarantee function](../../system/design/symmetry/concept.md).
+This is a real-world case of [USB-C power compatibility](../usb-c-power.md), showing that just having the right plug shape does not mean your device will charge—a good reminder that [symmetry in appearance does not guarantee function](../../system/design/symmetry.md).
 
 I was under time pressure—trying to get the Sonos Move speakers to play music and set a mood for a romantic night with my partner.
 

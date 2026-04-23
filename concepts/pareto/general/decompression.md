@@ -22,7 +22,7 @@ Dense packing **saves space** but **hides** structure. Decompression **buys visi
 
 ## Pair with decluttering
 
-[Decluttering and retrieval](decluttering_and_retrieval.md) is about **long-term** **entropy** and **finding things** in a smaller, clearer collection. **Decompression** is often a **short-term** move: you **inflate** the search space **on purpose** to **finish a job**—then you **re-pack**, **donate**, or **reorganize** so the next retrieval stays sane.
+[Decluttering and retrieval](decluttering_and_retrieval.md) is about **long-term** [**entropy**](../../system/design/entropy.md) and **finding things** in a smaller, clearer collection. **Decompression** is often a **short-term** move: you **inflate** the search space **on purpose** to **finish a job**—then you **re-pack**, **donate**, or **reorganize** so the next retrieval stays sane.
 
 ---
 
