@@ -12,5 +12,4 @@ Use one row per item. Fill in as you go; keep **Name** and **Description** accur
 
 ## See also
 
-- [Charging matrix](charging.md) — which charger powers which device, and how fast
 - [Decluttering and retrieval](../pareto/general/decluttering_and_retrieval.md)

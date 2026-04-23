@@ -45,5 +45,5 @@ For mains wiring or fault concerns, use a qualified electrician and local code r
 
 ## See also
 
-- [USB-C charger compatibility](usb_c_charger_compatibility.md)
+- [USB-C charger compatibility](usb-c-power.md)
 - [Power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md)

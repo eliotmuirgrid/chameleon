@@ -20,12 +20,6 @@
 
 ---
 
-## Practical caution
-
-Treat suggestions as a fast draft, not final truth. Keep human review for correctness, naming, and project conventions.
-
----
-
 ## See also
 
 - [GitHub, Bitbucket, and Git](github_bitbucket_and_git.md) — hosting and source control layers around your project history.

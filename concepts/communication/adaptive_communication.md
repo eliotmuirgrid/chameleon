@@ -47,4 +47,4 @@ She naturally reads the other person's style and adjusts how she communicates.
 
 - [Simple English (80/20 language rule)](simple_english.md)
 - [Specific praise](specific_praise.md)
-- [USB-C charger compatibility](../electricity/usb_c_charger_compatibility.md) — same pattern: compatibility comes from adapting to different profiles.
+- [USB-C charger compatibility](../electricity/usb-c-power.md) — same pattern: compatibility comes from adapting to different profiles.

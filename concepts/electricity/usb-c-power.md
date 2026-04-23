@@ -55,3 +55,4 @@ More dialects (profiles) means more devices that charge reliably.
 - [Power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md)
 - [Adaptive communication](../communication/adaptive_communication.md) — same idea in people: better compatibility comes from adapting to different styles.
 - [Power delivery safety at home](power_delivery_safety.md) — negotiated delivery helps avoid providing more power than needed.
+- [Sonos Move charging](usb-c-power/sonos_move_charging.md) — device-specific charging behavior notes.
