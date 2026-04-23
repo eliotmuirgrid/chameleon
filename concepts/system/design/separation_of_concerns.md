@@ -16,6 +16,6 @@ When **different needs** live in **different spots**, you can **change one corne
 
 **Read next:** the pattern without domain detail—[**Concept**](separation_of_concerns/concept.md).
 
-**Concept writing rules:** [**Concept standard**](../../concept.md)
+**Concept writing rules:** [**Concept standard**](../../concept.md) · [**Concept - Detail Pages**](../../concept/detail.md)
 
 **Examples:** [**Code**](separation_of_concerns/code.md) · [**Diet reports**](separation_of_concerns/diet_report.md)

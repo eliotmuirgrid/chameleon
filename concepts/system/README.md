@@ -2,6 +2,8 @@
 
 Short notes on **how systems are shaped**—architecture, design ideas, and tradeoffs—in the same style as the rest of [`concepts/`](../): one main idea per page, linked for reuse.
 
+Topics that accumulate examples or long transfers should use the [two-layer detail pattern](../concept/detail.md) (hub `topic.md` plus optional `topic/` pages).
+
 ## Design
 
 - [Symmetry](design/symmetry.md) — two sides built the same way so one lesson covers both; when to match on purpose and when not to.
@@ -17,8 +19,13 @@ Short notes on **how systems are shaped**—architecture, design ideas, and trad
 - [Algorithms (index)](algorithms/README.md) — repeatable step-by-step problem-solving methods.
 - [Recursion](algorithms/recursion.md) — solve by reducing to smaller same-shape subproblems until a stop rule.
 - [Binary search](algorithms/binary_search.md) — search sorted data by halving the remaining range each step.
+- [Iteration](algorithms/iteration.md) — improve outcomes by repeating a loop of action, feedback, and adjustment.
 
 ## Troubleshooting
 
 - [Troubleshooting (index)](troubleshooting/README.md) — finding failures in running systems.
 - [Pipeline](troubleshooting/pipeline.md) — **ordered steps** (each feeds the next); plain-language idea, useful when something breaks along the way. Example: [power / won’t turn on](troubleshooting/pipeline/power.md).
+
+## Organization
+
+- [Organization (index)](organization/README.md) — structure information and responsibilities so systems remain understandable and maintainable.

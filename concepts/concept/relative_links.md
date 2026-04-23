@@ -28,4 +28,5 @@ Example: [Solubility mechanism](../physics/solubility_mechanism.md)
 ## See also
 
 - [Concept standard](../concept.md)
+- [Concept - Detail Pages](detail.md)
 - [Concept - Inline Links](inline_links.md)

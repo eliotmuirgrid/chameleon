@@ -14,6 +14,8 @@ Examples in this folder:
 - **[Markdown](markdown.md)** — **plain text** with simple structure; easy to **convert**, **search**, and **hand to AI**.  
 - The **general-purpose** idea — a **few** flexible tools, many jobs — in [general-purpose tools](general_purpose.md).
 
+A physical home example of the same pattern: [slatboard](../../home/slatboard.md) as an open, reconfigurable base, with notes on transfer to healthcare environments.
+
 You are **not** stuck in one app. You can **move** files, **edit** them almost anywhere, and **build** on them over time. That usually means **more work up front** and **more freedom** later.
 
 ---
@@ -28,25 +30,7 @@ Closed systems usually mean **less to think about** at the start. The trade is *
 
 ---
 
-## Kitchen analogy: same pattern
-
-**Open** vs **closed** lines up with **general-purpose** vs **specialized** tools in a kitchen—spelled out in [general-purpose tools](general_purpose.md).
-
-- A **chef’s knife** is **general-purpose**: you can chop vegetables, slice meat, and **mince garlic** with **one** blade and skills that **carry** to the next dish. It **plays well** with **any** cutting board and **any** recipe. That is the **spirit** of an **open** setup: **one** strong base, **many** paths forward.
-
-- A **garlic press** is **specialized**: it does **one** job. It can feel **easy** the night you only care about garlic—but it **does not** train a skill that helps elsewhere, it **fills a drawer**, and for most garlic jobs a knife **already** works. That is closer to the **spirit** of a **closed** setup: **quick** in a **narrow** lane, **weak** when the task **changes**.
-
-Software and file choices follow the same **shape**: **flexible foundations** (plain text, [source control](source_control.md)—often [Git](git.md)—and Markdown) versus **one-brand boxes** that feel **fast** until you need to **move** or **reuse** your work.
-
----
-
-## Same idea in file formats
-
-Documents repeat the pattern—**open** formats vs **closed** ones:
-
-**[Markdown](markdown.md)** is **plain text** with light structure. You can open it in **almost any** editor, store it under **[source control](source_control.md)** (this repo uses **[Git](git.md)**), and turn it into a **web page**, **PDF**, **book**, or **notes**—**your** pipeline.
-
-**Word** and **PDF** are **more closed** for **long-run** work: they look polished, but they are **harder** to treat as **simple text**, **reuse**, and **hand off** to other tools. A fuller argument is in [Markdown](markdown.md).
+Longer analogies and format discussion follow the [two-layer detail pattern](../../concept/detail.md): [Kitchen analogy](open_versus_closed/kitchen_analogy.md), [file formats](open_versus_closed/file_formats.md). Index: [Open vs closed (detail pages)](open_versus_closed/README.md).
 
 ---
 
@@ -69,7 +53,11 @@ Documents repeat the pattern—**open** formats vs **closed** ones:
 | Git in plain English | [Git](git.md) |
 | Markdown vs Word/PDF/HTML | [Markdown](markdown.md) |
 | Kitchen-style “general-purpose” tools | [general-purpose tools](general_purpose.md) |
+| Kitchen analogy (detail) | [Kitchen analogy](open_versus_closed/kitchen_analogy.md) |
+| File formats open vs closed (detail) | [File formats](open_versus_closed/file_formats.md) |
+| Slatboard as an open physical system (home -> healthcare transfer) | [Slatboard](../../home/slatboard.md) |
 | Wix as closed vs Markdown / source control as open | [Wix vs plain files](wix.md) |
 | Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../entity/software/github_bitbucket_and_git.md) |
 | Atlassian Confluence (team wiki, closed) | [Confluence](confluence.md) |
 | Concepts site: idea vs how we hosted it | [How this all started](../C.how_this_all_started.md) |
+| Concept writing: two-layer depth | [Concept - Detail Pages](../../concept/detail.md) |

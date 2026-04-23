@@ -21,5 +21,6 @@ Ask:
 ## See also
 
 - [Concept standard](../concept.md)
+- [Concept - Detail Pages](detail.md)
 - [Simple English (80/20 language rule)](../communication/simple_english.md)
 - [Cognitive load](../system/design/cognitive_load/README.md)

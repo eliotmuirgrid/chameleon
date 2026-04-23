@@ -2,6 +2,8 @@
 
 These pages show the same equilibrium pattern in different systems.
 
+Layout follows [Concept - Detail Pages](../../../concept/detail.md): short hub on `equilibrium.md`, optional depth here.
+
 ## Examples
 
 - [Osmosis](osmosis.md) - concentration differences drive flow until a balance point is reached.
@@ -13,3 +15,4 @@ These pages show the same equilibrium pattern in different systems.
 ## See also
 
 - [Equilibrium (system design)](../equilibrium.md)
+- [Concept - Detail Pages](../../../concept/detail.md)
