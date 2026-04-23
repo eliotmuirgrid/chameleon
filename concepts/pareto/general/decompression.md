@@ -22,11 +22,4 @@ Dense packing **saves space** but **hides** structure. Decompression **buys visi
 
 ## Pair with decluttering
 
-[Decluttering and retrieval](decluttering_and_retrieval.md) is about **long-term** [**entropy**](../../system/design/entropy.md) and **finding things** in a smaller, clearer collection. **Decompression** is often a **short-term** move: you **inflate** the search space **on purpose** to **finish a job**—then you **re-pack**, **donate**, or **reorganize** so the next retrieval stays sane.
-
----
-
-## See also
-
-- [Decluttering and retrieval](decluttering_and_retrieval.md) — fewer places to look **after** the work; pairs with temporary spread-out.
-- [Small packet](../../system/design/small_packet.md) — the opposite instinct sometimes: **small units** in motion; decompression is the **spread-out** phase when a packet is **opened**.
+[Decluttering and retrieval](decluttering_and_retrieval.md) is about **long-term** [**entropy**](../../system/design/entropy.md) and **finding things** in a smaller, clearer collection—fewer places to look **after** the work. **Decompression** is often a **short-term** move: you **inflate** the search space **on purpose** to **finish a job**—then you **re-pack**, **donate**, or **reorganize** so the next retrieval stays sane. [Small packet](../../system/design/small_packet.md) thinking is the opposite instinct sometimes—**small units** in motion—while decompression is the **spread-out** phase when a packet is **opened**.

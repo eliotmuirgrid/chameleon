@@ -33,9 +33,4 @@ Lower cognitive load usually gives:
 - faster learning,
 - steadier execution.
 
-## See also
-
-- [Simple English](../../../communication/simple_english.md)
-- [Separation of concerns](../separation_of_concerns.md)
-- [Small packet](../small_packet.md)
-- [Symmetry](../symmetry.md)
+That lines up with [Simple English](../../../communication/simple_english.md), with [separation of concerns](../separation_of_concerns.md) so each view answers one question, with [small packet](../small_packet.md)-sized steps, and with [symmetry](../symmetry.md) so parallel paths look the same.

@@ -42,13 +42,6 @@ It may also be that there is **not enough incentive**—inside the business or f
 
 Across **training**, **roles**, and **structure**, the same question applies: **where is the constraint**—the step that most limits **orders completing**? Until that is **relieved** (clear ownership for replies, faster paths for simple questions, alignment of front line and expertise), **extra marketing** or **more quotes** may only **deepen the queue** behind the bottleneck.
 
+**Vendors:** [Audiophile](../../entity/company/audiophile.md) and [Eddies](../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/README.md)). **Patterns:** [Bottleneck](bottleneck.md), [Theory of constraints](theory_of_constraints.md), [attention as a bottleneck and executive support](attention_bottleneck_executive_support.md), [race condition](race_condition.md). Different domain, same constraint shape: [Subrina — dental care bottleneck](../../entity/people/subrina/dental_care_bottleneck.md).
+
 ---
-
-## See also
-
-- [Audiophile](../../entity/company/audiophile.md) · [Eddies](../../entity/company/eddies.md) — **vendor** concepts ([Company (concepts)](../../entity/company/README.md)).
-- [Bottleneck](bottleneck.md)
-- [Theory of constraints](theory_of_constraints.md)
-- [Attention as a bottleneck and executive support](attention_bottleneck_executive_support.md) — when **focus** is the constraint; **support** for **external** friction.
-- [Race condition](race_condition.md) — **parallel** vendor paths (here and **Eddies**); **timing-dependent** decisions when **several** slow **ordering** pipelines run at once.
-- [Example: relieving a bottleneck (dental care)](../../entity/people/example_bottleneck_dental_care.md) — a different domain; **information** and **handoff** as constraints.

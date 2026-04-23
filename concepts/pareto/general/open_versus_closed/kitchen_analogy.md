@@ -6,8 +6,4 @@
 
 - A **garlic press** is **specialized**: it does **one** job. It can feel **easy** the night you only care about garlic—but it **does not** train a skill that helps elsewhere, it **fills a drawer**, and for most garlic jobs a knife **already** works. That is closer to the **spirit** of a **closed** setup: **quick** in a **narrow** lane, **weak** when the task **changes**.
 
-Software and file choices follow the same **shape**: **flexible foundations** (plain text, [source control](../source_control.md)—often [Git](../../../computer/git/git.md)—and [Markdown](../markdown.md)) versus **one-brand boxes** that feel **fast** until you need to **move** or **reuse** your work.
-
-## See also
-
-- [Open systems vs closed systems](../open_versus_closed.md)
+Software and file choices follow the same **shape**: **flexible foundations** (plain text, [source control](../source_control.md)—often [Git](../../../computer/git/git.md)—and [Markdown](../markdown.md)) versus **one-brand boxes** that feel **fast** until you need to **move** or **reuse** your work. Return to the hub: [Open systems vs closed systems](../open_versus_closed.md).

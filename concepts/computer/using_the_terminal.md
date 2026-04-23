@@ -46,14 +46,7 @@ Wrong folder after `cd`? Type `cd` alone and press **Enter**—that usually take
 
 ## Paste and safety
 
-You can **paste** with **Command + V** (the **Command** key is labeled **⌘** and sits next to the space bar on Apple keyboards). Before you paste a line from the internet, read it and only use sources you trust. If the computer asks for your **password**, stop unless you know why that step is safe.
-
----
-
-## See also
-
-- [The command line](command_line.md) — the big picture in friendly terms.
-- [Spaces in file names and the command line](filename_spaces_command_line.md) — why paths with spaces need quotes or care.
+You can **paste** with **Command + V** (the **Command** key is labeled **⌘** and sits next to the space bar on Apple keyboards). Before you paste a line from the internet, read it and only use sources you trust. If the computer asks for your **password**, stop unless you know why that step is safe. For the big picture on typing to the computer, read [The command line](command_line.md); for paths that contain spaces, read [spaces in file names and the command line](filename_spaces_command_line.md).
 
 ---
 

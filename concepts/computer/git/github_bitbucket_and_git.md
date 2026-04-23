@@ -16,12 +16,4 @@
 
 If **most** of how you work lives **only** inside **that website’s** special screens, **leaving** feels heavy—even though the **Git part** could move **easily**. Keep a **full copy** of your project and treat the site as a **convenience**, not the **only** home for how you think.
 
----
-
-## See also
-
-- [Source control (the idea)](../../pareto/general/source_control.md) — concept **before** any one tool.  
-- **[Git](git.md)** — Git **by itself**, in plain English (history and files **without** GitHub or Bitbucket).  
-- [Git `core.ignorecase` and filesystems](git_core_ignorecase.md) — Mac/Windows vs Linux filename case; stable naming across environments.
-- [Cursor (editor)](../../entity/software/cursor.md) — where many people read and edit this repository day to day.
-- [Open systems vs closed systems](../../pareto/general/open_versus_closed.md) · [Wix vs plain files](../../pareto/general/wix.md) · [Confluence](../../pareto/general/confluence.md) (Atlassian wiki) · [Markdown](../../pareto/general/markdown.md)
+For [Git](git.md) without hosting, for [Git `core.ignorecase` and filesystems](git_core_ignorecase.md), and for day-to-day editing here, see [Cursor (editor)](../../entity/software/cursor.md). The open-vs-closed picture for files and platforms is [Open systems vs closed systems](../../pareto/general/open_versus_closed.md), with site-builder contrast in [Wix vs plain files](../../pareto/general/wix.md), team wiki notes in [Confluence](../../pareto/general/confluence.md), and format choices in [Markdown](../../pareto/general/markdown.md).

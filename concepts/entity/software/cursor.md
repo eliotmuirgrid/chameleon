@@ -18,9 +18,4 @@
 - Easier onboarding: questions can be asked in-place while reading code.
 - Better flow when documentation, data tables, and code live together.
 
----
-
-## See also
-
-- [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) — hosting and source control layers around your project history.
-- [Markdown table format](../../system/design/symmetry/markdown_table.md) — why this repo favors readable table structure for both people and tools.
+That flow sits next to [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) (local Git vs hosting) and to readable [Markdown table format](../../system/design/symmetry/markdown_table.md) in this repo.

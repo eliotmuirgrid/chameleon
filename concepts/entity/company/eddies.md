@@ -17,12 +17,6 @@ The **illustrative** message (scheduling thread) lives with the **race-condition
 - **[Race condition](../pareto/general/race_condition.md)** — **Eddies** and **Audiophile** as **parallel** **slow** **ordering** paths for the **same** **decision**.
 - **[Audiophile](audiophile.md)** — the **other** named vendor concept in the same **story**.
 
+Index: [Company (concepts)](README.md). **Parallel** paths: [race condition](../pareto/general/race_condition.md). **Throughput** language: [bottleneck](../pareto/general/bottleneck.md), [theory of constraints](../pareto/general/theory_of_constraints.md). **Audiophile**-focused case study (Eddies is parallel there, not the subject): [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md).
+
 ---
-
-## See also
-
-- [Company (concepts)](README.md)
-- [Audiophile](audiophile.md)
-- [Race condition](../pareto/general/race_condition.md)
-- [Bottleneck](../pareto/general/bottleneck.md) · [Theory of constraints](../pareto/general/theory_of_constraints.md)
-- [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md) — **structural** follow-up issues (Audiophile-focused case study; **Eddies** is **parallel** in the **race** story, not the **subject** of that page).

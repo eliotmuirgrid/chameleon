@@ -1,6 +1,6 @@
 # Exercise (concepts)
 
-One concept page per exercise, split from the spreadsheet source [`exercise.tsv`](exercise.tsv). Edit the **TSV** for a single tabular source, or edit individual **`.md`** files for narrative tweaks. Pages are grouped by category in subfolders: [`stabilization/`](stabilization/), [`strength/`](strength/), [`stretch/`](stretch/).
+One concept page per exercise, split from the spreadsheet source [`exercise.tsv`](exercise.tsv). Edit the **TSV** for a single tabular source, or edit individual **`.md`** files for narrative tweaks. Pages are grouped by category in subfolders: [`stabilization/`](stabilization/), [`strength/`](strength/), [`stretch/`](stretch/). Parent index: [Health (concepts)](../README.md). Muscle fuel context: [muscle energy at rest and when used](../muscle_energy_at_rest_and_use.md).
 
 ## Stabilization
 
@@ -33,8 +33,3 @@ One concept page per exercise, split from the spreadsheet source [`exercise.tsv`
 - [Triceps Stretch](stretch/triceps_stretch.md)
 - [Shoulder Stretch](stretch/shoulder_stretch.md)
 - [Neck Stretch](stretch/neck_stretch.md)
-
-## See also
-
-- [Health (concepts)](../README.md)
-- [Muscle energy at rest and when used](../muscle_energy_at_rest_and_use.md)

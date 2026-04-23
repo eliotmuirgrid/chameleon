@@ -28,10 +28,6 @@ When muscles **contract**—from a short sprint to a long walk—**energy demand
 - **Energy balance:** Resting use sets a **floor**; **activity** adds **variable** burn—both sides matter for how fuel from food is **spent**.
 - **Training:** **Strength** and **endurance** work change how efficiently muscle **uses** energy over time (this note stays conceptual; details belong in sport-science depth elsewhere).
 
+This page sits under [Health (concepts)](README.md). After meals, movement and **muscle uptake** show up in [glucose spikes](nutrition/glucose_spikes.md); meals and long-run fuel sit in [Nutrition (concepts)](nutrition/README.md).
+
 ---
-
-## See also
-
-- [Health (concepts)](README.md)
-- [Glucose spikes](nutrition/glucose_spikes.md) — movement and **muscle uptake** after eating.
-- [Nutrition (concepts)](nutrition/README.md) — fuel, meals, and long-term metabolic context.

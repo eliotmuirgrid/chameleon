@@ -22,11 +22,6 @@ That is not a sign of personal failure; it is **infrastructure** for a world whe
 
 **Executive support** scales when **the outside world** does not: if **everything** worked smoothly—reliable vendors, clear channels, instant follow-up—**less** of this work would be needed. The role is **partly a response to friction**; reduce friction everywhere, and the **same** outcome might need **fewer** people in **pure coordination** roles.
 
+The same “find the constraint” lens appears in [bottleneck](bottleneck.md), [theory of constraints](theory_of_constraints.md), and [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md). A person-shaped slice of support load: [Subrina](../../entity/people/subrina.md).
+
 ---
-
-## See also
-
-- [Bottleneck](bottleneck.md)
-- [Theory of constraints](theory_of_constraints.md)
-- [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — a **business** whose throughput is limited by follow-up and structure (different shape, same idea: find the constraint).
-- [Subrina job description](../../entity/people/subrina_job_description.md) — assistant / research role in a living system; overlaps with **support** and **operational** load.

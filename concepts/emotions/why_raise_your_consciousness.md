@@ -20,6 +20,4 @@ Raising consciousness isn’t abstract—it’s **practical**.
 
 > Build a better mind, and everything else follows.
 
-## See also
-
-- [How can consciousness be raised?](how_consciousness_can_be_raised.md)
+Practical levers sit in [how can consciousness be raised?](how_consciousness_can_be_raised.md).

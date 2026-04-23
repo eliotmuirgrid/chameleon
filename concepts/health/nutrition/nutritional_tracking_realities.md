@@ -49,10 +49,4 @@ Ask:
 
 If yes, the tracking system is robust enough for real life.
 
-## See also
-
-- [Shared nutrition plan (draft) — Eliot & Subrina](shared_nutrition_plan_eliot_subrina.md)
-- [Zeroing (taring) a scale](tare_scale.md)
-- [Daily variety of fruits and vegetables](daily_variety_fruits_vegetables.md)
-- [Cognitive load](../../system/design/cognitive_load/README.md)
-- [Separation of concerns](../../system/design/separation_of_concerns.md)
+Pair tracking with the [shared nutrition plan (draft) — Eliot & Subrina](shared_nutrition_plan_eliot_subrina.md), clean weighing via [zeroing (taring) a scale](tare_scale.md), and [variety of fruit and vegetables](variety_fruit_vegatables.md). Design for [cognitive load](../../system/design/cognitive_load/README.md) and [separation of concerns](../../system/design/separation_of_concerns.md) so logging stays lightweight.

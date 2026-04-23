@@ -14,13 +14,4 @@ That bottleneck might be a **machine**, a **person**, a **rule**, a **missing pi
 
 In [theory of constraints](theory_of_constraints.md), the same idea is usually called a **constraint**. **Bottleneck** and **constraint** are **the same role** in the model: the **limiting factor** you want to find first so the **whole system** can improve.
 
----
-
-## See also
-
-- [Theory of constraints](theory_of_constraints.md) — how to use this idea systematically.
-- [Example: relieving a bottleneck (dental care)](../../entity/people/example_bottleneck_dental_care.md) — a real case, including **information** and **handoff** as the limiting factor.
-- [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — **business** throughput limited by **follow-up**, **roles**, and **structure**.
-- [Attention as a bottleneck and executive support](attention_bottleneck_executive_support.md) — when **attention** is the scarce resource; **support** for **external** broken systems.
-- [Race condition](race_condition.md) — when **parallel** slow processes make **outcomes** depend on **timing** (e.g. two vendor quotes).
-- [Audiophile](../../entity/company/audiophile.md) · [Eddies](../../entity/company/eddies.md) — **named vendors** used in **bottleneck** and **race** examples ([Company (concepts)](../../entity/company/README.md)).
+Worked angles: [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md); dental handoff and information in [Subrina — dental care bottleneck](../../entity/people/subrina/dental_care_bottleneck.md); [attention as a bottleneck and executive support](attention_bottleneck_executive_support.md); [race condition](race_condition.md) when timing decides outcomes. Named vendors in examples: [Audiophile](../../entity/company/audiophile.md), [Eddies](../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/README.md)).

@@ -6,6 +6,8 @@ When creating links in this repository, use relative Markdown paths from the cur
 
 Example: [Solubility mechanism](../physics/solubility_mechanism.md)
 
+This rule sits with the rest of the [concept standard](../concept.md), works best alongside [inline links](inline_links.md) (link on the phrase you mean), and supports the [two-layer detail pattern](detail.md): relative paths keep hubs and detail folders navigable as the tree grows.
+
 ## Rules
 
 1. Link using relative paths from the current file.
@@ -24,9 +26,3 @@ Example: [Solubility mechanism](../physics/solubility_mechanism.md)
 - Relative links = living system.
 - Commit links = dead snapshot.
 - Always choose the living system.
-
-## See also
-
-- [Concept standard](../concept.md)
-- [Concept - Detail Pages](detail.md)
-- [Concept - Inline Links](inline_links.md)

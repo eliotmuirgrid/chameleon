@@ -2,7 +2,7 @@
 
 Repeated builds while you edit should not always rerun the full compiler for work that has not really changed. [ccache](https://ccache.dev/) is a compiler cache: it stores object files keyed by a hash of the inputs that matter for a given compile. Roughly, it simulates enough of the preprocessor path to form that key, computes something like an MD5, and if a matching result exists, copies the cached object instead of invoking the real compiler. If not, it runs the compiler and stores the new result.
 
-ccache can use a lot of disk space. Behavior also varies with version and with how your compiler is set up, so treat it as a strong default, not an absolute guarantee. The shared POSIX rules in this repository wrap the compiler with `ccache` when it is installed; see `../makefile.common`. Full documentation is at [ccache.dev](https://ccache.dev/).
+ccache can use a lot of disk space. Behavior also varies with version and with how your compiler is set up, so treat it as a strong default, not an absolute guarantee. The shared POSIX rules in this repository wrap the compiler with `ccache` when it is installed; see `../makefile.common`. Full documentation is at [ccache.dev](https://ccache.dev/). For flags and the compile pipeline, read [C/C++ compiler concepts](B.compiler-concepts.md); for how builds are driven here, read [Make concepts](C.make-concepts.md).
 
 ## Statistics (`ccache -s`)
 
@@ -34,7 +34,3 @@ cache size                           2.5 GB
 max cache size                       5.0 GB
 ```
 
-## See also
-
-- [C/C++ compiler concepts](B.compiler-concepts.md): compiler flags and the build pipeline.
-- [Make concepts](C.make-concepts.md): how builds are driven in this tree.

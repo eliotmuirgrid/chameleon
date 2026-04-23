@@ -10,6 +10,4 @@ When **building or running systems**, it often pays to **solve the urgent proble
 
 **When not to shortcut:** **Safety**, **security**, **compliance**, or **data you cannot lose**—those deserve the **right** tool, not only the **nearby** one.
 
-## See also
-
-- [Symmetry](symmetry.md) — when two parts of a system should **match on purpose** for the long haul; pairs well with “fix now, align later.”
+After the fire is out, you often **converge** on [symmetry](symmetry.md)—two parts matching on purpose—once the problem’s shape is clear.

@@ -16,13 +16,4 @@ In system terms, this is open because parts are interchangeable and the arrangem
 
 This shifts the mindset from "finish a room" to "evolve a system."
 
-Broader transfer (healthcare environments, stress, and human consequences) lives on a [detail page](slatboard/healthcare_environments.md). Index: [Slatboard detail pages](slatboard/README.md).
-
-## See also
-
-- [Open systems vs closed systems](../pareto/general/open_versus_closed.md)
-- [General-purpose tools](../pareto/general/general_purpose.md)
-- [Iteration](../system/algorithms/iteration.md)
-- [Building a bathroom (iterative approach)](../system/algorithms/iteration/bathroom_build.md)
-- [Inventory](inventory.md)
-- [Concept - Detail Pages](../concept/detail.md)
+Broader transfer (healthcare environments, stress, and human consequences) lives on a [detail page](slatboard/healthcare_environments.md). Index: [Slatboard detail pages](slatboard/README.md). The open-systems frame is [Open systems vs closed systems](../pareto/general/open_versus_closed.md); flexible tooling is [general-purpose tools](../pareto/general/general_purpose.md). Change over time follows [iteration](../system/algorithms/iteration.md), with a build example in [building a bathroom (iterative approach)](../system/algorithms/iteration/bathroom_build.md). Household lists sit in [inventory](inventory.md). The split pattern matches [Concept - Detail Pages](../concept/detail.md).

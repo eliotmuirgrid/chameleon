@@ -26,15 +26,6 @@ The same idea applies directly to **business**. In a supply chain, imagine a com
 
 Across these examples, the pattern is the same: **find the constraint**, **focus effort there**, and the **whole system** improves.
 
+Plain terms for the limiting factor: [Bottleneck](bottleneck.md). Worked cases: [Subrina — dental care bottleneck](../../entity/people/subrina/dental_care_bottleneck.md); [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md). When **attention** is the constraint: [attention as a bottleneck and executive support](attention_bottleneck_executive_support.md). Parallel external delays: [race condition](race_condition.md). Fair exchange in how work is designed: [theory of reciprocity](theory_of_reciprocity.md) and [Subrina](../../entity/people/subrina.md). Kitchen analogy for “what limits flow?”: [general-purpose tools vs many specialised tools](general_purpose.md).
+
 ---
-
-## See also
-
-- [Bottleneck](bottleneck.md) — what the limiting factor is, in plain terms.
-- [Example: relieving a bottleneck (dental care)](../../entity/people/example_bottleneck_dental_care.md) — real case; information and handoff as the constraint.
-- [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md) — revenue and cash flow delayed when **order completion** is the limiting factor.
-- [Attention as a bottleneck and executive support](attention_bottleneck_executive_support.md) — when **attention** is the limiting factor.
-- [Race condition](race_condition.md) — **multiple** bottlenecks in **parallel** external systems; **decisions** depend on **order** and **timing**.
-- [Theory of reciprocity](theory_of_reciprocity.md) — fair exchange; often paired with constraint thinking in how work is designed.
-- [Subrina job description](../../entity/people/subrina_job_description.md) — reciprocity and theory of constraints as working principles.
-- [General-purpose tools vs many specialised tools](general_purpose.md) — kitchen example; constraints often show up as “what is actually limiting flow?”

@@ -2,7 +2,7 @@
 
 This page is a **concrete example** of a [leaky abstraction](../../system/design/leaky_abstraction.md): Git presents paths one way, but the **operating system’s filesystem** is the hidden layer—and it **does not match** across all machines.
 
-For what **abstraction** means in general, see [Abstraction](../../system/design/abstraction.md).
+For what **abstraction** means in general, see [Abstraction](../../system/design/abstraction.md). For day-to-day Git without the hosting layer, see [Git (in plain terms)](git.md). The abstract idea Git implements is [source control (the idea)](../../pareto/general/source_control.md); portability across tools and files is [open vs closed](../../pareto/general/open_versus_closed.md). Filenames also meet shell parsing in [spaces in file names and the command line](../filename_spaces_command_line.md).
 
 ---
 
@@ -11,10 +11,3 @@ For what **abstraction** means in general, see [Abstraction](../../system/design
 On **Linux**, the same strings are **different** paths. Moving work between environments exposes the leak: case-only renames that behave oddly, “works here” surprises in CI or production, or painful merges when two branches differ only by casing yet look identical on a case-insensitive checkout.
 
 **Takeaway:** `ignorecase` reflects an **OS constraint**, not a style preference. **Discipline** still matters: treat paths as **stable identifiers** and use a **consistent convention** (often all lowercase). When **case carries no meaning** in your tree, the leaky boundary hurts less and behavior stays **predictable** across environments.
-
-## See also
-
-- [Git (in plain terms)](git.md)
-- [Source control (the idea)](../../pareto/general/source_control.md)
-- [Open systems vs closed systems](../../pareto/general/open_versus_closed.md)
-- [Spaces in file names and the command line](../filename_spaces_command_line.md) — another place filenames meet shell parsing.

@@ -18,12 +18,6 @@ The **worked example** [Example: order follow-up as a bottleneck (Audiophile)](.
 
 **[Eddies](eddies.md)** is another vendor path for **related** needs—**not** a direct competitor in how we frame it—so [parallel](../pareto/general/race_condition.md) requests to **both** create a **timing-dependent** picture.
 
+Index: [Company (concepts)](README.md). **Case study:** [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md). **Parallel** timing: [race condition](../pareto/general/race_condition.md). **Throughput:** [bottleneck](../pareto/general/bottleneck.md), [theory of constraints](../pareto/general/theory_of_constraints.md).
+
 ---
-
-## See also
-
-- [Company (concepts)](README.md)
-- [Eddies](eddies.md) — another vendor concept in the same thread of examples.
-- [Example: order follow-up as a bottleneck (Audiophile)](../pareto/general/example_bottleneck_order_followup_audiophile.md) — bottleneck case study.
-- [Race condition](../pareto/general/race_condition.md) — Audiophile and Eddies in **parallel**.
-- [Bottleneck](../pareto/general/bottleneck.md) · [Theory of constraints](../pareto/general/theory_of_constraints.md)

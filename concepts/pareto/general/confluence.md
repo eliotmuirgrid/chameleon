@@ -26,13 +26,6 @@ The **product** is different from a site builder, but the **shape** is similar t
 | **AI** | Assistants work best on **text you control** in **files**. Pulling **clean** text **out** of a wiki is often **slower** and **more brittle** than editing Markdown **directly**. |
 | **Structure** | **Moving** or **renaming** many linked pages can be **manual** and **tedious**—because the **tree** is **owned** by the **app**, not by **files you reorder** in a folder. |
 
----
-
-## See also
-
-- [Open systems vs closed systems](open_versus_closed.md)  
-- [Wix vs plain files](wix.md) — same **closed** pattern, different category  
-- [Markdown](markdown.md) · [Source control](source_control.md) · [Git](../../computer/git/git.md)
-- [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) — **Atlassian** context
+Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open_versus_closed.md), [Markdown](markdown.md), [source control](source_control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) for Atlassian-adjacent hosting context.
 
 **How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../C.how_this_all_started.md).

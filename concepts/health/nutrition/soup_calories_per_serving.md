@@ -41,8 +41,4 @@ The soup is treated as **one uniform liquid** — each gram has about the same c
 - **Oil or cream not fully mixed** — stir before ladling, or allocate fat separately.
 - **Solids left in the pot** — if you only eat broth, **W_serving** should reflect what is in the bowl, and **W_total** should match what you measured for the whole batch you are splitting.
 
-## See also
-
-- [Proportional allocation](../../system/design/proportional_allocation.md) — definitions and assumptions.
-- [Zeroing (taring) a scale](tare_scale.md)
-- [Nutritional tracking realities](nutritional_tracking_realities.md) — imperfect days still benefit from **good enough** splits.
+Definitions and assumptions live on [proportional allocation](../../system/design/proportional_allocation.md). Clean weights use [zeroing (taring) a scale](tare_scale.md). Imperfect days still benefit from **good enough** splits—see [nutritional tracking realities](nutritional_tracking_realities.md).

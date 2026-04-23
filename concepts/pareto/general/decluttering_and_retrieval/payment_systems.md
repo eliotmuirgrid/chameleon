@@ -20,8 +20,4 @@ Apply decluttering by:
 - Fewer payment errors.
 - Better retrieval: users can find a valid method without scanning noise.
 
-## See also
-
-- [Decluttering and retrieval](../decluttering_and_retrieval.md)
-- [Separation of concerns](../../../system/design/separation_of_concerns/concept.md)
-- [Entropy](../../../system/design/entropy.md)
+This is one slice of [Decluttering and retrieval](../decluttering_and_retrieval.md), uses [separation of concerns](../../../system/design/separation_of_concerns/concept.md) between active and dead methods, and fights [entropy](../../../system/design/entropy.md) in the checkout list.

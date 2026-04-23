@@ -22,11 +22,4 @@ It **reinforces the right behavior** by pointing to the **specific action** that
 
 ## Why it generalizes
 
-In all cases, **specificity reduces ambiguity** and tells the system **exactly what signal to repeat**.
-
----
-
-## See also
-
-- [Communication (concepts)](README.md) — index for this topic area.
-- [Communicate better, faster with AI](../../tools/ai/A.Communicate_better_faster_with_AI.md) — related ideas in the AI tooling notes.
+In all cases, **specificity reduces ambiguity** and tells the system **exactly what signal to repeat**. More communication notes live under [Communication (concepts)](README.md); related AI drafting ideas sit in [Communicate better, faster with AI](../../tools/ai/A.Communicate_better_faster_with_AI.md).

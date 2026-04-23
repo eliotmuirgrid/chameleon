@@ -12,7 +12,4 @@ Layout follows [Concept - Detail Pages](../../../concept/detail.md): short hub o
 - [CO2 bubbles coming off liquid](co2_bubbles.md) - dissolved gas leaves until rates in and out balance.
 - [Eliot's mental equilibrium while assimilating concepts](eliot_mental_equilibrium.md) - a person needs enough space and processing time to stabilize understanding.
 
-## See also
-
-- [Equilibrium (system design)](../equilibrium.md)
-- [Concept - Detail Pages](../../../concept/detail.md)
+Hub: [Equilibrium (system design)](../equilibrium.md). Pattern notes: [Concept - Detail Pages](../../../concept/detail.md).

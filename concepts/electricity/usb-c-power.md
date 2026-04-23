@@ -50,9 +50,4 @@ You are buying a charger that can speak many electrical dialects.
 
 More dialects (profiles) means more devices that charge reliably.
 
-## See also
-
-- [Power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md)
-- [Adaptive communication](../communication/adaptive_communication.md) — same idea in people: better compatibility comes from adapting to different styles.
-- [Power delivery safety at home](power_delivery_safety.md) — negotiated delivery helps avoid providing more power than needed.
-- [Sonos Move charging](usb-c-power/sonos_move_charging.md) — device-specific charging behavior notes.
+When charging still fails, walk the [power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md). The people-side analog is [adaptive communication](../communication/adaptive_communication.md). Home safety angle: [power delivery safety at home](power_delivery_safety.md). Device quirks: [Sonos Move charging](usb-c-power/sonos_move_charging.md).

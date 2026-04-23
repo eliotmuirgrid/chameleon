@@ -15,7 +15,4 @@ A **small packet** is a **little unit** of work, data, or responsibility sent or
 
 **Quick test:** Are you splitting because the problem is **naturally incremental**, or because the **design is unclear**? The first is a strength; the second can hide a need for a clearer whole.
 
-## See also
-
-- [Pipeline](../troubleshooting/pipeline.md) — ordered steps where each stage feeds the next; small packets often **flow through** a pipeline.
-- [Immediate solutions](immediate_solutions.md) — when a **tiny fix now** unblocks the next step without waiting for the full design.
+Small packets often **flow through** a [pipeline](../troubleshooting/pipeline.md). When a **tiny fix now** unblocks the next step without waiting for the full design, that is [immediate solutions](immediate_solutions.md).

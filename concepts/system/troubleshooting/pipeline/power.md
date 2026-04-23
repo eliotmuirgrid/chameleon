@@ -18,9 +18,5 @@ Only after **power reaches the machine** does it make sense to worry about the *
 
 ## Why this order matters
 
-A pipeline fails at the **first** broken step. If no electricity enters, you can replace parts inside the case and still see nothing. Checking **power first** saves time and money.
-
-## See also
-
-- [Pipeline](../pipeline.md) — the general idea: **ordered steps**, find the **first** failure.
+A pipeline fails at the **first** broken step. If no electricity enters, you can replace parts inside the case and still see nothing. Checking **power first** saves time and money. General pattern: [Pipeline](../pipeline.md).
 

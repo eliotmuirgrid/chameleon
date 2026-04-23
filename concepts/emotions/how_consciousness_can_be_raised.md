@@ -24,6 +24,4 @@ Instead of feeling overwhelmed by details, you grasp what matters quickly and us
 
 > Raising consciousness isn’t mysterious—it’s what happens when a mind becomes more **organized**, more **connected**, and better at understanding itself and the world.
 
-## See also
-
-- [Why raise your consciousness?](why_raise_your_consciousness.md)
+For motivation to invest in that path, read [why raise your consciousness?](why_raise_your_consciousness.md).

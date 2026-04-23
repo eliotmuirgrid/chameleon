@@ -28,6 +28,4 @@ A **pumice stone** made for toilets can lift stubborn rings **wet**, with light 
 - **Ventilate** the bathroom when using strong cleaners.
 - **Wear gloves**; keep products away from children and pets.
 
-## See also
-
-- [Waxing metal](waxing_metal) — outdoor metal polish and wax (different from toilet porcelain).
+Outdoor metal care (different domain from porcelain): [waxing metal](waxing_metal).

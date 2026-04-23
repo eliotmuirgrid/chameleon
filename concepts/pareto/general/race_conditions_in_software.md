@@ -33,9 +33,6 @@ This note is not a **coding** manual; it names **directions**:
 
 The goal is to make **order** either **impossible to get wrong** or **explicit** in the design—not **accidentally** left to **luck** and **scheduler** mood.
 
+The same ordering hazard outside code is [race condition](race_condition.md). **Load** often **changes timing** and can **expose** races even when the core limiter is a [bottleneck](bottleneck.md).
+
 ---
-
-## See also
-
-- [Race condition](race_condition.md) — the **general** pattern (including **non-software** examples).
-- [Bottleneck](bottleneck.md) — unrelated **mechanism**, but **load** on a system often **changes timing** and can **expose** races.

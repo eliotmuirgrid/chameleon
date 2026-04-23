@@ -30,14 +30,6 @@ That is itself **separation of concerns**: **definition** here, **illustrations*
 
 ## Quick test
 
-Can you **change or verify one thing** (one rule, one bug, one clause, one person’s totals) **without** touching unrelated parts? If not, concerns may still be **tangled**.
-
----
-
-## See also
-
-- [Symmetry](../symmetry.md) — when two parts **should** match on purpose.
-- [Immediate solutions](../immediate_solutions.md) — fix one slice without redesigning everything.
-- [Small packet](../small_packet.md) — small units; separation is **which** unit owns **which** job.
+Can you **change or verify one thing** (one rule, one bug, one clause, one person’s totals) **without** touching unrelated parts? If not, concerns may still be **tangled**. [Symmetry](../symmetry.md) is when two parts **should** match on purpose; [immediate solutions](../immediate_solutions.md) fix one slice without redesigning everything; [small packet](../small_packet.md) is the unit size separation protects.
 
 *Hub (all entry points):* [Separation of concerns](../separation_of_concerns.md)

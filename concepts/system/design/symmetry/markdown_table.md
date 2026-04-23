@@ -48,10 +48,5 @@ Fish, Salmon	200	40	416
 Blueberries	100	0.7	57
 ```
 
-This is cleaner than CSV for commas inside values, but tabs are still not as visually clear as a Markdown table.
-
-## See also
-
-- [Symmetry](../symmetry.md) — keep the same structure across related files so one learning transfers to the next.
-- [Separation of concerns](../separation_of_concerns/concept.md) — keep raw machine storage and human-facing explanation as separate concerns when needed.
+This is cleaner than CSV for commas inside values, but tabs are still not as visually clear as a Markdown table. Visible tables support [symmetry](../symmetry.md) across related files; when machine dumps and human prose diverge, treat them as [separation of concerns](../separation_of_concerns/concept.md).
 

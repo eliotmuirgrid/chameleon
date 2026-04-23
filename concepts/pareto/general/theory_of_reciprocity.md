@@ -19,10 +19,6 @@ When this exchange feels **fair**, people engage and do their best work. When it
 
 A healthy workplace **maintains this balance over time**. It is not only a transaction—it is an **ongoing, fair exchange of value** between both sides.
 
+Reciprocity shows up in people notes like [Subrina](../../entity/people/subrina.md). When systems are under strain, pair this idea with [bottleneck](bottleneck.md) thinking and with [theory of constraints](theory_of_constraints.md) for how work improves end to end.
+
 ---
-
-## See also
-
-- [Subrina job description](../../entity/people/subrina_job_description.md) — reciprocity as a named principle alongside theory of constraints.
-- [Bottleneck](bottleneck.md) — the part of the system that limits flow.
-- [Theory of constraints](theory_of_constraints.md) — often paired when designing how work and systems improve together.

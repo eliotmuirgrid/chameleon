@@ -43,8 +43,4 @@ When she has a one-on-one conversation with someone, she tends to build a good c
 
 She naturally reads the other person's style and adjusts how she communicates.
 
-## See also
-
-- [Simple English (80/20 language rule)](simple_english.md)
-- [Specific praise](specific_praise.md)
-- [USB-C charger compatibility](../electricity/usb-c-power.md) — same pattern: compatibility comes from adapting to different profiles.
+That pairs with [Simple English (80/20 language rule)](simple_english.md), with [specific praise](specific_praise.md) as one concrete adaptation, and with [USB-C charger compatibility](../electricity/usb-c-power.md)—another case where compatibility comes from matching different profiles.

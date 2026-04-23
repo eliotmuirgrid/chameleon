@@ -43,7 +43,4 @@ This concept is about design direction, not electrical repair instructions.
 
 For mains wiring or fault concerns, use a qualified electrician and local code requirements.
 
-## See also
-
-- [USB-C charger compatibility](usb-c-power.md)
-- [Power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md)
+Related: [USB-C charger compatibility](usb-c-power.md); ordered troubleshooting: [power pipeline (computer won't turn on)](../system/troubleshooting/pipeline/power.md).

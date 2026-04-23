@@ -1,6 +1,6 @@
 # Home inventory
 
-Use one row per item. Fill in as you go; keep **Name** and **Description** accurate so retrieval stays easy. Update **Last checked** when you verify the item.
+Use one row per item. Fill in as you go; keep **Name** and **Description** accurate so retrieval stays easy. Update **Last checked** when you verify the item. Same retrieval discipline as [Decluttering and retrieval](../pareto/general/decluttering_and_retrieval.md).
 
 | Name | Description | Last checked |
 | --- | --- | --- |
@@ -9,7 +9,3 @@ Use one row per item. Fill in as you go; keep **Name** and **Description** accur
 | Goddess of Love | Samsung Galaxy S23 Ultra Android phone | 2026-04-21 |
 | Frank | Sonos mood speaker | 2026-04-21 |
 | | | |
-
-## See also
-
-- [Decluttering and retrieval](../pareto/general/decluttering_and_retrieval.md)

@@ -25,8 +25,4 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 
 ## Git
 
-- [Git (concepts)](git/README.md) — Git itself, `core.ignorecase`, and GitHub/Bitbucket vs local Git.
-
-## See also
-
-- [Source control (the idea)](../pareto/general/source_control.md) — the abstract idea; [Git (concepts)](git/README.md) is how this repo usually implements it.
+- [Git (concepts)](git/README.md) — Git itself, `core.ignorecase`, and GitHub/Bitbucket vs local Git. Git implements [source control (the idea)](../pareto/general/source_control.md); the index above is the usual entry point.

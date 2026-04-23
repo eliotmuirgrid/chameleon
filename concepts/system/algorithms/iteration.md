@@ -13,7 +13,7 @@ Each pass follows the same small loop: do, check, adjust, repeat.
 
 ## System view
 
-Iteration is useful when one perfect pass is unlikely, but many small corrections can move the system toward [equilibrium](../design/equilibrium.md).
+Iteration is useful when one perfect pass is unlikely, but many small corrections can move the system toward [equilibrium](../design/equilibrium.md). It pairs with ordered multi-step flows in the [pipeline](../troubleshooting/pipeline.md) idea, with [recursion](recursion.md) when the loop has self-similar shape, and with attention to [cognitive load](../design/cognitive_load/README.md) so each pass stays reviewable. Growing topics can follow the [Concept - Detail Pages](../../concept/detail.md) pattern with a short hub and a matching detail folder.
 
 ## Failure mode
 
@@ -21,14 +21,4 @@ Without a clear feedback signal or stop rule, iteration can become random churn.
 
 ## Simple example
 
-Write a draft, review for clarity, revise one section, then review again.
-
-Domain example: [Building a bathroom (iterative approach)](iteration/bathroom_build.md) - one change at a time, learning from each step.
-
-## See also
-
-- [Recursion](recursion.md)
-- [Pipeline](../troubleshooting/pipeline.md)
-- [Equilibrium](../design/equilibrium.md)
-- [Cognitive load](../design/cognitive_load/README.md)
-- [Concept - Detail Pages](../../concept/detail.md)
+Write a draft, review for clarity, revise one section, then review again. A physical build that uses the same rhythm is [building a bathroom (iterative approach)](iteration/bathroom_build.md).
