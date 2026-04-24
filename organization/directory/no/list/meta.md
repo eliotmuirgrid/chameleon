@@ -1,3 +1,3 @@
 # A directory meta list is a file which lists the files within a directory.
 
-When we find these files we should delete them because they introduce [cognitive load](../../../../cognition/load.md) and require human and artificial intelligence to maintain a list with a directory when directories already have lists. If a directory needs such meta list files then it's a symptom of the need to [separate concerns](../../../../system/design/separation/of/concerns.md).
+When we find these files we should delete them because they introduce [cognitive load](../../../../cognition/load.md) and require human and artificial intelligence to maintain a list with a directory when directories already have lists. If a directory needs such meta list files then it's a symptom of the need to [separate concerns](../../../../system/design/separation/concerns.md).

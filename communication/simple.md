@@ -14,4 +14,4 @@ Use the smallest set of words that most people understand.
 - Faster understanding.
 - Fewer interpretation errors.
 
-Those wins track [cognitive load](../system/design/cognitive_load/load.md), slow [entropy](../system/design/entropy.md) in meaning, fit recursive simplification patterns like [recursion](../system/algorithms/recursion.md), support [separation of concerns](../system/design/separation/of/concerns.md), and match the [concept standard](../rule.md) for this site.
+Those wins track [cognitive load](../system/design/cognitive_load/load.md), slow [entropy](../system/design/entropy.md) in meaning, fit recursive simplification patterns like [recursion](../system/algorithms/recursion.md), support [separation of concerns](../system/design/separation/concerns.md), and match the [concept standard](../rule.md) for this site.

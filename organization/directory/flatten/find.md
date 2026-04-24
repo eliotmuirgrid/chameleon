@@ -2,7 +2,7 @@
 
 Before:
 
-- `system/pareto/general/finding/what/you/need/to/solve/problems.md`
+- `system/pareto/general/finding/problems.md`
 
 After:
 
