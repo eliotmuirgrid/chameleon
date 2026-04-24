@@ -2,7 +2,7 @@
 
 These pages show the same equilibrium pattern in different systems.
 
-Layout follows [Concept - Detail Pages](../../../Concepts/ideas/detail.md): short hub on `equilibrium.md`, optional depth here.
+Layout follows [Concept - Detail Pages](../../../breakdown/detail.md): short hub on `equilibrium.md`, optional depth here.
 
 ## Examples
 
@@ -12,4 +12,4 @@ Layout follows [Concept - Detail Pages](../../../Concepts/ideas/detail.md): shor
 - [CO2 bubbles coming off liquid](co2_bubbles.md) - dissolved gas leaves until rates in and out balance.
 - [Eliot's mental equilibrium while assimilating concepts](eliot_mental_equilibrium.md) - a person needs enough space and processing time to stabilize understanding.
 
-Hub: [Equilibrium (system design)](../equilibrium.md). Pattern notes: [Concept - Detail Pages](../../../Concepts/ideas/detail.md).
+Hub: [Equilibrium (system design)](../equilibrium.md). Pattern notes: [Concept - Detail Pages](../../../breakdown/detail.md).

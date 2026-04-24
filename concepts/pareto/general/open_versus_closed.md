@@ -30,7 +30,7 @@ Closed systems usually mean **less to think about** at the start. The trade is *
 
 ---
 
-Longer analogies and format discussion follow the [two-layer detail pattern](../../Concepts/ideas/detail.md): [Kitchen analogy](open_versus_closed/kitchen_analogy.md), [file formats](open_versus_closed/file_formats.md). Index: [Open vs closed (detail pages)](open_versus_closed/README.md).
+Longer analogies and format discussion follow the [two-layer detail pattern](../../breakdown/detail.md): [Kitchen analogy](open_versus_closed/kitchen_analogy.md), [file formats](open_versus_closed/file_formats.md). Index: [Open vs closed (detail pages)](open_versus_closed/README.md).
 
 ---
 
@@ -61,4 +61,4 @@ Longer analogies and format discussion follow the [two-layer detail pattern](../
 | Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) |
 | Atlassian Confluence (team wiki, closed) | [Confluence](confluence.md) |
 | Concepts site: idea vs how we hosted it | [How this all started](../C.how_this_all_started.md) |
-| Concept writing: two-layer depth | [Concept - Detail Pages](../../Concepts/ideas/detail.md) |
+| Concept writing: two-layer depth | [Concept - Detail Pages](../../breakdown/detail.md) |

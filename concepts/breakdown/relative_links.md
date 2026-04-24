@@ -4,9 +4,9 @@
 
 When creating links in this repository, use relative Markdown paths from the current file, not commit-hash URLs or UI-copied snapshot links.
 
-Example: [Solubility mechanism](../../physics/solubility_mechanism.md)
+Example: [Solubility mechanism](../physics/solubility_mechanism.md)
 
-This rule sits with the rest of the [concept standard](../../concept.md), works best alongside [inline links](inline_links.md) (link on the phrase you mean), and supports the [two-layer detail pattern](detail.md): relative paths keep hubs and detail folders navigable as the tree grows.
+This rule sits with the rest of the [concept standard](../concept.md), works best alongside [inline links](inline_links.md) (link on the phrase you mean), and supports the [two-layer detail pattern](detail.md): relative paths keep hubs and detail folders navigable as the tree grows.
 
 ## Rules
 

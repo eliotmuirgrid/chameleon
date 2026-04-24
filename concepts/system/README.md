@@ -2,7 +2,7 @@
 
 Short notes on **how systems are shaped**—architecture, design ideas, and tradeoffs—in the same style as the rest of [`concepts/`](../): one main idea per page, linked for reuse.
 
-Topics that accumulate examples or long transfers should use the [two-layer detail pattern](../Concepts/ideas/detail.md) (hub `topic.md` plus optional `topic/` pages).
+Topics that accumulate examples or long transfers should use the [two-layer detail pattern](../breakdown/detail.md) (hub `topic.md` plus optional `topic/` pages).
 
 ## Design
 

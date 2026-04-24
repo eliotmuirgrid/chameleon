@@ -12,4 +12,4 @@ That lack of adaptability fed broader social consequences, including delayed car
 
 The point is not blame. The design lesson is that system architecture has human consequences.
 
-When healthcare environments are modular and easier to evolve, teams can respond faster in crises, reduce waste, and lower burden on patients and society. Core slatboard note: [Slatboard (core)](../slatboard.md). Open vs closed hub: [Open systems vs closed systems](../../pareto/general/open_versus_closed.md). Depth layout: [Concept - Detail Pages](../../Concepts/ideas/detail.md).
+When healthcare environments are modular and easier to evolve, teams can respond faster in crises, reduce waste, and lower burden on patients and society. Core slatboard note: [Slatboard (core)](../slatboard.md). Open vs closed hub: [Open systems vs closed systems](../../pareto/general/open_versus_closed.md). Depth layout: [Concept - Detail Pages](../../breakdown/detail.md).

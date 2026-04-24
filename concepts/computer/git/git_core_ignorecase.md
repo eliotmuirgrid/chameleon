@@ -4,7 +4,7 @@
 
 **One sentence:** Git stores and exchanges history in a **portable** way, but every checkout lands on a **real filesystem**—and the three big **desktop families** do **not** agree whether [letter case](../letter_case.md) in a path is **significant** for **same-file** decisions (see [case-sensitive](../letter_case/case_sensitive_comparison.md) vs [case-insensitive](../letter_case/case_insensitive_comparison.md)). `core.ignorecase` is Git’s way of **recording which world** your working tree lives in so it does not fight the disk.
 
-This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../Concepts/ideas/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](git_core_ignorecase/filesystem_case_by_os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../Concepts/ideas/detail.md).
+This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../breakdown/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](git_core_ignorecase/filesystem_case_by_os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../breakdown/detail.md).
 
 ---
 
