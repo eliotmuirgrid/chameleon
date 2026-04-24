@@ -2,7 +2,12 @@
 
 ## Concept
 
-Many **Markdown** viewers and **static site** generators turn repository paths into **URLs**. A space in a path segment becomes **`%20`** (or similar encoding). That is **harder to read**, easier to **truncate** or copy wrong, and **uglier** in the address bar. Avoiding spaces in `concepts/` names keeps **what you see in the repo** closer to **what appears in generated or preview links**, without encoding surprises.
+Many Markdown viewers and static site tools turn repo paths into URLs.
+A space in a path segment becomes `%20` (or another encoded form).
+Encoded links are harder to read and easier to copy wrong.
+
+Avoiding spaces in `concepts/` names keeps visible repo paths close to preview and generated URLs.
+That reduces encoding surprises.
 
 ## Related
 

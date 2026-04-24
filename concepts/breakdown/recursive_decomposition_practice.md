@@ -15,12 +15,12 @@ Before a page gets bloated, make sure the hub has:
 
 ## Checks (in order)
 
-1. **Spot overload** - If one paragraph needs two systems to make sense, split the second system to its own page.
-2. **Spot prerequisites** - If a term carries the argument, give it a page (or link one) instead of a long side explanation.
-3. **Parentage** - New child pages should link back to the hub.
-4. **Boundary** - Keep tool-internal rules separate from environment rules.
-5. **Promote mechanisms** - If a leaf depends on a reusable mechanism, create or link a general page for that mechanism.
-6. **Define base before derived** - Link base vocabulary before derived adjectives.
+1. Spot overload - If one paragraph needs two systems, move the second system to its own page.
+2. Spot prerequisites - If a term carries the argument, link or create a page for it instead of adding a long side note.
+3. Parentage - New child pages should link back to the hub.
+4. Boundary - Keep tool-internal rules separate from environment rules.
+5. Promote mechanisms - If a leaf depends on a reusable mechanism, create or link a general page for it.
+6. Define base before derived - Link base terms before derived terms.
 
 ## When to stop splitting
 
@@ -41,10 +41,10 @@ Worked example: [Common filesystems (cross-platform)](../computer/storage/common
 
 ## Iterative passes
 
-- **Pass A: Structure** - split threads and boundaries
-- **Pass B: Term audit** - define, link, or create pages for opaque terms
-- **Pass C: Re-run gate** - check for reintroduced overload
-- **Pass D: Abstraction ladder** - general -> domain -> identity where needed
-- **Pass E: Lexical prerequisites** - base term linked before derived term
+- Pass A: Structure - split threads and boundaries.
+- Pass B: Term audit - define, link, or create pages for unclear terms.
+- Pass C: Re-run gate - check whether overload came back.
+- Pass D: Abstraction ladder - use general -> domain -> identity where needed.
+- Pass E: Lexical prerequisites - link base terms before derived terms.
 
 Small loops beat one big rewrite.
