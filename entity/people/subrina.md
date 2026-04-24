@@ -57,5 +57,5 @@ These principles are core to how we operate as an organization, and Subrina woul
 
 Assistant researcher, reporting to **Eliot Muir** (founder and CEO, iNTERFACEWARE).
 
-**Related:** When the **constraint** is **focus and attention**, a standard **protocol** is **executive-style support** for **external** broken systems—see [Attention as a bottleneck and executive support](../../pareto/general/attention_bottleneck_executive_support.md). If those systems ran smoothly, **less** of that kind of role would be needed.
+**Related:** When the **constraint** is **focus and attention**, a standard **protocol** is **executive-style support** for **external** broken systems—see [Attention as a bottleneck and executive support](../../system/pareto/general/attention/bottleneck/executive/support.md). If those systems ran smoothly, **less** of that kind of role would be needed.
 

@@ -14,4 +14,4 @@ You already know what **letter case** means in this notebook from the [hub](../l
 
 ## Where you see it
 
-Typical **Linux** desktop and server layouts in [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem_case_by_os.md). [ext4](../../storage/common_filesystems/ext4.md) is a common example format.
+Typical **Linux** desktop and server layouts in [Filesystem case on major desktop OS families](../../../git/git_core_ignorecase/filesystem/case/by/os.md). [ext4](../../../storage/common_filesystems/ext4.md) is a common example format.

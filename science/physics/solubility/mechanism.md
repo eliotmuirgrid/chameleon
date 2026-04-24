@@ -21,5 +21,5 @@ Pressure matters for gases too: higher pressure above a liquid pushes more gas i
 
 ## Related
 
-- [Solubility](../chemistry/solubility.md) — chemistry overview and examples.
-- [CO2 solubility and temperature](../chemistry/solubility/co2.md) — practical fizzy-drink example.
+- [Solubility](../../chemistry/solubility.md) — chemistry overview and examples.
+- [CO2 solubility and temperature](../../chemistry/solubility/co2.md) — practical fizzy-drink example.

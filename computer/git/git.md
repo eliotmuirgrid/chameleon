@@ -1,6 +1,6 @@
 # Git (in plain terms)
 
-**Summary:** **Git** is a **widely used program** that **implements** [source control](../../pareto/general/source_control.md)—it **remembers versions** of your files so you can **see what changed**, **go back in time**, and **work with others** without constantly overwriting each other’s work. It is **not** the same as the **abstract idea** of source control (see [source control](../../pareto/general/source_control.md)); other tools (Mercurial, Subversion, and others) implement that idea differently. Git is **general-purpose**: you can point it at **any** folder (code, writing, research, design, personal projects, and more).
+**Summary:** **Git** is a **widely used program** that **implements** [source control](../../system/pareto/general/source/control.md)—it **remembers versions** of your files so you can **see what changed**, **go back in time**, and **work with others** without constantly overwriting each other’s work. It is **not** the same as the **abstract idea** of source control (see [source control](../../system/pareto/general/source/control.md)); other tools (Mercurial, Subversion, and others) implement that idea differently. Git is **general-purpose**: you can point it at **any** folder (code, writing, research, design, personal projects, and more).
 
 ---
 
@@ -34,4 +34,4 @@ You point it at a **folder** (any files and subfolders you choose). There is not
 
 > Git is a **general-purpose**, very **smart “save history”** for **almost anything** you create—as long as it lives in files.
 
-**GitHub** and **Bitbucket** are **websites** that use Git—they are **not** required to use Git on your own machine. How those layers fit together is in [GitHub, Bitbucket, and Git](github/bitbucket/and/git.md). The abstract idea Git implements is [source control (the idea)](../../pareto/general/source_control.md). Cross-platform path spelling ([letter case](../letter/case.md), then Git’s knob) is a separate sharp edge: see [`core.ignorecase` and filesystems](git/core/ignorecase.md).
+**GitHub** and **Bitbucket** are **websites** that use Git—they are **not** required to use Git on your own machine. How those layers fit together is in [GitHub, Bitbucket, and Git](github/bitbucket/and/git.md). The abstract idea Git implements is [source control (the idea)](../../system/pareto/general/source/control.md). Cross-platform path spelling ([letter case](../letter/case.md), then Git’s knob) is a separate sharp edge: see [`core.ignorecase` and filesystems](git/core/ignorecase.md).

@@ -23,4 +23,4 @@ That follows [Concept - Detail Pages](../../organization/detail.md) and [Recursi
 Link to real files, not deep anchors in long pages.
 Use [inline links](../inline.md) and [relative links](../../organization/relative_links.md).
 
-Example: link to [ext4](../../computer/storage/common_filesystems/ext4.md) as its own page.
+Example: link to [ext4](../computer/storage/common_filesystems/ext4.md) as its own page.

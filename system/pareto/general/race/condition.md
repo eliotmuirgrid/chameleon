@@ -28,7 +28,7 @@ That is a **race condition** in the wild: **outcome** depends on **how two slow 
 
 ## Named vendors: Audiophile and Eddies
 
-For **what each business is** in this notebook, see the vendor concepts **[Audiophile](../../entity/company/audiophile.md)** and **[Eddies](../../entity/company/eddies.md)** ([Company (concepts)](../../entity/company/index.md)).
+For **what each business is** in this notebook, see the vendor concepts **[Audiophile](../../entity/company/audiophile.md)** and **[Eddies](../../../../entity/company/eddies.md)** ([Company (concepts)](../../entity/company/index.md)).
 
 **Audiophile** is one real case where **order follow-up** is the bottleneck—worked through in [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md). **Eddies** is **another** vendor: **not** a direct competitor, but **another** plausible solution path for the **same** underlying problem. It **also** shows an **ordering bottleneck**—delayed replies, **tentative** slots, and confirmation still pending before anything is **firm**.
 
@@ -55,4 +55,4 @@ When **Eddies** and **Audiophile** (and any **other** paths) are **in parallel**
 - **Single owner** for tracking **each** open vendor or scheduling thread, so **handoffs** inside *your* side do not add **another** race.
 - **Honest** expectations when **external** [bottlenecks](bottleneck.md) are **known**—parallel requests buy **optionality**, not **speed**, unless at least one path is **actually** fast.
 
-The same timing shape in code is [race conditions in software](race_conditions_in_software.md). [Theory of constraints](theory_of_constraints.md) names the wider improvement loop. **Vendors** in this notebook: [Audiophile](../../entity/company/audiophile.md), [Eddies](../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/index.md)). **Follow-up bottleneck** story: [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md).
+The same timing shape in code is [race conditions in software](conditions/software.md). [Theory of constraints](theory_of_constraints.md) names the wider improvement loop. **Vendors** in this notebook: [Audiophile](../../entity/company/audiophile.md), [Eddies](../../../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/index.md)). **Follow-up bottleneck** story: [Example: order follow-up as a bottleneck (Audiophile)](example_bottleneck_order_followup_audiophile.md).

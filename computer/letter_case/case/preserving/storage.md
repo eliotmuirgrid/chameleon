@@ -14,4 +14,4 @@ Read [Letter case (for paths and names)](../letter_case.md), then [Case-insensit
 
 ## Where you see it
 
-Typical **NTFS** and default **APFS** / **HFS+** behavior described in [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem_case_by_os.md).
+Typical **NTFS** and default **APFS** / **HFS+** behavior described in [Filesystem case on major desktop OS families](../../../git/git_core_ignorecase/filesystem/case/by/os.md).

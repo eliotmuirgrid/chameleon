@@ -4,7 +4,7 @@
 
 **One sentence:** Git stores and exchanges history in a **portable** way, but every checkout lands on a **real filesystem**—and the three big **desktop families** do **not** agree whether [letter case](../letter_case.md) in a path is **significant** for **same-file** decisions (see [case-sensitive](../letter_case/case_sensitive_comparison.md) vs [case-insensitive](../letter_case/case_insensitive_comparison.md)). `core.ignorecase` is Git’s way of **recording which world** your working tree lives in so it does not fight the disk.
 
-This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../breakdown/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](git_core_ignorecase/filesystem_case_by_os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../breakdown/detail.md).
+This page is intentionally **fat**: it ties together **Git policy**, **OS filesystem rules**, and a **leaky abstraction** story. That is an **overload signal** in the sense of [Special case: overloaded concepts](../../breakdown/overloaded_concept.md). The filesystem-only thread already lives in a [detail page](../../git_core_ignorecase/filesystem/case/by/os.md); if Git’s **index**, **merge**, and **rename** edges keep growing here, split them the same way per [Concept - Detail Pages](../../breakdown/detail.md).
 
 ---
 
@@ -12,7 +12,7 @@ This page is intentionally **fat**: it ties together **Git policy**, **OS filesy
 
 Keep **three threads** separate in your head and in the file tree:
 
-1. **Filesystem thread** — How **Windows**, **macOS**, and **Linux** (typical defaults) treat [letter case](../letter_case.md) in paths. **Do not** fold Git config trivia into that explanation; use [Filesystem case on major desktop OS families](git_core_ignorecase/filesystem_case_by_os.md).
+1. **Filesystem thread** — How **Windows**, **macOS**, and **Linux** (typical defaults) treat [letter case](../letter_case.md) in paths. **Do not** fold Git config trivia into that explanation; use [Filesystem case on major desktop OS families](../../git_core_ignorecase/filesystem/case/by/os.md).
 
 2. **Git’s portable model** — Git’s **object database** and **history** use path strings in a **consistent** way across clones; **checkout** and **working tree** operations must **map** those strings onto whatever rules the **local** filesystem uses.
 
@@ -24,7 +24,7 @@ When a draft keeps mixing those threads in one paragraph, **stop** and add or li
 
 ## What Git has to reconcile
 
-Git must stay **useful on all major platforms**: the same commit must **mean** the same logical tree everywhere, yet **check out** cleanly on a [case-insensitive](../letter_case/case_insensitive_comparison.md) laptop and on a [case-sensitive](../letter_case/case_sensitive_comparison.md) server. The tension is not “Git prefers uppercase”; the tension is **identity of paths** under different **OS defaults**. For the **three-family** filesystem picture without Git, read [Filesystem case on major desktop OS families](git_core_ignorecase/filesystem_case_by_os.md).
+Git must stay **useful on all major platforms**: the same commit must **mean** the same logical tree everywhere, yet **check out** cleanly on a [case-insensitive](../letter_case/case_insensitive_comparison.md) laptop and on a [case-sensitive](../letter_case/case_sensitive_comparison.md) server. The tension is not “Git prefers uppercase”; the tension is **identity of paths** under different **OS defaults**. For the **three-family** filesystem picture without Git, read [Filesystem case on major desktop OS families](../../git_core_ignorecase/filesystem/case/by/os.md).
 
 ---
 
@@ -36,7 +36,7 @@ This topic is also a **concrete example** of a [leaky abstraction](../../system/
 
 On typical **Linux**, the same strings are **different** paths under [case-sensitive](../letter_case/case_sensitive_comparison.md) rules. Moving work between environments exposes the leak: case-only renames that behave oddly, “works here” surprises in CI or production, or painful merges when two branches differ only by casing yet look identical on a [case-insensitive](../letter_case/case_insensitive_comparison.md) checkout.
 
-For what **abstraction** means in general, see [Abstraction](../../system/design/abstraction.md). For day-to-day Git without the hosting layer, see [Git (in plain terms)](git.md). The abstract idea Git implements is [source control (the idea)](../../pareto/general/source_control.md); portability across tools and files is [open vs closed](../../pareto/general/open_versus_closed.md). Filenames also meet shell parsing in [spaces in file names and the command line](../filename_spaces_command_line.md).
+For what **abstraction** means in general, see [Abstraction](../../system/design/abstraction.md). For day-to-day Git without the hosting layer, see [Git (in plain terms)](git.md). The abstract idea Git implements is [source control (the idea)](../../../../system/pareto/general/source/control.md); portability across tools and files is [open vs closed](../../pareto/general/open_versus_closed.md). Filenames also meet shell parsing in [spaces in file names and the command line](../../../filename/spaces/command/line.md).
 
 ---
 
@@ -48,4 +48,4 @@ For what **abstraction** means in general, see [Abstraction](../../system/design
 
 ## Same shape elsewhere
 
-Other notes in this repo use the same **match the hidden profile** picture: [USB-C charger compatibility](../../electricity/usb-c-power.md) (charger and device must overlap on **power profiles**), and [Adaptive communication](../../communication/adaptive_communication.md) (adjust **delivery**, not facts, to the listener). Vocabulary for path **case** stays on [Letter case (for paths and names)](../letter_case.md).
+Other notes in this repo use the same **match the hidden profile** picture: [USB-C charger compatibility](../../../../science/physics/electricity/usb-c-power.md) (charger and device must overlap on **power profiles**), and [Adaptive communication](../../communication/adaptive_communication.md) (adjust **delivery**, not facts, to the listener). Vocabulary for path **case** stays on [Letter case (for paths and names)](../letter_case.md).

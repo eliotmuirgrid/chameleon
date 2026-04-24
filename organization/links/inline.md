@@ -2,4 +2,4 @@
 
 Canonical page:
 
-- [Concept - Inline Links](../connections/inline.md)
+- [Concept - Inline Links](../../connections/inline.md)

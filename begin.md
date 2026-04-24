@@ -10,7 +10,7 @@ That **idea** does **not** belong to any **one** product. You could host it as a
 
 ## How the original concepts site was hosted (Confluence)
 
-**Here**, the first home for much of this material was **Atlassian Confluence**—a **browser wiki** used at **Interfaceware**. What Confluence *is*, and why it behaves like a **closed** system, is its own note: [Confluence](pareto/general/confluence.md).
+**Here**, the first home for much of this material was **Atlassian Confluence**—a **browser wiki** used at **Interfaceware**. What Confluence *is*, and why it behaves like a **closed** system, is its own note: [Confluence](system/pareto/general/confluence.md).
 
 The **space** we started from:
 
@@ -22,6 +22,6 @@ Confluence was **easy** to **start** in, but **linking** pages, **restructuring*
 
 ## What we use now (same idea, different implementation)
 
-This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](pareto/general/source_control.md) implemented with **[Git](computer/git/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How/pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
+This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](system/pareto/general/source/control.md) implemented with **[Git](computer/git/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How/pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
 
-The **old** wiki stack was [Confluence](pareto/general/confluence.md). **Current** building blocks are [Markdown](pareto/general/markdown.md), [source control](pareto/general/source_control.md), and [Git](computer/git/git.md). **Why** plain files matter: [Open systems vs closed systems](pareto/general/open_versus_closed.md).
+The **old** wiki stack was [Confluence](system/pareto/general/confluence.md). **Current** building blocks are [Markdown](system/pareto/general/markdown.md), [source control](system/pareto/general/source/control.md), and [Git](computer/git/git.md). **Why** plain files matter: [Open systems vs closed systems](pareto/general/open_versus_closed.md).

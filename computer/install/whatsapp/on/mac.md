@@ -12,7 +12,7 @@ You need **WhatsApp already working on your phone** (the mobile app). The comput
 
 The **App Store** is Apple’s built-in shop for apps on macOS.
 
-1. Open the **App Store** (for example: click its icon in the **Dock**—the strip of icons at the bottom or side of the screen—or open it from search; see [Open apps with search](open_apps_with_spotlight_mac.md)).
+1. Open the **App Store** (for example: click its icon in the **Dock**—the strip of icons at the bottom or side of the screen—or open it from search; see [Open apps with search](../../../open/apps/with/spotlight/mac.md)).
 2. Search for **WhatsApp**.
 3. Choose **WhatsApp** from **WhatsApp Inc.** (check that the publisher looks right).
 4. Click **Get** or **Install**. Sign in with your **Apple ID** (the account you use for Apple services) if asked, and wait for the download to finish.

@@ -2,4 +2,4 @@
 
 Canonical concept:
 
-- [Using the terminal](using/the/terminal.md)
+- [Using the terminal](using/terminal.md)

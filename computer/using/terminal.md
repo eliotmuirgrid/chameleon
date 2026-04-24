@@ -12,7 +12,7 @@ Read [The command line](command_line.md) if the idea of typing to the computer i
 
 **Terminal** is an app that comes with macOS. To open it (or any app), use the built-in search called **Spotlight**:
 
-See: [Open apps with search (Spotlight) on a Mac](open_apps_with_spotlight_mac.md).
+See: [Open apps with search (Spotlight) on a Mac](../open/apps/with/spotlight/mac.md).
 
 Once Terminal is open, continue below.
 
@@ -46,7 +46,7 @@ Wrong folder after `cd`? Type `cd` alone and press **Enter**—that usually take
 
 ## Paste and safety
 
-You can **paste** with **Command + V** (the **Command** key is labeled **⌘** and sits next to the space bar on Apple keyboards). Before you paste a line from the internet, read it and only use sources you trust. If the computer asks for your **password**, stop unless you know why that step is safe. For the big picture on typing to the computer, read [The command line](command_line.md); for paths that contain spaces, read [spaces in file names and the command line](filename_spaces_command_line.md).
+You can **paste** with **Command + V** (the **Command** key is labeled **⌘** and sits next to the space bar on Apple keyboards). Before you paste a line from the internet, read it and only use sources you trust. If the computer asks for your **password**, stop unless you know why that step is safe. For the big picture on typing to the computer, read [The command line](command_line.md); for paths that contain spaces, read [spaces in file names and the command line](../filename/spaces/command/line.md).
 
 ---
 

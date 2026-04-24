@@ -22,5 +22,5 @@ Good result:
 
 - [Subrina dental bottleneck](flatten/examples/bottleneck.md)
 - [Slat COVID response impact](flatten/examples/impact.md)
-- [Glute bridge spinal control](flatten/examples/bridge.md)
-- [Finding problems to solve](flatten/examples/find.md)
+- [Glute bridge spinal control](flatten/bridge.md)
+- [Finding problems to solve](flatten/find.md)

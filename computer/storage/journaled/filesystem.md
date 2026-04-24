@@ -10,7 +10,7 @@ Without a journal, the machine might have **half-written** a rename or a new fil
 
 ## Examples in this repo
 
-Several Linux-oriented identities in [Common filesystems (cross-platform)](common_filesystems.md) are commonly described as **journaled** in production talk—for example [XFS](common_filesystems/xfs.md). Exact on-disk layouts differ by format; the **shared** idea is the **log before trust**.
+Several Linux-oriented identities in [Common filesystems (cross-platform)](common_filesystems.md) are commonly described as **journaled** in production talk—for example [XFS](../common_filesystems/xfs.md). Exact on-disk layouts differ by format; the **shared** idea is the **log before trust**.
 
 ## Related
 

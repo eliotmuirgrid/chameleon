@@ -1,6 +1,6 @@
 # HFS+
 
-Optional identity for [Common filesystems (cross-platform)](../common_filesystems.md). [Letter case (for paths and names)](../../letter_case.md) first; then [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem_case_by_os.md).
+Optional identity for [Common filesystems (cross-platform)](../common_filesystems.md). [Letter case (for paths and names)](../../letter_case.md) first; then [Filesystem case on major desktop OS families](../../../git/git_core_ignorecase/filesystem/case/by/os.md).
 
 ---
 
@@ -10,4 +10,4 @@ Optional identity for [Common filesystems (cross-platform)](../common_filesystem
 
 ## Case (typical)
 
-Like typical [APFS](apfs.md) for consumers, it is commonly [case-insensitive](../../letter_case/case_insensitive_comparison.md) and [case-preserving](../../letter_case/case_preserving_storage.md).
+Like typical [APFS](../apfs.md) for consumers, it is commonly [case-insensitive](../../letter_case/case_insensitive_comparison.md) and [case-preserving](../../letter_case/case_preserving_storage.md).

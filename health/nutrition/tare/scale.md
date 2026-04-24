@@ -86,6 +86,6 @@ Each entry is direct and clear, with no subtraction step.
 - Letting part of the bowl touch the counter.
 - Using inconsistent units (`oz` one day, `g` the next).
 
-Weights feed the [shared nutrition plan — Eliot & Subrina](shared_nutrition_plan_eliot_subrina.md) and [calorie deficit](calorie_deficit.md) math.
+Weights feed the [shared nutrition plan — Eliot & Subrina](../shared/nutrition/plan/eliot/subrina.md) and [calorie deficit](calorie_deficit.md) math.
 
 ---

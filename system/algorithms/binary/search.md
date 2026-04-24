@@ -28,7 +28,7 @@
 - Reduces search space by 50% each step.
 - Lower effort than scanning every item one by one.
 
-Each step is a tight [small packet](../design/small_packet.md) of work; the same halving idea shows up in [recursion](recursion.md) when subproblems shrink the same way.
+Each step is a tight [small packet](../../design/small/packet.md) of work; the same halving idea shows up in [recursion](recursion.md) when subproblems shrink the same way.
 
 ## Failure mode
 

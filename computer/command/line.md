@@ -8,7 +8,7 @@ That typing often happens in a window called **Terminal** (on [macOS](index.md#a
 
 Many guides use typing because **everyone follows the same words**, which is simpler than describing a long trail of clicks.
 
-When you want to try a few safe steps on an **Apple computer running macOS**, go to [Using the terminal](using_the_terminal.md). File names with spaces are a common gotcha; see [spaces in file names and the command line](filename_spaces_command_line.md).
+When you want to try a few safe steps on an **Apple computer running macOS**, go to [Using the terminal](using_the_terminal.md). File names with spaces are a common gotcha; see [spaces in file names and the command line](../filename/spaces/command/line.md).
 
 ---
 

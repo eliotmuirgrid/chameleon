@@ -8,7 +8,7 @@
 
 You share meals but have **different primary goals**:
 
-- **Eliot (54, ~219 lb):** Move toward a **healthier body composition** — **lose fat** while **building or preserving muscle**. That implies a **calorie deficit** versus maintenance, **high protein**, and **enough carbohydrate** to train and recover (see [Carbohydrates](carbohydrates.md)). **Adequate fat** supports hormones and absorption of fat-soluble vitamins; **fiber** (from whole plants) supports satiety, gut health, and cardiometabolic markers.
+- **Eliot (54, ~219 lb):** Move toward a **healthier body composition** — **lose fat** while **building or preserving muscle**. That implies a **calorie deficit** versus maintenance, **high protein**, and **enough carbohydrate** to train and recover (see [Carbohydrates](../../../../carbohydrates.md)). **Adequate fat** supports hormones and absorption of fat-soluble vitamins; **fiber** (from whole plants) supports satiety, gut health, and cardiometabolic markers.
 - **Subrina (26, ~141 lb):** **Not** focused on weight loss. Goal is **strength** and **better body composition** (more muscle relative to fat). Training emphasis includes **left/right [symmetry](../../system/design/symmetry.md)** so one side does not compensate for the other—that is mainly **program design** (unilateral work, volume balance, possible physio input), with **nutrition** supporting **recovery** and **protein** for tissue adaptation.
 
 ---
@@ -20,7 +20,7 @@ You share meals but have **different primary goals**:
 | ------------------ | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | **Energy**         | Deficit vs **your** TDEE (cap in `targets_eliot.md`)                                               | Roughly **maintenance** or **small surplus** if lean gain is the priority |
 | **Protein**        | **First priority** in a deficit                                                                     | **High** relative to body weight for recomposition                        |
-| **Carbs**          | **Sufficient**, not zero — supports training and muscle sparing ([Carbohydrates](carbohydrates.md)) | **Sufficient** for sessions; can flex with workload                       |
+| **Carbs**          | **Sufficient**, not zero — supports training and muscle sparing ([Carbohydrates](../../../../carbohydrates.md)) | **Sufficient** for sessions; can flex with workload                       |
 | **Fat**            | Enough for health; capped to fit calories                                                           | Enough for health; not driven by a sharp deficit                          |
 | **Fiber / plants** | Vegetables, fruit, legumes as volume and fiber                                                      | Same — variety and micronutrients                                         |
 | **Alcohol**        | **0** in targets (optional personal choice)                                                         | **0** in targets                                                          |
@@ -35,7 +35,7 @@ You share meals but have **different primary goals**:
 | -------------------------------------------------------------------------------- | ----------------------------------------------- |
 | `[tracking/targets_eliot.md](../../../../tracking/targets_eliot.md)`     | Eliot’s daily macro / calorie / fiber targets   |
 | `[tracking/targets_subrina.md](../../../../tracking/targets_subrina.md)` | Subrina’s daily macro / calorie / fiber targets |
-| `[tracking/foods.md](../../../../tracking/foods.md)`                     | Shared density table for logging                |
+| `[tracking/foods.md](../../../../../tracking/foods.md)`                     | Shared density table for logging                |
 | Daily logs                                                                       | [`tracking/data.md`](../../../../tracking/data.md) with **Date** first and **Person** second |
 
 

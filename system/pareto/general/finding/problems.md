@@ -47,7 +47,7 @@ Across domains, a practical principle matches the kitchen picture in [general-pu
 | What actually limits flow (bottleneck) | [Bottleneck](bottleneck.md) |
 | Find the bottleneck first (systems thinking) | [Theory of constraints](theory_of_constraints.md) |
 | Parallel slow processes; outcome depends on timing | [Race condition](race_condition.md) |
-| Race conditions in programs (intermittent bugs) | [Race conditions in software](race_conditions_in_software.md) |
+| Race conditions in programs (intermittent bugs) | [Race conditions in software](../race/conditions/software.md) |
 | General tools vs many gadgets (kitchen analogy) | [General-purpose tools](general_purpose.md) |
 | Why portable, open files help you find and reuse ideas | [Open systems vs closed systems](open_versus_closed.md) |
 | Named companies in examples (Audiophile, Eddies) | [Company (concepts)](../../entity/company/index.md) |

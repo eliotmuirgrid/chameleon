@@ -2,7 +2,7 @@
 
 This page is a **worked example** of a [bottleneck](bottleneck.md) in a **business** where **communication and ownership**—not lack of demand—limit how fast **value turns into completed orders and cash**. It ties to [**theory of constraints**](theory_of_constraints.md): the system cannot move faster than its **weakest handoff**.
 
-**Vendor concepts:** [Audiophile](../../entity/company/audiophile.md) — **what** Audiophile **is** in this concepts set. **[Eddies](../../entity/company/eddies.md)** is the **other** named vendor in the **parallel** [race](race_condition.md) story. See [Company (concepts)](../../entity/company/index.md).
+**Vendor concepts:** [Audiophile](../../../../entity/company/audiophile.md) — **what** Audiophile **is** in this concepts set. **[Eddies](../../../../entity/company/eddies.md)** is the **other** named vendor in the **parallel** [race](race_condition.md) story. See [Company (concepts)](../../entity/company/index.md).
 
 ---
 
@@ -42,6 +42,6 @@ It may also be that there is **not enough incentive**—inside the business or f
 
 Across **training**, **roles**, and **structure**, the same question applies: **where is the constraint**—the step that most limits **orders completing**? Until that is **relieved** (clear ownership for replies, faster paths for simple questions, alignment of front line and expertise), **extra marketing** or **more quotes** may only **deepen the queue** behind the bottleneck.
 
-**Vendors:** [Audiophile](../../entity/company/audiophile.md) and [Eddies](../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/index.md)). **Patterns:** [Bottleneck](bottleneck.md), [Theory of constraints](theory_of_constraints.md), [attention as a bottleneck and executive support](attention_bottleneck_executive_support.md), [race condition](race_condition.md). Different domain, same constraint shape: [Subrina — dental care bottleneck](../../entity/people/subrina/dental_care_bottleneck.md).
+**Vendors:** [Audiophile](../../../../entity/company/audiophile.md) and [Eddies](../../../../entity/company/eddies.md) ([Company (concepts)](../../entity/company/index.md)). **Patterns:** [Bottleneck](bottleneck.md), [Theory of constraints](theory_of_constraints.md), [attention as a bottleneck and executive support](../attention/bottleneck/executive/support.md), [race condition](race_condition.md). Different domain, same constraint shape: [Subrina — dental care bottleneck](../../../../entity/people/subrina/dental/care/bottleneck.md).
 
 ---

@@ -2,4 +2,4 @@
 
 Canonical concept:
 
-- [hub with links to examples](design/separation/of/concerns.md)
+- [hub with links to examples](design/separation/concerns.md)

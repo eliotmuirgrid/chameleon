@@ -2,4 +2,4 @@
 
 Canonical concept:
 
-- [Hamstring (Face Up, One Leg Extended)](stretch/hamstring/face/up/one/leg/extend.md)
+- [Hamstring (Face Up, One Leg Extended)](stretch/hamstring/extend.md)

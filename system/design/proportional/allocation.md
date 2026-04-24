@@ -40,4 +40,4 @@ When these break, treat layers separately or measure the actual portion.
 1. Does **W_serving / W_total** add up to **1** across all servings you allocate (allowing rounding)?
 2. If you ate the whole batch, do you recover **C_total**?
 
-Worked food math: [Soup — calories per serving](../../health/nutrition/soup_calories_per_serving.md). Clean weights: [Zeroing (taring) a scale](../../health/nutrition/tare_scale.md). If you flatten reality too hard, you raise [entropy](entropy.md)—splits are only as good as the uniform-mixture story.
+Worked food math: [Soup — calories per serving](../../../health/nutrition/soup/calories/per/serve.md). Clean weights: [Zeroing (taring) a scale](../../health/nutrition/tare_scale.md). If you flatten reality too hard, you raise [entropy](entropy.md)—splits are only as good as the uniform-mixture story.

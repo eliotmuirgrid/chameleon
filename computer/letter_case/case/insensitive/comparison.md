@@ -14,4 +14,4 @@ Read [Letter case (for paths and names)](../letter_case.md) **before** relying o
 
 ## Where you see it
 
-Typical **Windows** and **macOS** consumer defaults in [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem_case_by_os.md). [NTFS](../../storage/common_filesystems/ntfs.md) and typical [APFS](../../storage/common_filesystems/apfs.md) examples in this repo use this rule for ordinary path **matching**.
+Typical **Windows** and **macOS** consumer defaults in [Filesystem case on major desktop OS families](../../../git/git_core_ignorecase/filesystem/case/by/os.md). [NTFS](../../../storage/common_filesystems/ntfs.md) and typical [APFS](../../../storage/common_filesystems/apfs.md) examples in this repo use this rule for ordinary path **matching**.

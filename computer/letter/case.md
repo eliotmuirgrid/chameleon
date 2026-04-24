@@ -18,10 +18,10 @@ Index with short blurbs: [Letter case (index)](letter_case/index.md).
 
 ## Where this shows up
 
-[Filesystem case on major desktop OS families](git/git_core_ignorecase/filesystem_case_by_os.md) applies the rules above per **OS family**. [Git `core.ignorecase` and filesystems](git/git_core_ignorecase.md) is the **Git** layer on top. [Common filesystems (cross-platform)](storage/common_filesystems.md) names **formats**; each format page points back here for **vocabulary**.
+[Filesystem case on major desktop OS families](../git/git_core_ignorecase/filesystem/case/by/os.md) applies the rules above per **OS family**. [Git `core.ignorecase` and filesystems](git/git_core_ignorecase.md) is the **Git** layer on top. [Common filesystems (cross-platform)](storage/common_filesystems.md) names **formats**; each format page points back here for **vocabulary**.
 
 ## Related
 
-[Simple English (80/20 language rule)](../communication/simple_english.md); [Recursive decomposition — practice checklist](../breakdown/recursive_decomposition_practice.md) (check **6**, **Pass E**).
+[Simple English (80/20 language rule)](../communication/simple_english.md); [Recursive decomposition — practice checklist](../../organization/recursive/decomposition/practice.md) (check **6**, **Pass E**).
 
-**Same boundary shape:** [USB-C charger compatibility](../electricity/usb-c-power.md) negotiates **electrical profiles** across plug and device; [Adaptive communication](../communication/adaptive_communication.md) negotiates **human style** while keeping the message true. Here the “profiles” are [case-sensitive](letter_case/case_sensitive_comparison.md) vs [case-insensitive](letter_case/case_insensitive_comparison.md) path rules; Git’s layer is [Git `core.ignorecase` and filesystems](git/git_core_ignorecase.md).
+**Same boundary shape:** [USB-C charger compatibility](../../science/physics/electricity/usb-c-power.md) negotiates **electrical profiles** across plug and device; [Adaptive communication](../communication/adaptive_communication.md) negotiates **human style** while keeping the message true. Here the “profiles” are [case-sensitive](letter_case/case_sensitive_comparison.md) vs [case-insensitive](letter_case/case_insensitive_comparison.md) path rules; Git’s layer is [Git `core.ignorecase` and filesystems](git/git_core_ignorecase.md).

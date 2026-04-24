@@ -2,7 +2,7 @@
 
 ## Concept
 
-For a **mixed soup** where ingredients are combined, you can estimate calories in one serving by **share of final cooked weight**, using [proportional allocation](../../system/design/proportional_allocation.md).
+For a **mixed soup** where ingredients are combined, you can estimate calories in one serving by **share of final cooked weight**, using [proportional allocation](../../../../../system/design/proportional/allocation.md).
 
 ## Example (numbers are illustrative)
 
@@ -34,11 +34,11 @@ Round to match your logging precision (whole kcal vs one decimal).
 
 ## Why this matches the model
 
-The soup is treated as **one uniform liquid** — each gram has about the same calorie density. That is the same assumption as in the main [proportional allocation](../../system/design/proportional_allocation.md) page.
+The soup is treated as **one uniform liquid** — each gram has about the same calorie density. That is the same assumption as in the main [proportional allocation](../../../../../system/design/proportional/allocation.md) page.
 
 ## When to be careful
 
 - **Oil or cream not fully mixed** — stir before ladling, or allocate fat separately.
 - **Solids left in the pot** — if you only eat broth, **W_serving** should reflect what is in the bowl, and **W_total** should match what you measured for the whole batch you are splitting.
 
-Definitions and assumptions live on [proportional allocation](../../system/design/proportional_allocation.md). Clean weights use [zeroing (taring) a scale](tare_scale.md). Imperfect days still benefit from **good enough** splits—see [nutritional tracking realities](nutritional_tracking_realities.md).
+Definitions and assumptions live on [proportional allocation](../../../../../system/design/proportional/allocation.md). Clean weights use [zeroing (taring) a scale](tare_scale.md). Imperfect days still benefit from **good enough** splits—see [nutritional tracking realities](../../../nutritional/tracking/realities.md).

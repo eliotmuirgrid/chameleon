@@ -10,7 +10,7 @@
 - **What you do:** Create **spaces** and **pages** in a **web** UI; **link** pages; **permissions** for teams.  
 - **Where it runs:** **On Atlassian’s** infrastructure (cloud) or **self-hosted** in some setups—either way, the **experience** is **their** product, **not** “a folder of files on your disk” by default.
 
-For how **Bitbucket** (Git hosting) relates to **Git** itself—same vendor family, different product—see [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md).
+For how **Bitbucket** (Git hosting) relates to **Git** itself—same vendor family, different product—see [GitHub, Bitbucket, and Git](../../../computer/git/github/bitbucket/and/git.md).
 
 ---
 
@@ -26,6 +26,6 @@ The **product** is different from a site builder, but the **shape** is similar t
 | **AI** | Assistants work best on **text you control** in **files**. Pulling **clean** text **out** of a wiki is often **slower** and **more brittle** than editing Markdown **directly**. |
 | **Structure** | **Moving** or **renaming** many linked pages can be **manual** and **tedious**—because the **tree** is **owned** by the **app**, not by **files you reorder** in a folder. |
 
-Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open/versus/close.md), [Markdown](markdown.md), [source control](source/control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) for Atlassian-adjacent hosting context.
+Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open/versus/close.md), [Markdown](markdown.md), [source control](source/control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../../computer/git/github/bitbucket/and/git.md) for Atlassian-adjacent hosting context.
 
 **How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../beginning.md).

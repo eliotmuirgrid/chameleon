@@ -59,8 +59,8 @@ You are only storing it.
 
 ## Examples
 
-- [Payment systems](decluttering_and_retrieval/payment_systems.md)
+- [Payment systems](../decluttering_and_retrieval/payment/systems.md)
 
-The habit pairs with [separation of concerns](../../system/design/separation_of_concerns/concept.md), with short-term [decompression](decompression.md) when you spread things out to finish a job, and with [finding what you need to solve problems](finding_what_you_need_to_solve_problems.md) as the broader retrieval pattern.
+The habit pairs with [separation of concerns](../../system/design/separation_of_concerns/concept.md), with short-term [decompression](../decompression.md) when you spread things out to finish a job, and with [finding what you need to solve problems](finding_what_you_need_to_solve_problems.md) as the broader retrieval pattern.
 
 ---

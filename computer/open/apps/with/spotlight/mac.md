@@ -38,4 +38,4 @@ You skip a lot of clicking through windows. Shortcut, type a little, **Enter**.
 
 ---
 
-**Show you have this down:** Open the search bar, type something so it is clearly yours, then take a **picture of that** ([steps here](region_screenshot_mac.md)) and **send it to a friend**.
+**Show you have this down:** Open the search bar, type something so it is clearly yours, then take a **picture of that** ([steps here](../../../../region/screenshot/mac.md)) and **send it to a friend**.
