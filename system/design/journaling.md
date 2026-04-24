@@ -10,7 +10,7 @@ If the only record is the **finished** result, a crash or half-finished step **l
 
 ## Transfer (beyond filesystems)
 
-- **Filesystems** — A [journaled filesystem](../../computer/storage/journaled_filesystem.md) writes metadata (and sometimes data) through a **log** so the tree on disk can be brought back to a **consistent** story after power loss.
+- **Filesystems** — A [journaled filesystem](../../computer/storage/journaled/filesystem.md) writes metadata (and sometimes data) through a **log** so the tree on disk can be brought back to a **consistent** story after power loss.
 - **Databases** — Many engines use **write-ahead logs**: intent hits durable storage before pages are considered committed.
 - **Human workflows** — Lab notebooks, **ship’s logs**, checklists with initials and times: the journal is the **durable** story of intent and order, not only the end artifact.
 

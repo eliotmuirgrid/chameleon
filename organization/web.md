@@ -16,14 +16,14 @@ You are placing complexity into structure so people can follow one thread at a t
 
 ## Practice
 
-Use the checklist: [Recursive decomposition — practice checklist](recursive_decomposition_practice.md).
+Use the checklist: [Recursive decomposition — practice checklist](recursive/decomposition/practice.md).
 Keep tool logic and environment rules separate.
 
 ## Worked examples
 
-- [Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md)
-- [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md)
-- [Common filesystems (cross-platform)](../computer/storage/common_filesystems.md)
+- [Git `core.ignorecase` and filesystems](../computer/git/git/core/ignorecase.md)
+- [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem/case/by/os.md)
+- [Common filesystems (cross-platform)](../computer/storage/common/filesystems.md)
 
 ## Takeaway
 

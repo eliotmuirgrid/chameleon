@@ -6,7 +6,7 @@ Do not use ASCII spaces in file or folder names under `concepts/`.
 A space looks like prose but acts like a separator in many tools.
 That mismatch causes mistakes.
 
-Shell details: [Spaces in file names and the command line](../../../../computer/filename_spaces_command_line.md).
+Shell details: [Spaces in file names and the command line](../../../../computer/filename/spaces/command/line.md).
 
 ## Why
 

@@ -21,4 +21,4 @@ Without a clear feedback signal or stop rule, iteration can become random churn.
 
 ## Simple example
 
-Write a draft, review for clarity, revise one section, then review again. A physical build that uses the same rhythm is [building a bathroom (iterative approach)](iteration/bathroom_build.md).
+Write a draft, review for clarity, revise one section, then review again. A physical build that uses the same rhythm is [building a bathroom (iterative approach)](iteration/bathroom/build.md).

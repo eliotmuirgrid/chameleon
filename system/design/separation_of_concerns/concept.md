@@ -24,12 +24,12 @@ This page is **only** the abstract pattern—on purpose.
 - Examples can go **deep** or **change** (new stack, new log format) without **rewriting** the definition.
 - Readers who already know one domain are not forced through **another** domain’s detail just to get the core idea.
 
-That is itself **separation of concerns**: **definition** here, **illustrations** elsewhere—[code](code.md), [diet reports](diet_report.md).
+That is itself **separation of concerns**: **definition** here, **illustrations** elsewhere—[code](code.md), [diet reports](diet/report.md).
 
 ---
 
 ## Quick test
 
-Can you **change or verify one thing** (one rule, one bug, one clause, one person’s totals) **without** touching unrelated parts? If not, concerns may still be **tangled**. [Symmetry](../symmetry.md) is when two parts **should** match on purpose; [immediate solutions](../immediate_solutions.md) fix one slice without redesigning everything; [small packet](../small_packet.md) is the unit size separation protects.
+Can you **change or verify one thing** (one rule, one bug, one clause, one person’s totals) **without** touching unrelated parts? If not, concerns may still be **tangled**. [Symmetry](../symmetry.md) is when two parts **should** match on purpose; [immediate solutions](../immediate/solutions.md) fix one slice without redesigning everything; [small packet](../small/packet.md) is the unit size separation protects.
 
-*Hub (all entry points):* [Separation of concerns](../separation_of_concerns.md)
+*Hub (all entry points):* [Separation of concerns](../separation/of/concerns.md)

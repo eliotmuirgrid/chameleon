@@ -28,4 +28,4 @@ To count down from 3:
 
 - count(3) -> count(2) -> count(1) -> count(0) stop.
 
-A sibling pattern that also halves a problem space is [binary search](binary_search.md). Recursion is easier to read with [Simple English (80/20 language rule)](../../communication/simple_english.md) and lower [cognitive load](../design/cognitive_load/index.md); if the stack of calls grows without discipline, you drift toward [entropy](../design/entropy.md). Clear [separation of concerns](../design/separation_of_concerns.md) keeps the base case and recursive step in view.
+A sibling pattern that also halves a problem space is [binary search](binary/search.md). Recursion is easier to read with [Simple English (80/20 language rule)](../../communication/simple_english.md) and lower [cognitive load](../design/cognitive_load/index.md); if the stack of calls grows without discipline, you drift toward [entropy](../design/entropy.md). Clear [separation of concerns](../design/separation/of/concerns.md) keeps the base case and recursive step in view.

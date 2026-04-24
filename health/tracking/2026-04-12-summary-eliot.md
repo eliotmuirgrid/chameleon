@@ -2,7 +2,7 @@
 
 [**← Day hub**](2026-04-12-summary.md) · [**Subrina’s report**](2026-04-12-summary-subrina.md) · [**Shared cooking reference**](2026-04-12-shared.md)
 
-Targets from [`targets_eliot.md`](targets_eliot.md). Raw log: [`data.md`](data.md) *(filter `Date = 2026-04-12`, `Person = Eliot`)*. This report is **Eliot only** — [Separation of concerns](../concepts/system/design/separation_of_concerns.md) · [diet pattern](../concepts/system/design/separation_of_concerns/diet_report.md).
+Targets from [`targets_eliot.md`](targets/eliot.md). Raw log: [`data.md`](data.md) *(filter `Date = 2026-04-12`, `Person = Eliot`)*. This report is **Eliot only** — [Separation of concerns](../concepts/system/design/separation_of_concerns.md) · [diet pattern](../concepts/system/design/separation_of_concerns/diet_report.md).
 
 Context: [`shared_nutrition_plan_eliot_subrina.md`](../concepts/health/nutrition/shared_nutrition_plan_eliot_subrina.md).
 

@@ -2,7 +2,7 @@
 
 **Markdown** is writing with **simple typing rules** on top of **plain text**. You use a few marks for headings (`#`), bold (`**like this**`), and lists (`-`). Files usually end in **`.md`**. Any computer can open them. Apps can **show them pretty** (that is called **rendering**) or you can read the raw text as-is.
 
-It is a **general-purpose** tool for text: **one** small set of rules covers **many** jobs—notes, school papers, project docs, books, checklists, meeting logs, web drafts, and more. You are not meant to buy a **different file format** for each kind of writing. The same idea is spelled out for physical tools in [general-purpose tools](general_purpose.md): a **few** flexible tools often beat a **drawer** of one-off gadgets.
+It is a **general-purpose** tool for text: **one** small set of rules covers **many** jobs—notes, school papers, project docs, books, checklists, meeting logs, web drafts, and more. You are not meant to buy a **different file format** for each kind of writing. The same idea is spelled out for physical tools in [general-purpose tools](general/purpose.md): a **few** flexible tools often beat a **drawer** of one-off gadgets.
 
 ---
 
@@ -32,9 +32,9 @@ Writing **software that renders HTML “the way browsers do”**—and stays **c
 ## Why Markdown is a better default
 
 - **Plain text** — What you save **is** what you see. **Less clutter** inside the file.  
-- **History** — Pairs well with [source control](source_control.md) (here, [Git](../../computer/git/git.md)): you can **follow changes** over time.  
+- **History** — Pairs well with [source control](source/control.md) (here, [Git](../../computer/git/git.md)): you can **follow changes** over time.  
 - **Search, scripts, AI** — Easy to **find text** and **hand it to a program** without extra steps.  
-- **General-purpose by design** — You learn **one habit** (headings, lists, emphasis) and reuse it everywhere. That is **less to remember** than learning separate tools or export paths for each project. Same spirit as keeping a **chef’s knife** instead of ten single-job slicers—see [general-purpose tools](general_purpose.md). The **big picture** for plain files vs locked platforms is [Open systems vs closed systems](open_versus_closed.md). [Source control](source_control.md) is the idea; [Git](../../computer/git/git.md) tracks changes in practice.
+- **General-purpose by design** — You learn **one habit** (headings, lists, emphasis) and reuse it everywhere. That is **less to remember** than learning separate tools or export paths for each project. Same spirit as keeping a **chef’s knife** instead of ten single-job slicers—see [general-purpose tools](general/purpose.md). The **big picture** for plain files vs locked platforms is [Open systems vs closed systems](open/versus/closed.md). [Source control](source/control.md) is the idea; [Git](../../computer/git/git.md) tracks changes in practice.
 
 ---
 

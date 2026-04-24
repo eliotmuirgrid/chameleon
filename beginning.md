@@ -22,6 +22,6 @@ Confluence was **easy** to **start** in, but **linking** pages, **restructuring*
 
 ## What we use now (same idea, different implementation)
 
-This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](pareto/general/source_control.md) implemented with **[Git](computer/git/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How_do_I_write_these_pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
+This repository keeps the **same** kind of **small, linked** concept pages, but as **Markdown** under [source control](pareto/general/source_control.md) implemented with **[Git](computer/git/git.md)**, with **AI** often helping draft and edit—see [How I write these pages](tools/ai/B.How/do/I/write/these/pages.md). The **move** was for **openness**, **history**, and **workflow**—not because the **ideas** changed.
 
 The **old** wiki stack was [Confluence](pareto/general/confluence.md). **Current** building blocks are [Markdown](pareto/general/markdown.md), [source control](pareto/general/source_control.md), and [Git](computer/git/git.md). **Why** plain files matter: [Open systems vs closed systems](pareto/general/open_versus_closed.md).

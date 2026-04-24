@@ -22,4 +22,4 @@ Positive pattern: [Singular](yes/singular/index.md) in [Naming `yes/`](yes.md).
 
 ## Related
 
-[Path and file naming](../naming.md); [Concept - Relative Links](../relative_links.md).
+[Path and file naming](../naming.md); [Concept - Relative Links](../relative/links.md).

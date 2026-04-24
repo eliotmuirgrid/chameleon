@@ -1,6 +1,6 @@
 # Btrfs
 
-Optional identity for [Common filesystems (cross-platform)](../common_filesystems.md). [Letter case (for paths and names)](../../letter_case.md) first; then [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem_case_by_os.md).
+Optional identity for [Common filesystems (cross-platform)](../common/filesystems.md). [Letter case (for paths and names)](../../letter/case.md) first; then [Filesystem case on major desktop OS families](../../git/git_core_ignorecase/filesystem/case/by/os.md).
 
 ---
 
@@ -10,4 +10,4 @@ Optional identity for [Common filesystems (cross-platform)](../common_filesystem
 
 ## Case
 
-For **ordinary path naming** and [letter case](../../letter_case.md), it behaves [case-sensitively](../../letter_case/case_sensitive_comparison.md) like [ext4](ext4.md) in typical layouts.
+For **ordinary path naming** and [letter case](../../letter/case.md), it behaves [case-sensitively](../../letter_case/case/sensitive/comparison.md) like [ext4](ext4.md) in typical layouts.

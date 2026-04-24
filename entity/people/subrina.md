@@ -27,7 +27,7 @@ The key is to **recognize** this not as a side contribution, but as a **core cap
 
 ## Example (bottleneck in practice)
 
-A concrete case of **finding and relieving a bottleneck**—including a long-overdue **dental checkup**, a minimal **Cayman** health plan, and using **lunch** to **hand off appointment details** so the rest of the flow could run—is on a separate page: [Example: relieving a bottleneck (dental care)](subrina/dental_care_bottleneck.md). That example ties together [bottleneck](../../pareto/general/bottleneck.md) and [theory of constraints](../../pareto/general/theory_of_constraints.md) in a real situation.
+A concrete case of **finding and relieving a bottleneck**—including a long-overdue **dental checkup**, a minimal **Cayman** health plan, and using **lunch** to **hand off appointment details** so the rest of the flow could run—is on a separate page: [Example: relieving a bottleneck (dental care)](subrina/dental/care/bottleneck.md). That example ties together [bottleneck](../../pareto/general/bottleneck.md) and [theory of constraints](../../pareto/general/theory_of_constraints.md) in a real situation.
 
 ---
 

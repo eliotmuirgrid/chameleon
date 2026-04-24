@@ -20,8 +20,8 @@ See the rule pages in [Naming `no/`](naming/no.md) and the positive pattern in [
 - Fewer broken assumptions in tools and scripts
 - Clearer page boundaries
 
-Related shell behavior: [Spaces in file names and the command line](../computer/filename_spaces_command_line.md).
+Related shell behavior: [Spaces in file names and the command line](../computer/filename/spaces/command/line.md).
 
 ## Related
 
-[Concept standard](../rule.md); [Naming `no/`](naming/no.md); [Naming `yes/`](naming/yes.md); [Concept - Detail Pages](detail.md); [Concept - Relative Links](relative_links.md).
+[Concept standard](../rule.md); [Naming `no/`](naming/no.md); [Naming `yes/`](naming/yes.md); [Concept - Detail Pages](detail.md); [Concept - Relative Links](relative/links.md).

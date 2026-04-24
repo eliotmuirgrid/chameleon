@@ -18,5 +18,5 @@ This is why thinking in pipelines is useful. When something isn’t working, you
 
 Even if real systems are more complicated, this way of thinking keeps things clear. You follow the flow, find the break, and fix it.
 
-This same idea applies to many many other physical and non physical systems. When you need a **quick** fix at one step before you clean up the whole flow, that is [immediate solutions](../design/immediate_solutions.md).
+This same idea applies to many many other physical and non physical systems. When you need a **quick** fix at one step before you clean up the whole flow, that is [immediate solutions](../design/immediate/solutions.md).
 

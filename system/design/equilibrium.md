@@ -16,7 +16,7 @@ Equilibrium is not "perfect" or "finished." It is a **current balance point** un
 
 If conditions change (load, resources, rules), the balance point shifts.
 
-The same pattern appears across physical, economic, social, and personal systems. Cross-domain examples live under [Equilibrium subconcepts and examples](equilibrium/index.md), using the [Concept - Detail Pages](../../breakdown/detail.md) split. [Entropy](entropy.md) is the drift that pulls systems away from balance; [proportional allocation](proportional_allocation.md) is one way to split finite totals fairly; the [pipeline](../troubleshooting/pipeline.md) view helps see where inflow and outflow stop matching.
+The same pattern appears across physical, economic, social, and personal systems. Cross-domain examples live under [Equilibrium subconcepts and examples](equilibrium/index.md), using the [Concept - Detail Pages](../../breakdown/detail.md) split. [Entropy](entropy.md) is the drift that pulls systems away from balance; [proportional allocation](proportional/allocation.md) is one way to split finite totals fairly; the [pipeline](../troubleshooting/pipeline.md) view helps see where inflow and outflow stop matching.
 
 ## Quick test
 

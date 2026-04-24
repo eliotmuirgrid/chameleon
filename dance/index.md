@@ -4,4 +4,4 @@ Notes on partner dance ideas that transfer across styles: lead, follow, timing, 
 
 ## Pages
 
-- [Create space](create_space.md) - many lead moves work by opening a path the partner can move into.
+- [Create space](create/space.md) - many lead moves work by opening a path the partner can move into.

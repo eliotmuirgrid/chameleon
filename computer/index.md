@@ -16,21 +16,21 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 
 ## Pages
 
-- [The command line](command_line.md) — what the command line is, in plain language (no commands required).
-- [Open apps with search (Spotlight) on a Mac](open_apps_with_spotlight_mac.md) — keyboard or magnifying glass, then type a name and **Enter**.
-- [Using the terminal](using_the_terminal.md) — on **macOS** only: open Terminal, then three commands (`pwd`, `ls`, `cd`).
-- [Spaces in file names and the command line](filename_spaces_command_line.md) — why spaces split arguments and how to avoid pain (naming, quotes).
-- [Install WhatsApp on an Apple computer](install_whatsapp_on_mac.md) — App Store or official download, then link to your phone.
-- [Screenshot part of the screen](region_screenshot_mac.md) — **Shift + ⌘ + 4**, drag a box; optional **Shift + ⌘ + 5** for more choices.
+- [The command line](command/line.md) — what the command line is, in plain language (no commands required).
+- [Open apps with search (Spotlight) on a Mac](open/apps/with/spotlight/mac.md) — keyboard or magnifying glass, then type a name and **Enter**.
+- [Using the terminal](using/the/terminal.md) — on **macOS** only: open Terminal, then three commands (`pwd`, `ls`, `cd`).
+- [Spaces in file names and the command line](filename/spaces/command/line.md) — why spaces split arguments and how to avoid pain (naming, quotes).
+- [Install WhatsApp on an Apple computer](install/whatsapp/on/mac.md) — App Store or official download, then link to your phone.
+- [Screenshot part of the screen](region/screenshot/mac.md) — **Shift + ⌘ + 4**, drag a box; optional **Shift + ⌘ + 5** for more choices.
 
 ## Paths and letter case
 
-- [Letter case (for paths and names)](letter_case.md) — what **case** means for names, then [case-sensitive](letter_case/case_sensitive_comparison.md) / [case-insensitive](letter_case/case_insensitive_comparison.md) / [case-preserving](letter_case/case_preserving_storage.md) comparison rules before OS or Git detail.
+- [Letter case (for paths and names)](letter/case.md) — what **case** means for names, then [case-sensitive](letter_case/case/sensitive/comparison.md) / [case-insensitive](letter_case/case/insensitive/comparison.md) / [case-preserving](letter_case/case/preserving/storage.md) comparison rules before OS or Git detail.
 
 ## Storage (names and formats)
 
-- [Common filesystems (cross-platform)](storage/common_filesystems.md) — hub for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs**; one **identity file** each under [`storage/common_filesystems/`](storage/common_filesystems/index.md). Old path: [Common filesystem names (redirect)](storage/common_filesystem_names.md).
-- [Journaled filesystem](storage/journaled_filesystem.md) — how a **log-before-trust** design fits filesystems; general pattern in [Journaling](../system/design/journaling.md).
+- [Common filesystems (cross-platform)](storage/common/filesystems.md) — hub for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs**; one **identity file** each under [`storage/common_filesystems/`](storage/common_filesystems/index.md). Old path: [Common filesystem names (redirect)](storage/common/filesystem/names.md).
+- [Journaled filesystem](storage/journaled/filesystem.md) — how a **log-before-trust** design fits filesystems; general pattern in [Journaling](../system/design/journaling.md).
 
 ## Git
 

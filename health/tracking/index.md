@@ -8,10 +8,10 @@ Daily macro planning and logs for **Eliot** and **Subrina**. Targets are **not**
 
 | File | Role |
 |------|------|
-| [`targets_eliot.md`](targets_eliot.md) | Eliot’s daily targets |
-| [`targets_subrina.md`](targets_subrina.md) | Subrina’s daily targets |
+| [`targets_eliot.md`](targets/eliot.md) | Eliot’s daily targets |
+| [`targets_subrina.md`](targets/subrina.md) | Subrina’s daily targets |
 | [`foods.md`](foods.md) | Shared density table for logging |
-| [`body_metrics_eliot.md`](body_metrics_eliot.md) | Eliot’s body measurement notes (e.g. tailoring / progress) |
+| [`body_metrics_eliot.md`](body/metrics/eliot.md) | Eliot’s body measurement notes (e.g. tailoring / progress) |
 | [`data.md`](data.md) | Consolidated raw table for all dates; first columns are **Date** and **Person** |
 | `YYYY-MM-DD-summary.md` | Optional **hub** for that day (links to per-person reports + shared reference) |
 | `YYYY-MM-DD-summary-eliot.md` / `…-subrina.md` | That person’s day vs **their** targets |

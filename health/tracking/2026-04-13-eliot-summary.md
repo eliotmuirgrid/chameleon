@@ -1,6 +1,6 @@
 # 2026-04-13 — Eliot intake summary
 
-Source: [`eliot_food_log.md`](eliot_food_log.md) — **Eliot rows only** (Subrina’s half of the shared rice and shared chicken batch are excluded).
+Source: [`eliot_food_log.md`](eliot/food/log.md) — **Eliot rows only** (Subrina’s half of the shared rice and shared chicken batch are excluded).
 
 ## Totals
 
@@ -11,7 +11,7 @@ Source: [`eliot_food_log.md`](eliot_food_log.md) — **Eliot rows only** (Subrin
 | **Fat (g)** | **38** |
 | **Carbs (g)** | **154** |
 
-## vs [`targets_eliot.md`](targets_eliot.md)
+## vs [`targets_eliot.md`](targets/eliot.md)
 
 | Metric | Target | Today | Notes |
 | --- | ---: | ---: | --- |

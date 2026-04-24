@@ -6,8 +6,8 @@ Use this packet when a concept page starts mixing too many systems.
 
 ## Pages
 
-- [Hub page shape](./hub_page_shape.md)
+- [Hub page shape](hub/page/shape.md)
 - [Checks (in order)](./checks.md)
-- [When to stop splitting](./stop_splitting.md)
-- [Glossary packet split](./glossary_packet_split.md)
-- [Iterative passes](./iterative_passes.md)
+- [When to stop splitting](stop/splitting.md)
+- [Glossary packet split](glossary/packet/split.md)
+- [Iterative passes](iterative/passes.md)

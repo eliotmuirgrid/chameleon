@@ -1,5 +1,5 @@
 # Professional assistants that help communication
 
 - [Interpreter](./interpreter.md)
-- [Patient advocate](./patient_advocate.md)
-- [Legal aid intake worker](./legal_aid_intake_worker.md)
+- [Patient advocate](patient/advocate.md)
+- [Legal aid intake worker](legal/aid/intake/worker.md)
