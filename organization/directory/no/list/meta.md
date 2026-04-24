@@ -1,3 +1,15 @@
-# A directory meta list is a file which lists the files within a directory.
+# Rule: No directory meta list files
 
-When we find these files we should delete them because they introduce [cognitive load](../../../../cognition/load.md) and require human and artificial intelligence to maintain a list with a directory when directories already have lists. If a directory needs such meta list files then it's a symptom of the need to [separate concerns](../../../../system/design/separation/concerns.md).
+A directory already lists its contents.
+
+Do not add a separate file that only repeats that list.
+
+Why this is good:
+
+- It removes duplicate maintenance work.
+- It lowers [cognitive load](../../../../cognition/load.md).
+- It pushes better [separation of concerns](../../../../system/design/separation/concerns.md).
+
+There basically should *never* be an index.md rule.  There is zero flexibility on this.
+
+Related rule style: [Markdown writing rule link](../../../../communication/markdown/rules/no-meta-file.md).
