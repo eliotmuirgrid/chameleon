@@ -54,6 +54,7 @@ Across domains, a practical principle matches the kitchen picture in [general-pu
 | Communication (people and AI) | [Communication (concepts)](../../communication/index.md) |
 | Health concepts | [Health (concepts)](../../health/index.md) |
 | Nutrition concepts | [Nutrition (concepts)](../../health/nutrition/index.md) |
+| Music concepts | [Music (concepts)](../../music/index.md) |
 | How this concepts site is structured | [How this all started](../../beginning.md) |
 
 ---
