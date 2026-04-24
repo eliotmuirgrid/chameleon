@@ -7,7 +7,7 @@ Do not use commit-hash URLs or copied snapshot links.
 
 Example: [Solubility mechanism](../physics/solubility_mechanism.md)
 
-This works with the [concept standard](../concept.md), [inline links](inline_links.md), and [Concept - Detail Pages](detail.md).
+This works with the [concept standard](../rule.md), [inline links](inline_links.md), and [Concept - Detail Pages](detail.md).
 
 ## Rules
 

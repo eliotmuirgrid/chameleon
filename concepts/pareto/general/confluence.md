@@ -28,4 +28,4 @@ The **product** is different from a site builder, but the **shape** is similar t
 
 Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open_versus_closed.md), [Markdown](markdown.md), [source control](source_control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) for Atlassian-adjacent hosting context.
 
-**How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../C.how_this_all_started.md).
+**How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../beginning.md).

@@ -60,5 +60,5 @@ Longer analogies and format discussion follow the [two-layer detail pattern](../
 | Wix as closed vs Markdown / source control as open | [Wix vs plain files](wix.md) |
 | Git vs GitHub / Bitbucket (hosting layer) | [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) |
 | Atlassian Confluence (team wiki, closed) | [Confluence](confluence.md) |
-| Concepts site: idea vs how we hosted it | [How this all started](../C.how_this_all_started.md) |
+| Concepts site: idea vs how we hosted it | [How this all started](../beginning.md) |
 | Concept writing: two-layer depth | [Concept - Detail Pages](../../breakdown/detail.md) |

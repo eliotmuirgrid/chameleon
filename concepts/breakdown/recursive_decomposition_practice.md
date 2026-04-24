@@ -1,6 +1,6 @@
 # Recursive decomposition — practice checklist
 
-Optional depth for [Recursive concept decomposition](breakup_concepts_into_web.md).
+Optional depth for [Recursive concept decomposition](web.md).
 
 ## Hub page shape
 

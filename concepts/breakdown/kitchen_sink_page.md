@@ -16,7 +16,7 @@ This often overlaps with an [overloaded concept](overloaded_concept.md).
 ## Better pattern
 
 Use a small hub page plus separate identity pages.
-That follows [Concept - Detail Pages](detail.md) and [Recursive concept decomposition](breakup_concepts_into_web.md).
+That follows [Concept - Detail Pages](detail.md) and [Recursive concept decomposition](web.md).
 
 ## Linking
 

@@ -17,7 +17,7 @@ You are placing complexity into structure so people can follow one thread at a t
 ## Practice
 
 Use the checklist: [Recursive decomposition — practice checklist](recursive_decomposition_practice.md).
-Keep tool logic and environment rules separate: [Tool internal model and environment](internal_model_and_environment.md).
+Keep tool logic and environment rules separate.
 
 ## Worked examples
 

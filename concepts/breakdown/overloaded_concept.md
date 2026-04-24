@@ -20,4 +20,4 @@ This is not about removing complexity. It is about placing complexity in structu
 
 [Git `core.ignorecase` and filesystems](../computer/git/git_core_ignorecase.md) combines several threads (OS rules, Git behavior, and setting details). The split pattern is used there, with a filesystem-only page: [Filesystem case on major desktop OS families](../computer/git/git_core_ignorecase/filesystem_case_by_os.md).
 
-For the repeat habit, see [Recursive concept decomposition](breakup_concepts_into_web.md).
+For the repeat habit, see [Recursive concept decomposition](web.md).

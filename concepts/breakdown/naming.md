@@ -24,4 +24,4 @@ Related shell behavior: [Spaces in file names and the command line](../computer/
 
 ## Related
 
-[Concept standard](../concept.md); [Naming `no/`](naming/no.md); [Naming `yes/`](naming/yes.md); [Concept - Detail Pages](detail.md); [Concept - Relative Links](relative_links.md).
+[Concept standard](../rule.md); [Naming `no/`](naming/no.md); [Naming `yes/`](naming/yes.md); [Concept - Detail Pages](detail.md); [Concept - Relative Links](relative_links.md).
