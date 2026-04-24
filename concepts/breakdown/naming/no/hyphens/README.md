@@ -1,11 +1,16 @@
-# No hyphens in `concepts/` path names
+# No hyphens in `concepts/` names
 
 ## Concept
 
-**Hyphens** are **not** used in file or folder names under `concepts/`. The character is **ambiguous** in naming: it already means **subtraction**, **ranges**, **flags**, and **other punctuation** in shells, math, URLs, and prose. In a path segment it is easy to read as “something technical happened here” instead of “this is a **word boundary** inside one identifier,” so people **disagree** about whether `foo-bar` is one name or a **relation** between `foo` and `bar`. Tools and humans then resolve names **inconsistently**, which is the opposite of a stable **path as identifier** story (see [No spaces in `concepts/` names — path as identifier](../spaces/path_as_identifier.md)).
+Do not use hyphens in file or folder names under `concepts/`.
+Hyphens are overloaded punctuation (`a-b`, ranges, flags).
+They make names harder to parse consistently.
 
-Do **not** replace hyphens with **underscores** or **spaces** inside a segment either; see [No underscores](../underscores/README.md) and [No spaces in `concepts/` names](../spaces/README.md). Prefer **one head token per segment** and **folder depth** or a **hub + detail** split; see [Singular](../../yes/singular/README.md).
+## What to do instead
+
+Use one clear token per segment.
+If you need more meaning, add folder depth.
 
 ## Related
 
-[Naming `no/` (hub)](../no.md); [No underscores](../underscores/README.md); [No spaces in `concepts/` names](../spaces/README.md); [No plural](../plural/README.md); [Singular](../../yes/singular/README.md); [Path and file naming (concepts tree)](../../../naming.md); [Concept - Relative Links](../../../relative_links.md).
+[Naming `no/`](../no.md); [No spaces](../spaces/README.md); [No underscores](../underscores/README.md); [Singular](../../yes/singular/README.md); [Path and file naming](../../../naming.md).

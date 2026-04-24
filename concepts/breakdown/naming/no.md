@@ -2,19 +2,24 @@
 
 ## Concept
 
-Under `concepts/`, path segments avoid **literal spaces**, **hyphens**, **underscores**, and **plural** word forms in file and folder **names**—for the same **naming** reason in each case: those spellings **overload** the segment with **ambiguous** readings (tokens vs prose, code vs English, one page vs many). Positive pattern: **one head token per segment** where you can, **singular** labels, and **structure** from **folders** or **hub + detail** instead of gluing words inside one string.
+Under `concepts/`, avoid these in path segments:
 
-Notes live under **`naming/no/`**:
+- spaces
+- hyphens
+- underscores
+- plural names
 
-- **[Spaces](no/spaces/README.md)** — no ASCII **space** (human/tool **double reading**).
-- **[Hyphens](no/hyphens/README.md)** — no **hyphens** (operators, ranges, “is this one name?”).
-- **[Underscores](no/underscores/README.md)** — no **underscores** (code-id **snake_case** confusion).
-- **[Plural](no/plural/README.md)** — no **plural** segment names (cardinality / “many of what?” ambiguity).
+Each one adds ambiguity. Keep names short, singular, and clear.
 
-Prefer **[Singular](yes/singular/README.md)** under **[Naming `yes/`](yes.md)**.
+## Pages
 
-Parent hub: [Path and file naming (concepts tree)](../naming.md).
+- [Spaces](no/spaces/README.md)
+- [Hyphens](no/hyphens/README.md)
+- [Underscores](no/underscores/README.md)
+- [Plural](no/plural/README.md)
+
+Positive pattern: [Singular](yes/singular/README.md) in [Naming `yes/`](yes.md).
 
 ## Related
 
-[Path and file naming (concepts tree)](../naming.md); [Naming `yes/`](yes.md); [Concept - Relative Links](../relative_links.md).
+[Path and file naming](../naming.md); [Concept - Relative Links](../relative_links.md).

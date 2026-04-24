@@ -2,7 +2,11 @@
 
 ## Concept
 
-The [naming hub](../../../naming.md) treats path strings as **identifiers** shared with **Git**, **search**, and **cross-platform** checkouts. Spaces inside identifiers are a recurring **footgun** (shells, scripts, and some tools treat them as **separators** first). Leaving spaces out of `concepts/` names is a **cheap default** for a tree that is mostly **hand-edited text** and **relative links**, aligned with “path as identifier” rather than free-form prose.
+The [naming hub](../../../naming.md) treats path strings as identifiers shared across Git, search tools, and different operating systems.
+Spaces in identifiers are a common source of mistakes because shells and scripts treat spaces as separators first.
+
+Keeping spaces out of `concepts/` names is a simple default for a tree made of hand-edited text and relative links.
+It supports "path as identifier" instead of free-form prose naming.
 
 ## Related
 

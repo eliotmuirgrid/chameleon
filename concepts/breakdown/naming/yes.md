@@ -2,12 +2,11 @@
 
 ## Concept
 
-The **`naming/yes/`** folder holds **positive** defaults: names that usually work well in this tree. Today that is **[Singular](yes/singular/README.md)** for path segments that stand for **one concept** or **one identity** per file.
+This folder holds positive naming defaults.
+Current default: [Singular](yes/singular/README.md).
 
-Contrast with **[Naming `no/`](no.md)** (no spaces, hyphens, underscores, or plural segment names—each is **ambiguous** in its own way).
-
-Parent hub: [Path and file naming (concepts tree)](../naming.md).
+Use `naming/no/` for disallowed patterns.
 
 ## Related
 
-[Naming `no/`](no.md); [Path and file naming (concepts tree)](../naming.md); [Concept - Relative Links](../relative_links.md).
+[Naming `no/`](no.md); [Path and file naming](../naming.md); [Concept - Relative Links](../relative_links.md).

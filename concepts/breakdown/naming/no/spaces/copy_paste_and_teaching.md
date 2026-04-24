@@ -2,9 +2,15 @@
 
 ## Concept
 
-Instructions and chat often show paths as **plain text**. A name with a **literal space** forces readers to notice and add **quoting** when they type or paste into a terminal. Path segments **without spaces** paste as **one** shell token and match what people type from a **README** or a message, so examples are harder to get wrong when teaching or sharing links out of band. The same stability goal rules out **hyphens** and **underscores** as word-glue; see [No hyphens](../hyphens/README.md) and [No underscores](../underscores/README.md).
+Docs and chat usually show paths as plain text.
+If a name has a space, readers must remember quotes when they type or paste commands.
+Names without spaces paste as one shell token and are easier to type from a README or message.
+That makes examples easier to teach and harder to misuse.
 
-This is about **human workflow**, not a claim that spaces are forbidden on disk.
+For the same reason, avoid hyphens and underscores as word glue:
+[No hyphens](../hyphens/README.md) and [No underscores](../underscores/README.md).
+
+This is about safer human workflow, not a claim that spaces are invalid on disk.
 
 ## Related
 

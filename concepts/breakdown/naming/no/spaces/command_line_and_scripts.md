@@ -2,9 +2,12 @@
 
 ## Concept
 
-Anyone cloning the repo may run **find**, **grep**, **git**, or small **shell** loops over paths. A **space** in a file or folder name turns one path into **two tokens** unless every use remembers **quotes** or **escapes**. The failure mode is often **silent** (wrong file) or **noisy** (“file not found”). The concepts tree is meant to be **safe to treat as data** in scripts without special cases for spaces.
+People who clone the repo run tools like `find`, `rg`, `git`, and shell loops on paths.
+A space in a file or folder name splits one path into two parts unless every command uses quotes or escapes.
+That often causes wrong results or "file not found" errors.
 
-That splitting behavior is the same idea as [Spaces in file names and the command line](../../../../computer/filename_spaces_command_line.md), applied here as a **naming choice** for `concepts/`.
+We want the `concepts/` tree to work in scripts without special handling for spaces.
+This is the same issue explained in [Spaces in file names and the command line](../../../../computer/filename_spaces_command_line.md).
 
 ## Related
 
