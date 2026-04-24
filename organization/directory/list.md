@@ -1,0 +1,1 @@
+A directory has a list of files and other sub directories in the directory.
