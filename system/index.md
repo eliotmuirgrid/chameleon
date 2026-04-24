@@ -15,7 +15,7 @@ Topics that accumulate examples or long transfers should use the [two-layer deta
 - [Proportional allocation](design/proportional/allocation.md) — split a total across parts by **share of size** (e.g. calories per serving from batch weight).
 - [Abstraction](design/abstraction.md) — hide detail behind a simpler surface so you can reason with less at once.
 - [Leaky abstraction](design/leaky/abstraction.md) — when hidden reality breaks through and you must deal with it anyway.
-- [Journaling](design/journaling.md) — record intent or steps **before** final commit so recovery and audit stay possible; applies beyond disks (databases, workflows).
+- [Journaling](design/journal.md) — record intent or steps **before** final commit so recovery and audit stay possible; applies beyond disks (databases, workflows).
 
 ## Algorithms
 

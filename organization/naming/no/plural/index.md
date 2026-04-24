@@ -13,4 +13,4 @@ If you need a collection, make it explicit with structure.
 
 ## Related
 
-[Naming `no/`](../no.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../naming.md); [Concept - Detail Pages](../../../detail.md).
+[Naming `no/`](../no.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../name.md); [Concept - Detail Pages](../../../detail.md).

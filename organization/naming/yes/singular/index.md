@@ -16,4 +16,4 @@ If you need extra words, use folder depth or detail pages.
 
 ## Related
 
-[Naming `yes/`](../yes.md); [Naming `no/`](../../no.md); [No plural](../../no/plural/index.md); [Path and file naming](../../../naming.md).
+[Naming `yes/`](../yes.md); [Naming `no/`](../../no.md); [No plural](../../no/plural/index.md); [Path and file naming](../../../name.md).

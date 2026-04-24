@@ -13,4 +13,4 @@ If a topic needs multiple words, use folder depth or a detail page.
 
 ## Related
 
-[Naming `no/`](../no.md); [No spaces](../spaces/index.md); [No hyphens](../hyphens/index.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../naming.md).
+[Naming `no/`](../no.md); [No spaces](../spaces/index.md); [No hyphens](../hyphens/index.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../name.md).

@@ -27,7 +27,7 @@ One concept page per exercise, split from the spreadsheet source [`exercise.tsv`
 
 ## Stretch
 
-- [Hamstring (Face Up, One Leg Extended)](stretch/hamstring/face/up/one/leg/extended.md)
+- [Hamstring (Face Up, One Leg Extended)](stretch/hamstring/face/up/one/leg/extend.md)
 - [Piriform (Figure-4 Stretch)](stretch/piriform/figure/4/stretch.md)
 - [Psoas (Hip Flexor Stretch)](stretch/psoas/hip/flexor/stretch.md)
 - [Triceps Stretch](stretch/triceps/stretch.md)

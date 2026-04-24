@@ -6,7 +6,7 @@ Short notes on **inner life**—stress, clarity, consciousness, and related idea
 
 - [Intention](intention.md) — what you **mean to do**; aim, steering, and adjusting when outcomes differ.
 - [Why raise your consciousness?](why/raise/your/consciousness.md) — less stress, more control, better thinking.
-- [How can consciousness be raised?](how/consciousness/can/be/raised.md) — attention, feedback, and a clearer mind.
+- [How can consciousness be raised?](how/consciousness/can/be/raise.md) — attention, feedback, and a clearer mind.
 - [On Love](on/love.md) — from Kahlil Gibran, *The Prophet* (1923).
 - [On Marriage](on/marriage.md) — from Kahlil Gibran, *The Prophet* (1923).
 - [On Children](on/children.md) — from Kahlil Gibran, *The Prophet* (1923).

@@ -1,6 +1,4 @@
-# Filename expansion rule
-
-## Rule
+# Organizaton / File / Expand
 
 When a markdown filename contains `_`, convert each `_` into one folder level.
 

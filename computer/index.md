@@ -30,7 +30,7 @@ If you use a **Windows PC** or another system, the keys and menus will differ; t
 ## Storage (names and formats)
 
 - [Common filesystems (cross-platform)](storage/common/filesystems.md) — hub for **NTFS**, **APFS**, **HFS+**, **ext4**, **XFS**, **Btrfs**; one **identity file** each under [`storage/common_filesystems/`](storage/common_filesystems/index.md). Old path: [Common filesystem names (redirect)](storage/common/filesystem/names.md).
-- [Journaled filesystem](storage/journaled/filesystem.md) — how a **log-before-trust** design fits filesystems; general pattern in [Journaling](../system/design/journaling.md).
+- [Journaled filesystem](storage/journaled/filesystem.md) — how a **log-before-trust** design fits filesystems; general pattern in [Journaling](../system/design/journal.md).
 
 ## Git
 

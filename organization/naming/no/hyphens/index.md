@@ -13,4 +13,4 @@ If you need more meaning, add folder depth.
 
 ## Related
 
-[Naming `no/`](../no.md); [No spaces](../spaces/index.md); [No underscores](../underscores/index.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../naming.md).
+[Naming `no/`](../no.md); [No spaces](../spaces/index.md); [No underscores](../underscores/index.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../name.md).

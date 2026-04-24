@@ -21,4 +21,4 @@ Also see [No hyphens](../hyphens/index.md) and [No underscores](../underscores/i
 
 ## Related
 
-[Naming `no/`](../no.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../naming.md).
+[Naming `no/`](../no.md); [Singular](../../yes/singular/index.md); [Path and file naming](../../../name.md).

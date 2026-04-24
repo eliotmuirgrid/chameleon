@@ -1,6 +1,6 @@
 # Open systems vs closed systems (detail pages)
 
-Optional depth for [Open systems vs closed systems](../open/versus/closed.md). The hub page keeps definitions and the trade table; these pages carry longer analogies and format discussion. Pattern: [Concept - Detail Pages](../../../breakdown/detail.md).
+Optional depth for [Open systems vs closed systems](../open/versus/close.md). The hub page keeps definitions and the trade table; these pages carry longer analogies and format discussion. Pattern: [Concept - Detail Pages](../../../breakdown/detail.md).
 
 ## Pages
 

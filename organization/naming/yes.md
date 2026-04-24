@@ -9,4 +9,4 @@ Use `naming/no/` for disallowed patterns.
 
 ## Related
 
-[Naming `no/`](no.md); [Path and file naming](../naming.md); [Concept - Relative Links](../relative/links.md).
+[Naming `no/`](no.md); [Path and file naming](../name.md); [Concept - Relative Links](../relative/links.md).

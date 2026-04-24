@@ -1,6 +1,6 @@
 # Confluence (Atlassian wiki)
 
-**Summary:** **Confluence** is Atlassian’s **team wiki** in the **browser**. Teams use it for **documentation**, **meeting notes**, and **linked** pages inside **one** product. Like other **closed** setups, it tends to be **easy** at first and **harder** to **export**, **restructure**, or **pipe** to **outside** tools (including **AI**) as **plain text**. For that pattern, see [Open systems vs closed systems](open/versus/closed.md) and [Wix vs plain files](wix.md).
+**Summary:** **Confluence** is Atlassian’s **team wiki** in the **browser**. Teams use it for **documentation**, **meeting notes**, and **linked** pages inside **one** product. Like other **closed** setups, it tends to be **easy** at first and **harder** to **export**, **restructure**, or **pipe** to **outside** tools (including **AI**) as **plain text**. For that pattern, see [Open systems vs closed systems](open/versus/close.md) and [Wix vs plain files](wix.md).
 
 ---
 
@@ -26,6 +26,6 @@ The **product** is different from a site builder, but the **shape** is similar t
 | **AI** | Assistants work best on **text you control** in **files**. Pulling **clean** text **out** of a wiki is often **slower** and **more brittle** than editing Markdown **directly**. |
 | **Structure** | **Moving** or **renaming** many linked pages can be **manual** and **tedious**—because the **tree** is **owned** by the **app**, not by **files you reorder** in a folder. |
 
-Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open/versus/closed.md), [Markdown](markdown.md), [source control](source/control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) for Atlassian-adjacent hosting context.
+Same **closed** pattern in another category: [Wix vs plain files](wix.md). Open stack: [Open systems vs closed systems](open/versus/close.md), [Markdown](markdown.md), [source control](source/control.md), [Git](../../computer/git/git.md), and [GitHub, Bitbucket, and Git](../../computer/git/github_bitbucket_and_git.md) for Atlassian-adjacent hosting context.
 
 **How we used Confluence for an earlier concepts site**—and the **ideas** behind that site regardless of tool—is **not** covered here; see [How this all started](../../beginning.md).

@@ -6,7 +6,7 @@ Optional identity for [Common filesystems (cross-platform)](../common/filesystem
 
 ## Concept
 
-**XFS** is a [journaled filesystem](../journaled/filesystem.md) common on **Linux** servers and some desktops. The general pattern behind that word is [Journaling](../../../system/design/journaling.md).
+**XFS** is a [journaled filesystem](../journaled/filesystem.md) common on **Linux** servers and some desktops. The general pattern behind that word is [Journaling](../../../system/design/journal.md).
 
 ## Case
 
