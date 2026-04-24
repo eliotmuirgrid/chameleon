@@ -7,7 +7,7 @@ Use two layers:
 - Core page: `<concept>.md`
 - Optional depth: `<concept>/`
 
-Keep the main page short. Put longer examples and edge cases in the folder pages. This follows [separation of concerns](../system/design/separation/of/concerns.md), lowers [cognitive load](../system/design/cognitive_load/index.md), and matches the [concept standard](../rule.md).
+Keep the main page short. Put longer examples and edge cases in the folder pages. This follows [separation of concerns](../system/design/separation/of/concerns.md), lowers [cognitive load](../system/design/cognitive_load/load.md), and matches the [concept standard](../rule.md).
 
 ## Why
 

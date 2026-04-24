@@ -18,6 +18,6 @@ After hard work, the body uses energy for repair and replenishment.
 
 ## Related
 
-- [Muscle energy](index.md)
+- [Muscle energy](activity.md)
 - [Muscle energy at rest](rest.md)
 - [Muscle and blood glucose uptake](glucose.md)

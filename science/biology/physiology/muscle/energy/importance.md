@@ -14,7 +14,7 @@ Together they shape how fuel from food is used.
 
 ## Related
 
-- [Muscle energy](index.md)
+- [Muscle energy](activity.md)
 - [Muscle energy at rest](rest.md)
 - [Energy demand during movement](activity.md)
 - [Muscle and blood glucose uptake](glucose.md)

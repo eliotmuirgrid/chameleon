@@ -16,9 +16,9 @@ Each one adds ambiguity. Keep names short, singular, and clear.
 - [Spaces](no/spaces/index.md)
 - [Hyphens](no/hyphens/index.md)
 - [Underscores](no/underscores/index.md)
-- [Plural](no/plural/index.md)
+- [Plural](no/plural/detail.md)
 
-Positive pattern: [Singular](yes/singular/index.md) in [Naming `yes/`](yes.md).
+Positive pattern: [Singular](yes/singular/detail.md) in [Naming `yes/`](yes.md).
 
 ## Related
 

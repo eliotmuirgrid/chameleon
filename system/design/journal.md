@@ -6,7 +6,7 @@
 
 ## Why
 
-If the only record is the **finished** result, a crash or half-finished step **leaves no map** back to a clean state. A **journal** is the extra trail that makes **repair** and **learning** cheaper. That lowers panic and guesswork for both **people** and **programs**—the same pressure [cognitive load](cognitive_load/index.md) describes when a system hides its history.
+If the only record is the **finished** result, a crash or half-finished step **leaves no map** back to a clean state. A **journal** is the extra trail that makes **repair** and **learning** cheaper. That lowers panic and guesswork for both **people** and **programs**—the same pressure [cognitive load](cognitive_load/load.md) describes when a system hides its history.
 
 ## Transfer (beyond filesystems)
 

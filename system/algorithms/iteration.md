@@ -13,7 +13,7 @@ Each pass follows the same small loop: do, check, adjust, repeat.
 
 ## System view
 
-Iteration is useful when one perfect pass is unlikely, but many small corrections can move the system toward [equilibrium](../design/equilibrium.md). It pairs with ordered multi-step flows in the [pipeline](../troubleshooting/pipeline.md) idea, with [recursion](recursion.md) when the loop has self-similar shape, and with attention to [cognitive load](../design/cognitive_load/index.md) so each pass stays reviewable. Growing topics can follow the [Concept - Detail Pages](../../breakdown/detail.md) pattern with a short hub and a matching detail folder.
+Iteration is useful when one perfect pass is unlikely, but many small corrections can move the system toward [equilibrium](../design/equilibrium.md). It pairs with ordered multi-step flows in the [pipeline](../troubleshooting/pipeline.md) idea, with [recursion](recursion.md) when the loop has self-similar shape, and with attention to [cognitive load](../design/cognitive_load/load.md) so each pass stays reviewable. Growing topics can follow the [Concept - Detail Pages](../../breakdown/detail.md) pattern with a short hub and a matching detail folder.
 
 ## Failure mode
 

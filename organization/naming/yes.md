@@ -3,7 +3,7 @@
 ## Concept
 
 This folder holds positive naming defaults.
-Current default: [Singular](yes/singular/index.md).
+Current default: [Singular](yes/singular/detail.md).
 
 Use `naming/no/` for disallowed patterns.
 

@@ -35,4 +35,4 @@ After simplifying, ask:
 
 If "no" appears, entropy is increasing and the simplification should stop.
 
-Entropy ties to [cognitive load](cognitive_load/index.md) and to [Simple English (80/20 language rule)](../../communication/simple_english.md) when simplification removes too much. [Separation of concerns](separation/of/concerns.md) limits how fast one area’s mess spreads; physical clutter has the same shape in [decluttering and retrieval](../../pareto/general/decluttering_and_retrieval.md#entropy-and-search-space).
+Entropy ties to [cognitive load](cognitive_load/load.md) and to [Simple English (80/20 language rule)](../../communication/simple_english.md) when simplification removes too much. [Separation of concerns](separation/of/concerns.md) limits how fast one area’s mess spreads; physical clutter has the same shape in [decluttering and retrieval](../../pareto/general/decluttering_and_retrieval.md#entropy-and-search-space).

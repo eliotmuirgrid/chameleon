@@ -16,6 +16,6 @@ So both movement level and muscle mass affect day-to-day glucose handling.
 
 ## Related
 
-- [Muscle energy](index.md)
+- [Muscle energy](activity.md)
 - [Energy demand during movement](activity.md)
 - [Glucose spikes](../../../../health/nutrition/glucose_spikes.md)

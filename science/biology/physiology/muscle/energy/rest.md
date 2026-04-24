@@ -17,5 +17,5 @@ The size of that increase is real but modest.
 
 ## Related
 
-- [Muscle energy](index.md)
+- [Muscle energy](activity.md)
 - [Energy demand during movement](activity.md)

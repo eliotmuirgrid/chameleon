@@ -10,7 +10,7 @@ You are placing complexity into structure so people can follow one thread at a t
 
 ## Why
 
-- Lower [cognitive load](../system/design/cognitive_load/index.md)
+- Lower [cognitive load](../system/design/cognitive_load/load.md)
 - Better fit for [Simple English](../communication/simple_english.md)
 - Better [separation of concerns](../system/design/separation_of_concerns/concept.md)
 

@@ -12,7 +12,7 @@ Use names that are easy to read, easy to type, and stable over time.
 3. Prefer one clear token per path segment.
 4. If you need extra words, add folder depth instead of packing one segment.
 
-See the rule pages in [Naming `no/`](naming/no.md) and the positive pattern in [Singular](naming/yes/singular/index.md).
+See the rule pages in [Naming `no/`](naming/no.md) and the positive pattern in [Singular](naming/yes/singular/detail.md).
 
 ## Why
 
