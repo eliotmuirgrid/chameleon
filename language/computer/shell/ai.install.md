@@ -7,21 +7,19 @@ The team runs a single mission profile: one workflow, one shared toolset, repeat
 1. Clone or update `~/chameleon`.
 2. Run the installer:
    - `./language/computer/shell/ai.install`
-3. Add your bin directory to `PATH` if needed:
-   - `export PATH="$HOME/.local/bin:$PATH"`
-4. Reload your shell:
+3. Reload your shell if prompted:
    - `source ~/.zshrc`
-5. Confirm installed commands:
+4. Confirm installed commands:
    - `git.publish --help` (or run with a message)
    - `git.republish --help` (or run with a message)
-   - `prompt "test prompt"`
+   - `ai.prompt "test prompt"`
 
 ## Current Command Set
 
-- `ai.install`: installs and links shell tools into your bin directory.
+- `ai.install`: installs and links shell tools, and updates your shell config for PATH.
 - `git.publish`: stage, commit, and push from `~/chameleon`.
 - `git.republish`: amend the latest commit message and push safely.
-- `prompt`: send text to the Cursor CLI agent.
+- `ai.prompt`: send text to the Cursor CLI agent.
 
 ## Why This Works (Theory of Constraints)
 

@@ -1,4 +1,4 @@
-`prompt` sends text to the Cursor CLI agent in the `~/chameleon` workspace.
+`ai.prompt` sends text to the Cursor CLI agent in the `~/chameleon` workspace.
 
 How it works:
 
@@ -9,5 +9,5 @@ How it works:
 
 Examples:
 
-- `./prompt Add a new concept directory called gardening`
-- `./prompt "$(cat command.md)"`
+- `ai.prompt Add a new concept directory called gardening`
+- `ai.prompt "$(cat command.md)"`

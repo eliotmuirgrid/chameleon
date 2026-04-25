@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORKSPACE="/Users/eliotmuir/chameleon"
+WORKSPACE="$HOME/chameleon"
 
 PROMPT="$*"
 
