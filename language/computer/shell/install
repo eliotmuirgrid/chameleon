@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BIN_DIR="${1:-$HOME/.local/bin}"
+
+mkdir -p "$BIN_DIR"
+
+for ScriptPath in "$SCRIPT_DIR"/*; do
+  Name="$(basename "$ScriptPath")"
+
+  if [ -d "$ScriptPath" ]; then
+    continue
+  fi
+
+  case "$Name" in
+    *.md|install)
+      continue
+      ;;
+  esac
+
+  chmod +x "$ScriptPath"
+  ln -sf "$ScriptPath" "$BIN_DIR/$Name"
+  echo "Installed $Name -> $BIN_DIR/$Name"
+done
+
+case ":$PATH:" in
+  *":$BIN_DIR:"*)
+    echo "$BIN_DIR is already in PATH."
+    ;;
+  *)
+    echo "Add this to your shell config if needed:"
+    echo "export PATH=\"$BIN_DIR:\$PATH\""
+    ;;
+esac

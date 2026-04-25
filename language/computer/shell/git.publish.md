@@ -1,4 +1,4 @@
-`publish` stages, commits, and pushes changes in `~/chameleon`.
+`git.publish` stages, commits, and pushes changes in `~/chameleon`.
 
 How it works:
 
@@ -12,9 +12,9 @@ How it works:
 
 Examples:
 
-- `./publish update gardening notes`
-- `./publish $'Add gardening concept\n\nAdd cilantro and flower notes'`
+- `git.publish update gardening notes`
+- `git.publish $'Add gardening concept\n\nAdd cilantro and flower notes'`
 
 Behavior note:
 
-- `./publish This is a multiline comment` is one line, not a multiline commit message.
+- `git.publish This is a multiline comment` is one line, not a multiline commit message.

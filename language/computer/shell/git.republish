@@ -4,7 +4,7 @@ WORKSPACE="$HOME/chameleon"
 NEW_MSG="$*"
 
 if [ -z "$NEW_MSG" ]; then
-  echo "Usage: republish <new commit message>"
+  echo "Usage: git.republish <new commit message>"
   exit 1
 fi
 
