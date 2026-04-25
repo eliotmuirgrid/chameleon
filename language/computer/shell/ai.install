@@ -15,7 +15,7 @@ for ScriptPath in "$SCRIPT_DIR"/*; do
   fi
 
   case "$Name" in
-    *.md|install)
+    *.md|ai.install)
       continue
       ;;
   esac
