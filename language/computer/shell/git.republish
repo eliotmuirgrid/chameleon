@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+WORKSPACE="$HOME/chameleon"
+NEW_MSG="$*"
+
+if [ -z "$NEW_MSG" ]; then
+  echo "Usage: republish <new commit message>"
+  exit 1
+fi
+
+OLD_HEAD="$(git -C "$WORKSPACE" rev-parse HEAD 2>/dev/null)"
+if [ -z "$OLD_HEAD" ]; then
+  echo "Unable to read current commit in $WORKSPACE"
+  exit 1
+fi
+
+BRANCH="$(git -C "$WORKSPACE" rev-parse --abbrev-ref HEAD 2>/dev/null)"
+UPSTREAM="$(git -C "$WORKSPACE" rev-parse --abbrev-ref --symbolic-full-name "@{u}" 2>/dev/null)"
+REMOTE=""
+REMOTE_BRANCH=""
+if [ -n "$UPSTREAM" ]; then
+  REMOTE="${UPSTREAM%%/*}"
+  REMOTE_BRANCH="${UPSTREAM#*/}"
+fi
+
+git -C "$WORKSPACE" commit --amend -m "$NEW_MSG" || exit 1
+
+if [ -n "$UPSTREAM" ] && [ -n "$REMOTE" ] && [ -n "$REMOTE_BRANCH" ]; then
+  if git -C "$WORKSPACE" merge-base --is-ancestor "$OLD_HEAD" "$UPSTREAM"; then
+    echo "Previous commit was already pushed."
+    echo "Push amended commit with --force-with-lease? [y/N]"
+    read -r ANSWER
+    case "$ANSWER" in
+      y|Y|yes|YES)
+        git -C "$WORKSPACE" push "$REMOTE" "$BRANCH:$REMOTE_BRANCH" --force-with-lease="$REMOTE_BRANCH:$OLD_HEAD"
+        ;;
+      *)
+        echo "Skipped push. Run this when ready:"
+        echo "git -C \"$WORKSPACE\" push \"$REMOTE\" \"$BRANCH:$REMOTE_BRANCH\" --force-with-lease=\"$REMOTE_BRANCH:$OLD_HEAD\""
+        ;;
+    esac
+  else
+    git -C "$WORKSPACE" push "$REMOTE" "$BRANCH:$REMOTE_BRANCH"
+  fi
+else
+  echo "No upstream branch configured. Amended commit locally only."
+fi
