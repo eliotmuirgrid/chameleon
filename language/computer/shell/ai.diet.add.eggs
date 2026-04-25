@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WORKSPACE="/Users/eliotmuir/chameleon"
+
+PROGRAM="$(basename "$0")"
+ARGS="$*"
+
+echo "$PROGRAM $ARGS"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+WORKSPACE="$HOME/chameleon"
+
+COMMIT_MSG="$*"
+
+git -C "$WORKSPACE" add .
+git -C "$WORKSPACE" commit --all -m "$COMMIT_MSG"
+git -C "$WORKSPACE" push

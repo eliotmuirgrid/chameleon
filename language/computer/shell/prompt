@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+WORKSPACE="/Users/eliotmuir/chameleon"
+
+PROMPT="$*"
+
+agent -p --workspace "$WORKSPACE" "$PROMPT" --trust
