@@ -5,9 +5,9 @@ The team runs a single mission profile: one workflow, one shared toolset, repeat
 ## Install For Every Teammate
 
 1. Clone or update `~/chameleon`.
-2. Run the installer:
-   - `./language/computer/shell/ai.install`
-3. Reload your shell if prompted:
+2. Run:
+   - `~/chameleon/language/computer/shell/ai.install`
+3. Reload your shell:
    - `source ~/.zshrc`
 4. Confirm installed commands:
    - `git.publish --help` (or run with a message)
@@ -16,10 +16,16 @@ The team runs a single mission profile: one workflow, one shared toolset, repeat
 
 ## Current Command Set
 
-- `ai.install`: installs and links shell tools, and updates your shell config for PATH.
+- `ai.install`: update your shell `PATH` for `~/chameleon/language/computer/shell`.
 - `git.publish`: stage, commit, and push from `~/chameleon`.
 - `git.republish`: amend the latest commit message and push safely.
 - `ai.prompt`: send text to the Cursor CLI agent.
+
+## Continuous Update Model
+
+- Commands run directly from the repository path.
+- Pulling latest changes updates behavior immediately.
+- No copied binaries, no symlinks, and no stale installed versions.
 
 ## Why This Works (Theory of Constraints)
 

@@ -3,56 +3,21 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BIN_DIR="${1:-$HOME/.local/bin}"
-SHELL_NAME="$(basename "${SHELL:-}")"
-RC_FILE="$HOME/.profile"
+RC_FILE="$HOME/.zshrc"
+if [ "${SHELL:-}" != "" ] && [ "$(basename "$SHELL")" = "bash" ]; then
+  RC_FILE="$HOME/.bashrc"
+fi
 
-case "$SHELL_NAME" in
-  zsh)
-    RC_FILE="$HOME/.zshrc"
-    ;;
-  bash)
-    RC_FILE="$HOME/.bashrc"
-    ;;
-esac
+PATH_LINE="export PATH=\"$SCRIPT_DIR:\$PATH\""
 
-mkdir -p "$BIN_DIR"
-
-for ScriptPath in "$SCRIPT_DIR"/*; do
-  Name="$(basename "$ScriptPath")"
-
-  if [ -d "$ScriptPath" ]; then
-    continue
-  fi
-
-  case "$Name" in
-    *.md|ai.install)
-      continue
-      ;;
-  esac
-
-  chmod +x "$ScriptPath"
-  ln -sf "$ScriptPath" "$BIN_DIR/$Name"
-  echo "Installed $Name -> $BIN_DIR/$Name"
-done
-
-PATH_LINE="export PATH=\"$BIN_DIR:\$PATH\""
-
-if [ -f "$RC_FILE" ] && grep -F "$PATH_LINE" "$RC_FILE" >/dev/null 2>&1; then
-  echo "PATH line already present in $RC_FILE."
+if [ -f "$RC_FILE" ] && rg -F "$PATH_LINE" "$RC_FILE" >/dev/null 2>&1; then
+  echo "Already configured in $RC_FILE."
 else
   echo "" >> "$RC_FILE"
   echo "# Added by ai.install" >> "$RC_FILE"
   echo "$PATH_LINE" >> "$RC_FILE"
-  echo "Added PATH update to $RC_FILE."
+  echo "Added PATH entry to $RC_FILE."
 fi
 
-case ":$PATH:" in
-  *":$BIN_DIR:"*)
-    echo "$BIN_DIR is already active in this shell PATH."
-    ;;
-  *)
-    echo "Reload your shell to activate PATH now:"
-    echo "source \"$RC_FILE\""
-    ;;
-esac
+echo "Reload your shell:"
+echo "source \"$RC_FILE\""
